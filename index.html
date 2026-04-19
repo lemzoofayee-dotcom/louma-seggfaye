@@ -19,38 +19,49 @@
       background: #100d08;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      transition: opacity .6s ease, visibility .6s ease;
+      transition: opacity .8s ease, visibility .8s ease;
     }
     #preloader.hidden { opacity: 0; visibility: hidden; }
     .pre-logo {
-      width: 110px; height: 110px; border-radius: 50%;
+      width: 300px; height: 300px; border-radius: 50%;
       overflow: hidden; margin-bottom: 2rem;
-      animation: pre-pulse 1.8s ease-in-out infinite;
-      border: 2px solid rgba(201,168,76,.3);
+      border: 2px solid rgba(201,168,76,.35);
+      box-shadow: 0 0 80px rgba(201,168,76,.15);
+      animation: pre-reveal 2.4s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
     }
     .pre-logo img { width: 100%; height: 100%; object-fit: cover; }
-    @keyframes pre-pulse {
-      0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(201,168,76,.3); }
-      50% { transform: scale(1.05); box-shadow: 0 0 0 16px rgba(201,168,76,.0); }
+    @keyframes pre-reveal {
+      0%   { opacity: 0; transform: scale(1.18); }
+      30%  { opacity: 1; }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .pre-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 700; letter-spacing: .25em;
+      color: var(--cream); text-transform: uppercase;
+      opacity: 0; animation: pre-up .7s ease .9s forwards;
+    }
+    .pre-tagline {
+      font-size: .62rem; font-weight: 700; letter-spacing: .25em;
+      text-transform: uppercase; color: rgba(201,168,76,.6);
+      margin-top: .4rem; margin-bottom: 2rem;
+      opacity: 0; animation: pre-up .7s ease 1.2s forwards;
+    }
+    @keyframes pre-up {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     .pre-bar {
-      width: 180px; height: 2px;
+      width: 160px; height: 1.5px;
       background: rgba(201,168,76,.15);
       border-radius: 999px; overflow: hidden;
     }
     .pre-fill {
       height: 100%; background: var(--gold);
       border-radius: 999px;
-      animation: pre-load 1.4s ease-in-out forwards;
+      animation: pre-load 2s ease-in-out forwards;
     }
     @keyframes pre-load { from { width: 0 } to { width: 100% } }
-    .pre-label {
-      font-size: .65rem; font-weight: 700; letter-spacing: .25em;
-      text-transform: uppercase; color: rgba(201,168,76,.5);
-      margin-top: 1rem;
-      animation: pre-fade 1.4s ease infinite;
-    }
-    @keyframes pre-fade { 0%,100%{opacity:.4} 50%{opacity:1} }
 
     /* ═══════════════════════════════════════
        CURSOR CUSTOM
@@ -347,6 +358,41 @@
       position: relative;
       overflow: hidden;
     }
+    #particles-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    #hero > *:not(#particles-canvas) { position: relative; z-index: 1; }
+
+    /* TOAST NOTIFICATION */
+    #sale-toast {
+      position: fixed;
+      bottom: 90px; left: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: .85rem 1.1rem;
+      display: flex; align-items: center; gap: .8rem;
+      max-width: 270px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+      z-index: 9000;
+      transform: translateX(-320px);
+      transition: transform .5s cubic-bezier(.34,1.56,.64,1);
+    }
+    #sale-toast.show { transform: translateX(0); }
+    .toast-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #8B6914);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .toast-text { line-height: 1.3; }
+    .toast-name { font-weight: 700; font-size: .85rem; color: var(--text); }
+    .toast-product { font-size: .78rem; color: var(--muted); margin-top: .15rem; }
+    .toast-time { font-size: .7rem; color: var(--gold); margin-top: .2rem; }
 
     /* LEFT — texte */
     .hero-left {
@@ -544,6 +590,64 @@
       text-transform: uppercase;
     }
     .marquee-item svg { color: var(--gold); flex-shrink: 0; }
+
+    /* ═══════════════════════════════════════
+       COMMENT COMMANDER
+    ═══════════════════════════════════════ */
+    .how-section {
+      padding: 4rem 0 3rem;
+      background: linear-gradient(180deg, transparent 0%, rgba(201,168,76,.04) 50%, transparent 100%);
+    }
+    .how-title {
+      text-align: center;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      color: var(--text);
+    }
+    .how-steps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .how-step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1.2rem;
+      padding: 1.8rem 1.2rem 1.4rem;
+      text-align: center;
+      width: 160px;
+      position: relative;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .how-step:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(201,168,76,.12); }
+    .how-num {
+      position: absolute;
+      top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--gold);
+      color: #111;
+      font-weight: 800;
+      font-size: .85rem;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .how-icon { font-size: 2.2rem; margin-bottom: .8rem; line-height: 1; }
+    .how-label { font-weight: 700; font-size: .95rem; margin-bottom: .4rem; color: var(--text); }
+    .how-desc { font-size: .78rem; color: var(--muted); line-height: 1.4; }
+    .how-arrow {
+      font-size: 1.6rem;
+      color: var(--gold);
+      opacity: .6;
+      font-weight: 300;
+    }
+    @media (max-width: 520px) {
+      .how-arrow { display: none; }
+      .how-steps { gap: 1.2rem; }
+      .how-step { width: 140px; padding: 1.6rem 1rem 1.2rem; }
+    }
 
     /* ═══════════════════════════════════════
        SECTIONS
@@ -1031,6 +1135,33 @@
       font-size:.62rem; color:var(--muted); text-align:center;
       display:flex; align-items:center; justify-content:center; gap:.3rem;
     }
+    .cart-zone-row {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:.5rem 0;
+    }
+    .cart-zone-row select {
+      background:var(--surface-2); border:1px solid var(--border);
+      color:var(--cream); border-radius:999px; padding:.3rem .8rem;
+      font-size:.78rem; font-weight:600; cursor:pointer; outline:none;
+      font-family:'Plus Jakarta Sans',sans-serif;
+      transition:border-color .2s;
+    }
+    .cart-zone-row select:focus { border-color:var(--gold); }
+    .cart-shipping-row {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:.3rem 0;
+    }
+    .cart-carrier-badge {
+      font-size:.55rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+      background:rgba(201,168,76,.12); border:1px solid rgba(201,168,76,.2);
+      color:var(--gold); padding:.1rem .4rem; border-radius:999px; margin-left:.35rem;
+    }
+    #cart-shipping-val { font-size:.88rem; font-weight:700; color:var(--cream); }
+    .cart-grand-total-row {
+      display:flex; justify-content:space-between; align-items:center;
+      padding-top:.65rem; border-top:1px solid var(--border); margin-top:.2rem;
+    }
+    .label-grand { font-size:.88rem; font-weight:800; color:var(--cream); }
     .cart-success-modal {
       position:fixed; inset:0; z-index:500;
       display:none; align-items:center; justify-content:center;
@@ -1274,8 +1405,9 @@
 <!-- PRELOADER -->
 <div id="preloader">
   <div class="pre-logo"><img src="logosite.jpg" alt="Seggfaye"/></div>
+  <div class="pre-name">Seggfaye</div>
+  <div class="pre-tagline">Le marché africain authentique</div>
   <div class="pre-bar"><div class="pre-fill"></div></div>
-  <div class="pre-label">Chargement en cours…</div>
 </div>
 
 <!-- CURSOR -->
@@ -1304,6 +1436,7 @@
 <li><a href="#contact">Contact</a></li>
 </ul>
 <a class="nav-cta" href="https://wa.me/33652650395" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.828L.057 23.215a.75.75 0 0 0 .928.928l5.388-1.466A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.725 9.725 0 0 1-4.953-1.354l-.355-.212-3.683 1.002.978-3.584-.23-.368A9.716 9.716 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
       Commander
     </a>
 <button aria-label="Menu" class="nav-burger" id="navBurger" onclick="toggleMobileMenu()">
@@ -1322,6 +1455,7 @@
 </div>
 <!-- HERO -->
 <section id="hero">
+<canvas id="particles-canvas"></canvas>
 <div class="hero-left">
 <div class="hero-eyebrow">
 <div class="hero-dot"></div>
@@ -1367,7 +1501,7 @@
 </div>
 <div class="hero-right">
 <div class="hero-photos">
-<div class="hero-photo hp1"><img alt="Crevettes séchées" src="crevettesechees.JPG"/></div>
+<div class="hero-photo hp1"><img alt="Crevettes séchées" src="crevettesechees.jpg"/></div>
 <div class="hero-photo hp2"><img alt="Yeet séché" src="yeet.jpg"/></div>
 <div class="hero-photo hp3"><img alt="Netetou Barre" src="netetou-barre.jpg"/></div>
 <div class="hero-photo hp4"><img alt="Guedji Beurre" src="guedji-beurre.jpg"/></div>
@@ -1414,6 +1548,37 @@
 </div>
 </div>
 
+<!-- COMMENT COMMANDER -->
+<section class="how-section">
+  <div class="wrap">
+    <h2 class="how-title reveal">Comment commander ?</h2>
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <div class="how-num">1</div>
+        <div class="how-icon">🛍️</div>
+        <div class="how-label">Choisissez vos produits</div>
+        <div class="how-desc">Parcourez le catalogue et ajoutez au panier</div>
+      </div>
+      <div class="how-arrow reveal">→</div>
+      <div class="how-step reveal">
+        <div class="how-num">2</div>
+        <div class="how-icon">🛒</div>
+        <div class="how-label">Validez votre panier</div>
+        <div class="how-desc">Cliquez sur Commander pour envoyer votre sélection</div>
+      </div>
+      <div class="how-arrow reveal">→</div>
+      <div class="how-step reveal">
+        <div class="how-num">3</div>
+        <div class="how-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#25D366" style="width:36px;height:36px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.828L.057 23.215a.75.75 0 0 0 .928.928l5.388-1.466A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.725 9.725 0 0 1-4.953-1.354l-.355-.212-3.683 1.002.978-3.584-.23-.368A9.716 9.716 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        </div>
+        <div class="how-label">Recevez sur WhatsApp</div>
+        <div class="how-desc">On confirme votre commande et on livre chez vous</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PRODUITS -->
 <section class="section" id="produits">
 <div class="wrap">
@@ -1431,408 +1596,18 @@
 </div>
 <div class="cat-panel active" id="cat-mer">
 <div class="cat-grid">
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Crevettes séchées" src="crevettesechees.JPG"/></div><div class="prod-img-overlay">Crevettes séchées</div></div>
-<div class="prod-body">
-<div class="prod-badge">Bestseller</div><div class="prod-name">Crevettes séchées</div>
-<div class="prod-footer">
-<div class="prod-price">6,00 € <small>par 100g</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Crevettes%20s%C3%A9ch%C3%A9es" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Yoxos" src="yohos.jpg"/></div><div class="prod-img-overlay">Yoxos (huîtres secs)</div></div>
-<div class="prod-body">
-<div class="prod-name">Yoxos (huîtres secs)</div>
-<div class="prod-footer">
-<div class="prod-price">6,00 € <small>par 100g</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Yoxos%20%28hu%C3%AEtres%20secs%29" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Pagne" src="pagne-conv.jpg"/></div><div class="prod-img-overlay">Pagne (coques)</div></div>
-<div class="prod-body">
-<div class="prod-name">Pagne (coques)</div>
-<div class="prod-footer">
-<div class="prod-price">6,00 € <small>par 100g</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Pagne%20%28coques%29" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Tuffa" src="tuffa.jpg"/></div><div class="prod-img-overlay">Tuffa</div></div>
-<div class="prod-body">
-<div class="prod-name">Tuffa</div>
-<div class="prod-footer">
-<div class="prod-price">6,00 € <small>par 100g</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Tuffa" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Yeet Maggi" src="yeet.jpg"/></div><div class="prod-img-overlay">Yeet Maggi</div></div>
-<div class="prod-body">
-<div class="prod-name">Yeet Maggi</div>
-<div class="prod-footer">
-<div class="prod-price">6,00 € <small>par 100g</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Yeet%20Maggi" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Guej Yass" src="guedj-yass.jpg"/></div><div class="prod-img-overlay">Guej Yass</div></div>
-<div class="prod-body">
-<div class="prod-name">Guej Yass</div>
-<div class="prod-footer">
-<div class="prod-price">6,00 € <small>par 100g</small><span class="prod-price-old">7,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Guej%20Yass" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Guej Beurre" src="guedji-beurre.jpg"/></div><div class="prod-img-overlay">Guej Beurre</div></div>
-<div class="prod-body">
-<div class="prod-name">Guej Beurre</div>
-<div class="prod-footer">
-<div class="prod-price">4,00 € <small>par 100g</small><span class="prod-price-old">6,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Guej%20Beurre" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Guej Beur Casamance" src="guedji-beur_casamance.jpg"/></div><div class="prod-img-overlay">Guej Beur Casamance</div></div>
-<div class="prod-body">
-<div class="prod-badge">Casamance</div><div class="prod-name">Guej Beur Casamance</div>
-<div class="prod-footer">
-<div class="prod-price">12,00 € <small>par 300g</small><span class="prod-price-old">18,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Guej%20Beur%20Casamance" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Guej Sol" src="Guedji-sole.JPG"/></div><div class="prod-img-overlay">Guej Sol</div></div>
-<div class="prod-body">
-<div class="prod-name">Guej Sol</div>
-<div class="prod-footer">
-<div class="prod-price">4,00 € <small>par 100g</small><span class="prod-price-old">6,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Guej%20Sol" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Guej Kong" src="Guedji-kong.JPG"/></div><div class="prod-img-overlay">Guej Kong</div></div>
-<div class="prod-body">
-<div class="prod-name">Guej Kong</div>
-<div class="prod-footer">
-<div class="prod-price">3,00 € <small>par 100g</small><span class="prod-price-old">5,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Guej%20Kong" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Guej Tambajang" src="Guedji-tambajang.JPG"/></div><div class="prod-img-overlay">Guej Tambajang</div></div>
-<div class="prod-body">
-<div class="prod-name">Guej Tambajang</div>
-<div class="prod-footer">
-<div class="prod-price">3,00 € <small>par 100g</small><span class="prod-price-old">5,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Guej%20Tambajang" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Guej Toumboulan" src="guedji-toumboulane.JPG"/></div><div class="prod-img-overlay">Guej Toumboulan</div></div>
-<div class="prod-body">
-<div class="prod-name">Guej Toumboulan</div>
-<div class="prod-footer">
-<div class="prod-price">3,00 € <small>par 100g</small><span class="prod-price-old">5,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Guej%20Toumboulan" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Guerte Tooy" src="guerte-toye.JPG"/></div><div class="prod-img-overlay">Guerte Tooy</div></div>
-<div class="prod-body">
-<div class="prod-name">Guerte Tooy</div>
-<div class="prod-footer">
-<div class="prod-price">8,00 € <small>par kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Guerte%20Tooy" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Kongfume" src="kong-fume-sec.JPG"/></div><div class="prod-img-overlay">Kongfume</div></div>
-<div class="prod-body">
-<div class="prod-badge">Fumé</div><div class="prod-name">Kongfume</div>
-<div class="prod-footer">
-<div class="prod-price">30,00 € <small>par 500g</small><span class="prod-price-old">35,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Kongfume" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Kongfume Gambie" src="kong-fume1.jpg"/></div><div class="prod-img-overlay">Kongfume Gambie</div></div>
-<div class="prod-body">
-<div class="prod-badge">Gambie</div><div class="prod-name">Kongfume Gambie</div>
-<div class="prod-footer">
-<div class="prod-price">30,00 € <small>par 500g</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Kongfume%20Gambie" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Pack Saloum" src="packsaloum-sachetdebout1.jpg"/></div><div class="prod-img-overlay">Pack Saloum</div></div>
-<div class="prod-body">
-<div class="prod-badge">Pack 4 produits</div><div class="prod-name">Pack Saloum</div>
-<div class="prod-footer">
-<div class="prod-price">60,00 € <small>par kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Pack%20Saloum" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="cat-panel" id="cat-epices">
 <div class="cat-grid">
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Netetu Dom" src="netetou-dome.JPG"/></div><div class="prod-img-overlay">Netetu Dom</div></div>
-<div class="prod-body">
-<div class="prod-name">Netetu Dom</div>
-<div class="prod-footer">
-<div class="prod-price">5,00 € <small>par 100g</small><span class="prod-price-old">6,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Netetu%20Dom" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Netetu Barre" src="netetou-barre.jpg"/></div><div class="prod-img-overlay">Netetu Barre</div></div>
-<div class="prod-body">
-<div class="prod-name">Netetu Barre</div>
-<div class="prod-footer">
-<div class="prod-price">5,00 € <small>par 100g</small><span class="prod-price-old">6,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Netetu%20Barre" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Netetu Mix" src="netetou-mixte.JPG"/></div><div class="prod-img-overlay">Netetu Mix</div></div>
-<div class="prod-body">
-<div class="prod-badge">Mix</div><div class="prod-name">Netetu Mix</div>
-<div class="prod-footer">
-<div class="prod-price">15,00 € <small>par 200g</small><span class="prod-price-old">20,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Netetu%20Mix" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Netetu simple poudre" src="netetou-poudre.JPG"/></div><div class="prod-img-overlay">Netetu simple poudre</div></div>
-<div class="prod-body">
-<div class="prod-name">Netetu simple poudre</div>
-<div class="prod-footer">
-<div class="prod-price">5,00 € <small>par 100g</small><span class="prod-price-old">6,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Netetu%20simple%20poudre" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Sauce Netetu Beugeuc" src="sauce netetou.jpg"/></div><div class="prod-img-overlay">Sauce Netetu Beugeuc</div></div>
-<div class="prod-body">
-<div class="prod-badge">Sauce</div><div class="prod-name">Sauce Netetu Beugeuc</div>
-<div class="prod-footer">
-<div class="prod-price">10,00 € <small>250g</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Sauce%20Netetu%20Beugeuc" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Beugeuc Feuille Bissap" src="beugeuth-bissap2.jpg"/></div><div class="prod-img-overlay">Beugeuc Feuille Bissap</div></div>
-<div class="prod-body">
-<div class="prod-badge">Bissap</div><div class="prod-name">Beugeuc Feuille Bissap</div>
-<div class="prod-footer">
-<div class="prod-price">10,00 € <small>300g</small><span class="prod-price-old">15,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Beugeuc%20Feuille%20Bissap" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Keciax" src="Guedji-kethiakh.JPG"/></div><div class="prod-img-overlay">Keciax</div></div>
-<div class="prod-body">
-<div class="prod-name">Keciax</div>
-<div class="prod-footer">
-<div class="prod-price">3,00 € <small>par 100g</small><span class="prod-price-old">5,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Keciax" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Bissap Rouge" src="Bissap-rouge.JPG"/></div><div class="prod-img-overlay">Bissap Rouge</div></div>
-<div class="prod-body">
-<div class="prod-badge">Bissap</div><div class="prod-name">Bissap Rouge</div>
-<div class="prod-footer">
-<div class="prod-price">5,00 € <small>par 150g</small><span class="prod-price-old">6,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Bissap%20Rouge" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Bissap Blanc" src="Bissap-blanc.JPG"/></div><div class="prod-img-overlay">Bissap Blanc</div></div>
-<div class="prod-body">
-<div class="prod-badge">Bissap</div><div class="prod-name">Bissap Blanc</div>
-<div class="prod-footer">
-<div class="prod-price">5,00 € <small>par 200g</small><span class="prod-price-old">6,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Bissap%20Blanc" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Bouye poudre baobab" src="poudre-baobab.jpg"/></div><div class="prod-img-overlay">Bouye (poudre baobab)</div></div>
-<div class="prod-body">
-<div class="prod-badge">Baobab</div><div class="prod-name">Bouye (poudre baobab)</div>
-<div class="prod-footer">
-<div class="prod-price">6,00 € <small>par 200g</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Bouye%20%28poudre%20baobab%29" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Purée Piment Fort" src="kani-puree.JPG"/></div><div class="prod-img-overlay">Purée Piment Fort</div></div>
-<div class="prod-body">
-<div class="prod-badge">Piment</div><div class="prod-name">Purée Piment Fort</div>
-<div class="prod-footer">
-<div class="prod-price">10,00 € <small>200g</small><span class="prod-price-old">12,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Pur%C3%A9e%20Piment%20Fort" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Maad Confi" src="maad-confi2.jpg"/></div><div class="prod-img-overlay">Maad Confi</div></div>
-<div class="prod-body">
-<div class="prod-badge">Confiture</div><div class="prod-name">Maad Confi</div>
-<div class="prod-footer">
-<div class="prod-price">25,00 € <small>par kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Maad%20Confi" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="cat-panel" id="cat-cereales">
 <div class="cat-grid">
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Arraw Dugup" src="arraw.jpg"/></div><div class="prod-img-overlay">Arraw Dugup (mil)</div></div>
-<div class="prod-body">
-<div class="prod-badge">Mil</div><div class="prod-name">Arraw Dugup (mil)</div>
-<div class="prod-footer">
-<div class="prod-price">18,00 € <small>par kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Arraw%20Dugup%20%28mil%29" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Ciakri" src="thiackry.jpg"/></div><div class="prod-img-overlay">Ciakri</div></div>
-<div class="prod-body">
-<div class="prod-badge">Couscous</div><div class="prod-name">Ciakri</div>
-<div class="prod-footer">
-<div class="prod-price">18,00 € <small>par kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Ciakri" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Sankal Duggup" src="sankal.jpg"/></div><div class="prod-img-overlay">Sankal Duggup</div></div>
-<div class="prod-body">
-<div class="prod-name">Sankal Duggup</div>
-<div class="prod-footer">
-<div class="prod-price">9,00 € <small>500g</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Sankal%20Duggup" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Niebe Saloum" src="niebe-saloum.jpg"/></div><div class="prod-img-overlay">Niebe Saloum</div></div>
-<div class="prod-body">
-<div class="prod-badge">Saloum</div><div class="prod-name">Niebe Saloum</div>
-<div class="prod-footer">
-<div class="prod-price">5,00 € <small>250g</small><span class="prod-price-old">6,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Niebe%20Saloum" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Guerte Noflay" src="Guerte-noflay.JPG"/></div><div class="prod-img-overlay">Guerte Noflay</div></div>
-<div class="prod-body">
-<div class="prod-badge">Poudre arachide</div><div class="prod-name">Guerte Noflay</div>
-<div class="prod-footer">
-<div class="prod-price">5,00 € <small>par 250g</small><span class="prod-price-old">7,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Guerte%20Noflay" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="cat-panel" id="cat-beurres">
 <div class="cat-grid">
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Tiguadegue" src="tiagadegue.JPG"/></div><div class="prod-img-overlay">Tiguadegue (pâte d'arachide)</div></div>
-<div class="prod-body">
-<div class="prod-badge">Pâte arachide</div><div class="prod-name">Tiguadegue (pâte d'arachide)</div>
-<div class="prod-footer">
-<div class="prod-price">12,00 € <small>500g</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Tiguadegue%20%28p%C3%A2te%20d%27arachide%29" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Tigadégué" src="tiagadegue.JPG"/></div><div class="prod-img-overlay">Tigadégué</div></div>
-<div class="prod-body">
-<div class="prod-badge">Pâte arachide</div><div class="prod-name">Tigadégué</div>
-<div class="prod-footer">
-<div class="prod-price">6,00 € <small>par 250g</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Tigad%C3%A9gu%C3%A9" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Diwnior" src="diwnior.JPG"/></div><div class="prod-img-overlay">Diwnior (beurre clarifié)</div></div>
-<div class="prod-body">
-<div class="prod-badge">Beurre vache</div><div class="prod-name">Diwnior (beurre clarifié)</div>
-<div class="prod-footer">
-<div class="prod-price">20,00 € <small>par 0,5L</small><span class="prod-price-old">25,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Diwnior%20%28beurre%20clarifi%C3%A9%29" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Diwnior" src="diwnior.JPG"/></div><div class="prod-img-overlay">Diwnior (beurre clarifié)</div></div>
-<div class="prod-body">
-<div class="prod-badge">Beurre vache</div><div class="prod-name">Diwnior (beurre clarifié)</div>
-<div class="prod-footer">
-<div class="prod-price">40,00 € <small>par 1L</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Diwnior%20%28beurre%20clarifi%C3%A9%29" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Diwtir Pure" src="diwtir.jpg"/></div><div class="prod-img-overlay">Diwtir Pure</div></div>
-<div class="prod-body">
-<div class="prod-badge">Huile</div><div class="prod-name">Diwtir Pure</div>
-<div class="prod-footer">
-<div class="prod-price">25,00 € <small>par 1L</small><span class="prod-price-old">30,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Diwtir%20Pure" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img alt="Lem miel Pure" src="lem-pure.JPG"/></div><div class="prod-img-overlay">Lem miel Pure</div></div>
-<div class="prod-body">
-<div class="prod-badge">Miel</div><div class="prod-name">Lem miel Pure</div>
-<div class="prod-footer">
-<div class="prod-price">25,00 € <small>1,5L</small><span class="prod-price-old">27,00 €</span></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Lem%20miel%20Pure" target="_blank">Commander →</a>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1843,137 +1618,6 @@
   🚚 <strong>Livraison FedEx :</strong> France métropolitaine 10,00 € · Union Européenne 20,00 € · Commande minimum 1 carton
 </div>
 <div class="cat-grid">
-
-<!-- Thiof découpé -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="thiof.jpg" alt="Thiof découpé" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Thiof découpé</div></div>
-<div class="prod-body">
-<div class="prod-badge">Carton 5kg</div><div class="prod-name">Thiof découpé</div>
-<div class="prod-footer">
-<div class="prod-price">55,00 € <small>carton 5kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Thiof%20d%C3%A9coup%C3%A9%205kg" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- Diarégne Colafil -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="sompate2.jpg" alt="Diarégne Colafil" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Diarégne Colafil</div></div>
-<div class="prod-body">
-<div class="prod-badge">Carton 5kg</div><div class="prod-name">Diarégne Colafil</div>
-<div class="prod-footer">
-<div class="prod-price">49,00 € <small>carton 5kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Diar%C3%A9gne%20Colafil%205kg" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- Beurre (Capitaine) -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="thiof4.jpg" alt="Beurre Capitaine" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Beurre (Capitaine)</div></div>
-<div class="prod-body">
-<div class="prod-badge">Carton 5kg</div><div class="prod-name">Beurre (Capitaine)</div>
-<div class="prod-footer">
-<div class="prod-price">45,00 € <small>carton 5kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Beurre%20Capitaine%205kg" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- Chanchar Diéye -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="yakh4.jpg" alt="Chanchar Diéye" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Chanchar (Diéye)</div></div>
-<div class="prod-body">
-<div class="prod-badge">Carton 5kg</div><div class="prod-name">Chanchar (Diéye)</div>
-<div class="prod-footer">
-<div class="prod-price">25,00 € <small>carton 5kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Chanchar%20Di%C3%A9ye%205kg" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- Poisson Eau Douce -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="sompate3.jpg" alt="Poisson Eau Douce" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Poisson Eau Douce</div></div>
-<div class="prod-body">
-<div class="prod-badge">Carton 5kg</div><div class="prod-name">Poisson Eau Douce</div>
-<div class="prod-footer">
-<div class="prod-price">10,00 € <small>carton 5kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Poisson%20Eau%20Douce%205kg" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- Yaye Boye -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="yaboye.jpg" alt="Yaye Boye" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Yaye Boye</div></div>
-<div class="prod-body">
-<div class="prod-badge">Au kilo</div><div class="prod-name">Yaye Boye</div>
-<div class="prod-footer">
-<div class="prod-price">7,50 € <small>/ kilo</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Yaye%20Boye" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- Yakh -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="yakh.jpg" alt="Yakh" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Yakh</div></div>
-<div class="prod-body">
-<div class="prod-badge">Carton 5kg</div><div class="prod-name">Yakh</div>
-<div class="prod-footer">
-<div class="prod-price">60,00 € <small>carton 5kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Yakh%205kg" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- Poisson Sompate -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="sompate.jpg" alt="Poisson Sompate" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Poisson Sompate</div></div>
-<div class="prod-body">
-<div class="prod-badge">Carton 5kg</div><div class="prod-name">Poisson Sompate</div>
-<div class="prod-footer">
-<div class="prod-price">45,00 € <small>carton 5kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Poisson%20Sompate%205kg" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- Tilapia Rouge -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="yakh2.jpg" alt="Tilapia Rouge" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Tilapia Rouge</div></div>
-<div class="prod-body">
-<div class="prod-badge">Carton 5kg</div><div class="prod-name">Tilapia Rouge</div>
-<div class="prod-footer">
-<div class="prod-price">22,00 € <small>carton 5kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Tilapia%20Rouge%205kg" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- Seude Baracouda -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="seude.jpg" alt="Seude Baracouda" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Seude Baracouda</div></div>
-<div class="prod-body">
-<div class="prod-badge">Carton 5kg</div><div class="prod-name">Seude Baracouda</div>
-<div class="prod-footer">
-<div class="prod-price">40,00 € <small>carton 5kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Seude%20Baracouda%205kg" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- Yakh Carpe Rouge -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="yakh.jpg" alt="Yakh Carpe Rouge" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Yakh (Carpe Rouge)</div></div>
-<div class="prod-body">
-<div class="prod-badge">Carton 5kg</div><div class="prod-name">Yakh (Carpe Rouge)</div>
-<div class="prod-footer">
-<div class="prod-price">60,00 € <small>carton 5kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Yakh%20Carpe%20Rouge%205kg" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- Iler Bi (Plapla) -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core"><img src="iler.jpg" alt="Iler Bi Plapla" style="width:100%;height:100%;object-fit:cover;"/></div><div class="prod-img-overlay">Iler Bi (Plapla)</div></div>
-<div class="prod-body">
-<div class="prod-badge">Carton 5kg</div><div class="prod-name">Iler Bi (Plapla)</div>
-<div class="prod-footer">
-<div class="prod-price">45,00 € <small>carton 5kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20Iler%20Bi%20Plapla%205kg" target="_blank">Commander →</a>
-</div></div></div>
-
-<!-- 10kg Mélange de Poisson -->
-<div class="prod-card reveal">
-<div class="prod-img-shell"><div class="prod-img-core" style="background:#1a1410;display:flex;align-items:center;justify-content:center;font-size:3rem;">📦</div><div class="prod-img-overlay">Mélange de Poisson 10kg</div></div>
-<div class="prod-body">
-<div class="prod-badge" style="background:#c9a84c;color:#100d08;">⭐ Best Deal</div><div class="prod-name">Mélange de Poisson 10kg</div>
-<div class="prod-footer">
-<div class="prod-price">110,00 € <small>carton 10kg</small></div>
-<a class="btn-sm" href="https://wa.me/33652650395?text=Bonjour%2C%20je%20souhaite%20commander%20%3A%20M%C3%A9lange%20de%20Poisson%2010kg%20%C3%A0%20110%E2%82%AC" target="_blank">Commander →</a>
-</div></div></div>
-
 </div>
 </div>
 
@@ -2406,8 +2050,24 @@
 </div>
 </div>
 <div class="cart-footer">
+<div class="cart-zone-row">
+<span class="label-total">Zone livraison</span>
+<select id="cart-zone" onchange="cartSystem.onZoneChange()">
+<option value="fr">France 🇫🇷</option>
+<option value="r1">Europe Zone 1 🇪🇺</option>
+<option value="r2">Europe Zone 2 🇪🇺</option>
+</select>
+</div>
 <div class="cart-subtotal">
-<span class="label-total">Total</span>
+<span class="label-total">Sous-total</span>
+<span id="cart-subtotal-val">0,00 €</span>
+</div>
+<div class="cart-shipping-row">
+<span class="label-total">Livraison <span id="cart-shipping-carrier" class="cart-carrier-badge"></span></span>
+<span id="cart-shipping-val">—</span>
+</div>
+<div class="cart-grand-total-row">
+<span class="label-grand">Total TTC</span>
 <span class="value-total" id="cart-total">0,00 €</span>
 </div>
 <div id="paypal-btn-wrap" style="display:none">
@@ -2425,6 +2085,16 @@
 <button class="btn btn-gold" onclick="document.getElementById('cart-success-modal').classList.remove('open')">Fermer</button>
 </div>
 </div>
+<!-- SALE TOAST -->
+<div id="sale-toast">
+  <div class="toast-avatar" id="toast-avatar">🛍️</div>
+  <div class="toast-text">
+    <div class="toast-name" id="toast-name"></div>
+    <div class="toast-product" id="toast-product"></div>
+    <div class="toast-time" id="toast-time"></div>
+  </div>
+</div>
+
 <!-- WHATSAPP FLOAT -->
 <a class="wa-float" href="https://wa.me/33652650395" target="_blank" title="Commander sur WhatsApp">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -2463,7 +2133,24 @@
       });
     },
 
+    isFruitDeMer(name) {
+      const fdm = ['guedji','yeet','kongfume','guerte','cipakh','sompate','crevette','diwnior','yohos','tuffa','sankal','netetou'];
+      return fdm.some(k => name.toLowerCase().includes(k));
+    },
+
+    productWeightG(item) {
+      return this.parseWeight(item.unit) * item.qty;
+    },
+
     add(product) {
+      if (this.isFruitDeMer(product.name)) {
+        const existing = this.items.find(i => i.name === product.name);
+        const currentQty = existing ? existing.qty : 0;
+        const unitW = this.parseWeight(product.unit);
+        if ((currentQty + 1) * unitW > 1000) {
+          this.showLimitMsg(product.name); return;
+        }
+      }
       const existing = this.items.find(i => i.name === product.name);
       if (existing) existing.qty++;
       else this.items.push({...product, qty: 1});
@@ -2478,13 +2165,79 @@
     updateQty(name, delta) {
       const item = this.items.find(i => i.name === name);
       if (!item) return;
+      if (delta > 0 && this.isFruitDeMer(item.name)) {
+        const unitW = this.parseWeight(item.unit);
+        if ((item.qty + 1) * unitW > 1000) {
+          this.showLimitMsg(item.name); return;
+        }
+      }
       item.qty += delta;
       if (item.qty <= 0) this.remove(name);
       else { this.save(); this.renderItems(); this.updateCount(); }
     },
 
+    showLimitMsg(name) {
+      const el = document.getElementById('cart-notif');
+      if (!el) return;
+      el.textContent = '⚠️ Max 1kg par article (' + name + ')';
+      el.style.color = '#ef4444';
+      el.classList.add('show');
+      setTimeout(() => { el.classList.remove('show'); el.style.color = ''; }, 3000);
+    },
+
     total() { return this.items.reduce((s,i) => s + i.price * i.qty, 0); },
     count() { return this.items.reduce((s,i) => s + i.qty, 0); },
+
+    hasFreshFish() {
+      const fresh = ['thiof frais','dorade fraîche','poisson frais'];
+      return this.items.some(i => fresh.some(k => i.name.toLowerCase().includes(k)));
+    },
+
+    parseWeight(unit) {
+      // ex: "par 500g", "par 1kg", "par 250g"
+      const m = unit.match(/(\d+(?:[.,]\d+)?)\s*(kg|g)/i);
+      if (!m) return 500;
+      const v = parseFloat(m[1].replace(',','.'));
+      return m[2].toLowerCase() === 'kg' ? v * 1000 : v;
+    },
+
+    totalWeightG() {
+      const PKG = 80; // emballage ~80g par ligne
+      return this.items.reduce((s, i) => s + (this.parseWeight(i.unit) + PKG) * i.qty, 0);
+    },
+
+    colissimoRate(wg, zone) {
+      // Grille simplifiée Colissimo 2026
+      const grid = {
+        fr: [[1000,9.59],[2000,11.19],[5000,17.39]],
+        r1: [[1000,12.89],[2000,14.49],[5000,20.69]],
+        r2: [[1000,14.59],[2000,16.19],[5000,22.39]]
+      };
+      const rows = grid[zone] || grid.fr;
+      for (const [max, price] of rows) { if (wg <= max) return price; }
+      return rows[rows.length-1][1];
+    },
+
+    shippingCost() {
+      if (this.items.length === 0) return 0;
+      const zone = document.getElementById('cart-zone')?.value || 'fr';
+      if (this.hasFreshFish()) return zone === 'fr' ? 10.00 : 20.00;
+      return this.colissimoRate(this.totalWeightG(), zone);
+    },
+
+    shippingCarrier() {
+      if (this.items.length === 0) return '';
+      if (this.hasFreshFish()) return 'Mondial Relay';
+      return 'Colissimo';
+    },
+
+    grandTotal() { return this.total() + this.shippingCost(); },
+
+    onZoneChange() {
+      const pp = document.getElementById('paypal-button-container');
+      if (pp) { pp.innerHTML = ''; this.renderPayPal(); }
+      this.renderItems();
+    },
 
     save() { try { localStorage.setItem('sgf-cart', JSON.stringify(this.items)); } catch {} },
     load() { try { this.items = JSON.parse(localStorage.getItem('sgf-cart')) || []; } catch { this.items = []; } },
@@ -2543,7 +2296,15 @@
           + '</div>';
       }).join('');
 
-      if (totalEl) totalEl.textContent = this.total().toFixed(2).replace('.',',') + ' €';
+      const sub = document.getElementById('cart-subtotal-val');
+      const shipVal = document.getElementById('cart-shipping-val');
+      const shipCarrier = document.getElementById('cart-shipping-carrier');
+      const ship = this.shippingCost();
+      const carrier = this.shippingCarrier();
+      if (sub) sub.textContent = this.total().toFixed(2).replace('.',',') + ' €';
+      if (shipVal) shipVal.textContent = ship.toFixed(2).replace('.',',') + ' €';
+      if (shipCarrier) shipCarrier.textContent = carrier;
+      if (totalEl) totalEl.textContent = this.grandTotal().toFixed(2).replace('.',',') + ' €';
       const pp = document.getElementById('paypal-button-container');
       if (pp) { pp.innerHTML = ''; this.renderPayPal(); }
     },
@@ -2556,8 +2317,11 @@
           purchase_units: [{
             description: 'Commande Louma by Seggfaye',
             amount: {
-              value: this.total().toFixed(2), currency_code: 'EUR',
-              breakdown: { item_total: { value: this.total().toFixed(2), currency_code: 'EUR' } }
+              value: this.grandTotal().toFixed(2), currency_code: 'EUR',
+              breakdown: {
+                item_total: { value: this.total().toFixed(2), currency_code: 'EUR' },
+                shipping: { value: this.shippingCost().toFixed(2), currency_code: 'EUR' }
+              }
             },
             items: this.items.map(i => ({
               name: i.name.substring(0,127), quantity: String(i.qty),
@@ -2590,11 +2354,9 @@
   };
 
   // Chargement du SDK PayPal
-  // ⚠️  IMPORTANT : Remplacez "sb" par votre vrai Client ID PayPal
-  //     une fois votre société créée → https://developer.paypal.com/dashboard/
   (function() {
     const s = document.createElement('script');
-    s.src = 'https://www.paypal.com/sdk/js?client-id=sb&currency=EUR&locale=fr_FR&disable-funding=credit';
+    s.src = 'https://www.paypal.com/sdk/js?client-id=EMzE2BXGXLylAGNXodpV5Utq7pl9kvetZGCA_TkFe6pdInzYMtRxQSHn3bDkhbBYNJFcJgDeV39ijA14&currency=EUR&locale=fr_FR&disable-funding=credit';
     document.head.appendChild(s);
   })();
 
@@ -2605,6 +2367,7 @@
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
   }, { threshold: .12 });
+  window._revealObserver = observer;
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   // Product filter
@@ -2686,8 +2449,8 @@
     setTimeout(() => {
       const pl = document.getElementById('preloader');
       if (pl) pl.classList.add('hidden');
-      setTimeout(() => { if (pl) pl.remove(); }, 700);
-    }, 1500);
+      setTimeout(() => { if (pl) pl.remove(); }, 900);
+    }, 2600);
   });
 
   // ═══════════════════════════════════════
@@ -2885,11 +2648,109 @@
   <ul>
     <li><a href="#hero"><span class="mob-icon">🏠</span>Accueil</a></li>
     <li><a href="#produits"><span class="mob-icon">🛒</span>Produits</a></li>
-    <li><a href="https://wa.me/33652650395" target="_blank" class="mob-wa"><span class="mob-icon">💬</span>Commander</a></li>
+    <li><a href="https://wa.me/33652650395" target="_blank" class="mob-wa"><span class="mob-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.828L.057 23.215a.75.75 0 0 0 .928.928l5.388-1.466A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.725 9.725 0 0 1-4.953-1.354l-.355-.212-3.683 1.002.978-3.584-.23-.368A9.716 9.716 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg></span>Commander</a></li>
     <li><a href="#tiktok"><span class="mob-icon">🎵</span>TikTok</a></li>
     <li><a href="#contact"><span class="mob-icon">✉️</span>Contact</a></li>
   </ul>
 </nav>
 
+<script src="produits.js"></script>
+<script>
+/* ── PARTICULES DORÉES HERO ── */
+(function() {
+  const canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function Particle() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.r = Math.random() * 2 + .5;
+    this.dx = (Math.random() - .5) * .4;
+    this.dy = (Math.random() - .5) * .4;
+    this.alpha = Math.random() * .5 + .1;
+    this.da = (Math.random() * .004 + .001) * (Math.random() < .5 ? 1 : -1);
+  }
+
+  Particle.prototype.update = function() {
+    this.x += this.dx; this.y += this.dy;
+    this.alpha += this.da;
+    if (this.alpha > .6 || this.alpha < .05) this.da *= -1;
+    if (this.x < 0) this.x = W;
+    if (this.x > W) this.x = 0;
+    if (this.y < 0) this.y = H;
+    if (this.y > H) this.y = 0;
+  };
+
+  function init() {
+    resize();
+    particles = Array.from({length: 55}, () => new Particle());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.update();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(201,168,76,${p.alpha})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  init();
+  draw();
+})();
+
+/* ── TOAST VENTES LIVE ── */
+(function() {
+  const orders = [
+    { name: 'Aminata D.', city: 'Paris', product: 'Guedji Sole', emoji: '🐟', time: 'il y a 2 min' },
+    { name: 'Mariama T.', city: 'Lyon', product: 'Pack Saloum', emoji: '📦', time: 'il y a 5 min' },
+    { name: 'Fatou B.', city: 'Bordeaux', product: 'Bissap Rouge', emoji: '🌺', time: 'il y a 8 min' },
+    { name: 'Rokhaya S.', city: 'Marseille', product: 'Netetou Barre', emoji: '🌿', time: 'il y a 12 min' },
+    { name: 'Coumba N.', city: 'Strasbourg', product: 'Thiéré Champion', emoji: '🏆', time: 'il y a 15 min' },
+    { name: 'Aïssatou M.', city: 'Nantes', product: 'Crevettes séchées', emoji: '🦐', time: 'il y a 18 min' },
+    { name: 'Ndèye F.', city: 'Lille', product: 'Karité Pur', emoji: '🫙', time: 'il y a 22 min' },
+    { name: 'Binta K.', city: 'Toulouse', product: 'Fonio Bio', emoji: '🌾', time: 'il y a 25 min' },
+  ];
+
+  const toast = document.getElementById('sale-toast');
+  const avatar = document.getElementById('toast-avatar');
+  const nameEl = document.getElementById('toast-name');
+  const productEl = document.getElementById('toast-product');
+  const timeEl = document.getElementById('toast-time');
+
+  if (!toast) return;
+
+  let idx = 0;
+
+  function showToast() {
+    const o = orders[idx % orders.length];
+    avatar.textContent = o.emoji;
+    nameEl.textContent = o.name + ' · ' + o.city;
+    productEl.textContent = 'vient de commander ' + o.product;
+    timeEl.textContent = o.time;
+    toast.classList.add('show');
+    idx++;
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 4500);
+  }
+
+  setTimeout(() => {
+    showToast();
+    setInterval(showToast, 9000);
+  }, 5000);
+})();
+</script>
 </body>
 </html>
