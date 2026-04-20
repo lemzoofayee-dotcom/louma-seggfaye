@@ -350,6 +350,19 @@ const PRODUITS = [
     stock: true,
     nouveaute: false
   },
+  {
+    id: "maad-fruit",
+    nom: "Maad Fruit",
+    categorie: "epices",
+    prix: 10.00,
+    unite: "par kg",
+    prixAncien: null,
+    badge: "Fruit",
+    image: "maad-fruit.jpg",
+    stock: true,
+    nouveaute: true,
+    maxKg: 3
+  },
 
   // ──────────────────────────────────────
   //  🌾 CÉRÉALES & FARINES
@@ -362,7 +375,7 @@ const PRODUITS = [
     unite: "par kg",
     prixAncien: null,
     badge: "🏆 Champion du Monde",
-    image: "thiackry.jpg",
+    image: "thiere1.jpg",
     stock: true,
     nouveaute: false
   },
@@ -380,13 +393,13 @@ const PRODUITS = [
   },
   {
     id: "ciakri",
-    nom: "Ciakri",
+    nom: "Thiakry",
     categorie: "cereales",
     prix: 18.00,
     unite: "par kg",
     prixAncien: null,
     badge: "Couscous",
-    image: "thiackry.jpg",
+    image: "thiakry1.jpg",
     stock: true,
     nouveaute: false
   },
