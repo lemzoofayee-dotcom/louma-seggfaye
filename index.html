@@ -823,12 +823,13 @@
     }
     .prod-footer { display:flex; align-items:center; justify-content:space-between; gap:.4rem; margin-top:.8rem; }
     .prod-price {
-      font-size: 1.35rem;
+      font-size: 1.2rem;
       font-weight: 900;
       color: #c9a84c;
       letter-spacing: -.02em;
-      line-height: 1;
+      line-height: 1.1;
       margin-bottom: .2rem;
+      white-space: nowrap;
     }
     .prod-price small { font-size:.65rem; color:var(--muted); font-weight:500; display:block; line-height:1; }
     .btn-sm {
@@ -1101,6 +1102,30 @@
     .reveal-delay-4 { transition-delay: .4s; }
     .reveal-delay-5 { transition-delay: .5s; }
 
+    /* ── Cartes produits : zoom progressif spring ── */
+    .prod-card.reveal {
+      opacity: 0;
+      transform: scale(0.78) translateY(30px);
+      transition: opacity .65s cubic-bezier(0.34,1.56,0.64,1),
+                  transform .65s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .prod-card.reveal.in {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    /* Cascade : chaque carte décalée de 80ms */
+    .cat-grid .prod-card.reveal:nth-child(2)  { transition-delay: .08s; }
+    .cat-grid .prod-card.reveal:nth-child(3)  { transition-delay: .16s; }
+    .cat-grid .prod-card.reveal:nth-child(4)  { transition-delay: .24s; }
+    .cat-grid .prod-card.reveal:nth-child(5)  { transition-delay: .32s; }
+    .cat-grid .prod-card.reveal:nth-child(6)  { transition-delay: .40s; }
+    .cat-grid .prod-card.reveal:nth-child(7)  { transition-delay: .48s; }
+    .cat-grid .prod-card.reveal:nth-child(8)  { transition-delay: .56s; }
+    .cat-grid .prod-card.reveal:nth-child(9)  { transition-delay: .64s; }
+    .cat-grid .prod-card.reveal:nth-child(10) { transition-delay: .72s; }
+    .cat-grid .prod-card.reveal:nth-child(11) { transition-delay: .80s; }
+    .cat-grid .prod-card.reveal:nth-child(12) { transition-delay: .88s; }
+
     /* ═══════════════════════════════════════
        RESPONSIVE
     ═══════════════════════════════════════ */
@@ -1131,6 +1156,20 @@
       .form-row { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: .5rem; }
+      /* Carte produit mobile : prix + bouton en colonne */
+      .prod-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .55rem;
+      }
+      .btn-sm {
+        width: 100%;
+        justify-content: center;
+        padding: .55rem 0;
+        font-size: .78rem;
+      }
+      .prod-body { padding: .85rem .9rem 1rem; }
+      .prod-name { font-size: .95rem; }
     }
 
     /* ═══════════════════════════════════════
