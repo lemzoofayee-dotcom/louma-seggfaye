@@ -69,8 +69,11 @@
     .ticker-wrap {
       width: 100%; overflow: hidden;
       background: #c9a84c;
-      padding: .4rem 0;
-      position: relative; z-index: 50;
+      padding: .45rem 0;
+      position: fixed;
+      top: 68px;
+      left: 0; right: 0;
+      z-index: 90;
     }
     .ticker-track {
       display: flex;
@@ -383,6 +386,7 @@
     ═══════════════════════════════════════ */
     #hero {
       min-height: 100dvh;
+      margin-top: 30px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: stretch;
