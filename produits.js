@@ -710,9 +710,10 @@ function buildProdCard(p) {
   <div class="prod-img-shell">
     <div class="prod-img-core">${imgContent}</div>
     <div class="prod-img-overlay">${p.nom}</div>
+    ${badgeHtml}
   </div>
   <div class="prod-body">
-    ${badgeHtml}<div class="prod-name">${p.nom}</div>
+    <div class="prod-name">${p.nom}</div>
     <div class="prod-footer">
       <div class="prod-price">${formatPrix(p.prix)} <small>${p.unite}</small>${prixAncienHtml}</div>
       ${btnHtml}
