@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Mains du Saloum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,700;1,300;1,700&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --gold: #C4933A;
+  --gold2: #E8C07A;
+  --ink: #F0E6D0;
+  --bg: #060504;
+}
+::selection { background: var(--gold); color: #060504; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; overflow-x: hidden; cursor: none; }
+
+/* CURSOR */
+#cur { position:fixed; width:6px; height:6px; background:var(--gold); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .3s,height .3s; }
+#cur2 { position:fixed; width:40px; height:40px; border:1px solid rgba(196,147,58,.35); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:width .3s,height .3s; }
+body:hover #cur2 { opacity:1; }
+
+/* PROGRESS */
+#bar { position:fixed; top:0; left:0; height:1px; background:var(--gold); z-index:1000; width:0; transition:width .1s; }
+
+/* GRAIN */
+.grain { position:fixed; inset:0; pointer-events:none; z-index:500; opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px; }
+
+/* ─── SECTION 1: HERO CINÉMATIQUE ─── */
+#s1 {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  background: url('images/saloum-delta.png') center/cover no-repeat;
+  transform: scale(1.1);
+  animation: zoomOut 12s ease forwards;
+  filter: brightness(.3) saturate(.9);
+}
+
+@keyframes zoomOut {
+  to { transform: scale(1); }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(170deg, transparent 30%, rgba(6,5,4,.95) 85%);
+}
+
+.hero-body {
+  position: relative;
+  padding: 0 8vw 8vh;
+  width: 100%;
+}
+
+.hero-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .6rem;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp .8s ease .5s forwards;
+}
+
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 14vw, 13rem);
+  font-weight: 700;
+  line-height: .88;
+  letter-spacing: -.04em;
+  overflow: hidden;
+}
+
+.hero-h1 .line {
+  display: block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: slideUp .9s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hero-h1 .line:nth-child(1) { animation-delay: .2s; }
+.hero-h1 .line:nth-child(2) { animation-delay: .38s; color: var(--gold2); font-style: italic; }
+
+.hero-sub {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(.75rem, 1.5vw, .9rem);
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(240,230,208,.5);
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fadeUp .8s ease .9s forwards;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  opacity: 0;
+  animation: fadeUp .8s ease 1.1s forwards;
+}
+
+.cta-gold {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: #060504;
+  padding: .9rem 2.2rem;
+  text-decoration: none;
+  cursor: none;
+  transition: background .3s, transform .3s;
+}
+.cta-gold:hover { background: var(--gold2); transform: translateY(-2px); }
+
+.cta-ghost {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(240,230,208,.25);
+  color: var(--ink);
+  padding: .9rem 2.2rem;
+  text-decoration: none;
+  cursor: none;
+  transition: border-color .3s, color .3s;
+}
+.cta-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* SCROLL HINT */
+.scroll-hint {
+  position: absolute;
+  right: 3rem;
+  bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  opacity: .4;
+}
+.scroll-hint span { font-family:'JetBrains Mono',monospace; font-size:.55rem; letter-spacing:.2em; text-transform:uppercase; writing-mode:vertical-rl; color:rgba(240,230,208,.6); }
+.scroll-tick { width:1px; height:60px; background:linear-gradient(to bottom,var(--gold),transparent); animation:tickAnim 2s ease-in-out infinite; }
+@keyframes tickAnim { 0%,100%{transform:scaleY(1) translateY(0)} 50%{transform:scaleY(.6) translateY(8px)} }
+
+/* ─── SECTION 2: CHIFFRE IMPACT ─── */
+#s2 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.s2-bg {
+  position: absolute;
+  inset: 0;
+  background: url('images/saloum-mains.png') center/cover;
+  filter: brightness(.08) saturate(.5);
+}
+
+.s2-content {
+  position: relative;
+  text-align: center;
+  padding: 0 4rem;
+}
+
+.mega-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(6rem, 22vw, 20rem);
+  font-weight: 300;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--gold);
+  opacity: 0;
+  transform: scale(.8);
+  transition: opacity 1s ease, transform 1.2s cubic-bezier(.16,1,.3,1);
+  letter-spacing: -.05em;
+}
+.mega-num.vis { opacity: 1; transform: scale(1); }
+
+.mega-label {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .8s ease .3s, transform .8s ease .3s;
+}
+.mega-label.vis { opacity: 1; transform: translateY(0); }
+
+.mega-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  color: var(--gold);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  opacity: 0;
+  transition: opacity .8s ease .5s;
+}
+.mega-sub.vis { opacity: 1; }
+
+/* ─── SECTION 3: SPLIT SCROLLYTELLING ─── */
+#s3 {
+  min-height: 300vh;
+  position: relative;
+}
+
+.s3-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.s3-left {
+  position: relative;
+  overflow: hidden;
+}
+
+.s3-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity .8s ease, transform .8s ease;
+}
+.s3-img-1 { background-image: url('images/saloum-mains.png'); opacity:1; }
+.s3-img-2 { background-image: url('images/saloum-delta.png'); opacity:0; }
+.s3-img-3 { background-image: url('images/saloum-femme.png'); opacity:0; }
+
+.s3-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 5vw;
+  background: var(--bg);
+  position: relative;
+}
+
+.s3-steps {
+  position: relative;
+}
+
+.s3-step {
+  opacity: .2;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+  margin-bottom: 5rem;
+}
+.s3-step.active { opacity: 1; transform: translateY(0); }
+.s3-step:last-child { margin-bottom: 0; }
+
+.step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .6rem;
+  letter-spacing: .3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.step-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  letter-spacing: -.02em;
+}
+
+.step-body {
+  font-family: 'Syne', sans-serif;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(240,230,208,.65);
+  max-width: 42ch;
+}
+
+.step-line {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin-top: 1.5rem;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .6s ease .2s;
+}
+.s3-step.active .step-line { transform: scaleX(1); }
+
+/* ─── SECTION 4: ÉPISODES ─── */
+#s4 {
+  padding: 12rem 0;
+  background: #080605;
+  border-top: 1px solid rgba(196,147,58,.08);
+}
+
+.s4-head {
+  padding: 0 8vw;
+  margin-bottom: 5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.s4-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: .9;
+  letter-spacing: -.03em;
+}
+.s4-title em { font-style: italic; color: var(--gold2); }
+
+.s4-all {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: none;
+  transition: opacity .3s;
+}
+.s4-all:hover { opacity: .7; }
+
+.ep-list {
+  padding: 0 8vw;
+}
+
+.ep {
+  display: grid;
+  grid-template-columns: 60px 1fr 100px;
+  align-items: center;
+  padding: 2.2rem 0;
+  border-bottom: 1px solid rgba(240,230,208,.06);
+  text-decoration: none;
+  cursor: none;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.ep.vis { opacity: 1; transform: translateX(0); }
+.ep:nth-child(1){transition-delay:0s}
+.ep:nth-child(2){transition-delay:.1s}
+.ep:nth-child(3){transition-delay:.2s}
+
+.ep::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--gold-dim, rgba(196,147,58,.06)), transparent);
+  opacity: 0;
+  transition: opacity .4s;
+}
+.ep:hover::before { opacity: 1; }
+
+.ep-n {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem;
+  color: var(--gold);
+  letter-spacing: .2em;
+}
+
+.ep-info {}
+.ep-t {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 3vw, 2.2rem);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: .3rem;
+}
+.ep-m {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .58rem;
+  color: rgba(240,230,208,.35);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.ep-dur {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: rgba(196,147,58,.3);
+  text-align: right;
+  transition: color .4s;
+}
+.ep:hover .ep-dur { color: var(--gold); }
+
+/* ─── SECTION 5: PORTRAIT PLEIN ÉCRAN ─── */
+#s5 {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.s5-bg {
+  position: absolute;
+  inset: 0;
+  background: url('images/saloum-femme.png') center/cover;
+  filter: brightness(.25) saturate(.7);
+}
+
+.s5-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(6,5,4,.9) 45%, transparent 100%);
+}
+
+.s5-content {
+  position: relative;
+  padding: 0 8vw;
+  max-width: 700px;
+}
+
+.s5-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .6rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.s5-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  margin-bottom: 2rem;
+}
+
+.s5-dash { width: 50px; height: 1px; background: var(--gold); display: block; margin-bottom: 1.5rem; }
+
+.s5-author {
+  font-family: 'Syne', sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(240,230,208,.6);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--bg);
+  border-top: 1px solid rgba(196,147,58,.1);
+  padding: 4rem 8vw 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.ft-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: -.02em;
+}
+.ft-logo em { font-style: italic; color: var(--gold2); }
+
+.ft-links { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+.ft-links a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .6rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(240,230,208,.4);
+  text-decoration: none;
+  cursor: none;
+  transition: color .3s;
+}
+.ft-links a:hover { color: var(--gold); }
+
+.ft-copy {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .58rem;
+  color: rgba(240,230,208,.2);
+  letter-spacing: .1em;
+}
+
+/* KEYFRAMES */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes slideUp { from{opacity:0;transform:translateY(100%)} to{opacity:1;transform:translateY(0)} }
+
+/* AUDIO BUTTON */
+#audiobtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2.5rem;
+  z-index: 900;
+  background: rgba(6,5,4,.7);
+  border: 1px solid rgba(196,147,58,.3);
+  color: var(--gold);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  backdrop-filter: blur(8px);
+  transition: border-color .3s, background .3s;
+}
+#audiobtn:hover { border-color: var(--gold); background: rgba(196,147,58,.15); }
+#audiobtn.muted { color: rgba(240,230,208,.3); border-color: rgba(240,230,208,.1); }
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+  .s3-sticky { grid-template-columns: 1fr; }
+  .s3-left { height: 50vh; position: relative; }
+  .s3-right { padding: 3rem 2rem; }
+  #s3 { min-height: auto; }
+  .s3-sticky { position: relative; height: auto; display: flex; flex-direction: column; }
+  .s4-head { flex-direction: column; align-items: flex-start; }
+  .ep { grid-template-columns: 40px 1fr; gap: 1.2rem; }
+  .ep-dur { display: none; }
+  footer { flex-direction: column; text-align: center; }
+  .s5-overlay { background: rgba(6,5,4,.7); }
+  .hero-body { padding: 0 5vw 8vh; }
+}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div id="bar"></div>
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- AUDIO -->
+<audio id="bgaudio" loop preload="auto">
+  <source src="pene-papangom.mp3" type="audio/mpeg">
+</audio>
+<button id="audiobtn" title="Musique">
+  <svg id="icon-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+  <svg id="icon-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><line x1="1" y1="1" x2="23" y2="23"/><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+</button>
+
+<!-- S1: HERO -->
+<section id="s1">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-body">
+    <div class="hero-kicker">Documentaire · @SEGGFAYE · Delta du Saloum · Sénégal</div>
+    <h1 class="hero-h1">
+      <span class="line">Les Mains</span>
+      <span class="line">du Saloum</span>
+    </h1>
+    <p class="hero-sub">Patrimoine Mondial UNESCO · Femmes des Bolongs · Depuis le VIIIe siècle</p>
+    <div class="hero-cta-row">
+      <a href="https://tiktok.com/@seggfaye" class="cta-gold" target="_blank">Voir le documentaire</a>
+      <a href="#s3" class="cta-ghost">L'histoire</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-tick"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- S2: CHIFFRE CHOC -->
+<section id="s2">
+  <div class="s2-bg"></div>
+  <div class="s2-content">
+    <div class="mega-num" id="mn">5000</div>
+    <div class="mega-label" id="ml">ans de transmission</div>
+    <div class="mega-sub" id="ms">Le geste ancestral des femmes du Saloum</div>
+  </div>
+</section>
+
+<!-- S3: SCROLLYTELLING SPLIT -->
+<section id="s3">
+  <div class="s3-sticky" id="s3sticky">
+    <div class="s3-left" id="s3left">
+      <div class="s3-img s3-img-1" id="simg1"></div>
+      <div class="s3-img s3-img-2" id="simg2"></div>
+      <div class="s3-img s3-img-3" id="simg3"></div>
+    </div>
+    <div class="s3-right">
+      <div class="s3-steps">
+
+        <div class="s3-step" id="st1">
+          <span class="step-num">01 — Le geste</span>
+          <div class="step-title">Mains dans la vase, coque après coque</div>
+          <p class="step-body">Chaque matin avant le soleil, les femmes descendent vers les bolongs. L'eau jusqu'à la taille. Leurs mains cherchent, brassent, ramassent. Ce geste, elles l'apprennent à 6 ans.</p>
+          <div class="step-line"></div>
+        </div>
+
+        <div class="s3-step" id="st2">
+          <span class="step-num">02 — Le delta</span>
+          <div class="step-title">Un labyrinthe liquide classé UNESCO</div>
+          <p class="step-body">Le delta du Saloum — des bolongs, des mangroves, des îles construites sur des millions de coquilles empilées depuis le VIIIe siècle. Patrimoine Mondial de l'UNESCO depuis 2011.</p>
+          <div class="step-line"></div>
+        </div>
+
+        <div class="s3-step" id="st3">
+          <span class="step-num">03 — Le pagne</span>
+          <div class="step-title">Ce n'est pas un tissu. C'est une déclaration.</div>
+          <p class="step-body">Noué après la pêche, porté dans la boue. Le pagne chez les Sérères du Saloum ne cache pas. Il proclame. Je suis d'ici. Je travaille. Je nourris. Je suis femme du Saloum.</p>
+          <div class="step-line"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S4: ÉPISODES -->
+<section id="s4">
+  <div class="s4-head">
+    <h2 class="s4-title">La série<br><em>documentaire</em></h2>
+    <a href="https://tiktok.com/@seggfaye" class="s4-all" target="_blank">Voir tous les épisodes →</a>
+  </div>
+  <div class="ep-list">
+    <a href="https://tiktok.com/@seggfaye" class="ep" target="_blank">
+      <span class="ep-n">EP.01</span>
+      <div class="ep-info">
+        <div class="ep-t">Ces îles n'existaient pas</div>
+        <div class="ep-m">Mystère & Découverte · 65 secondes · @SEGGFAYE</div>
+      </div>
+      <div class="ep-dur">65s</div>
+    </a>
+    <a href="https://tiktok.com/@seggfaye" class="ep" target="_blank">
+      <span class="ep-n">EP.02</span>
+      <div class="ep-info">
+        <div class="ep-t">Le geste que les filles apprennent à 6 ans</div>
+        <div class="ep-m">Savoir-Faire · 68 secondes · @SEGGFAYE</div>
+      </div>
+      <div class="ep-dur">68s</div>
+    </a>
+    <a href="https://tiktok.com/@seggfaye" class="ep" target="_blank">
+      <span class="ep-n">EP.03</span>
+      <div class="ep-info">
+        <div class="ep-t">Le secret des îles bâties à la main</div>
+        <div class="ep-m">Ingénierie Ancestrale · 70 secondes · @SEGGFAYE</div>
+      </div>
+      <div class="ep-dur">70s</div>
+    </a>
+  </div>
+</section>
+
+<!-- S5: PORTRAIT + CITATION -->
+<section id="s5">
+  <div class="s5-bg"></div>
+  <div class="s5-overlay"></div>
+  <div class="s5-content">
+    <span class="s5-tag">Citation — Épisode I</span>
+    <blockquote class="s5-quote">"Ces femmes ne demandent pas à être sauvées. Elles demandent à être reconnues."</blockquote>
+    <span class="s5-dash"></span>
+    <span class="s5-author">Les Mains du Saloum · @SEGGFAYE</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo">Les Mains <em>du Saloum</em></div>
+  <div class="ft-links">
+    <a href="https://tiktok.com/@seggfaye" target="_blank">TikTok</a>
+    <a href="https://instagram.com/seggfaye" target="_blank">Instagram</a>
+    <a href="https://youtube.com/@seggfaye" target="_blank">YouTube</a>
+  </div>
+  <div class="ft-copy">© 2026 @SEGGFAYE</div>
+</footer>
+
+<script>
+// CURSOR
+const cur = document.getElementById('cur'), cur2 = document.getElementById('cur2');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
+(function loop(){ rx+=(mx-rx)*.1; ry+=(my-ry)*.1; cur2.style.left=rx+'px'; cur2.style.top=ry+'px'; requestAnimationFrame(loop); })();
+document.querySelectorAll('a,button').forEach(el => {
+  el.addEventListener('mouseenter',()=>{ cur.style.width='14px'; cur.style.height='14px'; cur2.style.width='55px'; cur2.style.height='55px'; });
+  el.addEventListener('mouseleave',()=>{ cur.style.width='6px'; cur.style.height='6px'; cur2.style.width='40px'; cur2.style.height='40px'; });
+});
+
+// SCROLL PROGRESS
+const bar = document.getElementById('bar');
+window.addEventListener('scroll',()=>{ bar.style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+'%'; },{passive:true});
+
+// INTERSECTION OBSERVER
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
+},{threshold:.2});
+document.querySelectorAll('#mn,#ml,#ms,.ep').forEach(el=>obs.observe(el));
+
+// SCROLLYTELLING S3
+const s3 = document.getElementById('s3');
+const steps = [document.getElementById('st1'), document.getElementById('st2'), document.getElementById('st3')];
+const imgs  = [document.getElementById('simg1'), document.getElementById('simg2'), document.getElementById('simg3')];
+
+function setStep(i) {
+  steps.forEach((s,j) => s.classList.toggle('active', j===i));
+  imgs.forEach((img,j) => { img.style.opacity = j===i ? '1' : '0'; img.style.transform = j===i ? 'scale(1)' : 'scale(1.04)'; });
+}
+setStep(0);
+
+window.addEventListener('scroll', () => {
+  const rect = s3.getBoundingClientRect();
+  const total = s3.offsetHeight - innerHeight;
+  const prog = Math.max(0, Math.min(1, -rect.top / total));
+  const idx = prog < .33 ? 0 : prog < .66 ? 1 : 2;
+  setStep(idx);
+},{passive:true});
+
+// AUDIO
+const audio = document.getElementById('bgaudio');
+const btn = document.getElementById('audiobtn');
+const iconOn = document.getElementById('icon-on');
+const iconOff = document.getElementById('icon-off');
+audio.volume = 0.25;
+
+let playing = false;
+
+function tryPlay() {
+  audio.play().then(() => {
+    playing = true;
+    btn.classList.remove('muted');
+    iconOn.style.display = 'block';
+    iconOff.style.display = 'none';
+  }).catch(() => {});
+}
+
+// Démarre au premier scroll
+window.addEventListener('scroll', () => { if (!playing) tryPlay(); }, { once: true, passive: true });
+
+btn.addEventListener('click', () => {
+  if (playing) {
+    audio.pause();
+    playing = false;
+    btn.classList.add('muted');
+    iconOn.style.display = 'none';
+    iconOff.style.display = 'block';
+  } else {
+    tryPlay();
+  }
+});
+
+// ÉPISODES VIS (manuel si observer rate)
+setTimeout(()=>{
+  document.querySelectorAll('.ep').forEach(e=>e.classList.add('vis'));
+},800);
+</script>
+</body>
+</html>
