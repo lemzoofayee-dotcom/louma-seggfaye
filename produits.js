@@ -702,11 +702,11 @@ function buildProdCard(p) {
   const nomEsc = p.nom.replace(/'/g, "\\'");
   const imgEsc = (p.image || '').replace(/'/g, "\\'");
   const btnHtml = p.stock
-    ? `<button class="btn-sm" onclick="cartSystem.add({name:'${nomEsc}',price:${p.prix},unit:'${p.unite}',img:'${imgEsc}'})">🛒 Ajouter</button>`
+    ? `<button class="btn-sm" onclick="cartSystem.add({name:'${nomEsc}',price:${p.prix},unit:'${p.unite}',img:'${imgEsc}',cat:'${p.categorie}'})">🛒 Ajouter</button>`
     : `<span class="btn-sm" style="opacity:.35;cursor:not-allowed;pointer-events:none;">Indisponible</span>`;
 
   return `
-<div class="prod-card reveal${!p.stock ? ' out-of-stock' : ''}">
+<div class="prod-card reveal${!p.stock ? ' out-of-stock' : ''}" data-cat="${p.categorie}">
   <div class="prod-img-shell">
     <div class="prod-img-core">${imgContent}</div>
     <div class="prod-img-overlay">${p.nom}</div>

@@ -1583,6 +1583,7 @@
     </a>
 <ul class="nav-links">
 <li><a href="#produits">Produits</a></li>
+<li><a href="/saloum/">🎬 Documentaire</a></li>
 <li><a href="#comment">Livraison</a></li>
 <li><a href="#recettes">Recettes</a></li>
 <li><a href="#avis">Avis</a></li>
@@ -1600,6 +1601,7 @@
 <!-- MOBILE MENU -->
 <div class="nav-mobile-menu" id="navMobileMenu">
 <a href="#produits" onclick="toggleMobileMenu()">Produits</a>
+<a href="/saloum/" onclick="toggleMobileMenu()">🎬 Documentaire</a>
 <a href="#comment" onclick="toggleMobileMenu()">Livraison</a>
 <a href="#recettes" onclick="toggleMobileMenu()">Recettes</a>
 <a href="#avis" onclick="toggleMobileMenu()">Avis</a>
@@ -2195,6 +2197,7 @@
 <div class="footer-col">
 <h5>Contact</h5>
 <ul>
+<li><a href="/saloum/">🎬 Documentaire Saloum</a></li>
 <li><a href="https://wa.me/33652650395" target="_blank">WhatsApp</a></li>
 <li><a href="https://www.tiktok.com/@seggfaye" target="_blank">TikTok @seggfaye</a></li>
 <li><a href="mailto:seggfaye@gmail.com">seggfaye@gmail.com</a></li>
@@ -2308,10 +2311,11 @@
         const price = parseFloat(priceText.replace(',','.').replace(/[^0-9.]/g,'')) || 0;
         const unit = card.querySelector('.prod-price small')?.textContent.trim() || '';
         const img = card.querySelector('.prod-img-core img')?.getAttribute('src') || null;
+        const cat = card.dataset.cat || '';
         const newBtn = document.createElement('button');
         newBtn.className = btn.className;
         newBtn.innerHTML = '🛒 Ajouter';
-        newBtn.addEventListener('click', () => this.add({name, price, unit, img}));
+        newBtn.addEventListener('click', () => this.add({name, price, unit, img, cat}));
         btn.replaceWith(newBtn);
       });
     },
@@ -2326,7 +2330,8 @@
     },
 
     add(product) {
-      if (this.isFruitDeMer(product.name)) {
+      const isMerSec = product.cat === 'mer' || this.isFruitDeMer(product.name);
+      if (isMerSec) {
         const existing = this.items.find(i => i.name === product.name);
         const currentQty = existing ? existing.qty : 0;
         const unitW = this.parseWeight(product.unit);
@@ -2348,7 +2353,8 @@
     updateQty(name, delta) {
       const item = this.items.find(i => i.name === name);
       if (!item) return;
-      if (delta > 0 && this.isFruitDeMer(item.name)) {
+      const isMerSec = item.cat === 'mer' || this.isFruitDeMer(item.name);
+      if (delta > 0 && isMerSec) {
         const unitW = this.parseWeight(item.unit);
         if ((item.qty + 1) * unitW > 1000) {
           this.showLimitMsg(item.name); return;
@@ -2372,8 +2378,10 @@
     count() { return this.items.reduce((s,i) => s + i.qty, 0); },
 
     hasFreshFish() {
-      const fresh = ['thiof frais','dorade fraîche','poisson frais'];
-      return this.items.some(i => fresh.some(k => i.name.toLowerCase().includes(k)));
+      // Détection par catégorie (source de vérité produits.js).
+      // Les anciens noms restent en fallback pour les paniers legacy en localStorage.
+      const fresh = ['thiof','dorade','tilapia','sompate','seude','iler','yakh','yaye boye','chanchar','capitaine','colafil','baracouda','poisson eau douce','mélange de poisson'];
+      return this.items.some(i => i.cat === 'frais' || fresh.some(k => i.name.toLowerCase().includes(k)));
     },
 
     parseWeight(unit) {
@@ -2410,7 +2418,7 @@
 
     shippingCarrier() {
       if (this.items.length === 0) return '';
-      if (this.hasFreshFish()) return 'Mondial Relay';
+      if (this.hasFreshFish()) return 'FedEx';
       return 'Colissimo';
     },
 
