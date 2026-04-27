@@ -2543,6 +2543,99 @@
     document.head.appendChild(s);
   })();
 
+  // ═══════════════════════════════════════
+  // CATALOGUE PRODUITS — option A (placeholders dégradés)
+  // ═══════════════════════════════════════
+  const PRODUCTS = [
+    // ▼ Fruits de mer séchés
+    { name: "Crevettes séchées", price: 6.00, unit: "par 100g", cat: "mer", grad: "linear-gradient(135deg,#d4842c,#8a2f12 60%,#2a1408)" },
+    { name: "Yoxos (huîtres séchées)", price: 6.00, unit: "par 100g", cat: "mer", grad: "linear-gradient(135deg,#6b4423,#2a1408)" },
+    { name: "Pagne (coques)", price: 6.00, unit: "par 100g", cat: "mer", grad: "linear-gradient(135deg,#4a3520,#1a1208)" },
+    { name: "Tuffa", price: 6.00, unit: "par 100g", cat: "mer", grad: "linear-gradient(135deg,#8b6035,#2a1408)" },
+    { name: "Yeet Maggi", price: 6.00, unit: "par 100g", cat: "mer", grad: "linear-gradient(135deg,#a05a2c,#2a1408)" },
+    { name: "Guej Yass", price: 6.00, unit: "par 100g", cat: "mer", grad: "linear-gradient(135deg,#7a4a28,#1f1208)" },
+    { name: "Guej Beurre", price: 4.00, unit: "par 100g", cat: "mer", grad: "linear-gradient(135deg,#d4a644,#6b4423,#2a1408)" },
+    { name: "Guej Beur Casamance", price: 12.00, unit: "par 300g", cat: "mer", grad: "linear-gradient(135deg,#e8c478,#8b6035)" },
+    { name: "Guej Sol", price: 4.00, unit: "par 100g", cat: "mer", grad: "linear-gradient(135deg,#5c4023,#1a1208)" },
+    { name: "Guej Kong", price: 3.00, unit: "par 100g", cat: "mer", grad: "linear-gradient(135deg,#6b3a1c,#1a1208)" },
+    { name: "Guej Tambajang", price: 3.00, unit: "par 100g", cat: "mer", grad: "linear-gradient(135deg,#5a3220,#1a1208)" },
+    { name: "Guej Toumboulan", price: 3.00, unit: "par 100g", cat: "mer", grad: "linear-gradient(135deg,#4a2a18,#1a1208)" },
+    { name: "Guerte Tooy", price: 8.00, unit: "par kg", cat: "mer", grad: "linear-gradient(135deg,#b87333,#3a1f10)" },
+    { name: "Kongfume (fumé)", price: 30.00, unit: "par 500g", cat: "mer", grad: "linear-gradient(135deg,#3a2418,#0d0a07)" },
+    { name: "Kongfume Gambie 500g", price: 30.00, unit: "par 500g", cat: "mer", grad: "linear-gradient(135deg,#4a2a18,#1a1208)" },
+    { name: "Kongfume Gambie 1kg", price: 60.00, unit: "par 1kg", cat: "mer", grad: "linear-gradient(135deg,#5a3220,#1a1208)" },
+    { name: "Pack Saloum (4 produits)", price: 60.00, unit: "par kg", cat: "mer", grad: "linear-gradient(135deg,#d4a644,#8b4513,#2a1408)", tag: "Pack" },
+
+    // ▼ Épices & Condiments
+    { name: "Netetu Dom", price: 5.00, unit: "par 100g", cat: "epices", grad: "linear-gradient(135deg,#8b4513,#2a1408)" },
+    { name: "Netetu Barre", price: 5.00, unit: "par 100g", cat: "epices", grad: "linear-gradient(135deg,#7a3e10,#2a1408)" },
+    { name: "Netetu Mix", price: 15.00, unit: "par 200g", cat: "epices", grad: "linear-gradient(135deg,#a05418,#3a1f10)" },
+    { name: "Netetu simple poudre", price: 5.00, unit: "par 100g", cat: "epices", grad: "linear-gradient(135deg,#6b3a14,#1f1208)" },
+    { name: "Sauce Netetu Beugeuc", price: 10.00, unit: "par 250g", cat: "epices", grad: "linear-gradient(135deg,#9a4a18,#2a1408)" },
+    { name: "Beugeuc Feuille Bissap", price: 10.00, unit: "par 300g", cat: "epices", grad: "linear-gradient(135deg,#6b1a2c,#2a0810)" },
+    { name: "Keciax", price: 3.00, unit: "par 100g", cat: "epices", grad: "linear-gradient(135deg,#7a4520,#1f1208)" },
+    { name: "Bissap Rouge", price: 5.00, unit: "par 150g", cat: "epices", grad: "linear-gradient(135deg,#a8203a,#3a0810)" },
+    { name: "Bissap Blanc", price: 5.00, unit: "par 200g", cat: "epices", grad: "linear-gradient(135deg,#c9b07a,#5a4a30)" },
+    { name: "Bouye (poudre baobab)", price: 6.00, unit: "par 200g", cat: "epices", grad: "linear-gradient(135deg,#d4b876,#6b4423)" },
+    { name: "Purée Piment Fort", price: 10.00, unit: "par 200g", cat: "epices", grad: "linear-gradient(135deg,#c44a1f,#4a1809)", tag: "Fort" },
+    { name: "Maad Confi", price: 25.00, unit: "par kg", cat: "epices", grad: "linear-gradient(135deg,#8b3a1c,#2a1408)" },
+
+    // ▼ Céréales & Farines
+    { name: "Arraw Dugup (mil)", price: 18.00, unit: "par kg", cat: "cereales", grad: "linear-gradient(135deg,#d4a644,#4a3318)" },
+    { name: "Ciakri (couscous)", price: 18.00, unit: "par kg", cat: "cereales", grad: "linear-gradient(135deg,#e8c478,#6b4423)" },
+    { name: "Cieré Lalo", price: 15.00, unit: "par kg", cat: "cereales", grad: "linear-gradient(135deg,#b88a3a,#3a2a10)" },
+    { name: "Sankal Duggup", price: 9.00, unit: "par 500g", cat: "cereales", grad: "linear-gradient(135deg,#c9a84c,#4a3318)" },
+    { name: "Niebe Saloum", price: 5.00, unit: "par 250g", cat: "cereales", grad: "linear-gradient(135deg,#a87c30,#2a1f08)" },
+    { name: "Guerte Noflay (poudre arachide)", price: 5.00, unit: "par 250g", cat: "cereales", grad: "linear-gradient(135deg,#d4a644,#6b4423)" },
+
+    // ▼ Pâtes & Beurres
+    { name: "Tiguadegue (pâte d'arachide) 500g", price: 12.00, unit: "par 500g", cat: "beurres", grad: "linear-gradient(135deg,#a87c30,#3a2a10)" },
+    { name: "Tigadégué 250g", price: 6.00, unit: "par 250g", cat: "beurres", grad: "linear-gradient(135deg,#8b6035,#2a1408)" },
+    { name: "Diwnior (beurre clarifié) 0,5L", price: 20.00, unit: "par 0,5L", cat: "beurres", grad: "linear-gradient(135deg,#e8c478,#8b6035)" },
+    { name: "Diwnior (beurre clarifié) 1L", price: 40.00, unit: "par 1L", cat: "beurres", grad: "linear-gradient(135deg,#f0d090,#a07e2c)" },
+    { name: "Diwtir Pure (huile)", price: 25.00, unit: "par 1L", cat: "beurres", grad: "linear-gradient(135deg,#d4a644,#6b4423)" },
+    { name: "Lem miel Pure", price: 25.00, unit: "par 1,5L", cat: "beurres", grad: "linear-gradient(135deg,#c9a84c,#5a4020)", tag: "Pure" }
+  ];
+
+  function renderProducts() {
+    const grids = {
+      mer: document.querySelector('#cat-mer .cat-grid'),
+      epices: document.querySelector('#cat-epices .cat-grid'),
+      cereales: document.querySelector('#cat-cereales .cat-grid'),
+      beurres: document.querySelector('#cat-beurres .cat-grid'),
+      frais: document.querySelector('#cat-frais .cat-grid')
+    };
+    const buckets = { mer:[], epices:[], cereales:[], beurres:[], frais:[] };
+    PRODUCTS.forEach(p => { if (buckets[p.cat]) buckets[p.cat].push(p); });
+
+    Object.keys(grids).forEach(cat => {
+      const grid = grids[cat];
+      if (!grid) return;
+      const list = buckets[cat];
+      if (cat === 'frais' && list.length === 0) {
+        grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2.5rem 1rem; color:var(--muted); font-size:.95rem;">Poissons frais sur commande — contactez-nous via WhatsApp pour la disponibilité du jour.</div>';
+        return;
+      }
+      grid.innerHTML = list.map(p => {
+        const priceTxt = p.price.toFixed(2).replace('.', ',') + ' €';
+        const tagHtml = p.tag ? '<span style="position:absolute;top:.8rem;left:.8rem;background:rgba(13,10,7,.85);backdrop-filter:blur(8px);color:#c9a84c;padding:.3rem .7rem;border:1px solid rgba(201,168,76,.3);border-radius:.4rem;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;z-index:2;">'+p.tag+'</span>' : '';
+        const labelHtml = '<span style="font-family:\'Cormorant Garamond\',\'Playfair Display\',serif;font-style:italic;color:rgba(245,237,224,.45);font-size:1rem;text-align:center;padding:0 1rem;">'+p.name+'</span>';
+        return '<article class="prod-card" data-cat="'+p.cat+'">'
+             +   '<div class="prod-img-core" style="background:'+p.grad+';display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">'
+             +     tagHtml + labelHtml
+             +   '</div>'
+             +   '<div class="prod-name">'+p.name+'</div>'
+             +   '<div class="prod-footer">'
+             +     '<div class="prod-price">'+priceTxt+'<small>'+p.unit+'</small></div>'
+             +     '<button class="btn-sm">Commander</button>'
+             +   '</div>'
+             + '</article>';
+      }).join('');
+    });
+  }
+
+  window.cartSystem = cartSystem;
+  renderProducts();
   cartSystem.init();
 
   // ═══════════════════════════════════════
