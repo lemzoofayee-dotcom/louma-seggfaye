@@ -702,7 +702,7 @@ function buildProdCard(p) {
   const nomEsc = p.nom.replace(/'/g, "\\'");
   const imgEsc = (p.image || '').replace(/'/g, "\\'");
   const btnHtml = p.stock
-    ? `<button class="btn-sm" onclick="Cart.add({name:'${nomEsc}',price:${p.prix},unit:'${p.unite}',img:'${imgEsc}'})">🛒 Ajouter</button>`
+    ? `<button class="btn-sm" onclick="cartSystem.add({name:'${nomEsc}',price:${p.prix},unit:'${p.unite}',img:'${imgEsc}'})">🛒 Ajouter</button>`
     : `<span class="btn-sm" style="opacity:.35;cursor:not-allowed;pointer-events:none;">Indisponible</span>`;
 
   return `
