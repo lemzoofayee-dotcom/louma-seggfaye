@@ -1550,6 +1550,322 @@
       opacity: 1;
       transform: translateY(0);
     }
+  /* ═══════════════════════════════════════
+     FICHE PRODUIT MODAL
+     ═══════════════════════════════════════ */
+  .prod-modal {
+    position: fixed; inset: 0;
+    z-index: 200;
+    display: none;
+    align-items: center; justify-content: center;
+    padding: 1rem;
+  }
+  .prod-modal.open { display: flex; }
+  .prod-modal-overlay {
+    position: absolute; inset: 0;
+    background: rgba(8, 6, 3, .85);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    animation: fadeIn .3s ease-out;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .prod-modal-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    max-height: 92vh;
+    overflow-y: auto;
+    background: linear-gradient(145deg, rgba(34, 26, 19, 1) 0%, rgba(13, 10, 7, 1) 100%);
+    border: 1px solid rgba(201, 168, 76, .35);
+    border-radius: 1.2rem;
+    box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 60px rgba(201,168,76,.08);
+    animation: modalSlide .4s cubic-bezier(.2, .8, .2, 1);
+  }
+  @keyframes modalSlide {
+    from { opacity: 0; transform: translateY(40px) scale(.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .prod-modal-close {
+    position: absolute; top: 1rem; right: 1rem;
+    width: 40px; height: 40px;
+    background: rgba(13, 10, 7, .9);
+    border: 1px solid rgba(201, 168, 76, .35);
+    border-radius: 50%;
+    color: #c9a84c;
+    font-size: 1.4rem; line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    transition: all .2s;
+  }
+  .prod-modal-close:hover {
+    background: #c9a84c; color: #100d08;
+    transform: rotate(90deg);
+  }
+  .prod-modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .prod-modal-gallery {
+    padding: 2rem;
+    background: rgba(8, 6, 3, .35);
+    border-radius: 1.2rem 0 0 1.2rem;
+  }
+  .prod-modal-main-img {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: .9rem;
+    overflow: hidden;
+    border: 1px solid rgba(201, 168, 76, .25);
+    background: #0d0a07;
+    margin-bottom: 1rem;
+  }
+  .prod-modal-main-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: opacity .3s;
+  }
+  .prod-modal-badge-overlay {
+    position: absolute;
+    top: 1rem; left: 1rem;
+    background: rgba(201, 168, 76, .95);
+    color: #100d08;
+    padding: .4rem .9rem;
+    border-radius: .5rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .prod-modal-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .6rem;
+  }
+  .prod-modal-thumb {
+    aspect-ratio: 1;
+    border-radius: .5rem;
+    overflow: hidden;
+    border: 2px solid rgba(201, 168, 76, .15);
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .prod-modal-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .prod-modal-thumb:hover { border-color: rgba(201, 168, 76, .5); }
+  .prod-modal-thumb.active {
+    border-color: #c9a84c;
+    box-shadow: 0 0 0 1px #c9a84c;
+  }
+  .prod-modal-info {
+    padding: 2.5rem 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .prod-modal-origine {
+    color: #c9a84c;
+    font-size: .72rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: .8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .prod-modal-origine::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: #c9a84c;
+  }
+  .prod-modal-name {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    line-height: 1.05;
+    color: #f5ede0;
+    font-weight: 600;
+    margin-bottom: .3rem;
+  }
+  .prod-modal-name-local {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: rgba(232, 196, 120, .7);
+    font-size: 1.05rem;
+    margin-bottom: 1.4rem;
+  }
+  .prod-modal-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: .8rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(201, 168, 76, .15);
+    border-bottom: 1px solid rgba(201, 168, 76, .15);
+    margin-bottom: 1.5rem;
+  }
+  .prod-modal-price {
+    font-family: 'Playfair Display', serif;
+    color: #c9a84c;
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .prod-modal-price-unit {
+    color: rgba(232, 222, 197, .55);
+    font-size: .85rem;
+  }
+  .prod-modal-price-old {
+    color: rgba(232, 222, 197, .35);
+    font-size: 1rem;
+    text-decoration: line-through;
+    margin-left: auto;
+  }
+  .prod-modal-description {
+    color: rgba(232, 222, 197, .82);
+    font-size: .98rem;
+    line-height: 1.7;
+    margin-bottom: 1.4rem;
+  }
+  .prod-modal-section {
+    background: rgba(201, 168, 76, .06);
+    border: 1px solid rgba(201, 168, 76, .15);
+    border-radius: .7rem;
+    padding: 1rem 1.1rem;
+    margin-bottom: .8rem;
+  }
+  .prod-modal-section h4 {
+    color: #c9a84c;
+    font-size: .72rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: .4rem;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .prod-modal-section p {
+    color: rgba(232, 222, 197, .85);
+    font-size: .9rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .prod-modal-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: .8rem;
+    align-items: stretch;
+  }
+  .prod-modal-qty {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(201, 168, 76, .35);
+    border-radius: 999px;
+    background: rgba(13, 10, 7, .6);
+    overflow: hidden;
+  }
+  .prod-modal-qty button {
+    width: 44px; height: 100%;
+    background: transparent;
+    border: none;
+    color: #c9a84c;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background .2s;
+    font-family: inherit;
+  }
+  .prod-modal-qty button:hover { background: rgba(201, 168, 76, .12); }
+  .prod-modal-qty span {
+    padding: 0 .9rem;
+    color: #f5ede0;
+    font-weight: 700;
+    min-width: 2.4rem;
+    text-align: center;
+  }
+  .prod-modal-add {
+    flex: 1;
+    background: #c9a84c;
+    color: #100d08;
+    border: none;
+    border-radius: 999px;
+    padding: .85rem 1.5rem;
+    font-size: .92rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+  }
+  .prod-modal-add:hover {
+    background: #e8c478;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201, 168, 76, .3);
+  }
+  .prod-modal-add:disabled {
+    background: rgba(232, 222, 197, .15);
+    color: rgba(232, 222, 197, .4);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  .prod-modal-trust {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+    margin-top: 1.4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(201, 168, 76, .15);
+  }
+  .prod-modal-trust div {
+    color: rgba(232, 222, 197, .65);
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+  }
+  .prod-card .prod-img-shell { cursor: pointer; }
+  .prod-card .prod-img-shell::after {
+    content: '🔍 Voir';
+    position: absolute;
+    bottom: .8rem; right: .8rem;
+    background: rgba(13, 10, 7, .85);
+    color: #c9a84c;
+    padding: .35rem .7rem;
+    border-radius: .4rem;
+    font-size: .68rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 1px solid rgba(201, 168, 76, .3);
+    opacity: 0;
+    transition: opacity .2s;
+    pointer-events: none;
+  }
+  .prod-card:hover .prod-img-shell::after { opacity: 1; }
+  @media (max-width: 768px) {
+    .prod-modal { padding: 0; align-items: flex-end; }
+    .prod-modal-content {
+      max-height: 95vh;
+      border-radius: 1.2rem 1.2rem 0 0;
+      animation: modalSlideUp .4s cubic-bezier(.2, .8, .2, 1);
+    }
+    @keyframes modalSlideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+    .prod-modal-grid { grid-template-columns: 1fr; }
+    .prod-modal-gallery {
+      padding: 1.2rem;
+      border-radius: 1.2rem 1.2rem 0 0;
+    }
+    .prod-modal-info { padding: 1.5rem 1.2rem 2rem; }
+    .prod-modal-name { font-size: 1.7rem; }
+    .prod-modal-price { font-size: 2rem; }
+  }
   </style>
 </head>
 <body>
@@ -2229,6 +2545,10 @@
 <h3>🛒 Mon panier</h3>
 <button class="cart-close" onclick="cartSystem.close()">✕</button>
 </div>
+<div id="cart-mix-warn" style="display:none; background:rgba(196,74,31,.12); border:1px solid rgba(196,74,31,.45); border-left:3px solid #c44a1f; color:#f5ead8; padding:.8rem 1rem; margin:0 1.2rem 0; border-radius:.5rem; font-size:.78rem; line-height:1.5;">
+  <strong style="color:#e8c478; display:block; margin-bottom:.3rem;">⚠️ Colis séparés requis</strong>
+  Votre panier contient des <strong>poissons frais</strong> et des <strong>produits secs</strong>. La chaîne du froid impose 2 colis distincts (FedEx + Colissimo). Vous pouvez continuer, ou passer 2 commandes séparées.
+</div>
 <div class="cart-items" id="cart-items">
 <div class="cart-empty">
 <span>🛒</span>
@@ -2281,6 +2601,58 @@
   </div>
 </div>
 
+<!-- FICHE PRODUIT MODAL -->
+<div id="prodModal" class="prod-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+  <div class="prod-modal-overlay" onclick="closeProdModal()"></div>
+  <div class="prod-modal-content">
+    <button class="prod-modal-close" onclick="closeProdModal()" aria-label="Fermer">×</button>
+    <div class="prod-modal-grid">
+      <div class="prod-modal-gallery">
+        <div class="prod-modal-main-img">
+          <img id="modal-main-img" src="" alt="">
+          <div class="prod-modal-badge-overlay" id="modal-badge" style="display:none;"></div>
+        </div>
+        <div class="prod-modal-thumbs" id="modal-thumbs"></div>
+      </div>
+      <div class="prod-modal-info">
+        <div class="prod-modal-origine" id="modal-origine"></div>
+        <h2 class="prod-modal-name" id="modal-name"></h2>
+        <div class="prod-modal-name-local" id="modal-name-local"></div>
+        <div class="prod-modal-price-row">
+          <span class="prod-modal-price" id="modal-price"></span>
+          <span class="prod-modal-price-unit" id="modal-price-unit"></span>
+          <span class="prod-modal-price-old" id="modal-price-old"></span>
+        </div>
+        <p class="prod-modal-description" id="modal-description"></p>
+        <div class="prod-modal-section" id="modal-gout-plus-block" style="display:none;">
+          <h4>✨ Pourquoi c'est différent</h4>
+          <p id="modal-gout-plus"></p>
+        </div>
+        <div class="prod-modal-section" id="modal-conseil-block" style="display:none;">
+          <h4>👨‍🍳 Comment l'utiliser</h4>
+          <p id="modal-conseil"></p>
+        </div>
+        <div class="prod-modal-actions">
+          <div class="prod-modal-qty">
+            <button onclick="modalQty(-1)" aria-label="Diminuer">−</button>
+            <span id="modal-qty">1</span>
+            <button onclick="modalQty(1)" aria-label="Augmenter">+</button>
+          </div>
+          <button class="prod-modal-add" id="modal-add-btn" onclick="modalAddToCart()">🛒 Ajouter au panier</button>
+        </div>
+        <div id="modal-fresh-warn" style="display:none; background:rgba(196,74,31,.12); border:1px solid rgba(196,74,31,.45); border-left:3px solid #c44a1f; color:#f5ead8; padding:.7rem .9rem; margin-top:.8rem; border-radius:.5rem; font-size:.78rem; line-height:1.5;">
+          <strong style="color:#e8c478;">🧊 Chaîne du froid :</strong> ce produit voyage dans un colis FedEx séparé (10€ France · 20€ Europe). Si vous commandez aussi des produits secs, ils partiront dans un colis distinct.
+        </div>
+        <div class="prod-modal-trust">
+          <div>📦 Conditionnement sous vide — préserve la fraîcheur, pas d'odeur</div>
+          <div>🤝 Circuit court direct producteur → consommateur</div>
+          <div>🚚 Livraison France & Europe</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- WHATSAPP FLOAT -->
 <a class="wa-float" href="https://wa.me/33652650395" target="_blank" title="Commander sur WhatsApp">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -2298,7 +2670,7 @@
       this.load();
       this.updateCount();
       // Remplacer les boutons Commander par Ajouter au panier
-      setTimeout(() => this.overrideButtons(), 100);
+      setTimeout(() => { this.overrideButtons(); this.refreshMixWarn(); }, 100);
     },
 
     overrideButtons() {
@@ -2329,6 +2701,17 @@
       return this.parseWeight(item.unit) * item.qty;
     },
 
+    isMixed() {
+      // Panier mixte = au moins 1 produit frais ET au moins 1 produit non-frais
+      let hasFresh = false, hasDry = false;
+      for (const i of this.items) {
+        const isFrais = i.cat === 'frais' || (this.hasFreshFish.call({items:[i]}));
+        if (isFrais) hasFresh = true; else hasDry = true;
+        if (hasFresh && hasDry) return true;
+      }
+      return false;
+    },
+
     add(product) {
       const isMerSec = product.cat === 'mer' || this.isFruitDeMer(product.name);
       if (isMerSec) {
@@ -2339,15 +2722,42 @@
           this.showLimitMsg(product.name); return;
         }
       }
+      // Détecter si l'ajout va créer un mélange frais/secs
+      const productIsFresh = product.cat === 'frais';
+      const cartHasFresh = this.items.some(i => i.cat === 'frais');
+      const cartHasDry = this.items.some(i => i.cat && i.cat !== 'frais');
+      const willMix = (productIsFresh && cartHasDry) || (!productIsFresh && cartHasFresh);
+
       const existing = this.items.find(i => i.name === product.name);
       if (existing) existing.qty++;
       else this.items.push({...product, qty: 1});
-      this.save(); this.updateCount(); this.animateBtn(); this.showNotif(product.name);
+      this.save(); this.updateCount(); this.animateBtn();
+
+      if (willMix) {
+        this.showMixWarn(product.name);
+      } else {
+        this.showNotif(product.name);
+      }
+      this.refreshMixWarn();
+    },
+
+    showMixWarn(name) {
+      const el = document.getElementById('cart-notif');
+      if (!el) return;
+      el.innerHTML = '⚠️ <strong>"' + name + '"</strong> ajouté — colis séparé (chaîne du froid) 🧊';
+      el.style.color = '#e8c478';
+      el.classList.add('show');
+      setTimeout(() => { el.classList.remove('show'); el.style.color = ''; el.innerHTML = ''; }, 4000);
+    },
+
+    refreshMixWarn() {
+      const warn = document.getElementById('cart-mix-warn');
+      if (warn) warn.style.display = this.isMixed() ? 'block' : 'none';
     },
 
     remove(name) {
       this.items = this.items.filter(i => i.name !== name);
-      this.save(); this.renderItems(); this.updateCount();
+      this.save(); this.renderItems(); this.updateCount(); this.refreshMixWarn();
     },
 
     updateQty(name, delta) {
@@ -2362,7 +2772,7 @@
       }
       item.qty += delta;
       if (item.qty <= 0) this.remove(name);
-      else { this.save(); this.renderItems(); this.updateCount(); }
+      else { this.save(); this.renderItems(); this.updateCount(); this.refreshMixWarn(); }
     },
 
     showLimitMsg(name) {
@@ -2555,6 +2965,167 @@
   // et Ajouter des cartes générées par produits.js)
   window.cartSystem = cartSystem;
   cartSystem.init();
+
+  // ═══════════════════════════════════════
+  // FICHE PRODUIT MODAL
+  // ═══════════════════════════════════════
+  const ProdModal = {
+    current: null,
+    qty: 1,
+    el: () => document.getElementById('prodModal'),
+
+    open(id) {
+      const p = (window.PRODUITS || []).find(x => x.id === id);
+      if (!p) return;
+      this.current = p;
+      this.qty = 1;
+      this.render();
+      this.el().classList.add('open');
+      document.body.style.overflow = 'hidden';
+    },
+
+    close() {
+      this.el().classList.remove('open');
+      document.body.style.overflow = '';
+      this.current = null;
+    },
+
+    render() {
+      const p = this.current;
+      if (!p) return;
+
+      // Galerie
+      const gallery = (p.gallery && p.gallery.length) ? p.gallery : [p.image].filter(Boolean);
+      const mainImg = document.getElementById('modal-main-img');
+      mainImg.src = gallery[0] || '';
+      mainImg.alt = p.nom;
+
+      const thumbs = document.getElementById('modal-thumbs');
+      thumbs.innerHTML = gallery.map((src, i) => `
+        <div class="prod-modal-thumb${i === 0 ? ' active' : ''}" data-src="${src}" onclick="ProdModal.selectThumb(this, '${src}')">
+          <img src="${src}" alt="${p.nom} vue ${i + 1}">
+        </div>
+      `).join('');
+
+      // Badge overlay
+      const badge = document.getElementById('modal-badge');
+      if (!p.stock) {
+        badge.textContent = 'Rupture de stock';
+        badge.style.display = 'inline-block';
+        badge.style.background = '#c0392b';
+        badge.style.color = '#fff';
+      } else if (p.nouveaute) {
+        badge.textContent = 'Nouveau';
+        badge.style.display = 'inline-block';
+        badge.style.background = '#2ecc71';
+        badge.style.color = '#fff';
+      } else if (p.badge) {
+        badge.textContent = p.badge;
+        badge.style.display = 'inline-block';
+        badge.style.background = 'rgba(201,168,76,.95)';
+        badge.style.color = '#100d08';
+      } else {
+        badge.style.display = 'none';
+      }
+
+      // Texte
+      document.getElementById('modal-origine').textContent = p.origine || (p.categorie === 'frais' ? 'Sénégal — Pêche fraîche' : 'Sénégal');
+      document.getElementById('modal-name').textContent = p.nom;
+      const localEl = document.getElementById('modal-name-local');
+      if (p.nomLocal) {
+        localEl.textContent = p.nomLocal;
+        localEl.style.display = '';
+      } else {
+        localEl.style.display = 'none';
+      }
+
+      document.getElementById('modal-price').textContent = p.prix.toFixed(2).replace('.', ',') + ' €';
+      document.getElementById('modal-price-unit').textContent = p.unite;
+      const oldEl = document.getElementById('modal-price-old');
+      if (p.prixAncien) {
+        oldEl.textContent = p.prixAncien.toFixed(2).replace('.', ',') + ' €';
+        oldEl.style.display = '';
+      } else {
+        oldEl.style.display = 'none';
+      }
+
+      document.getElementById('modal-description').textContent = p.description ||
+        'Produit authentique sélectionné directement chez nos producteurs partenaires au Sénégal.';
+
+      const goutBlock = document.getElementById('modal-gout-plus-block');
+      if (p.goutPlus) {
+        document.getElementById('modal-gout-plus').textContent = p.goutPlus;
+        goutBlock.style.display = '';
+      } else {
+        goutBlock.style.display = 'none';
+      }
+
+      const conseilBlock = document.getElementById('modal-conseil-block');
+      if (p.conseil) {
+        document.getElementById('modal-conseil').textContent = p.conseil;
+        conseilBlock.style.display = '';
+      } else {
+        conseilBlock.style.display = 'none';
+      }
+
+      // Quantité
+      document.getElementById('modal-qty').textContent = this.qty;
+
+      // Bouton add
+      const addBtn = document.getElementById('modal-add-btn');
+      if (!p.stock) {
+        addBtn.textContent = 'Indisponible';
+        addBtn.disabled = true;
+      } else {
+        addBtn.innerHTML = '🛒 Ajouter au panier';
+        addBtn.disabled = false;
+      }
+
+      // Bandeau "chaîne du froid" pour les produits frais
+      const freshWarn = document.getElementById('modal-fresh-warn');
+      if (freshWarn) freshWarn.style.display = (p.categorie === 'frais') ? 'block' : 'none';
+    },
+
+    selectThumb(el, src) {
+      document.querySelectorAll('.prod-modal-thumb').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('modal-main-img').src = src;
+    },
+
+    changeQty(delta) {
+      const next = this.qty + delta;
+      if (next < 1) return;
+      this.qty = next;
+      document.getElementById('modal-qty').textContent = this.qty;
+    },
+
+    addToCart() {
+      const p = this.current;
+      if (!p || !p.stock) return;
+      for (let i = 0; i < this.qty; i++) {
+        cartSystem.add({
+          name: p.nom,
+          price: p.prix,
+          unit: p.unite,
+          img: (p.gallery && p.gallery[0]) || p.image || null,
+          cat: p.categorie
+        });
+      }
+      this.close();
+    }
+  };
+  window.ProdModal = ProdModal;
+  window.openProdModal = (id) => ProdModal.open(id);
+  window.closeProdModal = () => ProdModal.close();
+  window.modalQty = (delta) => ProdModal.changeQty(delta);
+  window.modalAddToCart = () => ProdModal.addToCart();
+
+  // Fermer au Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('prodModal')?.classList.contains('open')) {
+      closeProdModal();
+    }
+  });
 
   // ═══════════════════════════════════════
   // Scroll reveal

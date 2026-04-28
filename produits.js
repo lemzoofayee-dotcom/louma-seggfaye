@@ -13,24 +13,36 @@ const PRODUITS = [
   {
     id: "crevettes-sechees",
     nom: "Crevettes séchées",
+    nomLocal: "Cipakh",
     categorie: "mer",
     prix: 6.00,
     unite: "par 100g",
     prixAncien: null,
     badge: "Bestseller",
-    image: "crevettesechees.jpg",
+    image: "crevettes-saloum-1.jpg",
+    gallery: ["crevettes-saloum-1.jpg", "crevettes-saloum-2.jpg", "crevettes-saloum-3.jpg"],
+    description: "Pêche artisanale nocturne en duo dans les Îles du Saloum, cuisson à la vapeur, décortiquage à la main, puis séchage au soleil pendant 2 jours. Une méthode 100% traditionnelle, sans additif.",
+    origine: "Îles du Saloum, Foundiougne — Région de Fatick",
+    goutPlus: "Aucune sensation de sable sous la dent : la zone argileuse du Saloum garantit une qualité bien supérieure aux crevettes sablonneuses qu'on trouve ailleurs.",
+    conseil: "Réhydrater à l'eau tiède (jamais chaude) pour préserver le goût. Condiment polyvalent : se marie avec presque tous les plats sénégalais.",
     stock: true,
     nouveaute: false
   },
   {
     id: "yoxos",
-    nom: "Yoxos (huîtres secs)",
+    nom: "Yoxos",
+    nomLocal: "Huîtres séchées",
     categorie: "mer",
     prix: 6.00,
     unite: "par 100g",
     prixAncien: null,
     badge: null,
-    image: "yohos.jpg",
+    image: "yoxos-saloum-1.jpg",
+    gallery: ["yoxos-saloum-1.jpg", "yoxos-saloum-2.jpg", "yoxos-saloum-3.jpg"],
+    description: "Cueillette à la main par les femmes du Saloum, sur les racines des palétuviers en pleine mangrove. Méthode traditionnelle préservée de génération en génération.",
+    origine: "Mangrove des Îles du Saloum, Foundiougne",
+    goutPlus: "Récolte respectueuse de la mangrove. Chaque sachet soutient les femmes qui perpétuent ce savoir-faire ancestral.",
+    conseil: "Condiment aromatique pour rehausser tous les plats traditionnels. Réhydrater à l'eau tiède avant cuisson.",
     stock: true,
     nouveaute: false
   },
@@ -706,14 +718,14 @@ function buildProdCard(p) {
     : `<span class="btn-sm" style="opacity:.35;cursor:not-allowed;pointer-events:none;">Indisponible</span>`;
 
   return `
-<div class="prod-card reveal${!p.stock ? ' out-of-stock' : ''}" data-cat="${p.categorie}">
-  <div class="prod-img-shell">
+<div class="prod-card reveal${!p.stock ? ' out-of-stock' : ''}" data-cat="${p.categorie}" data-id="${p.id}">
+  <div class="prod-img-shell" onclick="openProdModal('${p.id}')">
     <div class="prod-img-core">${imgContent}</div>
     <div class="prod-img-overlay">${p.nom}</div>
     ${badgeHtml}
   </div>
   <div class="prod-body">
-    <div class="prod-name">${p.nom}</div>
+    <div class="prod-name" onclick="openProdModal('${p.id}')" style="cursor:pointer;">${p.nom}</div>
     <div class="prod-footer">
       <div class="prod-price">${formatPrix(p.prix)} <small>${p.unite}</small>${prixAncienHtml}</div>
       ${btnHtml}
@@ -738,5 +750,8 @@ function renderProduits() {
     });
   }
 }
+
+// Expose globalement pour la fiche produit modal
+window.PRODUITS = PRODUITS;
 
 document.addEventListener('DOMContentLoaded', renderProduits);
