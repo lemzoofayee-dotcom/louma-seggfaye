@@ -58,7 +58,7 @@ const PRODUITS = [
     image: "pagne-conv.jpg",
     description: "Coques cueillies à la main par les femmes dans la vase de la mangrove — ramassées ou récupérées en plongeant. Bouillies, décoquillées à la main, essorées au filet puis séchées au soleil 2 à 3 jours. Zéro machine, 100% artisanal.",
     origine: "Mangrove des Îles du Saloum — système matriarcal",
-    goutPlus: "Goût agréable de fruits de mer. Chair séchée arrondie (à ne pas confondre avec les yokhos/huîtres dont la chair est allongée). Même prix que les yokhos par choix : préserver la ressource et éviter de raréfier la denrée.",
+    goutPlus: "Goût agréable de fruits de mer. Chair séchée arrondie (à ne pas confondre avec les yokhos/huîtres dont la chair est allongée). Cueillette limitée : repos biologique de 6 mois par an.",
     conseil: "Frais : parfait en sauce spaghetti comme en Italie. Séché : dans tous les thieb et le riz blanc. Réhydrater à l'eau tiède avant cuisson.",
     stock: true,
     nouveaute: false
