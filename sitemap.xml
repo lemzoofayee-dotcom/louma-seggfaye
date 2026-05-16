@@ -19,6 +19,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- BLOG -->
+  <url>
+    <loc>https://seggfaye.com/blog/quest-ce-que-le-guedj.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- /BLOG -->
   <!-- PRODUITS -->
   <url>
     <loc>https://seggfaye.com/produits/crevettes-sechees.html</loc>
