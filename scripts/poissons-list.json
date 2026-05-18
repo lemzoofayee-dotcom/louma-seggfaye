@@ -1,0 +1,105 @@
+[
+  {
+    "type": "cover",
+    "slug": "01-cover",
+    "title": "Noms Wolof",
+    "subtitle": "Les Poissons"
+  },
+  {
+    "type": "fish",
+    "slug": "02-niaw-nekh",
+    "wolof": "NIAW NEKH",
+    "francais": "CARPE NOIRE",
+    "fishDescription": "fresh whole black carp fish with dark grey scales, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "03-seude",
+    "wolof": "SEUDE",
+    "francais": "BARRACUDA",
+    "fishDescription": "fresh whole barracuda fish, long silver elongated body, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "04-thiof",
+    "wolof": "THIOF",
+    "francais": "MÉROU BLANC",
+    "fishDescription": "fresh whole white grouper fish with mottled greyish skin, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "05-youfouf",
+    "wolof": "YOUFOUF",
+    "francais": "PAGEOT",
+    "fishDescription": "fresh whole red pandora seabream fish, pinkish red skin, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "06-seude-boundaw",
+    "wolof": "SEUDE BOUNDAW",
+    "francais": "BROCHET",
+    "fishDescription": "fresh whole pike fish, elongated body, greenish brown, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "07-wass",
+    "wolof": "WASS",
+    "francais": "TILAPIA",
+    "fishDescription": "fresh whole tilapia fish, silver-grey body, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "08-guiss",
+    "wolof": "GUISS",
+    "francais": "MULET",
+    "fishDescription": "fresh whole grey mullet fish, silver body, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "09-yakh",
+    "wolof": "YAKH",
+    "francais": "CARPE ROUGE",
+    "fishDescription": "fresh whole red snapper fish, vibrant red skin, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "10-djaye",
+    "wolof": "DJAYE",
+    "francais": "CHINCHARD",
+    "fishDescription": "fresh whole atlantic horse mackerel jack fish, silver streamlined body, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "11-diane",
+    "wolof": "DIANE",
+    "francais": "CAPITAINE",
+    "fishDescription": "fresh whole captain threadfin fish, silver elongated body, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "12-siket-mbao",
+    "wolof": "SIKET MBAO",
+    "francais": "THIEKEME",
+    "fishDescription": "fresh whole bonito tuna fish, dark blue striped back silver belly, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "13-sompate",
+    "wolof": "SOMPATE",
+    "francais": "CARPE LETHRINE",
+    "fishDescription": "fresh whole emperor lethrinus fish, pinkish bronze body, top-down view"
+  },
+  {
+    "type": "fish",
+    "slug": "14-yaboy",
+    "wolof": "YABOY",
+    "francais": "SARDINE",
+    "fishDescription": "fresh whole sardine fish, small silver body, top-down view"
+  },
+  {
+    "type": "cta",
+    "slug": "15-cta",
+    "title": "TAG UN SÉNÉGALAIS",
+    "subtitle": "Like pour la Part 2"
+  }
+]

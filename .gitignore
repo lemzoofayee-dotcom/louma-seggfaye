@@ -2,3 +2,9 @@
 .claude/worktrees/
 *.bak
 .env
+.env.save
+*.m4a
+*.srt
+spot2-*.png
+spot2-*.jpg
+spot2-*.webp
