@@ -2863,7 +2863,10 @@
     shippingCost() {
       if (this.items.length === 0) return 0;
       const zone = document.getElementById('cart-zone')?.value || 'fr';
+      const t = this.total();
       if (this.hasFreshFish()) return zone === 'fr' ? 10.00 : 20.00;
+      if (zone === 'fr' && t >= 60) return 0;
+      if (zone !== 'fr' && t >= 100) return 0;
       return this.colissimoRate(this.totalWeightG(), zone);
     },
 

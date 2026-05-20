@@ -743,7 +743,7 @@ const PRODUITS = [
     description: "Thiof (mérou blanc) découpé en tranches, congelé et conditionné en carton de 5kg. Le poisson noble du Sénégal, celui du vrai thiéboudienne. Chair blanche, ferme et savoureuse.",
     origine: "Sénégal — Pêche artisanale côtière",
     conseil: "Décongeler au réfrigérateur. Idéal pour le thiéboudienne, grillé ou en sauce. Le poisson roi de la cuisine sénégalaise.",
-    stock: true,
+    stock: false,
     nouveaute: false
   },
   {
@@ -759,7 +759,7 @@ const PRODUITS = [
     description: "Diarégne (pageot) découpé en filets (colafil), congelé en carton de 5kg. Poisson à chair blanche et délicate, très apprécié dans la cuisine sénégalaise.",
     origine: "Sénégal — Pêche artisanale côtière",
     conseil: "Décongeler au réfrigérateur. Se cuisine grillé, en sauce ou frit. Chair fine qui se défait facilement.",
-    stock: true,
+    stock: false,
     nouveaute: false
   },
   {
@@ -775,7 +775,7 @@ const PRODUITS = [
     description: "Capitaine (courbine/beurre) congelé en carton de 5kg. Poisson à chair blanche et grasse, c'est le même poisson qui donne le guedj beurre une fois séché. Frais, il est encore meilleur.",
     origine: "Sénégal — Pêche artisanale côtière",
     conseil: "Décongeler au réfrigérateur. Parfait grillé, en thiéboudienne ou en sauce. Sa chair grasse reste moelleuse à la cuisson.",
-    stock: true,
+    stock: false,
     nouveaute: false
   },
   {
@@ -791,7 +791,7 @@ const PRODUITS = [
     description: "Chanchar (diéye) congelé en carton de 5kg. Petit poisson savoureux à prix accessible, très populaire dans la cuisine quotidienne sénégalaise.",
     origine: "Sénégal — Pêche artisanale côtière",
     conseil: "Décongeler au réfrigérateur. Excellent frit, en sauce tomate ou dans le riz au poisson. Le poisson du quotidien par excellence.",
-    stock: true,
+    stock: false,
     nouveaute: false
   },
   {
@@ -806,7 +806,7 @@ const PRODUITS = [
     description: "Assortiment de poissons d'eau douce congelés en carton de 5kg. Provenant des fleuves et rivières du Sénégal. Prix imbattable pour une quantité généreuse.",
     origine: "Sénégal — Pêche fluviale",
     conseil: "Décongeler au réfrigérateur. Se cuisine en sauce, frit ou grillé. Idéal pour les grandes familles grâce au rapport quantité/prix.",
-    stock: true,
+    stock: false,
     nouveaute: false
   },
   {
@@ -822,7 +822,7 @@ const PRODUITS = [
     description: "Sardinelles fraîches congelées (yaboye), vendues au kilo. Le poisson le plus consommé au Sénégal, base de nombreux plats du quotidien.",
     origine: "Sénégal — Pêche artisanale côtière",
     conseil: "Décongeler au réfrigérateur. Se frit, se grille ou se cuisine en sauce tomate. Le poisson populaire par excellence, savoureux et économique.",
-    stock: true,
+    stock: false,
     nouveaute: false
   },
   {
@@ -838,7 +838,7 @@ const PRODUITS = [
     description: "Sompate congelé en carton de 5kg. Poisson de mer à chair ferme et goûteuse, très apprécié grillé ou en sauce. Un des poissons préférés de la diaspora.",
     origine: "Sénégal — Pêche artisanale côtière",
     conseil: "Décongeler au réfrigérateur. Excellent grillé au charbon avec une sauce oignon-citron, ou en thiéboudienne.",
-    stock: true,
+    stock: false,
     nouveaute: false
   },
   {
@@ -854,7 +854,7 @@ const PRODUITS = [
     description: "Tilapia rouge congelé en carton de 5kg. Poisson d'élevage à chair blanche et douce, apprécié pour sa polyvalence en cuisine et son prix accessible.",
     origine: "Sénégal — Élevage piscicole",
     conseil: "Décongeler au réfrigérateur. Se cuisine de toutes les façons : frit, grillé, en sauce ou au four. Chair douce qui plaît à tous.",
-    stock: true,
+    stock: false,
     nouveaute: false
   },
   {
@@ -870,7 +870,7 @@ const PRODUITS = [
     description: "Barracuda (seude) congelé en carton de 5kg. Grand poisson prédateur à chair ferme et goûteuse. Apprécié pour sa texture dense qui tient bien à la cuisson.",
     origine: "Sénégal — Pêche artisanale côtière",
     conseil: "Décongeler au réfrigérateur. Idéal grillé ou en darnes dans le thiéboudienne. Sa chair ferme ne se défait pas à la cuisson.",
-    stock: true,
+    stock: false,
     nouveaute: false
   },
   {
@@ -886,7 +886,7 @@ const PRODUITS = [
     description: "Carpe rouge (yakh) congelée en carton de 5kg. Poisson noble à chair rouge, ferme et savoureuse. Considéré comme un poisson de fête au Sénégal.",
     origine: "Sénégal — Pêche artisanale",
     conseil: "Décongeler au réfrigérateur. Poisson de choix pour les grandes occasions. Se cuisine grillé, en sauce ou en thiéboudienne de luxe.",
-    stock: true,
+    stock: false,
     nouveaute: false
   },
   {
@@ -902,7 +902,7 @@ const PRODUITS = [
     description: "Iler bi (plapla) congelé en carton de 5kg. Poisson plat à chair fine et délicate, très recherché pour sa saveur subtile.",
     origine: "Sénégal — Pêche artisanale côtière",
     conseil: "Décongeler au réfrigérateur. Se cuisine frit (croustillant) ou en sauce légère. Sa forme plate permet une cuisson rapide et uniforme.",
-    stock: true,
+    stock: false,
     nouveaute: false
   },
   {
@@ -917,7 +917,7 @@ const PRODUITS = [
     description: "Carton de 10kg avec un mélange de plusieurs espèces de poissons congelés. Le meilleur rapport quantité/prix du catalogue. Idéal pour stocker et varier les plats.",
     origine: "Sénégal — Pêche artisanale côtière",
     conseil: "Décongeler au réfrigérateur selon le besoin. Chaque espèce se cuisine différemment : frit, grillé, en sauce. De quoi varier les repas pendant des semaines.",
-    stock: true,
+    stock: false,
     nouveaute: false
   }
 
