@@ -1350,6 +1350,39 @@
       color:var(--gold); padding:.1rem .4rem; border-radius:999px; margin-left:.35rem;
     }
     #cart-shipping-val { font-size:.88rem; font-weight:700; color:var(--cream); }
+    .cart-promo-row { padding:.3rem 0; }
+    .cart-promo-form { display:flex; gap:.4rem; }
+    .cart-promo-form input {
+      flex:1; background:var(--surface-2); border:1px solid var(--border);
+      color:var(--cream); border-radius:999px; padding:.4rem .8rem;
+      font-size:.78rem; font-weight:600; font-family:'Plus Jakarta Sans',sans-serif;
+      outline:none; text-transform:uppercase; transition:border-color .2s;
+    }
+    .cart-promo-form input::placeholder { color:var(--muted); text-transform:none; }
+    .cart-promo-form input:focus { border-color:var(--gold); }
+    .cart-promo-form button {
+      background:var(--gold); color:var(--bg); border:none; border-radius:999px;
+      padding:.4rem .9rem; font-size:.72rem; font-weight:800; cursor:pointer;
+      font-family:'Plus Jakarta Sans',sans-serif; white-space:nowrap;
+    }
+    .cart-promo-form button:hover { opacity:.85; }
+    .cart-promo-applied {
+      display:flex; justify-content:space-between; align-items:center;
+      background:rgba(37,211,102,.08); border:1px solid rgba(37,211,102,.25);
+      border-radius:.5rem; padding:.4rem .7rem;
+    }
+    .cart-promo-applied span { font-size:.78rem; font-weight:700; color:#25D366; }
+    .cart-promo-applied button {
+      background:none; border:none; color:var(--muted); cursor:pointer;
+      font-size:.9rem; padding:0 .2rem; line-height:1;
+    }
+    .cart-promo-applied button:hover { color:#ef4444; }
+    .cart-promo-error { font-size:.7rem; color:#ef4444; margin-top:.3rem; }
+    .cart-discount-row {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:.3rem 0;
+    }
+    .cart-discount-row span { font-size:.82rem; color:#25D366; font-weight:700; }
     .cart-grand-total-row {
       display:flex; justify-content:space-between; align-items:center;
       padding-top:.65rem; border-top:1px solid var(--border); margin-top:.2rem;
@@ -2613,6 +2646,21 @@
 <span class="label-total">Livraison <span id="cart-shipping-carrier" class="cart-carrier-badge"></span></span>
 <span id="cart-shipping-val">—</span>
 </div>
+<div class="cart-promo-row" id="cart-promo-row">
+<div class="cart-promo-form" id="cart-promo-form">
+<input type="text" id="cart-promo-input" placeholder="Code promo" maxlength="20" onkeydown="if(event.key==='Enter'){event.preventDefault();cartSystem.applyPromo()}">
+<button onclick="cartSystem.applyPromo()">Appliquer</button>
+</div>
+<div class="cart-promo-applied" id="cart-promo-applied" style="display:none">
+<span id="cart-promo-label"></span>
+<button onclick="cartSystem.removePromo()" title="Supprimer">&times;</button>
+</div>
+<div class="cart-promo-error" id="cart-promo-error" style="display:none"></div>
+</div>
+<div class="cart-discount-row" id="cart-discount-row" style="display:none">
+<span>Reduction</span>
+<span id="cart-discount-val"></span>
+</div>
 <div class="cart-grand-total-row">
 <span class="label-grand">Total TTC</span>
 <span class="value-total" id="cart-total">0,00 €</span>
@@ -2709,8 +2757,8 @@
 
     init() {
       this.load();
+      this.loadPromo();
       this.updateCount();
-      // Remplacer les boutons Commander par Ajouter au panier
       setTimeout(() => { this.overrideButtons(); this.refreshMixWarn(); }, 100);
     },
 
@@ -2825,6 +2873,13 @@
       setTimeout(() => { el.classList.remove('show'); el.style.color = ''; }, 3000);
     },
 
+    promoCodes: {
+      'BIENVENUE10': { type: 'percent', value: 10 },
+      'SALOUM15': { type: 'percent', value: 15 },
+      'LOUMA5': { type: 'fixed', value: 5 }
+    },
+    activePromo: null,
+
     total() { return this.items.reduce((s,i) => s + i.price * i.qty, 0); },
     count() { return this.items.reduce((s,i) => s + i.qty, 0); },
 
@@ -2873,7 +2928,43 @@
       return 'Colissimo';
     },
 
-    grandTotal() { return this.total() + this.shippingCost(); },
+    discount() {
+      if (!this.activePromo) return 0;
+      const p = this.promoCodes[this.activePromo];
+      if (!p) return 0;
+      const t = this.total();
+      if (p.type === 'percent') return Math.round(t * p.value / 100 * 100) / 100;
+      return Math.min(p.value, t);
+    },
+
+    applyPromo() {
+      const input = document.getElementById('cart-promo-input');
+      const errEl = document.getElementById('cart-promo-error');
+      if (!input) return;
+      const code = input.value.trim().toUpperCase();
+      if (!code) return;
+      if (!this.promoCodes[code]) {
+        if (errEl) { errEl.textContent = 'Code invalide'; errEl.style.display = 'block'; }
+        setTimeout(() => { if (errEl) errEl.style.display = 'none'; }, 3000);
+        return;
+      }
+      this.activePromo = code;
+      this.savePromo();
+      this.renderItems();
+    },
+
+    removePromo() {
+      this.activePromo = null;
+      this.savePromo();
+      const input = document.getElementById('cart-promo-input');
+      if (input) input.value = '';
+      this.renderItems();
+    },
+
+    savePromo() { try { localStorage.setItem('sgf-promo', this.activePromo || ''); } catch {} },
+    loadPromo() { try { const c = localStorage.getItem('sgf-promo'); if (c && this.promoCodes[c]) this.activePromo = c; } catch {} },
+
+    grandTotal() { return this.total() - this.discount() + this.shippingCost(); },
 
     onZoneChange() {
       const pp = document.getElementById('paypal-button-container');
@@ -2946,6 +3037,27 @@
       if (sub) sub.textContent = this.total().toFixed(2).replace('.',',') + ' €';
       if (shipVal) shipVal.textContent = ship.toFixed(2).replace('.',',') + ' €';
       if (shipCarrier) shipCarrier.textContent = carrier;
+
+      const promoForm = document.getElementById('cart-promo-form');
+      const promoApplied = document.getElementById('cart-promo-applied');
+      const promoLabel = document.getElementById('cart-promo-label');
+      const discountRow = document.getElementById('cart-discount-row');
+      const discountVal = document.getElementById('cart-discount-val');
+      const d = this.discount();
+      if (this.activePromo && this.promoCodes[this.activePromo]) {
+        const p = this.promoCodes[this.activePromo];
+        const label = this.activePromo + (p.type === 'percent' ? ' (-' + p.value + '%)' : ' (-' + p.value + '€)');
+        if (promoForm) promoForm.style.display = 'none';
+        if (promoApplied) { promoApplied.style.display = 'flex'; }
+        if (promoLabel) promoLabel.textContent = label;
+        if (discountRow) discountRow.style.display = 'flex';
+        if (discountVal) discountVal.textContent = '-' + d.toFixed(2).replace('.',',') + ' €';
+      } else {
+        if (promoForm) promoForm.style.display = 'flex';
+        if (promoApplied) promoApplied.style.display = 'none';
+        if (discountRow) discountRow.style.display = 'none';
+      }
+
       if (totalEl) totalEl.textContent = this.grandTotal().toFixed(2).replace('.',',') + ' €';
       const pp = document.getElementById('paypal-button-container');
       if (pp) { pp.innerHTML = ''; this.renderPayPal(); }
@@ -2962,7 +3074,8 @@
               value: this.grandTotal().toFixed(2), currency_code: 'EUR',
               breakdown: {
                 item_total: { value: this.total().toFixed(2), currency_code: 'EUR' },
-                shipping: { value: this.shippingCost().toFixed(2), currency_code: 'EUR' }
+                shipping: { value: this.shippingCost().toFixed(2), currency_code: 'EUR' },
+                discount: { value: this.discount().toFixed(2), currency_code: 'EUR' }
               }
             },
             items: this.items.map(i => ({
