@@ -2192,7 +2192,7 @@
 <div class="step reveal reveal-delay-3">
 <div class="step-num">03</div>
 <h4>Recevez chez vous</h4>
-<p>Livraison soignée sous 48–72h. Emballage sous vide garanti. Frais de port offerts dès 60 € d'achat.</p>
+<p>Livraison soignée sous 48–72h. Emballage sous vide garanti.</p>
 </div>
 </div>
 <!-- TARIFS LIVRAISON -->
@@ -2202,14 +2202,14 @@
 <div style="font-weight:800; color:var(--gold); font-size:1.1rem;">France</div>
 <div style="color:var(--muted); font-size:.82rem; margin-top:.3rem;">Colissimo 48h</div>
 <div style="font-weight:700; color:var(--cream); margin-top:.5rem;">6,90 €</div>
-<div style="font-size:.72rem; color:var(--green); margin-top:.25rem;">Gratuit dès 60 €</div>
+<div style="font-size:.72rem; color:var(--muted); margin-top:.25rem;">Selon poids</div>
 </div>
 <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; text-align:center;">
 <div style="font-size:1.5rem; margin-bottom:.5rem;">🇪🇺</div>
 <div style="font-weight:800; color:var(--gold); font-size:1.1rem;">Europe</div>
 <div style="color:var(--muted); font-size:.82rem; margin-top:.3rem;">Colis suivi 3–5j</div>
 <div style="font-weight:700; color:var(--cream); margin-top:.5rem;">12,90 €</div>
-<div style="font-size:.72rem; color:var(--green); margin-top:.25rem;">Gratuit dès 100 €</div>
+<div style="font-size:.72rem; color:var(--muted); margin-top:.25rem;">Selon poids</div>
 </div>
 <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; text-align:center;">
 <div style="font-size:1.5rem; margin-bottom:.5rem;">🌍</div>
@@ -2863,10 +2863,7 @@
     shippingCost() {
       if (this.items.length === 0) return 0;
       const zone = document.getElementById('cart-zone')?.value || 'fr';
-      const t = this.total();
       if (this.hasFreshFish()) return zone === 'fr' ? 10.00 : 20.00;
-      if (zone === 'fr' && t >= 60) return 0;
-      if (zone !== 'fr' && t >= 100) return 0;
       return this.colissimoRate(this.totalWeightG(), zone);
     },
 
@@ -3411,13 +3408,13 @@
 <h3>2. Produits</h3>
 <p>Les produits proposés sont des denrées alimentaires africaines authentiques (poissons séchés, épices, céréales, beurres). Ils sont conditionnés sous vide ou emballage alimentaire hermétique. Les photos sont représentatives des produits livrés.</p>
 <h3>3. Prix</h3>
-<p>Tous les prix sont indiqués en euros TTC. Les frais de livraison sont indiqués séparément lors de la commande et sont à la charge de l'acheteur sauf mention contraire (offerts dès 60 € en France).</p>
+<p>Tous les prix sont indiqués en euros TTC. Les frais de livraison sont indiqués séparément lors de la commande et sont à la charge de l'acheteur.</p>
 <h3>4. Commande</h3>
 <p>La commande est validée dès réception du paiement (PayPal) ou confirmation par WhatsApp. Un accusé de réception est envoyé par email ou message.</p>
 <h3>5. Livraison</h3>
 <ul>
-<li>France métropolitaine : Colissimo 48h — 6,90 €, gratuit dès 60 €</li>
-<li>Europe : colis suivi 3–5 jours — 12,90 €, gratuit dès 100 €</li>
+<li>France métropolitaine : Colissimo 48h — tarif selon poids</li>
+<li>Europe : colis suivi 3–5 jours — tarif selon poids</li>
 <li>Autres destinations : sur devis via WhatsApp</li>
 </ul>
 <p>Les délais courent à compter de la validation du paiement. En cas de retard imputable au transporteur, la responsabilité de Seggfaye Louma ne peut être engagée.</p>
