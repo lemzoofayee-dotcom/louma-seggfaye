@@ -989,11 +989,12 @@
     },
 
     promoCodes: {
-      'BIENVENUE10': { type: 'percent', value: 10 },
-      'SALOUM15': { type: 'percent', value: 15 },
-      'LOUMA5': { type: 'fixed', value: 5 }
+      'BIENVENUE10': { type: 'percent', value: 10, once: true },
+      'SALOUM15': { type: 'percent', value: 15, once: true },
+      'LOUMA5': { type: 'fixed', value: 5, once: false }
     },
     activePromo: null,
+    usedPromos: [],
 
     total() { return this.items.reduce((s,i) => s + i.price * i.qty, 0); },
     count() { return this.items.reduce((s,i) => s + i.qty, 0); },
@@ -1058,8 +1059,14 @@
       if (!input) return;
       const code = input.value.trim().toUpperCase();
       if (!code) return;
-      if (!this.promoCodes[code]) {
+      const promo = this.promoCodes[code];
+      if (!promo) {
         if (errEl) { errEl.textContent = 'Code invalide'; errEl.style.display = 'block'; }
+        setTimeout(() => { if (errEl) errEl.style.display = 'none'; }, 3000);
+        return;
+      }
+      if (promo.once && this.usedPromos.includes(code)) {
+        if (errEl) { errEl.textContent = 'Code deja utilise'; errEl.style.display = 'block'; }
         setTimeout(() => { if (errEl) errEl.style.display = 'none'; }, 3000);
         return;
       }
@@ -1076,8 +1083,27 @@
       this.renderItems();
     },
 
-    savePromo() { try { localStorage.setItem('sgf-promo', this.activePromo || ''); } catch {} },
-    loadPromo() { try { const c = localStorage.getItem('sgf-promo'); if (c && this.promoCodes[c]) this.activePromo = c; } catch {} },
+    savePromo() {
+      try {
+        localStorage.setItem('sgf-promo', this.activePromo || '');
+        localStorage.setItem('sgf-used', JSON.stringify(this.usedPromos));
+      } catch {}
+    },
+    loadPromo() {
+      try {
+        const u = localStorage.getItem('sgf-used');
+        if (u) this.usedPromos = JSON.parse(u);
+        const c = localStorage.getItem('sgf-promo');
+        if (c && this.promoCodes[c]) this.activePromo = c;
+      } catch {}
+    },
+    markPromoUsed() {
+      if (this.activePromo && !this.usedPromos.includes(this.activePromo)) {
+        this.usedPromos.push(this.activePromo);
+      }
+      this.activePromo = null;
+      this.savePromo();
+    },
 
     grandTotal() { return this.total() - this.discount() + this.shippingCost(); },
 
@@ -1204,7 +1230,7 @@
           });
         },
         onApprove: (data, actions) => actions.order.capture().then(details => {
-          this.items = []; this.activePromo = null; this.save(); this.savePromo(); this.close(); this.updateCount();
+          this.items = []; this.markPromoUsed(); this.save(); this.close(); this.updateCount();
           const modal = document.getElementById('cart-success-modal');
           const msg = document.getElementById('success-msg');
           const prenom = details.payer?.name?.given_name || '';
