@@ -2069,9 +2069,9 @@
 <div class="hero-right">
 <div class="hero-photos">
 <div class="hero-photo hp1"><img alt="Crevettes séchées" src="crevettesechees.jpg"/></div>
-<div class="hero-photo hp2"><img alt="Yeet séché" src="yeet.jpg"/></div>
-<div class="hero-photo hp3"><img alt="Netetou Barre" src="netetou-barre.jpg"/></div>
-<div class="hero-photo hp4"><img alt="Guedji Beurre" src="guedji-beurre.jpg"/></div>
+<div class="hero-photo hp2"><img alt="Yeet séché" src="yeet.jpg" loading="lazy"/></div>
+<div class="hero-photo hp3"><img alt="Netetou Barre" src="netetou-barre.jpg" loading="lazy"/></div>
+<div class="hero-photo hp4"><img alt="Guedji Beurre" src="guedji-beurre.jpg" loading="lazy"/></div>
 </div>
 <div class="hero-logo-overlay">
 <div class="logo-shell">
@@ -3012,7 +3012,7 @@
       container.innerHTML = this.items.map(item => {
         const n = item.name.replace(/"/g,'&quot;');
         const imgHtml = item.img
-          ? '<img src="' + item.img + '" alt="' + n + '" />'
+          ? '<img src="' + item.img + '" alt="' + n + '" loading="lazy" />'
           : '<div style="width:100%;height:100%;background:var(--bg-2);display:flex;align-items:center;justify-content:center;font-size:1.4rem">🥘</div>';
         const nameJs = JSON.stringify(item.name);
         return '<div class="cart-item">'
@@ -3161,7 +3161,7 @@
       const thumbs = document.getElementById('modal-thumbs');
       thumbs.innerHTML = gallery.map((src, i) => `
         <div class="prod-modal-thumb${i === 0 ? ' active' : ''}" data-src="${src}" onclick="ProdModal.selectThumb(this, '${src}')">
-          <img src="${src}" alt="${p.nom} vue ${i + 1}">
+          <img src="${src}" alt="${p.nom} vue ${i + 1}" loading="lazy">
         </div>
       `).join('');
 
