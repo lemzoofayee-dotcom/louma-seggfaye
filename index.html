@@ -1041,9 +1041,9 @@
     },
 
     promoCodes: {
-      'BIENVENUE10': { type: 'percent', value: 10, once: true },
-      'SALOUM15': { type: 'percent', value: 15, once: true },
-      'LOUMA5': { type: 'fixed', value: 5, once: false }
+      'BIENVENUE10': { type: 'percent', value: 10, once: true, min: 25 },
+      'SALOUM15': { type: 'percent', value: 15, once: true, min: 25 },
+      'LOUMA5': { type: 'fixed', value: 5, once: false, min: 40 }
     },
     activePromo: null,
     usedPromos: [],
@@ -1119,6 +1119,7 @@
       const p = this.promoCodes[this.activePromo];
       if (!p) return 0;
       const t = this.total();
+      if (p.min && t < p.min) return 0; // minimum d'achat non atteint
       if (p.type === 'percent') return Math.round(t * p.value / 100 * 100) / 100;
       return Math.min(p.value, t);
     },
@@ -1138,6 +1139,11 @@
       if (promo.once && this.usedPromos.includes(code)) {
         if (errEl) { errEl.textContent = 'Code deja utilise'; errEl.style.display = 'block'; }
         setTimeout(() => { if (errEl) errEl.style.display = 'none'; }, 3000);
+        return;
+      }
+      if (promo.min && this.total() < promo.min) {
+        if (errEl) { errEl.textContent = 'Code valable dès ' + promo.min + '€ d\'achat'; errEl.style.display = 'block'; }
+        setTimeout(() => { if (errEl) errEl.style.display = 'none'; }, 3500);
         return;
       }
       this.activePromo = code;
