@@ -14,3 +14,29 @@
 .cart-grand-total-row{padding-top:.5rem;margin-top:0;}
 .cart-promo-toggle{background:none;border:none;color:var(--gold);font-size:.74rem;font-weight:700;cursor:pointer;padding:.1rem 0;font-family:'Plus Jakarta Sans',sans-serif;text-decoration:underline;text-underline-offset:2px;}
 .cart-promo-toggle:hover{opacity:.8;}
+/* ===== Capture email : section + popup ===== */
+.nl-section{background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,.10),transparent),var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.nl-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:center;}
+@media(max-width:768px){.nl-inner{grid-template-columns:1fr;gap:1.5rem;}}
+.nl-text .label{display:block;margin-bottom:.6rem;}
+.nl-title{font-size:clamp(1.7rem,3.5vw,2.6rem);color:var(--cream);margin-bottom:.7rem;}
+.nl-text p{color:var(--muted);font-size:.95rem;max-width:46ch;line-height:1.7;}
+.nl-form{display:flex;flex-wrap:wrap;gap:.6rem;}
+.nl-form input[type=email]{flex:1;min-width:200px;background:var(--surface);border:1px solid var(--border-hi);color:var(--cream);border-radius:999px;padding:.85rem 1.3rem;font-size:.95rem;font-family:'Plus Jakarta Sans',sans-serif;outline:none;transition:border-color .2s;}
+.nl-form input[type=email]:focus{border-color:var(--gold);}
+.nl-form input[type=email]::placeholder{color:var(--muted);}
+.nl-form .btn-gold{white-space:nowrap;}
+.nl-success{display:none;width:100%;background:rgba(201,168,76,.1);border:1px solid var(--border-hi);border-radius:.7rem;padding:.8rem 1rem;color:var(--gold);font-size:.88rem;font-weight:600;margin-top:.3rem;}
+.nl-success strong{color:var(--cream);letter-spacing:.05em;}
+.nl-popup-overlay{position:fixed;inset:0;z-index:550;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);padding:1.2rem;}
+.nl-popup-overlay.open{display:flex;animation:fadeIn .3s ease;}
+.nl-popup{position:relative;background:linear-gradient(150deg,var(--surface),var(--bg-2));border:1px solid var(--border-hi);border-radius:var(--radius-xl);padding:2.4rem 2rem 2rem;max-width:400px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(201,168,76,.08);}
+.nl-popup .label{display:block;margin-bottom:.6rem;}
+.nl-popup h3{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--cream);line-height:1.2;margin-bottom:.5rem;}
+.nl-popup p{color:var(--muted);font-size:.88rem;margin-bottom:1.2rem;}
+.nl-popup form{display:flex;flex-direction:column;gap:.7rem;}
+.nl-popup input[type=email]{background:var(--bg);border:1px solid var(--border-hi);color:var(--cream);border-radius:999px;padding:.85rem 1.3rem;font-size:.95rem;font-family:'Plus Jakarta Sans',sans-serif;outline:none;text-align:center;}
+.nl-popup input[type=email]:focus{border-color:var(--gold);}
+.nl-popup .btn-gold{width:100%;justify-content:center;}
+.nl-popup-close{position:absolute;top:.8rem;right:.8rem;width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--muted);cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;transition:color .2s,border-color .2s;}
+.nl-popup-close:hover{color:var(--cream);border-color:var(--border-hi);}

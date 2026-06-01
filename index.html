@@ -730,6 +730,23 @@
 </div>
 </div>
 </section>
+<!-- NEWSLETTER / CAPTURE EMAIL -->
+<section class="section nl-section" id="newsletter">
+<div class="wrap nl-inner">
+<div class="nl-text">
+<span class="label">Offre de bienvenue</span>
+<h2 class="display nl-title">-10% sur ta <em class="serif-italic">première commande</em></h2>
+<p>Rejoins la famille Louma : reçois ton code promo, les nouveautés et l'alerte retour de stock du poisson frais. Zéro spam, promis.</p>
+</div>
+<form class="nl-form" onsubmit="handleNewsletter(event)">
+<input type="email" name="email" required placeholder="Ton adresse email" aria-label="Ton adresse email">
+<input type="hidden" name="_subject" value="Nouvel abonne newsletter Louma">
+<input type="hidden" name="source" value="section-bienvenue-10">
+<button type="submit" class="btn btn-gold">Recevoir mon -10%</button>
+<div class="nl-success" id="nlSuccess">🎉 Bienvenue dans la famille Louma ! Ton code : <strong>BIENVENUE10</strong> — à saisir dans le panier.</div>
+</form>
+</div>
+</section>
 <!-- FOOTER -->
 <footer>
 <div class="wrap">
@@ -1888,6 +1905,54 @@
     setInterval(showToast, 45000);
   }, 120000);
 })();
+</script>
+<!-- NEWSLETTER POPUP -->
+<div class="nl-popup-overlay" id="nlPopup">
+<div class="nl-popup">
+<button class="nl-popup-close" onclick="closeNewsletterPopup()" aria-label="Fermer">✕</button>
+<span class="label">Offre de bienvenue</span>
+<h3>-10% sur ta première commande 🎁</h3>
+<p>Laisse ton email, reçois ton code promo et les bons plans Louma.</p>
+<form onsubmit="handleNewsletter(event)">
+<input type="email" name="email" required placeholder="Ton adresse email" aria-label="Ton adresse email">
+<input type="hidden" name="_subject" value="Nouvel abonne (popup) Louma">
+<input type="hidden" name="source" value="popup-bienvenue-10">
+<button type="submit" class="btn btn-gold">Recevoir mon -10%</button>
+<div class="nl-success" id="nlPopupSuccess">🎉 Ton code : <strong>BIENVENUE10</strong> — à saisir dans le panier.</div>
+</form>
+</div>
+</div>
+<script>
+  async function handleNewsletter(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type=submit]');
+    const success = form.querySelector('.nl-success');
+    btn.textContent = 'Envoi…'; btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/xpqkwvlb', {
+        method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form)
+      });
+      if (res.ok) {
+        if (success) success.style.display = 'block';
+        form.querySelector('input[type=email]').style.display = 'none';
+        btn.style.display = 'none';
+        localStorage.setItem('louma_nl_done', '1');
+      } else { btn.textContent = 'Réessayer'; btn.disabled = false; }
+    } catch (_) { btn.textContent = 'Réessayer'; btn.disabled = false; }
+  }
+  function closeNewsletterPopup() {
+    const p = document.getElementById('nlPopup');
+    if (p) p.classList.remove('open');
+    localStorage.setItem('louma_nl_seen', '1');
+  }
+  window.addEventListener('load', function () {
+    if (localStorage.getItem('louma_nl_seen') || localStorage.getItem('louma_nl_done')) return;
+    setTimeout(function () {
+      const p = document.getElementById('nlPopup');
+      if (p) p.classList.add('open');
+    }, 15000);
+  });
 </script>
 </body>
 </html>
