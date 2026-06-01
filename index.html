@@ -815,7 +815,8 @@
 <span id="cart-shipping-val">—</span>
 </div>
 <div class="cart-promo-row" id="cart-promo-row">
-<div class="cart-promo-form" id="cart-promo-form">
+<button type="button" class="cart-promo-toggle" id="cart-promo-toggle" onclick="cartSystem.togglePromo()">+ J'ai un code promo</button>
+<div class="cart-promo-form" id="cart-promo-form" style="display:none">
 <input type="text" id="cart-promo-input" placeholder="Code promo" maxlength="20" onkeydown="if(event.key==='Enter'){event.preventDefault();cartSystem.applyPromo()}">
 <button onclick="cartSystem.applyPromo()">Appliquer</button>
 </div>
@@ -927,31 +928,7 @@
       this.load();
       this.loadPromo();
       this.updateCount();
-      setTimeout(() => { this.overrideButtons(); this.refreshMixWarn(); }, 100);
-    },
-
-    overrideButtons() {
-      document.querySelectorAll('.prod-footer .btn-sm').forEach(btn => {
-        const card = btn.closest('.prod-card');
-        if (!card) return;
-        const name = card.querySelector('.prod-name')?.textContent.trim() || '';
-        const priceNode = card.querySelector('.prod-price');
-        const priceText = priceNode?.firstChild?.textContent?.trim() || '0';
-        const price = parseFloat(priceText.replace(',','.').replace(/[^0-9.]/g,'')) || 0;
-        const unit = card.querySelector('.prod-price small')?.textContent.trim() || '';
-        const img = card.querySelector('.prod-img-core img')?.getAttribute('src') || null;
-        const cat = card.dataset.cat || '';
-        const newBtn = document.createElement('button');
-        newBtn.className = btn.className;
-        newBtn.innerHTML = '🛒 Ajouter';
-        newBtn.addEventListener('click', () => this.add({name, price, unit, img, cat}));
-        btn.replaceWith(newBtn);
-      });
-    },
-
-    isFruitDeMer(name) {
-      const fdm = ['guedji','yeet','kongfume','guerte','cipakh','sompate','crevette','diwnior','yohos','tuffa','sankal','netetou'];
-      return fdm.some(k => name.toLowerCase().includes(k));
+      setTimeout(() => { this.refreshMixWarn(); }, 100);
     },
 
     productWeightG(item) {
@@ -970,41 +947,37 @@
     },
 
     add(product) {
-      const isMerSec = product.cat === 'mer' || this.isFruitDeMer(product.name);
-      if (isMerSec) {
-        const existing = this.items.find(i => i.name === product.name);
-        const currentQty = existing ? existing.qty : 0;
-        const unitW = this.parseWeight(product.unit);
-        if ((currentQty + 1) * unitW > 1000) {
-          this.showLimitMsg(product.name); return;
-        }
+      // Limite : 1 kg/client (détail) ou 3 cartons/client (exception cartons)
+      const existingQ = this.items.find(i => i.name === product.name);
+      const currentQty = existingQ ? existingQ.qty : 0;
+      if (currentQty + 1 > this.maxUnits(product.unit)) {
+        this.showLimitMsg(product.name, product.unit); return;
       }
-      // Détecter si l'ajout va créer un mélange frais/secs
+      // Poisson frais = vendu et expédié SEUL : on bloque tout mélange frais/secs
       const productIsFresh = product.cat === 'frais';
       const cartHasFresh = this.items.some(i => i.cat === 'frais');
-      const cartHasDry = this.items.some(i => i.cat && i.cat !== 'frais');
-      const willMix = (productIsFresh && cartHasDry) || (!productIsFresh && cartHasFresh);
+      const cartHasOther = this.items.some(i => i.cat !== 'frais');
+      if (productIsFresh ? cartHasOther : cartHasFresh) {
+        this.showSeparateMsg(productIsFresh); return;
+      }
 
       const existing = this.items.find(i => i.name === product.name);
       if (existing) existing.qty++;
       else this.items.push({...product, qty: 1});
       this.save(); this.updateCount(); this.animateBtn();
-
-      if (willMix) {
-        this.showMixWarn(product.name);
-      } else {
-        this.showNotif(product.name);
-      }
+      this.showNotif(product.name);
       this.refreshMixWarn();
     },
 
-    showMixWarn(name) {
+    showSeparateMsg(addingFresh) {
       const el = document.getElementById('cart-notif');
       if (!el) return;
-      el.innerHTML = '⚠️ <strong>"' + name + '"</strong> ajouté — colis séparé (chaîne du froid) 🧊';
+      el.innerHTML = addingFresh
+        ? '🐟 Le poisson frais se commande <strong>séparément</strong>. Termine cette commande, puis passe-en une autre. 🧊'
+        : '🧊 Ton panier contient du <strong>poisson frais</strong> (commandé à part). Termine-le d\'abord, puis ajoute tes produits secs.';
       el.style.color = '#e8c478';
       el.classList.add('show');
-      setTimeout(() => { el.classList.remove('show'); el.style.color = ''; el.innerHTML = ''; }, 4000);
+      setTimeout(() => { el.classList.remove('show'); el.style.color = ''; el.innerHTML = ''; }, 4500);
     },
 
     refreshMixWarn() {
@@ -1020,22 +993,18 @@
     updateQty(name, delta) {
       const item = this.items.find(i => i.name === name);
       if (!item) return;
-      const isMerSec = item.cat === 'mer' || this.isFruitDeMer(item.name);
-      if (delta > 0 && isMerSec) {
-        const unitW = this.parseWeight(item.unit);
-        if ((item.qty + 1) * unitW > 1000) {
-          this.showLimitMsg(item.name); return;
-        }
+      if (delta > 0 && item.qty + 1 > this.maxUnits(item.unit)) {
+        this.showLimitMsg(item.name, item.unit); return;
       }
       item.qty += delta;
       if (item.qty <= 0) this.remove(name);
       else { this.save(); this.renderItems(); this.updateCount(); this.refreshMixWarn(); }
     },
 
-    showLimitMsg(name) {
+    showLimitMsg(name, unit) {
       const el = document.getElementById('cart-notif');
       if (!el) return;
-      el.textContent = '⚠️ Max 1kg par article (' + name + ')';
+      el.textContent = '⚠️ ' + this.limitLabel(unit) + ' (' + name + ')';
       el.style.color = '#ef4444';
       el.classList.add('show');
       setTimeout(() => { el.classList.remove('show'); el.style.color = ''; }, 3000);
@@ -1060,11 +1029,29 @@
     },
 
     parseWeight(unit) {
-      // ex: "par 500g", "par 1kg", "par 250g"
-      const m = unit.match(/(\d+(?:[.,]\d+)?)\s*(kg|g)/i);
-      if (!m) return 500;
-      const v = parseFloat(m[1].replace(',','.'));
-      return m[2].toLowerCase() === 'kg' ? v * 1000 : v;
+      // ex: "par 500g", "par 1kg", "par 250g", "par kg", "/ kilo"
+      const u = (unit || '').toLowerCase();
+      const m = u.match(/(\d+(?:[.,]\d+)?)\s*(kg|g)\b/);
+      if (m) {
+        const v = parseFloat(m[1].replace(',','.'));
+        return m[2] === 'kg' ? v * 1000 : v;
+      }
+      // "par kg" / "/ kilo" sans nombre = 1 kg
+      if (/\bkg\b|kilo/.test(u)) return 1000;
+      return 500;
+    },
+
+    isCarton(unit) { return /carton/i.test(unit || ''); },
+
+    // Quantité max autorisée pour une ligne produit
+    // Cartons (exception) = 3 max par client ; sinon limite 1 kg par client
+    maxUnits(unit) {
+      if (this.isCarton(unit)) return 3;
+      return Math.max(1, Math.floor(1000 / this.parseWeight(unit)));
+    },
+
+    limitLabel(unit) {
+      return this.isCarton(unit) ? 'Max 3 cartons / client' : 'Max 1 kg / client';
     },
 
     totalWeightG() {
@@ -1134,6 +1121,16 @@
       const input = document.getElementById('cart-promo-input');
       if (input) input.value = '';
       this.renderItems();
+    },
+
+    togglePromo() {
+      const form = document.getElementById('cart-promo-form');
+      const toggle = document.getElementById('cart-promo-toggle');
+      if (!form) return;
+      const show = form.style.display === 'none';
+      form.style.display = show ? 'flex' : 'none';
+      if (toggle) toggle.style.display = show ? 'none' : 'block';
+      if (show) { const inp = document.getElementById('cart-promo-input'); if (inp) inp.focus(); }
     },
 
     savePromo() {
@@ -1209,6 +1206,11 @@
           ? '<img src="' + item.img + '" alt="' + n + '" loading="lazy" />'
           : '<div style="width:100%;height:100%;background:var(--bg-2);display:flex;align-items:center;justify-content:center;font-size:1.4rem">🥘</div>';
         const nameJs = JSON.stringify(item.name);
+        const atMax = item.qty + 1 > this.maxUnits(item.unit);
+        const plusBtn = atMax
+          ? '<button class="qty-btn is-max" disabled aria-label="Limite atteinte">+</button>'
+          : '<button class="qty-btn" onclick="cartSystem.updateQty(' + nameJs + ',1)">+</button>';
+        const limitNote = atMax ? '<div class="cart-item-limit">' + this.limitLabel(item.unit) + '</div>' : '';
         return '<div class="cart-item">'
           + '<div class="cart-item-img">' + imgHtml + '</div>'
           + '<div class="cart-item-info">'
@@ -1217,8 +1219,10 @@
           + '<div class="cart-item-qty">'
           + '<button class="qty-btn" onclick="cartSystem.updateQty(' + nameJs + ',-1)">−</button>'
           + '<span>' + item.qty + '</span>'
-          + '<button class="qty-btn" onclick="cartSystem.updateQty(' + nameJs + ',1)">+</button>'
-          + '</div></div>'
+          + plusBtn
+          + '</div>'
+          + limitNote
+          + '</div>'
           + '<button class="cart-item-remove" onclick="cartSystem.remove(' + nameJs + ')">×</button>'
           + '</div>';
       }).join('');
@@ -1233,6 +1237,7 @@
       if (shipCarrier) shipCarrier.textContent = carrier;
 
       const promoForm = document.getElementById('cart-promo-form');
+      const promoToggle = document.getElementById('cart-promo-toggle');
       const promoApplied = document.getElementById('cart-promo-applied');
       const promoLabel = document.getElementById('cart-promo-label');
       const discountRow = document.getElementById('cart-discount-row');
@@ -1241,13 +1246,15 @@
       if (this.activePromo && this.promoCodes[this.activePromo]) {
         const p = this.promoCodes[this.activePromo];
         const label = this.activePromo + (p.type === 'percent' ? ' (-' + p.value + '%)' : ' (-' + p.value + '€)');
+        if (promoToggle) promoToggle.style.display = 'none';
         if (promoForm) promoForm.style.display = 'none';
         if (promoApplied) { promoApplied.style.display = 'flex'; }
         if (promoLabel) promoLabel.textContent = label;
         if (discountRow) discountRow.style.display = 'flex';
         if (discountVal) discountVal.textContent = '-' + d.toFixed(2).replace('.',',') + ' €';
       } else {
-        if (promoForm) promoForm.style.display = 'flex';
+        if (promoToggle) promoToggle.style.display = 'block';
+        if (promoForm) promoForm.style.display = 'none';
         if (promoApplied) promoApplied.style.display = 'none';
         if (discountRow) discountRow.style.display = 'none';
       }
