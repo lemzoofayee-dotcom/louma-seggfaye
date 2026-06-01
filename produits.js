@@ -934,7 +934,7 @@ return `
 ${badgeHtml}
 </div>
 <div class="prod-body">
-<div class="prod-name" onclick="openProdModal('${p.id}')" style="cursor:pointer;">${p.nom}</div>
+<a class="prod-name" href="/produits/${p.id}.html" onclick="openProdModal('${p.id}');return false;" style="cursor:pointer;display:block;text-decoration:none;color:inherit;">${p.nom}</a>
 <div class="prod-footer">
 <div class="prod-price">${formatPrix(p.prix)} <small>${p.unite}</small>${prixAncienHtml}</div>
 ${btnHtml}

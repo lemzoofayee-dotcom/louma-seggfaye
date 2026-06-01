@@ -21,6 +21,11 @@
 
   <!-- BLOG -->
   <url>
+    <loc>https://seggfaye.com/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://seggfaye.com/blog/quest-ce-que-le-guedj.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
