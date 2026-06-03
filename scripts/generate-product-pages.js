@@ -37,6 +37,34 @@ const CAT_PAGES = {
   frais: 'poissons-frais'
 };
 
+// Variantes orthographiques par produit (clé = morceau de l'id) — pour RATISSER LARGE
+// dans les meta keywords uniquement (capte toutes les graphies cherchées sur Google).
+const KEYWORD_VARIANTS = {
+  'guej':       ['guedj', 'guej', 'guedji'],
+  'yoxos':      ['yoxos', 'yokhos', 'yokhoss', 'huitres sechees', 'huitres de mangrove'],
+  'tuffa':      ['tuffa', 'touffa', 'escargot de mer seche'],
+  'yeet':       ['yeet', 'yett', 'yet', 'cymbium', 'maggi africain'],
+  'kongfume':   ['kong fume', 'kongfume', 'kong fumé'],
+  'toumboulan': ['toumboulan', 'toumboulane'],
+  'beur':       ['guedj beurre', 'guedj berr', 'courbine sechee'],
+  'pagne':      ['pagne', 'coques sechees'],
+  'crevettes':  ['crevettes sechees', 'cipakh'],
+};
+
+function buildKeywords(p, catLabel) {
+  const set = new Set();
+  const add = v => { if (v) set.add(String(v).toLowerCase().trim()); };
+  add(p.nom);
+  add(p.nomLocal);
+  for (const [root, vars] of Object.entries(KEYWORD_VARIANTS)) {
+    if (p.id.includes(root)) vars.forEach(add);
+  }
+  // contexte générique large
+  [catLabel, 'produit senegalais', 'epicerie africaine en ligne', 'iles du saloum', 'cuisine senegalaise']
+    .forEach(add);
+  return [...set].join(', ');
+}
+
 function slugify(str) {
   return str.toLowerCase()
     .normalize('NFD').replace(/[̀-ͯ]/g, '')
@@ -50,6 +78,7 @@ function escapeHtml(s) {
 
 function generatePage(p, allProducts) {
   const catLabel = CAT_LABELS[p.categorie] || p.categorie;
+  const keywords = buildKeywords(p, catLabel);
   const catPage = CAT_PAGES[p.categorie];
   const catUrl = catPage ? `/categories/${catPage}.html` : '/#produits';
 
@@ -118,6 +147,7 @@ function generatePage(p, allProducts) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeHtml(desc)}">
+<meta name="keywords" content="${escapeHtml(keywords)}">
 <link rel="canonical" href="https://seggfaye.com/produits/${p.id}.html">
 <!-- Open Graph -->
 <meta property="og:title" content="${escapeHtml(title)}">
