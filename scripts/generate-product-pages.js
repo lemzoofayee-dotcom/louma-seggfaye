@@ -59,9 +59,18 @@ function buildKeywords(p, catLabel) {
   for (const [root, vars] of Object.entries(KEYWORD_VARIANTS)) {
     if (p.id.includes(root)) vars.forEach(add);
   }
-  // contexte générique large
-  [catLabel, 'produit senegalais', 'epicerie africaine en ligne', 'iles du saloum', 'cuisine senegalaise']
-    .forEach(add);
+  // Termes commerciaux FR à fort volume : le wolof n'a pas de graphie fixe,
+  // donc on se positionne sur les recherches descriptives françaises (= les clics).
+  const BY_CAT = {
+    mer:      ['produit halieutique seche', 'produits halieutiques senegal', 'mollusque seche', 'fruits de mer seches', 'poisson seche senegalais'],
+    frais:    ['poisson frais senegal', 'poisson congele africain', 'produits halieutiques'],
+    epices:   ['epices africaines', 'condiments africains'],
+    cereales: ['cereales africaines', 'farines africaines'],
+    beurres:  ['pate d arachide', 'beurre africain', 'huile de palme'],
+  };
+  const COMMON = ['produit senegalais', 'produits exotiques senegal', 'produits exotiques africains',
+                  'epicerie africaine en ligne', 'iles du saloum', 'cuisine senegalaise'];
+  [catLabel, ...(BY_CAT[p.categorie] || []), ...COMMON].forEach(add);
   return [...set].join(', ');
 }
 
