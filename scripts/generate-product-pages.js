@@ -28,6 +28,15 @@ const CAT_LABELS = {
   frais: 'Poissons Frais'
 };
 
+// Mapping catégorie produit -> slug de la page catégorie (pour le maillage interne)
+const CAT_PAGES = {
+  mer: 'produits-halieutiques',
+  epices: 'epices-condiments',
+  cereales: 'cereales-farines',
+  beurres: 'pates-beurres',
+  frais: 'poissons-frais'
+};
+
 function slugify(str) {
   return str.toLowerCase()
     .normalize('NFD').replace(/[̀-ͯ]/g, '')
@@ -39,8 +48,26 @@ function escapeHtml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-function generatePage(p) {
+function generatePage(p, allProducts) {
   const catLabel = CAT_LABELS[p.categorie] || p.categorie;
+  const catPage = CAT_PAGES[p.categorie];
+  const catUrl = catPage ? `/categories/${catPage}.html` : '/#produits';
+
+  // Produits similaires : jusqu'à 4 autres produits de la même catégorie (maillage interne statique)
+  const similaires = (allProducts || [])
+    .filter(x => x.categorie === p.categorie && x.id !== p.id && x.stock !== false)
+    .slice(0, 4);
+  const similairesHtml = similaires.length ? `
+      <div class="detail-block">
+        <h2>Produits similaires</h2>
+        <div class="similar-grid">
+          ${similaires.map(s => `<a class="similar-card" href="/produits/${s.id}.html">
+            <img src="/${escapeHtml(s.image || 'logosite.webp')}" alt="${escapeHtml(s.nom)}" loading="lazy">
+            <span>${escapeHtml(s.nom)}</span>
+          </a>`).join('\n          ')}
+        </div>
+        <p style="margin-top:1rem;"><a href="${catUrl}">Voir toute la catégorie ${escapeHtml(catLabel)} →</a></p>
+      </div>` : '';
   const title = `${p.nom}${p.nomLocal ? ` (${p.nomLocal})` : ''} — Louma by Seggfaye`;
   const desc = p.description
     ? p.description.substring(0, 150).replace(/\n/g, ' ')
@@ -140,7 +167,7 @@ function generatePage(p) {
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://seggfaye.com/"},
-    {"@type": "ListItem", "position": 2, "name": "${catLabel}", "item": "https://seggfaye.com/#produits"},
+    {"@type": "ListItem", "position": 2, "name": "${catLabel}", "item": "https://seggfaye.com${catUrl}"},
     {"@type": "ListItem", "position": 3, "name": "${p.nom}"}
   ]
 }
@@ -196,13 +223,22 @@ h1 { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:900; li
 
 .back-link { display:inline-flex; align-items:center; gap:.4rem; padding:1rem 0; font-size:.85rem; color:var(--gold); }
 
+.similar-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:1rem; }
+@media(max-width:600px) { .similar-grid { grid-template-columns:repeat(2,1fr); } }
+.similar-card { display:flex; flex-direction:column; gap:.5rem; font-size:.8rem; color:var(--cream); }
+.similar-card img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:.5rem; border:1px solid var(--border); transition:border-color .2s; }
+.similar-card:hover { text-decoration:none; }
+.similar-card:hover img { border-color:var(--gold); }
+
 footer { text-align:center; padding:2rem; font-size:.75rem; color:var(--muted); border-top:1px solid var(--border); }
+footer .footer-links { margin-top:.6rem; }
+footer .footer-links a { color:var(--muted); margin:0 .4rem; }
 </style>
 </head>
 <body>
 
 <nav class="breadcrumb">
-  <a href="/">Accueil</a> › <a href="/#produits">${catLabel}</a> › <span>${escapeHtml(p.nom)}</span>
+  <a href="/">Accueil</a> › <a href="${catUrl}">${catLabel}</a> › <span>${escapeHtml(p.nom)}</span>
 </nav>
 
 <main class="product-page">
@@ -231,12 +267,13 @@ footer { text-align:center; padding:2rem; font-size:.75rem; color:var(--muted); 
         : '<p style="color:#df7d7d;font-weight:600;">Temporairement en rupture de stock</p>'}
     </div>
   </div>
-${origineHtml}${goutHtml}${conseilHtml}
-  <a class="back-link" href="/#produits">← Retour au catalogue</a>
+${origineHtml}${goutHtml}${conseilHtml}${similairesHtml}
+  <a class="back-link" href="${catUrl}">← Retour à ${catLabel}</a>
 </main>
 
 <footer>
   <p>Louma by Seggfaye — Votre marché africain authentique</p>
+  <p class="footer-links"><a href="/">Accueil</a> · <a href="${catUrl}">${catLabel}</a> · <a href="/blog/">Blog</a></p>
   <p style="margin-top:.3rem;"><a href="https://wa.me/33652650395">WhatsApp</a> · <a href="https://www.tiktok.com/@seggfaye">TikTok</a></p>
 </footer>
 
@@ -251,7 +288,7 @@ let count = 0;
 const sitemapEntries = [];
 
 for (const p of PRODUITS) {
-  const html = generatePage(p);
+  const html = generatePage(p, PRODUITS);
   const filePath = path.join(OUT_DIR, `${p.id}.html`);
   fs.writeFileSync(filePath, html, 'utf8');
   count++;
