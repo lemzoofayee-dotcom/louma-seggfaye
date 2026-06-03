@@ -59,7 +59,8 @@ const KEYWORD_VARIANTS = {
   'beur':       ['guedj beurre', 'guedj berr', 'courbine sechee'],
   'pagne':      ['pagne', 'coques sechees'],
   'crevettes':  ['crevettes sechees', 'cipakh'],
-  'keciax':     ['keciax', 'kethiakh', 'ketiakh', 'poisson seche fermente', 'guedj kethiakh'],
+  'keciax':     ['keciax', 'kethiakh', 'ketiakh', 'poisson seche fermente', 'guedj kethiakh', 'sardinelle', 'yaboye', 'sardinelle sechee'],
+  'yass':       ['silure', 'guedj silure', 'guedj yass'],
 };
 
 function buildKeywords(p, catLabel) {
