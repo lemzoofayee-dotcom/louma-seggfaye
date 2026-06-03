@@ -95,7 +95,7 @@ categorie: "mer",
 prix: 6.00,
 unite: "par 100g",
 prixAncien: 7.00,
-badge: null,
+badge: "Rare",
 image: "guedj-yass-1.webp",
 gallery: ["guedj-yass-1.webp", "guedj-yass-3.webp", "guedj-yass-5.webp", "guedj-yass-2.webp", "guedj-yass-4.webp"],
 description: "Le guedj le plus rare, le plus cher et le plus particulier de tous. Contrairement aux autres guedj fermentés dans le sel, le yass (silure) ne reçoit aucun sel : il se conserve uniquement par son propre gras, l'humidité et le soleil. Séché jusqu'à devenir fin comme une feuille de papyrus.",
@@ -914,7 +914,7 @@ badgeHtml = `<div class="prod-badge" style="background:#c0392b;color:#fff;">Rupt
 } else if (p.nouveaute) {
 badgeHtml = `<div class="prod-badge" style="background:#2ecc71;color:#fff;">Nouveau</div>`;
 } else if (p.badge) {
-const isSpecial = p.badge === '⭐ Best Deal';
+const isSpecial = p.badge === '⭐ Best Deal' || p.badge === 'Rare';
 const style = isSpecial ? ' style="background:#c9a84c;color:#100d08;"' : '';
 badgeHtml = `<div class="prod-badge"${style}>${p.badge}</div>`;
 }

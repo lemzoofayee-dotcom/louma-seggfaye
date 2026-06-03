@@ -265,10 +265,11 @@ h1 { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:900; li
 .prix { font-size:1.8rem; font-weight:800; color:var(--cream); }
 .prix-unite { font-size:.8rem; color:var(--muted); }
 .prix-ancien { font-size:1rem; color:var(--muted); text-decoration:line-through; }
-.badge { display:inline-block; padding:.25rem .7rem; border-radius:2rem; font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.badge { display:inline-block; align-self:flex-start; padding:.25rem .7rem; border-radius:2rem; font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
 .badge-bestseller { background:var(--gold); color:var(--bg); }
 .badge-nouveau { background:#2a5a3a; color:#7ddf9b; }
 .badge-rupture { background:#5a2a2a; color:#df7d7d; }
+.badge-rare { background:#2a2018; color:var(--gold); border:1px solid var(--gold); }
 
 .btn-wa { display:inline-flex; align-items:center; gap:.5rem; padding:.9rem 2rem; background:#25D366; color:#fff; font-weight:700; font-size:.95rem; border-radius:.6rem; border:none; cursor:pointer; transition:transform .15s; }
 .btn-wa:hover { transform:translateY(-2px); text-decoration:none; }
