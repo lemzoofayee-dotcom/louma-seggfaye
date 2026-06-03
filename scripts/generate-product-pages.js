@@ -28,6 +28,16 @@ const CAT_LABELS = {
   frais: 'Poissons Frais'
 };
 
+// Descripteur commercial FR par catégorie — injecté dans <title> + meta description
+// pour se positionner sur les recherches à fort volume (le wolof n'a pas de graphie fixe).
+const CAT_SEO = {
+  mer:      'Produit halieutique séché du Sénégal',
+  frais:    'Poisson frais du Sénégal',
+  epices:   'Épice et condiment sénégalais',
+  cereales: 'Céréale et farine africaine',
+  beurres:  'Pâte et beurre africain du Sénégal'
+};
+
 // Mapping catégorie produit -> slug de la page catégorie (pour le maillage interne)
 const CAT_PAGES = {
   mer: 'produits-halieutiques',
@@ -106,10 +116,15 @@ function generatePage(p, allProducts) {
         </div>
         <p style="margin-top:1rem;"><a href="${catUrl}">Voir toute la catégorie ${escapeHtml(catLabel)} →</a></p>
       </div>` : '';
-  const title = `${p.nom}${p.nomLocal ? ` (${p.nomLocal})` : ''} — Louma by Seggfaye`;
-  const desc = p.description
-    ? p.description.substring(0, 150).replace(/\n/g, ' ')
-    : `${p.nom} — produit africain authentique. ${catLabel}. Livraison France & Europe.`;
+  const seoDesc = CAT_SEO[p.categorie] || catLabel;
+  // Titre = nom + descripteur commercial FR (le nomLocal reste en H1/sous-titre/JSON-LD)
+  const title = `${p.nom} — ${seoDesc} | Louma by Seggfaye`;
+  // Meta description = descripteur commercial en tête (pour le snippet Google) + storytelling.
+  // Le texte VISIBLE de la fiche garde p.description brut (storytelling intact).
+  const rawDesc = p.description
+    ? `${seoDesc} — ${p.description}`
+    : `${p.nom} — ${seoDesc}. Livraison France & Europe.`;
+  const desc = rawDesc.replace(/\n/g, ' ').substring(0, 160);
   const prix = p.prix ? p.prix.toFixed(2) : '';
   const image = p.image || 'logosite.jpg';
   const ogImage = `https://seggfaye.com/${image}`;
