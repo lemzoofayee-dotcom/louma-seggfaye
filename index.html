@@ -1929,12 +1929,27 @@
 </div>
 </div>
 <script>
+  // Inscrit l'email dans Brevo (liste "Abonnés Louma") → déclenche l'envoi auto du code BIENVENUE10.
+  // Envoi "fire-and-forget" (no-cors) : n'interrompt jamais le flux Formspree ci-dessous.
+  function subscribeBrevo(email) {
+    if (!email) return;
+    const body = new URLSearchParams();
+    body.append('EMAIL', email);
+    body.append('email_address_check', '');
+    body.append('locale', 'fr');
+    body.append('html_type', 'simple');
+    fetch('https://9bcb3ec7.sibforms.com/serve/MUIFAKfgKCXKYG_ZXFYru_btSXRhrZ-wIpMlcMNpCPGI9ny0YsbXZYetSzVcgUPXLLpqsUOrWLVMgUF6mqc9heKKrl3iWR-sfJ-gcsKC5UQjNnZ0pXLThNMPbPiS16HmtDEpknOAKbYdqdHwDxUD2cb4-cw9U1vN_hqhuJmYLLcsQl36VFrpenOX9_p-B-hFdX5dsz4MbUnHry8Fxg==', {
+      method: 'POST', mode: 'no-cors', body: body
+    }).catch(function () {});
+  }
   async function handleNewsletter(e) {
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('button[type=submit]');
     const success = form.querySelector('.nl-success');
+    const emailInput = form.querySelector('input[type=email]');
     btn.textContent = 'Envoi…'; btn.disabled = true;
+    subscribeBrevo(emailInput ? emailInput.value.trim() : '');
     try {
       const res = await fetch('https://formspree.io/f/xpqkwvlb', {
         method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form)
