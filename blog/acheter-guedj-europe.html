@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D32329HF3X"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-D32329HF3X');
+document.addEventListener('click', function(e){
+  var a = e.target.closest ? e.target.closest('a[href]') : null;
+  if(!a) return;
+  var h = a.href || '';
+  if(h.indexOf('wa.me') > -1){ gtag('event', 'whatsapp_click', {'link_url': h, 'page_path': location.pathname}); }
+  else if(h.indexOf('guide.seggfaye.com') > -1){ gtag('event', 'guide_click', {'link_url': h, 'page_path': location.pathname}); }
+});
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Acheter du guedj en Europe : poisson seche senegalais en Belgique, Suisse, Allemagne, Italie — Louma by Seggfaye</title>
