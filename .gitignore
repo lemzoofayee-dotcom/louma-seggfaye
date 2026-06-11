@@ -8,3 +8,9 @@
 spot2-*.png
 spot2-*.jpg
 spot2-*.webp
+
+# Outillage Google Ads (Phase 2)
+scripts/ads/.venv/
+scripts/ads/google-ads.yaml
+scripts/ads/client_secret*.json
+scripts/ads/refresh_token.txt
