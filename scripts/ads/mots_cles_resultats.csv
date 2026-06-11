@@ -1,0 +1,60 @@
+cluster,mot_cle,volume_mensuel,concurrence,cpc_bas_eur,cpc_haut_eur
+boissons-cereales,bissap,60500,LOW,0.01,0.37
+recettes,recette mafé,9900,LOW,0.05,1.73
+guedj-poisson,guedj,8100,LOW,0.0,0.0
+recettes,recette yassa poulet,8100,LOW,0.04,1.18
+fruits-de-mer,cymbium,6600,LOW,0.02,0.22
+boissons-cereales,fonio,5400,MEDIUM,20.7,172.75
+epicerie-en-ligne,épicerie africaine,5400,LOW,0.19,1.26
+condiments,pâte d arachide,4400,HIGH,0.38,0.69
+boissons-cereales,jus de bissap,4400,LOW,0.01,0.35
+boissons-cereales,thiakry,4400,LOW,0.0,0.0
+recettes,plat sénégalais,4400,LOW,0.0,0.0
+boissons-cereales,kinkeliba,3600,HIGH,0.01,0.11
+guedj-poisson,poisson séché,1600,MEDIUM,0.18,1.63
+condiments,soumbala,1600,LOW,0.0,0.0
+boissons-cereales,thiéré,1300,LOW,0.0,0.0
+boissons-cereales,niébé,1300,LOW,0.0,0.0
+fruits-de-mer,yeet,1000,LOW,1.45,4.33
+boissons-cereales,fleur d hibiscus séchée,1000,HIGH,0.07,0.47
+condiments,netetou,720,LOW,0.0,0.0
+recettes,soupoukandja,720,LOW,0.0,0.0
+fruits-de-mer,crevettes séchées,590,HIGH,0.2,0.84
+condiments,nététou,590,LOW,0.0,0.0
+boissons-cereales,couscous de mil,590,LOW,0.0,0.0
+recettes,recette thieboudienne,590,LOW,0.0,0.0
+recettes,mbakhal saloum,320,LOW,0.0,0.0
+guedj-poisson,poisson fumé africain,140,MEDIUM,0.0,0.0
+epicerie-en-ligne,épicerie africaine en ligne,140,HIGH,0.2,0.81
+epicerie-en-ligne,boutique africaine en ligne,110,HIGH,0.2,0.72
+boissons-cereales,fonio grains,70,HIGH,0.0,0.0
+epicerie-en-ligne,beurre de karité alimentaire,70,HIGH,0.0,0.0
+guedj-poisson,kethiakh,50,LOW,0.0,0.0
+fruits-de-mer,cymbium olla,50,LOW,0.0,0.0
+epicerie-en-ligne,épicerie exotique en ligne,50,HIGH,0.4,1.17
+recettes,bassi salté,50,LOW,0.0,0.0
+epicerie-en-ligne,produits africains en ligne,40,HIGH,0.1,0.39
+condiments,tiguadegue,30,LOW,0.0,0.0
+guedj-poisson,poisson séché africain,20,LOW,0.0,0.0
+fruits-de-mer,cymbium glans,20,LOW,0.0,0.0
+condiments,purée de piment africain,20,LOW,0.0,0.0
+fruits-de-mer,cymbium marmoratum,10,LOW,0.0,0.0
+boissons-cereales,aduna fonio,10,HIGH,0.0,0.0
+boissons-cereales,fonio aduna,10,UNSPECIFIED,0.0,0.0
+boissons-cereales,fonio nutrition,10,LOW,0.0,0.0
+boissons-cereales,fonio nutrition information,10,LOW,0.0,0.0
+boissons-cereales,fonio protein,10,UNSPECIFIED,0.0,0.0
+boissons-cereales,kekeliba plante,10,LOW,0.0,0.0
+boissons-cereales,white bissap,10,MEDIUM,0.0,0.0
+guedj-poisson,guedj sénégalais,0,UNSPECIFIED,0.0,0.0
+guedj-poisson,poisson séché sénégalais,0,UNSPECIFIED,0.0,0.0
+guedj-poisson,acheter guedj,0,UNSPECIFIED,0.0,0.0
+guedj-poisson,sardinelle fumée,0,UNSPECIFIED,0.0,0.0
+guedj-poisson,produit halieutique séché,0,UNSPECIFIED,0.0,0.0
+fruits-de-mer,huîtres séchées,0,UNSPECIFIED,0.0,0.0
+fruits-de-mer,crevettes séchées cuisine,0,UNSPECIFIED,0.0,0.0
+fruits-de-mer,escargot de mer séché,0,UNSPECIFIED,0.0,0.0
+boissons-cereales,fonio ah,0,UNSPECIFIED,0.0,0.0
+boissons-cereales,mil sénégalais,0,UNSPECIFIED,0.0,0.0
+epicerie-en-ligne,produits sénégalais france,0,UNSPECIFIED,0.0,0.0
+epicerie-en-ligne,produits exotiques sénégal,0,UNSPECIFIED,0.0,0.0
