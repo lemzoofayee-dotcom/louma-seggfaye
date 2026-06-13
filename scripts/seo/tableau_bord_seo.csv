@@ -1,0 +1,80 @@
+page,title,title_len,meta_desc,desc_len,h1,img_alt,canonical,og,schema,liens_int,sitemap
+blog/acheter-guedj-amerique-nord.html,TROP LONG,101,TROP LONG,171,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage",50,OK
+blog/acheter-guedj-europe.html,TROP LONG,112,TROP LONG,161,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage",59,OK
+blog/acheter-guedj-france.html,TROP LONG,99,OK,155,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage",38,OK
+blog/bissap-hibiscus-guide.html,OK,58,OK,149,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage",26,OK
+blog/fonio-cereale-sans-gluten.html,OK,57,TROP LONG,164,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage",22,OK
+blog/guide-netetou-soumbala.html,TROP LONG,85,TROP LONG,210,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage,VideoObject",29,OK
+blog/index.html,OK,55,OK,150,OK,OK,OK,OK,"Blog,BreadcrumbList",23,ABSENT
+blog/kinkeliba-tisane-bienfaits.html,OK,55,TROP LONG,168,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage",18,OK
+blog/produits-senegalais-france.html,TROP LONG,78,TROP LONG,206,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage",95,OK
+blog/quest-ce-que-le-guedj.html,TROP LONG,89,TROP LONG,186,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage",33,OK
+blog/recette-basse-salte.html,TROP LONG,66,TROP LONG,172,OK,OK,OK,OK,"BreadcrumbList,FAQPage,Recipe",40,OK
+blog/recette-caldou-senegalais.html,TROP LONG,70,TROP LONG,184,OK,OK,OK,OK,"BreadcrumbList,FAQPage,Recipe",57,OK
+blog/recette-jus-de-bissap.html,OK,56,TROP LONG,166,OK,OK,OK,OK,"BreadcrumbList,FAQPage,Recipe",24,OK
+blog/recette-mafe-senegalais.html,TROP LONG,75,TROP LONG,197,OK,OK,OK,OK,"BreadcrumbList,FAQPage,Recipe",42,OK
+blog/recette-mbakhalou-saloum.html,TROP LONG,66,TROP LONG,175,OK,OK,OK,OK,"BreadcrumbList,FAQPage,Recipe",44,OK
+blog/recette-soupoukandja.html,TROP LONG,69,TROP LONG,179,OK,OK,OK,OK,"BreadcrumbList,FAQPage,Recipe",50,OK
+blog/recette-thieboudienne-authentique.html,TROP LONG,89,TROP LONG,192,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage,Recipe,VideoObject",48,OK
+blog/recette-yassa-poulet.html,TROP LONG,66,TROP LONG,187,OK,OK,OK,OK,"BreadcrumbList,FAQPage,Recipe",36,OK
+blog/thiakry-degue-dessert-senegalais.html,OK,54,OK,147,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage",16,OK
+blog/yeet-cymbium-maggi-africain.html,TROP LONG,76,TROP LONG,208,OK,OK,OK,OK,"Article,BreadcrumbList,FAQPage,VideoObject",26,OK
+categories/cereales-farines.html,TROP LONG,74,TROP LONG,163,OK,OK,OK,MANQUE,"BreadcrumbList,CollectionPage",14,OK
+categories/epices-condiments.html,TROP LONG,74,TROP LONG,193,OK,OK,OK,MANQUE,"BreadcrumbList,CollectionPage",9,OK
+categories/pates-beurres.html,TROP LONG,75,TROP LONG,161,OK,OK,OK,MANQUE,"BreadcrumbList,CollectionPage",13,OK
+categories/poissons-frais.html,OK,58,OK,160,OK,OK,OK,MANQUE,"BreadcrumbList,CollectionPage",19,OK
+categories/produits-halieutiques.html,TROP LONG,113,TROP LONG,182,OK,OK,OK,MANQUE,"BreadcrumbList,CollectionPage",11,OK
+index.html,OK,55,MANQUE,0,OK,2 sans alt,OK,OK,"FAQPage,Organization",14,ABSENT
+produits/arraw-dugup.html,TROP LONG,67,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/beugeuc-feuille-bissap.html,TROP LONG,74,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/beurre-capitaine.html,OK,65,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/bissap-blanc.html,OK,64,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/bissap-rouge.html,OK,64,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/bouye-baobab.html,TROP LONG,73,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/chanchar-dieye.html,OK,63,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/ciakri.html,OK,57,OK,159,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/crevettes-sechees.html,TROP LONG,76,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/diargne-colafil.html,OK,63,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/diwnior-1l.html,TROP LONG,82,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/diwnior-500.html,TROP LONG,82,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/diwtir-pure.html,TROP LONG,68,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",10,OK
+produits/guej-beur-casamance.html,TROP LONG,81,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/guej-beurre.html,TROP LONG,71,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/guej-kong.html,TROP LONG,69,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/guej-sol.html,TROP LONG,69,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/guej-tambajang.html,TROP LONG,74,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/guej-toumboulan.html,TROP LONG,75,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/guej-yass.html,TROP LONG,69,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/guerte-noflay.html,OK,63,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/guerte-tooy.html,OK,61,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/iler-bi.html,OK,63,OK,147,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/keciax.html,OK,58,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/kongfume-gambie.html,TROP LONG,74,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/kongfume.html,TROP LONG,67,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/lem-miel.html,TROP LONG,70,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",10,OK
+produits/maad-confi.html,OK,62,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/maad-fruit.html,OK,62,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/melange-poisson-10kg.html,TROP LONG,70,OK,159,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/netetu-barre.html,OK,64,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/netetu-dom.html,OK,62,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/netetu-mix.html,OK,62,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/netetu-poudre.html,TROP LONG,72,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/niebe-saloum.html,OK,62,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/pack-saloum.html,TROP LONG,70,OK,159,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/pagne.html,TROP LONG,73,OK,159,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/poisson-eau-douce.html,OK,64,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/poisson-sompate.html,OK,62,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/puree-piment.html,TROP LONG,69,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/sankal-duggup.html,OK,63,OK,159,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/sauce-netetu-beugeuc.html,TROP LONG,72,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/seude-baracouda.html,OK,62,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/thiere-champion.html,TROP LONG,74,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/thiof-decoupe.html,OK,60,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/tigadegue-250.html,TROP LONG,66,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",10,OK
+produits/tiguadegue-500.html,TROP LONG,85,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",10,OK
+produits/tilapia-rouge.html,OK,60,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/tuffa.html,OK,64,OK,159,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/yakh-carpe-rouge.html,OK,65,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/yaye-boye.html,OK,56,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",6,OK
+produits/yeet-maggi.html,TROP LONG,69,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
+produits/yoxos.html,OK,64,OK,160,OK,OK,OK,OK,"BreadcrumbList,Product",11,OK
