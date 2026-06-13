@@ -292,7 +292,9 @@
       "Bash(git commit -m 'GSC Données structurées Vidéos \\(mail 13/06\\) : uploadDate au format ISO 8601 complet avec fuseau horaire \\(timestamp réel dérivé de l'\\\\''ID TikTok\\) sur les 13 VideoObject — corrige '\\\\''fuseau horaire manquant'\\\\'' + '\\\\''valeur date incorrecte'\\\\'' *)",
       "Bash(git commit -m 'Thiéboudienne : doublon vidéo nettoyé + section '\\\\''D'\\\\''autres versions en vidéo'\\\\'' \\(thiebou wekh blanc + thiebou djeun diagga\\) — 3 vraies vidéos distinctes, 3 balises VideoObject, 3 embeds, zéro doublon. Miniatures réelles hébergées *)",
       "Bash(git commit -m 'Thiéboudienne : terme '\\\\''thiebou wekh'\\\\'' \\(le blanc\\) ajouté section rouge/blanc + keywords schema — graphie de Lamine en avant pour le SEO \\(les gens cherchent '\\\\''thiebou wekh'\\\\'', pas '\\\\''ceebu jen bu weex'\\\\''\\) *)",
-      "Bash(git commit -m 'Thiéboudienne : correction culturelle \\(Lamine\\) — rouge=double concentré tomate, blanc/wekh=tomate FRAÎCHE \\(pas '\\\\''sans tomate'\\\\''\\), diagga=sauce rouge oignon + petites boulettes de poisson. Texte + FAQ + balise vidéo *)"
+      "Bash(git commit -m 'Thiéboudienne : correction culturelle \\(Lamine\\) — rouge=double concentré tomate, blanc/wekh=tomate FRAÎCHE \\(pas '\\\\''sans tomate'\\\\''\\), diagga=sauce rouge oignon + petites boulettes de poisson. Texte + FAQ + balise vidéo *)",
+      "Bash(xargs -I{} echo \"occurrences 'sans tomate' restantes : {}\")",
+      "Bash(git commit -m 'Thiéboudienne : retrait des 3 dernières mentions '\\\\''sans tomate'\\\\'' \\(VideoObject wekh, section vidéos, FAQ visible\\) — cohérent avec tomate fraîche *)"
     ]
   }
 }
