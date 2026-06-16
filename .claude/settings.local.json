@@ -321,7 +321,10 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://seggfaye.com/blog/comment-cuisiner-le-guedj.html)",
       "Bash(curl -s \"https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/oAUMIkf72DAzwim0hcF4FRpBWESgVBJiItfHJE~tplv-tiktokx-dmt-logom:tos-no1a-i-0068-no/ogEJIACAIw8xAnB0JiCCftFr8GxCciAwSzOzBa.image?dr=10393&x-expires=1781776800&x-signature=ISlw3tESiWrSkdyscl%2BGRsa97BI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a\" -o /tmp/ttconserv.img)",
       "Bash(sips -s format jpeg /tmp/ttconserv.img --out tiktok-thumb-conservation.jpg)",
-      "Bash(sips -g pixelWidth -g pixelHeight tiktok-thumb-conservation.jpg)"
+      "Bash(sips -g pixelWidth -g pixelHeight tiktok-thumb-conservation.jpg)",
+      "Bash(awk -F, '{print $1\" | \"$3\" vues | \"$NF}')",
+      "Bash(curl -s \"https://www.tiktok.com/oembed?url=https://www.tiktok.com/@seggfaye/video/7581473050948898070\")",
+      "Bash(python3 -c \"import sys,json;d=json.load\\(sys.stdin\\);print\\('keys:',list\\(d.keys\\(\\)\\)\\);print\\('thumb:',d.get\\('thumbnail_url'\\)\\)\")"
     ]
   }
 }
