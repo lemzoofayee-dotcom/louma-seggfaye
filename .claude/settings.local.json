@@ -316,7 +316,12 @@
       "Bash(open \"/Users/laminefaye/Desktop/VIDEO - 5 plats connus VS 5 meconnus.txt\")",
       "Bash(python3 -c \"import xml.dom.minidom; xml.dom.minidom.parse\\('sitemap.xml'\\); print\\('sitemap valide'\\)\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://seggfaye.com/blog/les-7-guedj-du-senegal.html)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://seggfaye.com/le-guedjologue.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://seggfaye.com/blog/comment-cuisiner-le-guedj.html)",
+      "Bash(curl -s \"https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-p-0037-no/oAUMIkf72DAzwim0hcF4FRpBWESgVBJiItfHJE~tplv-tiktokx-dmt-logom:tos-no1a-i-0068-no/ogEJIACAIw8xAnB0JiCCftFr8GxCciAwSzOzBa.image?dr=10393&x-expires=1781776800&x-signature=ISlw3tESiWrSkdyscl%2BGRsa97BI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a\" -o /tmp/ttconserv.img)",
+      "Bash(sips -s format jpeg /tmp/ttconserv.img --out tiktok-thumb-conservation.jpg)",
+      "Bash(sips -g pixelWidth -g pixelHeight tiktok-thumb-conservation.jpg)"
     ]
   }
 }
