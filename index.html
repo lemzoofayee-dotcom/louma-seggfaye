@@ -2068,10 +2068,15 @@ document.addEventListener('click', function(e){
   }
   window.addEventListener('load', function () {
     if (localStorage.getItem('louma_nl_seen') || localStorage.getItem('louma_nl_done')) return;
-    setTimeout(function () {
+    function tryShowNlPopup() {
+      if (localStorage.getItem('louma_nl_seen') || localStorage.getItem('louma_nl_done')) return;
+      // Ne pas s'ouvrir par-dessus le panier : attendre qu'il soit refermé
+      const drawer = document.getElementById('cart-drawer');
+      if (drawer && drawer.classList.contains('open')) { setTimeout(tryShowNlPopup, 3000); return; }
       const p = document.getElementById('nlPopup');
       if (p) p.classList.add('open');
-    }, 15000);
+    }
+    setTimeout(tryShowNlPopup, 15000);
   });
 </script>
 </body>
