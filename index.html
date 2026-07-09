@@ -913,6 +913,8 @@ document.addEventListener('click', function(e){
 <span class="value-total" id="cart-total">0,00 €</span>
 </div>
 <div id="paypal-btn-wrap" style="display:none">
+<button type="button" class="btn btn-wa cart-wa-order" onclick="cartSystem.orderWhatsApp()" style="width:100%;justify-content:center;margin-bottom:.75rem;">Commander sur WhatsApp 💬</button>
+<div class="cart-pay-sep" style="text-align:center;font-size:.72rem;color:var(--muted);margin-bottom:.6rem;">— ou payer en ligne —</div>
 <div id="paypal-button-container"></div>
 <p class="cart-paypal-note">🔒 Paiement sécurisé · CB, Apple Pay, Google Pay</p>
 </div>
@@ -1395,6 +1397,33 @@ document.addEventListener('click', function(e){
     close() {
       document.getElementById('cart-drawer')?.classList.remove('open');
       document.getElementById('cart-overlay')?.classList.remove('open');
+    },
+
+    orderWhatsApp() {
+      if (this.items.length === 0) return;
+      const eur = v => v.toFixed(2).replace('.',',') + ' €';
+      const zoneSel = document.getElementById('cart-zone');
+      const zoneLabel = zoneSel ? zoneSel.options[zoneSel.selectedIndex].text : '';
+      const produitStr = this.items.map(i => i.qty + '× ' + i.name).join(', ');
+
+      let msg = 'Bonjour Louma ! Je souhaite commander :\n'
+        + this.items.map(i => '- ' + i.qty + '× ' + i.name + ' (' + eur(i.price) + ')').join('\n');
+      msg += '\n\nSous-total : ' + eur(this.total());
+      const d = this.discount();
+      if (d > 0) msg += '\nRéduction : -' + eur(d);
+      msg += '\nLivraison' + (zoneLabel ? ' (' + zoneLabel + ')' : '') + ' : ' + eur(this.shippingCost());
+      msg += '\nTotal : ' + eur(this.grandTotal());
+
+      // Enregistre la commande dans le CRM (non bloquant ; keepalive = survit a la navigation vers WhatsApp)
+      try {
+        fetch('/api/crm', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
+          body: JSON.stringify({ produit: produitStr.slice(0,500), message: msg, source: 'WhatsApp' })
+        }).catch(() => {});
+      } catch (_) {}
+      if (typeof gtag === 'function') gtag('event', 'whatsapp_order', { value: this.grandTotal(), currency: 'EUR' });
+
+      window.open('https://wa.me/33652650395?text=' + encodeURIComponent(msg), '_blank');
     }
   };
 
