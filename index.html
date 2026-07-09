@@ -697,19 +697,20 @@ document.addEventListener('click', function(e){
 </div>
 <div class="contact-form-wrap reveal reveal-delay-2">
 <form id="contactForm" onsubmit="handleSubmit(event)">
+<input name="_subject" type="hidden" value="Nouvelle commande Louma"/>
 <div class="form-row">
 <div class="form-group">
 <label for="name">Nom</label>
-<input id="name" placeholder="Votre nom" required="" type="text"/>
+<input id="name" name="name" placeholder="Votre nom" required="" type="text"/>
 </div>
 <div class="form-group">
 <label for="email">Email</label>
-<input id="email" placeholder="votre@email.com" required="" type="email"/>
+<input id="email" name="email" placeholder="votre@email.com" required="" type="email"/>
 </div>
 </div>
 <div class="form-group">
 <label for="produit">Produit</label>
-<select id="produit">
+<select id="produit" name="produit">
 <option value="">Sélectionner un produit</option>
 <optgroup label="🐟 Fruits de mer séchés">
 <option>Crevettes séchées — 6,00 € / 100g</option>
@@ -765,7 +766,7 @@ document.addEventListener('click', function(e){
 </div>
 <div class="form-group">
 <label for="message">Message</label>
-<textarea id="message" placeholder="Quantité, adresse de livraison, questions..." required=""></textarea>
+<textarea id="message" name="message" placeholder="Quantité, adresse de livraison, questions..." required=""></textarea>
 </div>
 <button class="btn-submit" type="submit">Envoyer la commande</button>
 <div class="form-success" id="successMsg">
@@ -1594,6 +1595,17 @@ document.addEventListener('click', function(e){
     const form = e.target;
     btn.textContent = 'Envoi en cours…';
     btn.disabled = true;
+    // CRM Supabase (non bloquant : n'affecte pas l'envoi Formspree)
+    fetch('/api/crm', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: (document.getElementById('name') || {}).value || '',
+        email: (document.getElementById('email') || {}).value || '',
+        produit: (document.getElementById('produit') || {}).value || '',
+        message: (document.getElementById('message') || {}).value || '',
+        source: 'Commande'
+      })
+    }).catch(() => {});
     try {
       const res = await fetch('https://formspree.io/f/xpqkwvlb', {
         method: 'POST',
@@ -1998,6 +2010,15 @@ document.addEventListener('click', function(e){
     const emailInput = form.querySelector('input[type=email]');
     btn.textContent = 'Envoi…'; btn.disabled = true;
     subscribeBrevo(emailInput ? emailInput.value.trim() : '');
+    // CRM Supabase (non bloquant)
+    fetch('/api/crm', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: emailInput ? emailInput.value.trim() : '',
+        message: 'Inscription newsletter (-10%)',
+        source: 'Newsletter'
+      })
+    }).catch(() => {});
     try {
       const res = await fetch('https://formspree.io/f/xpqkwvlb', {
         method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form)
