@@ -37,6 +37,8 @@ Ce skill génère des prompts et des vidéos Seedance 2.0 (ByteDance, via fal.ai
 
 ## Règles strictes (à suivre toujours)
 
+**PRODUITS = toujours image-to-video avec une VRAIE photo du produit** (règle Lamine, 11/07/2026, après test) : en text-to-video Seedance invente un produit générique (crevettes/bissap « d'illustration »). Pour tout clip où le produit Louma apparaît → mode « Image en vidéo » (ou « Références de tout type », 2-10 images) avec les photos réelles de Lamine (ex : crevettes-saloum-1/2/3.jpg, yoxos-saloum-*.jpg, Bissap-rouge.webp). Le text-to-video reste OK pour les B-rolls sans produit (paysages Saloum, silhouettes, ambiances).
+
 **Mots interdits dans les prompts** (tendent à dégrader la qualité Seedance) :
 - ❌ "cinematic", "professional", "stunning", "beautiful", "amazing"
 - ✅ Décrire concrètement : "low angle 30°", "warm golden side light", "shallow depth of field"
@@ -97,6 +99,24 @@ Voir `references/templates.md` pour 3 templates testés :
 - **Faceless Lifestyle** (mains qui touchent, gestes culinaires)
 - **Product Reveal** (hook mystère 5s, ouverture pack Saloum)
 - **Saloum B-Roll** (paysages mangrove, eau, golden hour)
+
+## Patterns de hooks pour le bloc TIMELINE (source : rediumvex/ai-video-generator-claude, filtré Louma)
+
+À utiliser dans le bloc 5 (beat-by-beat). Fenêtres : 0-2s = la porte (50% de bounce = mort), 5-15s = payoff.
+
+**Compatibles marque Louma** :
+- **Obscured subject** : mains au travail en très gros plan, l'objet entier jamais montré avant 2s — « Tight framing shows only hands working. Camera never shows the full object. At 2s, slight pull-back hints at shape but doesn't reveal. »
+- **Satisfying motion ASMR** : « Extreme close-up: [liquide versé / découpe nette / vapeur]. Macro lens, shallow depth of field. Crisp ASMR audio synced to motion. Slow motion 0.5x. Warm golden lighting from side. »
+- **Silhouette pop** (curiosité) : « Complete backlight silhouette, golden hour source behind subject. No fill light. Shape and posture tell the story. Edge light catches outline. Background blown out to gold. »
+- **Silence puis son** : « First 1.5s: near-silence, static shot. At 1.5s: deep bass hit synced to hard visual cut. » (très fort sur TikTok)
+- **Before-after flash** : « Before state 0.8s → hard cut with whoosh + impact → after state. Dramatic contrast. »
+- **Micro push-in** : « Static composition, barely perceptible forward camera movement. Tension through stillness. »
+
+**Mouvements caméra chronométrés** : snap zoom 0.3s (choc) · whip pan 0.5s (énergie) · pull-back reveal 2s (contexte) · orbit 90° 3s (découverte) · rise reveal 2s (échelle).
+
+**Boucle parfaite** : « Final frame composition mirrors opening frame — same angle, same lighting. Last 0.5s movement creates visual continuation into first frame. Seamless loop point. »
+
+**❌ Off-brand Louma (ne jamais utiliser même si viraux)** : neon contrast, flash strobe 4Hz, glitch digital, kinetic typography (on-screen text interdit), couleurs électriques.
 
 ## Quand demander à l'utilisateur (toujours avant de générer)
 1. Quel produit ? (Crevettes Cipakh / Yokhos / Bissap / Netetou / Pack Saloum / Guedj X)
