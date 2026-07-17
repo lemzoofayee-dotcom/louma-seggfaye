@@ -1,0 +1,26 @@
+{
+  "_note": "Avis clients WhatsApp pour les fiches produits (étoiles Google). Règles : texte FIDÈLE au message, affichage JUSTE LE PRÉNOM (décision Lamine 16/07, pas d'initiale), JAMAIS d'avis inventé, accord client OBLIGATOIRE avant mise en ligne. Rempli au fil des captures de Lamine (chantier 16/07/2026).",
+  "avis": [
+    {
+      "client_affiche": "Martine",
+      "client_source": "Sall Martine (WhatsApp)",
+      "date": "2026-07-16",
+      "pays": "France",
+      "texte": "Je viens de recevoir mon colis, je vous remercie infiniment et je suis vraiment satisfaite.",
+      "produits": "❓ À PRÉCISER PAR LAMINE",
+      "accord_client": "❓ EN ATTENTE",
+      "note_suggeree": 5
+    },
+    {
+      "client_affiche": "Ngoné",
+      "client_source": "Ngone Thiam (WhatsApp)",
+      "date": "2026-07-16",
+      "pays": "France",
+      "texte": "J'ai bien reçu le maad, merci beaucoup. En tout cas c'est excellent.",
+      "texte_original": "Bonsoir j'ai bien reçu le made merci beaucoup en tout cas c'est excellent (faute 'made' corrigée en maad, graphie de Lamine 17/07)",
+      "produits": "Maad (fruit, vente WhatsApp — pas au catalogue site)",
+      "accord_client": "⏳ Lamine lui a écrit le 17/07 09:41 (mention avis clients) — attendre son OK explicite",
+      "note_suggeree": 5
+    }
+  ]
+}
