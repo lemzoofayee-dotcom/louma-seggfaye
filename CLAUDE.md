@@ -23,6 +23,15 @@ Ce fichier ne liste que les règles **spécifiques au projet** à ne jamais rate
 - i10X = annulé, ne plus utiliser. Privilégier outils en place ou solutions gratuites.
 - Skills custom dispo : `louma-content`, `hook-rescue`, `fiche-produit-louma`, `capcut-assets`, `louma-seo`, `seedance-louma`.
 
+## Routine SEO hebdo (cloud) — garde-fous
+- La routine cloud n'a **PAS accès à Google Search Console** → elle ne DOIT **jamais** présenter des
+  positions / impressions / CTR **estimés** comme des faits. Les vrais chiffres viennent **uniquement**
+  de `scripts/seo/gsc-data.md` (généré en LOCAL par `scripts/seo/gsc_pull.py` ; gitignoré car repo public).
+- Rôle de la routine cloud = **idées de contenu uniquement**.
+- **Avant** de proposer de « créer » une page/article : vérifier qu'elle n'existe pas déjà
+  (sitemaps `seggfaye.com` + `guide.seggfaye.com`, dossier `blog/`). Elle a déjà proposé des pages existantes.
+- L'analyse chiffrée de positionnement se fait **en local** (session Claude sur `gsc-data.md`).
+
 ## Source de vérité contenu
 - Produits poissons / guedj : `memory/reference_guedjologue.md` (encyclopédie de Lamine).
 - État du projet, stack, priorités : `memory/project_louma.md`.

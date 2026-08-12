@@ -14,3 +14,8 @@ scripts/ads/.venv/
 scripts/ads/google-ads.yaml
 scripts/ads/client_secret*.json
 scripts/ads/refresh_token.txt
+
+# Search Console API (secret local, ne jamais commiter)
+scripts/seo/gsc_token.json
+scripts/seo/gsc-data.md
+scripts/seo/gsc-queries.csv
