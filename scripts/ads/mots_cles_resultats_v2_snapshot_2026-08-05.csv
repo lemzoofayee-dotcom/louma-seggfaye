@@ -1,39 +1,39 @@
 cluster,mot_cle,volume_mensuel,concurrence,cpc_bas_eur,cpc_haut_eur
 guedj-poisson,guedj,6600,LOW,0.0,0.0
 condiments,néré,6600,LOW,0.0,0.0
-cymbium-yeet,cymbium,5400,LOW,0.01,0.55
-boissons-fruits,pain de singe,3600,MEDIUM,0.03,0.27
-boissons-fruits,poudre de baobab,2400,HIGH,0.03,0.38
+cymbium-yeet,cymbium,5400,LOW,0.01,0.5
+boissons-fruits,pain de singe,3600,MEDIUM,0.05,0.34
+boissons-fruits,poudre de baobab,2400,HIGH,0.03,0.45
 condiments,soumbala,1600,LOW,0.0,0.0
-boissons-fruits,bissap blanc,1600,MEDIUM,0.01,0.53
-boissons-fruits,bouye,1300,LOW,0.23,0.7
+boissons-fruits,bissap blanc,1600,HIGH,0.02,0.36
+boissons-fruits,bouye,1300,LOW,0.0,0.0
 recettes-plats,thiébou yapp,1300,LOW,0.0,0.0
-cymbium-yeet,yeet,1000,LOW,1.06,3.07
+cymbium-yeet,yeet,1000,LOW,1.12,3.2
 boissons-fruits,ditakh,1000,LOW,0.0,0.0
 boissons-fruits,jus de bouye,880,LOW,0.0,0.0
 recettes-plats,domoda,880,LOW,0.0,0.0
 condiments,netetou,720,LOW,0.0,0.0
+recettes-plats,soupou kandja,720,LOW,0.0,0.0
 condiments,nététou,590,LOW,0.0,0.0
-recettes-plats,soupou kandja,590,LOW,0.0,0.0
-boissons-fruits,bissap rouge,390,HIGH,0.01,0.09
+boissons-fruits,tamarin jus,390,MEDIUM,0.0,0.0
+boissons-fruits,bissap rouge,390,HIGH,0.02,0.65
 boissons-fruits,oseille de guinée,390,MEDIUM,0.0,0.0
-boissons-fruits,tamarin jus,320,MEDIUM,0.0,0.0
+guedj-poisson,poisson kong,320,LOW,0.0,0.0
 recettes-plats,mbakhalou saloum,320,LOW,0.0,0.0
-guedj-poisson,poisson kong,260,LOW,0.0,0.0
 condiments,graine de néré,210,LOW,0.0,0.0
 cymbium-yeet,yett,170,LOW,0.0,0.0
 recettes-plats,caldou,140,LOW,0.0,0.0
-achat-diaspora,acheter bissap,140,HIGH,0.24,0.64
+achat-diaspora,acheter bissap,140,HIGH,0.21,1.05
 achat-diaspora,épicerie africaine paris,140,LOW,0.0,0.0
 boissons-fruits,ditax,90,LOW,0.0,0.0
 guedj-poisson,guedj beurre,70,LOW,0.0,0.0
 guedj-poisson,kong fumé,70,LOW,0.0,0.0
-guedj-poisson,kethiakh,70,LOW,0.0,0.0
 cymbium-yeet,cymbium olla,50,LOW,0.0,0.0
-boissons-fruits,baobab bio,40,HIGH,0.0,0.0
+guedj-poisson,kethiakh,50,LOW,0.0,0.0
 recettes-plats,recette caldou,40,LOW,0.0,0.0
-cymbium-yeet,cymbium glans,30,LOW,0.0,0.0
+boissons-fruits,baobab bio,30,HIGH,0.13,1.32
 cymbium-yeet,escargot de mer sénégal,20,LOW,0.0,0.0
+cymbium-yeet,cymbium glans,20,LOW,0.0,0.0
 guedj-poisson,guedj kong,20,LOW,0.0,0.0
 guedj-poisson,ketiakh,20,LOW,0.0,0.0
 guedj-poisson,guedj yass,20,LOW,0.0,0.0
@@ -43,16 +43,14 @@ cymbium-yeet,cymbium séché,10,LOW,0.0,0.0
 cymbium-yeet,cymbium marmoratum,10,LOW,0.0,0.0
 guedj-poisson,poisson fumé sénégal,10,LOW,0.0,0.0
 condiments,sauce netetou,10,LOW,0.0,0.0
-condiments,yoxos,10,LOW,0.0,0.0
-condiments,hotel nere,10,MEDIUM,0.0,0.0
+condiments,yoxos,10,UNSPECIFIED,0.0,0.0
+condiments,hotel nere,10,UNSPECIFIED,0.0,0.0
 boissons-fruits,pain de singe in english,10,LOW,0.0,0.0
 cymbium-yeet,yet sénégalais,0,UNSPECIFIED,0.0,0.0
 cymbium-yeet,volute de mer,0,UNSPECIFIED,0.0,0.0
 cymbium-yeet,yeet cuisine,0,UNSPECIFIED,0.0,0.0
 guedj-poisson,courbine séchée,0,UNSPECIFIED,0.0,0.0
-guedj-poisson,tambadiang,0,UNSPECIFIED,0.0,0.0
 guedj-poisson,poisson séché sénégalais,0,UNSPECIFIED,0.0,0.0
-condiments,yokhos,0,UNSPECIFIED,0.0,0.0
 condiments,huitres séchées sénégal,0,UNSPECIFIED,0.0,0.0
 recettes-plats,lakh sénégalais,0,UNSPECIFIED,0.0,0.0
 achat-diaspora,où acheter guedj,0,UNSPECIFIED,0.0,0.0
