@@ -163,6 +163,9 @@ footer .footer-links a { color:var(--muted); margin:0 .4rem; }
   <div class="product-hero">
     <div class="product-gallery">
       <img id="main-img" src="/Bissap-rouge.webp" alt="Bissap Rouge — Bissap — Louma by Seggfaye">
+      <div class="gallery-thumbs">
+        <img src="/Bissap-rouge.webp" alt="Bissap rouge" class="gallery-thumb active" loading="lazy" onclick="document.getElementById('main-img').src=this.src;document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active');">
+        <img src="/Bissap-blanc.webp" alt="Bissap blanc" class="gallery-thumb" loading="lazy" onclick="document.getElementById('main-img').src=this.src;document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active');"></div>
       
     </div>
 

@@ -163,6 +163,9 @@ footer .footer-links a { color:var(--muted); margin:0 .4rem; }
   <div class="product-hero">
     <div class="product-gallery">
       <img id="main-img" src="/kong-fume-sec.webp" alt="Kongfume — Kong fumé — Louma by Seggfaye">
+      <div class="gallery-thumbs">
+        <img src="/kong-fume-sec.webp" alt="Kong fumé séché" class="gallery-thumb active" loading="lazy" onclick="document.getElementById('main-img').src=this.src;document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active');">
+        <img src="/kong-fume1.webp" alt="Kong fumé" class="gallery-thumb" loading="lazy" onclick="document.getElementById('main-img').src=this.src;document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active');"></div>
       
     </div>
 

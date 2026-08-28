@@ -163,6 +163,11 @@ footer .footer-links a { color:var(--muted); margin:0 .4rem; }
   <div class="product-hero">
     <div class="product-gallery">
       <img id="main-img" src="/netetou-barre.webp" alt="Netetu Barre — Netetou en barre — Louma by Seggfaye">
+      <div class="gallery-thumbs">
+        <img src="/netetou-poudre.webp" alt="Netetou poudre" class="gallery-thumb" loading="lazy" onclick="document.getElementById('main-img').src=this.src;document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active');">
+        <img src="/netetou-barre.webp" alt="Netetou en barre" class="gallery-thumb active" loading="lazy" onclick="document.getElementById('main-img').src=this.src;document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active');">
+        <img src="/netetou-dome.webp" alt="Netetou en dôme" class="gallery-thumb" loading="lazy" onclick="document.getElementById('main-img').src=this.src;document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active');">
+        <img src="/netetou-mixte.webp" alt="Netetou mixte" class="gallery-thumb" loading="lazy" onclick="document.getElementById('main-img').src=this.src;document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active');"></div>
       
     </div>
 

@@ -163,6 +163,9 @@ footer .footer-links a { color:var(--muted); margin:0 .4rem; }
   <div class="product-hero">
     <div class="product-gallery">
       <img id="main-img" src="/Guerte-noflay.webp" alt="Guerte Noflay — Poudre d'arachide — Louma by Seggfaye">
+      <div class="gallery-thumbs">
+        <img src="/Guerte-noflay.webp" alt="Guerté noflay" class="gallery-thumb active" loading="lazy" onclick="document.getElementById('main-img').src=this.src;document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active');">
+        <img src="/guerte-toye.webp" alt="Guerté tooy" class="gallery-thumb" loading="lazy" onclick="document.getElementById('main-img').src=this.src;document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active');"></div>
       
     </div>
 
