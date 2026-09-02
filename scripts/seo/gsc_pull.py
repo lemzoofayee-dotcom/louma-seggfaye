@@ -33,7 +33,7 @@ def query(dimension, limit=200):
     body = {
         "startDate": start.isoformat(),
         "endDate": end.isoformat(),
-        "dimensions": [dimension],
+        "dimensions": dimension if isinstance(dimension, list) else [dimension],
         "rowLimit": limit,
     }
     r = requests.post(
@@ -45,6 +45,16 @@ def query(dimension, limit=200):
 
 queries = query("query")
 pages = query("page")
+page_queries = query(["page", "query"], 5000)
+
+with open(os.path.join(BASE, "gsc-page-queries.csv"), "w", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(["page", "requete", "clics", "impressions", "ctr_pct", "position"])
+    for row in sorted(page_queries, key=lambda r: -r["impressions"]):
+        w.writerow([
+            row["keys"][0], row["keys"][1], row["clicks"], row["impressions"],
+            round(row["ctr"] * 100, 2), round(row["position"], 1),
+        ])
 
 with open(os.path.join(BASE, "gsc-queries.csv"), "w", newline="") as f:
     w = csv.writer(f)
