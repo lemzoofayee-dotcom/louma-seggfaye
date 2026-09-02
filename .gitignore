@@ -19,6 +19,7 @@ scripts/ads/refresh_token.txt
 scripts/seo/gsc_token.json
 scripts/seo/gsc-data.md
 scripts/seo/gsc-queries.csv
+scripts/seo/gsc-page-queries.csv
 
 # Skills HeyGen/HyperFrames matérialisés en local (skills-lock.json suffit à les réinstaller)
 .agents/
