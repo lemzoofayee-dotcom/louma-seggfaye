@@ -51,3 +51,6 @@ scripts/seo/gsc-page-queries.csv
 .claude/skills/seam-craft
 .claude/skills/slideshow
 .claude/skills/talking-head-recut
+
+# macOS
+.DS_Store

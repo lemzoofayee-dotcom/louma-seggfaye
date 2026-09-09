@@ -685,7 +685,7 @@ image: "diwtir.webp",
 description: "Huile de palme rouge non raffinée, extraite de manière artisanale. Couleur rouge-orangée naturelle, riche en carotènes et en vitamine A. L'huile traditionnelle de la cuisine ouest-africaine.",
 origine: "Sénégal — Extraction artisanale",
 goutPlus: "Goût fruité et terreux caractéristique, couleur rouge vif naturelle. Rien à voir avec l'huile de palme industrielle raffinée : ici c'est du pur jus, non traité.",
-conseil: "Indispensable dans le soupoukandja (sauce gombo) et le mbakhal jën, qui lui doit son autre nom : mbaxal diw tiir. Utilisée aussi dans les sauces, le mafé et la friture. Un incontournable de la cuisine sénégalaise.",
+conseil: "Les sauces qui l'utilisent vraiment : le soupoukandja (sauce gombo), le borokhé, l'étodié (feuilles de manioc et de moringa, Casamance) et le sakasaka. C'est elle aussi qui donne au mbakhal jën son autre nom : mbaxal diw tiir. Un incontournable de la cuisine sénégalaise.",
 stock: true,
 nouveaute: false
 },
