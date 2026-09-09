@@ -787,8 +787,8 @@ nouveaute: false
 },
 {
 id: "yaye-boye",
-nom: "Yaye Boye",
-nomLocal: "Yaboye",
+nom: "Yaboye",
+nomLocal: "Sardinelle",
 categorie: "frais",
 prix: 7.50,
 unite: "/ kilo",
