@@ -774,7 +774,7 @@ nouveaute: false
 id: "poisson-eau-douce",
 nom: "Poisson Eau Douce",
 categorie: "frais",
-prix: 10.00,
+prix: 50.00,
 unite: "carton 5kg",
 prixAncien: null,
 badge: "Carton 5kg",
