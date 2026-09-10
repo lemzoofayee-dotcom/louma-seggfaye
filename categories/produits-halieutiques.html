@@ -104,6 +104,11 @@ a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
 .guide-banner .title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:.3rem}
 .guide-banner .sub{font-size:.8rem;color:var(--muted)}
 footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border-top:1px solid var(--border)}
+  .tableau-guedj { width:100%; border-collapse:collapse; margin:1rem 0 1.4rem; font-size:.88rem; }
+  .tableau-guedj th, .tableau-guedj td { padding:.6rem .7rem; text-align:left; border-bottom:1px solid var(--border,rgba(201,168,76,.15)); vertical-align:top; }
+  .tableau-guedj th { color:var(--gold,#c9a84c); font-weight:700; font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; }
+  .tableau-guedj td a { color:var(--gold,#c9a84c); }
+  @media(max-width:600px){ .tableau-guedj { font-size:.8rem; } .tableau-guedj th, .tableau-guedj td { padding:.45rem .35rem; } }
 </style>
 </head>
 <body>
@@ -129,7 +134,7 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
     <img src="/Guedji-sole.webp" alt="Guedj Beurre — poisson séché fermenté du Sénégal" loading="lazy">
     <div class="cat-card-body">
       <h2>Guedj Beurre</h2>
-      <div class="local">Capitaine séché</div>
+      <div class="local">Courbine séchée (berr)</div>
       <p class="desc">Le roi des guedj. Poisson séché et fermenté, goût puissant et umami. Indispensable pour le thieboudienne.</p>
       <span class="prix">6,00€</span><span class="unite">/ 100g</span>
       <div><span class="btn-voir">Voir le produit</span></div>
@@ -149,7 +154,7 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
     <img src="/guedj-yass-1.webp" alt="Guedj Yass — silure séché du Sénégal" loading="lazy">
     <div class="cat-card-body">
       <h2>Guedj Yass</h2>
-      <div class="local">Sardinelle séchée</div>
+      <div class="local">Silure séché</div>
       <p class="desc">Le guedj du quotidien au Sénégal. Goût prononcé, prix accessible. Pour tous les plats.</p>
       <span class="prix">3,00€</span><span class="unite">/ 100g</span>
       <div><span class="btn-voir">Voir le produit</span></div>
@@ -216,11 +221,47 @@ footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);border
 
 <section class="seo-text">
   <h2>Acheter du guedj et du yeet en ligne : votre boutique sénégalaise</h2>
-  <p>Vous cherchez des <strong>produits halieutiques du Sénégal</strong> ? Louma by Seggfaye est votre <strong>boutique Sénégal</strong> en ligne pour la <strong>vente de produits halieutiques</strong> authentiques : <strong>guedj beurre</strong> (capitaine séché), <strong>mollusque séché</strong> (<strong>mollusque séché yet</strong>, yoxos, pagne), crevettes séchées, kethiakh (sardinelle fumée) et kong fumé.</p>
+  <p>Vous cherchez des <strong>produits halieutiques du Sénégal</strong> ? Louma by Seggfaye est votre <strong>boutique Sénégal</strong> en ligne pour la <strong>vente de produits halieutiques</strong> authentiques : <strong>guedj beurre</strong> (courbine séchée), <strong>mollusque séché</strong> (<strong>mollusque séché yet</strong>, yoxos, pagne), crevettes séchées, kethiakh (sardinelle fumée) et kong fumé.</p>
   <p>Tous nos <strong>produits sénégalais</strong> proviennent des <strong>Îles du Saloum</strong>, au coeur du delta du Saloum, zone classée réserve de biosphère par l'UNESCO. Le <strong>guedj</strong>, le <strong>yeet</strong> et les crevettes sont séchés, fumés ou fermentés selon les méthodes artisanales transmises de génération en génération. Chaque <strong>produit sénégalais en ligne</strong> est sélectionné par le Guedjologue.</p>
   <p>En tant que <strong>Guedjologue</strong>, spécialiste du guedj et des fruits de mer séchés, je sélectionne personnellement chaque produit pour vous garantir une qualité authentique. <strong>Livraison en France métropolitaine (48-72h) et en Europe (3-5 jours).</strong></p>
   <h2>Quel guedj, quel yeet, pour quel plat ?</h2>
-  <p>Le <strong>guedj beurre</strong> est idéal pour le thieboudienne. Le <strong>mollusque séché yet</strong> apporte une profondeur umami à toutes les sauces. Les <strong>crevettes séchées</strong> sont le condiment polyvalent par excellence. Consultez notre <a href="https://guide.seggfaye.com">guide interactif</a> pour savoir exactement quel produit utiliser dans chaque plat sénégalais.</p>
+  <p>Le <strong>guedj beurre</strong> est idéal pour le thieboudienne. Le <strong>yeet</strong> (aussi écrit <strong>yet</strong>) apporte une profondeur umami à toutes les sauces. Les <strong>crevettes séchées</strong> sont le condiment polyvalent par excellence. Consultez notre <a href="https://guide.seggfaye.com">guide interactif</a> pour savoir exactement quel produit utiliser dans chaque plat sénégalais.</p>
+
+  <h2>Les 7 guedj : lequel choisir quand on débute ?</h2>
+  <p>La plupart des gens ne connaissent que deux guedj : le <strong>beurre</strong> et le <strong>kong</strong>. Il en existe sept, et ils ne font pas le même travail dans une marmite.</p>
+  <table class="tableau-guedj">
+    <thead>
+      <tr><th>Guedj</th><th>Poisson d'origine</th><th>Caractère</th><th>Pour quel plat</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><a href="/produits/guej-beurre.html"><strong>Beurre</strong></a></td><td>Courbine (berr)</td><td>Doux, gras, passe partout</td><td>Thiéboudienne, mafé, toutes les sauces. <em>Le bon choix pour débuter.</em></td></tr>
+      <tr><td><a href="/produits/guej-kong.html"><strong>Kong</strong></a></td><td>Mâchoiron</td><td>Prononcé, puissant</td><td>Quand on veut que ça se sente</td></tr>
+      <tr><td><a href="/produits/guej-yass.html"><strong>Yass</strong></a></td><td>Silure</td><td>Rare — <strong>aucun sel de fermentation</strong>, il sèche par son propre gras. Doux et parfumé, jamais amer</td><td>Sauces tomate, riz au poisson. <strong>Fragile</strong> : à ajouter en fin de cuisson pour qu'il reste entier</td></tr>
+      <tr><td><a href="/produits/guej-sol.html"><strong>Sole</strong></a></td><td>Sole</td><td>Fin, délicat</td><td>Sauces légères et parfumées</td></tr>
+      <tr><td><a href="/produits/guej-tambajang.html"><strong>Tambajang</strong></a></td><td>—</td><td>Corsé</td><td>Condiment de caractère</td></tr>
+      <tr><td><a href="/produits/guej-toumboulan.html"><strong>Toumboulane</strong></a></td><td>—</td><td>Épaississant</td><td>Il donne du corps au bouillon</td></tr>
+      <tr><td><a href="/produits/guej-beur-casamance.html"><strong>Beurre Casamance</strong></a></td><td>Courbine fumée</td><td>Fumé au bois, version premium</td><td>Sauces qui demandent de la profondeur</td></tr>
+    </tbody>
+  </table>
+  <p><a href="/blog/les-7-guedj-du-senegal.html">Le guide complet des 7 guedj →</a></p>
+
+  <h2>Guedj, yeet, kéthiakh : quelle différence ?</h2>
+  <p>Ce sont trois produits qu'on confond souvent, et ils ne viennent même pas de la même famille.</p>
+  <ul>
+    <li><strong>Le guedj</strong> est un <strong>poisson</strong> salé, séché et <strong>fermenté</strong>. C'est la fermentation qui lui donne cette profondeur qu'aucune épice ne remplace. <a href="/blog/quest-ce-que-le-guedj.html">Tout savoir sur le guedj</a></li>
+    <li><strong>Le yeet</strong> (ou <strong>yet</strong>) n'est pas un poisson : c'est un <strong>cymbium</strong>, un gros mollusque marin. Sa note est plus haute, presque piquante — elle fait ressortir la tomate. On l'appelle le « Maggi africain ». <a href="/blog/yeet-cymbium-maggi-africain.html">Le guide du yeet</a></li>
+    <li><strong>Le kéthiakh</strong> n'est ni fermenté ni vraiment sec : c'est de la <strong>sardinelle salée en couches, fumée au four artisanal puis séchée à l'ombre</strong>. Elle reste souple. C'est la fumée qu'on cherche avec elle.</li>
+  </ul>
+  <p>Dans une bonne sauce sénégalaise, on met rarement l'un <em>ou</em> l'autre : on empile les couches. Le guedj pour la profondeur, un fruit de mer séché pour le salé marin, un poisson fumé pour la fumée.</p>
+
+  <h2>Comment les utiliser et les conserver</h2>
+  <p><strong>Réhydratation :</strong> à l'eau <strong>tiède</strong>, jamais chaude — l'eau bouillante fait perdre le goût. Pour le guedj, il suffit souvent de casser un morceau et de l'ajouter directement au bouillon.</p>
+  <p><strong>Dosage :</strong> ce sont des condiments, pas des ingrédients. Un morceau de la taille d'un pouce suffit pour une marmite de six personnes. Trop de guedj écrase le plat.</p>
+  <p><strong>Conservation :</strong> tous nos produits sont <strong>emballés sous vide</strong> — pas d'odeur pendant le transport, tout le goût une fois ouverts. Ensuite, un bocal fermé dans un placard sec suffit : ni frigo, ni congélateur. Le séchage et la fermentation sont déjà des méthodes de conservation, c'est même leur raison d'être.</p>
+
+  <h2>D'où viennent nos produits</h2>
+  <p>Des <strong>Îles du Saloum</strong>, dans le delta classé réserve de biosphère par l'UNESCO, et de la <strong>Casamance</strong> pour le guedj beurre fumé. Les crevettes sont pêchées de nuit, cuites à la vapeur et décortiquées à la main ; les <a href="/produits/yoxos.html">yokhos</a> sont cueillis par les femmes sur les racines des palétuviers, en pleine mangrove, avec un repos biologique de six mois par an.</p>
+  <p>Je suis né là-bas. C'est pour ça que je peux vous dire, produit par produit, d'où il vient et ce qu'il vaut.</p>
 </section>
 
 <footer>
