@@ -1100,7 +1100,7 @@ document.addEventListener('click', function(e){
     hasFreshFish() {
       // Détection par catégorie (source de vérité produits.js).
       // Les anciens noms restent en fallback pour les paniers legacy en localStorage.
-      const fresh = ['thiof','dorade','tilapia','sompate','seude','iler','yakh','yaye boye','yaboye','chanchar','capitaine','colafil','baracouda','poisson eau douce','mélange de poisson'];
+      const fresh = ['thiof','dorade','tilapia','sompate','seude','iler','yakh','yaye boye','yaboye','yet','yeet','yete','yéte','chanchar','capitaine','colafil','baracouda','poisson eau douce','mélange de poisson'];
       return this.items.some(i => i.cat === 'frais' || fresh.some(k => i.name.toLowerCase().includes(k)));
     },
 
