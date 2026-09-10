@@ -281,7 +281,7 @@ nouveaute: false
 },
 {
 id: "netetu-dom",
-nom: "Netetu Dom",
+nom: "Netetou dôme",
 nomLocal: "Netetou",
 categorie: "epices",
 prix: 5.00,
@@ -298,7 +298,7 @@ nouveaute: false
 },
 {
 id: "netetu-barre",
-nom: "Netetu Barre",
+nom: "Netetou barre",
 nomLocal: "Netetou en barre",
 categorie: "epices",
 prix: 5.00,
@@ -315,7 +315,7 @@ nouveaute: false
 },
 {
 id: "netetu-mix",
-nom: "Netetu Mix",
+nom: "Netetou Mix",
 nomLocal: "Netetou mixte",
 categorie: "epices",
 prix: 15.00,
@@ -332,7 +332,7 @@ nouveaute: false
 },
 {
 id: "netetu-poudre",
-nom: "Netetu simple poudre",
+nom: "Netetou en poudre",
 nomLocal: "Netetou poudre",
 categorie: "epices",
 prix: 5.00,
@@ -349,7 +349,7 @@ nouveaute: false
 },
 {
 id: "sauce-netetu-beugeuc",
-nom: "Sauce Netetu Beugeuc",
+nom: "Sauce netetou beugeuc",
 nomLocal: "Sauce netetou beugeuc",
 categorie: "epices",
 prix: 10.00,
