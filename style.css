@@ -40,3 +40,4 @@
 .nl-popup .btn-gold{width:100%;justify-content:center;}
 .nl-popup-close{position:absolute;top:.8rem;right:.8rem;width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--muted);cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;transition:color .2s,border-color .2s;}
 .nl-popup-close:hover{color:var(--cream);border-color:var(--border-hi);}
+a.recipe-card{display:block;text-decoration:none;color:inherit;}
