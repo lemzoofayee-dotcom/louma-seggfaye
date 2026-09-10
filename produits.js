@@ -742,15 +742,16 @@ nouveaute: false
 {
 id: "beurre-capitaine",
 nom: "Beurre (Capitaine)",
-nomLocal: "Berr / Capitaine",
+nomLocal: "Le gros calibre du diane (capitaine)",
 categorie: "frais",
 prix: 55.00,
 unite: "carton 5kg",
 prixAncien: null,
 badge: "Carton 5kg",
 image: "thiof4.webp",
-description: "Capitaine (courbine/beurre) congelé en carton de 5kg. Poisson à chair blanche et grasse, c'est le même poisson qui donne le guedj beurre une fois séché. Frais, il est encore meilleur.",
+description: "Le gros calibre du capitaine (Polydactylus quadrifilis), appele « beurre » au marche, congele en carton de 5 kg. Chair blanche, ferme et genereuse : c'est le poisson des grandes marmites.",
 origine: "Sénégal — Pêche artisanale côtière",
+goutPlus: "C'est le vrai capitaine (Polydactylus quadrifilis) en gros calibre. Meme poisson que le diane, qui en est la version petite. A ne pas confondre avec le siket mbao, le faux capitaine, ni avec le berr (la courbine), qui donne le guedj beurre.",
 conseil: "Décongeler au réfrigérateur. Parfait grillé, en thiéboudienne ou en sauce. Sa chair grasse reste moelleuse à la cuisson.",
 stock: false,
 nouveaute: false
