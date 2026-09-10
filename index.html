@@ -1026,8 +1026,8 @@ document.addEventListener('click', function(e){
       // Limite : 1 kg/client (détail) ou 3 cartons/client (exception cartons)
       const existingQ = this.items.find(i => i.name === product.name);
       const currentQty = existingQ ? existingQ.qty : 0;
-      if (currentQty + 1 > this.maxUnits(product.unit)) {
-        this.showLimitMsg(product.name, product.unit); return;
+      if (currentQty + 1 > this.maxUnits(product.unit, product.cat)) {
+        this.showLimitMsg(product.name, product.unit, product.cat); return;
       }
       // Poisson frais = vendu et expédié SEUL : on bloque tout mélange frais/secs
       const productIsFresh = product.cat === 'frais';
@@ -1069,18 +1069,18 @@ document.addEventListener('click', function(e){
     updateQty(name, delta) {
       const item = this.items.find(i => i.name === name);
       if (!item) return;
-      if (delta > 0 && item.qty + 1 > this.maxUnits(item.unit)) {
-        this.showLimitMsg(item.name, item.unit); return;
+      if (delta > 0 && item.qty + 1 > this.maxUnits(item.unit, item.cat)) {
+        this.showLimitMsg(item.name, item.unit, item.cat); return;
       }
       item.qty += delta;
       if (item.qty <= 0) this.remove(name);
       else { this.save(); this.renderItems(); this.updateCount(); this.refreshMixWarn(); }
     },
 
-    showLimitMsg(name, unit) {
+    showLimitMsg(name, unit, cat) {
       const el = document.getElementById('cart-notif');
       if (!el) return;
-      el.textContent = '⚠️ ' + this.limitLabel(unit) + ' (' + name + ')';
+      el.textContent = '⚠️ ' + this.limitLabel(unit, cat) + ' (' + name + ')';
       el.style.color = '#ef4444';
       el.classList.add('show');
       setTimeout(() => { el.classList.remove('show'); el.style.color = ''; }, 3000);
@@ -1120,14 +1120,17 @@ document.addEventListener('click', function(e){
     isCarton(unit) { return /carton/i.test(unit || ''); },
 
     // Quantité max autorisée pour une ligne produit
-    // Cartons (exception) = 3 max par client ; sinon limite 1 kg par client
-    maxUnits(unit) {
+    // Cartons = 3 max ; poisson frais au kilo = 2 kg ; sinon 1 kg par client
+    maxUnits(unit, cat) {
       if (this.isCarton(unit)) return 3;
+      if (cat === 'frais') return 2;
       return Math.max(1, Math.floor(1000 / this.parseWeight(unit)));
     },
 
-    limitLabel(unit) {
-      return this.isCarton(unit) ? 'Max 3 cartons / client' : 'Max 1 kg / client';
+    limitLabel(unit, cat) {
+      if (this.isCarton(unit)) return 'Max 3 cartons / client';
+      if (cat === 'frais') return 'Max 2 kg / client';
+      return 'Max 1 kg / client';
     },
 
     totalWeightG() {
@@ -1288,11 +1291,11 @@ document.addEventListener('click', function(e){
           ? '<img src="' + item.img + '" alt="' + n + '" loading="lazy" />'
           : '<div style="width:100%;height:100%;background:var(--bg-2);display:flex;align-items:center;justify-content:center;font-size:1.4rem">🥘</div>';
         const nameJs = JSON.stringify(item.name);
-        const atMax = item.qty + 1 > this.maxUnits(item.unit);
+        const atMax = item.qty + 1 > this.maxUnits(item.unit, item.cat);
         const plusBtn = atMax
           ? '<button class="qty-btn is-max" disabled aria-label="Limite atteinte">+</button>'
           : '<button class="qty-btn" onclick="cartSystem.updateQty(' + nameJs + ',1)">+</button>';
-        const limitNote = atMax ? '<div class="cart-item-limit">' + this.limitLabel(item.unit) + '</div>' : '';
+        const limitNote = atMax ? '<div class="cart-item-limit">' + this.limitLabel(item.unit, item.cat) + '</div>' : '';
         return '<div class="cart-item">'
           + '<div class="cart-item-img">' + imgHtml + '</div>'
           + '<div class="cart-item-info">'
