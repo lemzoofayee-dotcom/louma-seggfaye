@@ -269,6 +269,22 @@ document.addEventListener('click', function(e){
     padding: .5rem 1.3rem; border-radius: 999px;
     letter-spacing: .03em;
   }
+
+  /* NAV SORTANTE */
+  .site-nav {
+    background: rgba(0,87,183,.06);
+    padding: 1rem 3rem;
+    display: flex; align-items: center; justify-content: center;
+    gap: 1.6rem; flex-wrap: wrap;
+    border-top: 1px solid rgba(0,87,183,.12);
+  }
+  .site-nav a {
+    font-size: .82rem; font-weight: 700;
+    color: #0057b7; text-decoration: none;
+    letter-spacing: .04em;
+  }
+  .site-nav a:hover { text-decoration: underline; }
+  .footer-left a { color: inherit; text-decoration: none; }
 </style>
 </head>
 <body>
@@ -386,10 +402,20 @@ document.addEventListener('click', function(e){
 
   </div>
 
+  <!-- NAV SORTANTE -->
+  <nav class="site-nav">
+    <a href="/">Accueil</a>
+    <a href="/categories/poissons-frais.html">Poissons frais</a>
+    <a href="/categories/produits-halieutiques.html">Poissons séchés &amp; guedj</a>
+    <a href="/blog/">Blog</a>
+    <a href="/epicerie-africaine.html">Épicerie africaine</a>
+    <a href="/conditions-de-vente.html">Livraison &amp; retours</a>
+  </nav>
+
   <!-- FOOTER -->
   <div class="footer">
     <div class="footer-left">
-      Louma by Seggfaye
+      <a href="/">Louma by Seggfaye</a>
       <span>Marché africain en ligne</span>
     </div>
     <div class="footer-center">
