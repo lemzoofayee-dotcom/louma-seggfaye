@@ -902,7 +902,7 @@ description: "Carton de 10 kg mélangeant six espèces : seude, thiof, yakh, som
 origine: "Sénégal — Pêche artisanale côtière",
 goutPlus: "Six poissons dans un seul carton : seude (le barracuda), thiof (le mérou blanc), yakh (la carpe rouge), sompate (la carpe blanche), iler (le « plat plat ») et youfouf (le pageot). Achetés séparément, ce serait six cartons de 5 kg — trente kilos, et un congélateur entier. Là, c'est dix kilos, et chaque plat de la semaine change de poisson.",
 conseil: "Décongeler au réfrigérateur au fur et à mesure des besoins. Chaque espèce a son usage : le thiof pour la thiéboudienne, le yakh grillé, l'iler frit, le seude en sauce.",
-stock: false,
+stock: true,
 nouveaute: false
 }
 ];
