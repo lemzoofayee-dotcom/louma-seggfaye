@@ -48,8 +48,8 @@
   </item>
   <item>
     <g:id>tuffa</g:id>
-    <g:title>Tuffa (Touffa) — 100g</g:title>
-    <g:description>Escargot de mer des Îles du Saloum, cueilli à la main en même temps que les coques (pagne) dans la mangrove. Sorti de sa coquille puis séché au soleil pendant 3 à 4 jours. Contrairement aux coques qui sont bouillies, le tuffa est séché directement après extraction.</g:description>
+    <g:title>Toufa (touffa, tuffa) — 100g</g:title>
+    <g:description>Escargot de mer des Îles du Saloum, cueilli à la main en même temps que les coques (pagne) dans la mangrove. Sorti de sa coquille puis séché au soleil pendant 3 à 4 jours. Contrairement aux coques qui sont bouillies, le toufa est séché directement après extraction. Aussi écrit « tuffa » ou « touffa ».</g:description>
     <g:link>https://seggfaye.com/produits/tuffa.html</g:link>
     <g:image_link>https://seggfaye.com/tuffa.webp</g:image_link>
     <g:price>6.00 EUR</g:price>
@@ -217,7 +217,7 @@
   <item>
     <g:id>pack-saloum</g:id>
     <g:title>Pack Saloum (Pack bi Saloum) — kg</g:title>
-    <g:description>4 trésors des Îles du Saloum réunis : Tuffa + Yoxos + Cipakh (crevettes) + Pagne (coques). Ces 4 produits ne sont jamais disponibles en même temps — cette rareté justifie le pack.</g:description>
+    <g:description>4 trésors des Îles du Saloum réunis : Toufa + Yoxos + Cipakh (crevettes) + Pagne (coques). Ces 4 produits ne sont jamais disponibles en même temps — cette rareté justifie le pack.</g:description>
     <g:link>https://seggfaye.com/produits/pack-saloum.html</g:link>
     <g:image_link>https://seggfaye.com/packsaloum-sachetdebout1.webp</g:image_link>
     <g:price>60.00 EUR</g:price>
