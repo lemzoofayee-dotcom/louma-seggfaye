@@ -188,7 +188,7 @@ image: "guedj-tambajang-1.webp",
 gallery: ["guedj-tambajang-1.webp", "guedj-tambajang-3.webp", "guedj-tambajang-2.webp"],
 description: "Guedj de tambajang : du mulet (guiss) séché entier. Très utilisé comme condiment dans la cuisine sénégalaise pour son goût concentré et sa praticité.",
 origine: "Sénégal — Pêche artisanale côtière",
-goutPlus: "À la fabrication, le tambajang reste entier : on lui enlève seulement les écailles, là où les autres guedj sont vidés. C'est le plus ancien des guedj — sa technique de séchage est particulière, ancestrale — et son goût est soutenu, particulier. Et c'est le guedj qui tient le plus longtemps : plus de cinq ans sans bouger. C'est pour cela qu'il s'exporte autant dans la sous-région, le risque est minime.",
+goutPlus: "À la fabrication, le tambajang reste entier : on lui enlève seulement les écailles, là où les autres guedj sont vidés. Vient ensuite la fermentation, puis le gros sel pendant deux à trois jours. On le lave à l'eau de mer, on le saupoudre de sel fin, et on le sèche au soleil. C'est le plus ancien des guedj — sa technique de séchage est particulière, ancestrale — et son goût est soutenu, particulier. Et c'est le guedj qui tient le plus longtemps : plus de cinq ans sans bouger. On l'exporte beaucoup dans la sous-région : le risque de détérioration est minime.",
 conseil: "Les autres guedj, on les lave, on les coupe et on les plonge dans la marmite. Le tambajang, non. Sa chair colle à l'os : il faut d'abord le chauffer pour la dilater, récupérer la chair et la peau, puis jeter les arêtes et la tête. Il se prépare en pâte, mélangé avec du netetou, du piment et du nokkos.",
 stock: true,
 nouveaute: false
