@@ -64,7 +64,7 @@ badge: null,
 image: "tuffa.webp",
 description: "Escargot de mer des Îles du Saloum, cueilli à la main en même temps que les coques (pagne) dans la mangrove. Sorti de sa coquille puis séché au soleil pendant 3 à 4 jours. Contrairement aux coques qui sont bouillies, le toufa est séché directement après extraction. Aussi écrit « tuffa » ou « touffa ».",
 origine: "Îles du Saloum, Foundiougne — Mangrove",
-goutPlus: "Condiment puissant au goût marin concentré. Le séchage direct (sans cuisson préalable) préserve une saveur plus intense que les autres fruits de mer séchés du Saloum.",
+goutPlus: "Condiment puissant au goût marin concentré. Le séchage direct (sans cuisson préalable) préserve une saveur plus intense que les autres fruits de mer séchés du Saloum. Dans un même lot, les morceaux vont du miel au presque noir : c'est le séchage qui n'avance pas au même rythme sur chacun, pas un défaut.",
 conseil: "Assaisonnement pour les sauces et le riz. Même usage que le yeet : émietter dans la sauce en début de cuisson pour parfumer tout le plat.",
 stock: true,
 nouveaute: false
