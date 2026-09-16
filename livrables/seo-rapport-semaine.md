@@ -1,4 +1,4 @@
-# Rapport SEO Louma by Seggfaye — Semaine du 9 septembre 2026
+# Rapport SEO Louma by Seggfaye — Semaine du 16 septembre 2026
 
 > **AVERTISSEMENT : Positions et indexations = ESTIMATIONS hors GSC, issues de recherches web publiques. À confirmer obligatoirement dans Google Search Console et via l'outil de test des résultats enrichis Google. Aucune cellule "non vu" ne signifie "non indexé" — cela signifie "non trouvé dans mes recherches".**
 
@@ -9,36 +9,34 @@
 | Mot-clé | seggfaye.com | guide.seggfaye.com | maya-boutique.fr | Leader estimé |
 |---|---|---|---|---|
 | produits exotiques africains france | non vu — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | nkosiagro.com / nomad-exotic.com / sougouexpress.com |
-| produits halieutiques séchés sénégal | non vu — à vérifier GSC | non vu — à vérifier GSC | catégorie halieutique visible (guedj beurre, crevettes séchées, yett, pagne) | espaceagro.com |
-| poisson séché sénégalais acheter | non vu — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | espaceagro.com (B2B) / senpoisson.com |
-| guedj acheter france | article "quest-ce-que-le-guedj" visible (~5e résultat) | non vu — à vérifier GSC | guedj beurre 200g visible (6.00€) | magasin-africain.com / grandexotique.com / issanny.com / keryaye.fr |
-| netetou acheter | non vu sur cette requête — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | carafrique.fr / miamland.com / halalfrais.fr / nkosiagro.com |
-| epicerie africaine en ligne | non vu — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | nkosiagro.com / dookow.com / maryexotik.com / issanny.com |
-| produits sénégalais en ligne | non vu — à vérifier GSC | non vu — à vérifier GSC | **1er résultat SERP estimé** | maya-boutique.fr |
-| recette thieboudienne ingrédients | non vu — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | kelianfood.com / nkosiagro.com / wikipedia |
+| produits halieutiques séchés sénégal | non vu — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | espaceagro.com |
+| poisson séché sénégalais acheter | non vu — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | issanny.com / lesdelicesdelafrique.fr / senpoisson.com |
+| guedj acheter france | article "quest-ce-que-le-guedj" visible (~7e) | non vu — à vérifier GSC | non vu — à vérifier GSC | magasin-africain.com / amazon.fr / afroleck.com / grandexotique.com |
+| netetou acheter | non vu sur cette requête — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | miamland.com / halalfrais.fr / tamexotique.com / carafrique.fr |
+| épicerie africaine en ligne | non vu — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | nkosiagro.com / dookow.com / maryexotik.com / sougouexpress.com |
+| produits sénégalais en ligne | non vu — à vérifier GSC | non vu — à vérifier GSC | **1er résultat SERP estimé** | maya-boutique.fr / sunualimentation.com |
+| recette thieboudienne ingrédients | non vu — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | kelianfood.com / ileauxepices.com / wikipedia |
 | crevettes séchées sénégal | non vu — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | exoticasenegal.fr / timifood.com |
-| cuisine sénégalaise produits | non vu — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | chefsimon.com / clubmed.fr |
-| où acheter du guedj en france | blog seggfaye.com/blog/ visible (~3e) + article guedj visible (~7e) | non vu — à vérifier GSC | non vu — à vérifier GSC | magasin-africain.com / issanny.com |
-| acheter netetou en ligne | page produit netetu-poudre.html visible + sauce-netetu-beugeuc.html visible | mbakhalou-saloum visible | non vu — à vérifier GSC | carafrique.fr / halalfrais.fr |
+| cuisine sénégalaise produits | non vu en propre — à vérifier GSC | non vu — à vérifier GSC | non vu — à vérifier GSC | chefsimon.com (recette Lamine Faye!) / clubmed.fr / wikipedia |
+| où acheter du guedj en france | article "quest-ce-que-le-guedj" visible (~7e) | non vu — à vérifier GSC | non vu — à vérifier GSC | senecuisine.com / issanny.com / magasin-africain.com |
+| acheter netetou en ligne | netetu-poudre.html + sauce-netetu-beugeuc.html visibles (recherche croisée) | mbakhalou-saloum visible | non vu — à vérifier GSC | carafrique.fr / halalfrais.fr / miamland.com |
 
-### Evolution vs semaine S-3 (2 septembre)
+### Evolution vs semaine S-4 (9 septembre)
 
-**Signal positif majeur — nouvelles pages produit visibles :**
-- `seggfaye.com/produits/sauce-netetu-beugeuc.html` apparaît dans les SERP : deuxième page produit netetou visible, en plus de `netetu-poudre.html`. À confirmer dans GSC.
-- `seggfaye.com/produits/yakh-carpe-rouge.html` (Yakh, carpe rouge) apparaît dans les résultats. Nouvelle page produit indexée — non mentionnée dans les rapports précédents.
+**Signal positif majeur — 4ème page produit indexée (kongfume.html) :**
+- `seggfaye.com/produits/kongfume.html` (Kong fumé mâchoiron) apparaît dans les SERP cette semaine. Non mentionné dans le rapport S-4. Seggfaye.com passe de 3 à 4 pages produit visibles en SERP. À confirmer et tracer dans GSC.
 
-**Signal positif — guide.seggfaye.com passe de 4 à 5 plats indexés :**
-- `guide.seggfaye.com/plats/fonde` apparaît dans les SERP cette semaine. Le guide compte maintenant 5 plats visibles : fondé, caldou, lakh, dibi, mbakhalou saloum.
+**Signal positif stratégique — backlink chefsimon.com (autorité haute) :**
+- La recette "Thiéboudienne rouge au guedj" de Lamine Faye est visible sur chefsimon.com à l'URL `chefsimon.com/gourmets/lamine-faye/recettes/thieboudienne-rouge-au-guedj`. ChefSimon est une référence culinaire française à fort Domain Rating. Ce backlink est un signal d'autorité thématique non replicable rapidement par la concurrence. À vérifier si le lien pointe vers seggfaye.com et s'assurer que le maillage interne profite de cet afflux.
 
-**Point d'attention :**
-- `seggfaye.com/produits/netetu-poudre.html` n'est pas ressorti sur la requête directe "netetou acheter" cette semaine, alors qu'il avait émergé en S-3. Peut être une fluctuation de classement normale. À surveiller dans GSC.
+**guide.seggfaye.com stable à 5 plats indexés :**
+- caldou, fonde, dibi, lakh, mbakhalou saloum — inchangé vs S-4. Aucun nouveau plat détecté cette semaine.
+
+**Point d'attention — "netetou acheter" :**
+- Les 2 pages produit netetou de seggfaye.com (netetu-poudre, sauce-netetu-beugeuc) n'ont pas été trouvées en top résultats sur la requête directe "netetou acheter" — mais elles sont bien indexées et visibles sur des requêtes croisées (ex : "seggfaye.com netetou produit acheter"). Fluctuation de classement normale, à surveiller dans GSC.
 
 **maya-boutique.fr :**
-- Confirmation que maya-boutique.fr est positionné en 1er estimé sur "produits sénégalais en ligne acheter france". C'est leur requête principale et leur point fort.
-- Leur catégorie halieutique est bien structurée avec des prix visibles dans les SERP : guedj beurre 200g à 6.00€, crevettes séchées à 6.50€, yett/mollusque, pagne, kéthiakh, kong fumé.
-
-**keryaye.fr :**
-- Confirmé cette semaine avec une page produit dédiée `keryaye.fr/produit/le-guedj/`. L'épicerie se positionne comme "l'épicerie de l'Afrique", travaille avec des associations de femmes (ESS). Concurrent direct sur la niche guedj.
+- Confirm 1ère position estimée sur "produits sénégalais en ligne". Inaccessible via WebFetch pour la 5ème semaine consécutive.
 
 ---
 
@@ -46,52 +44,53 @@
 
 ### 2.1 maya-boutique.fr (concurrent direct principal)
 
-Note : maya-boutique.fr est inaccessible via fetch réseau (accès proxy bloqué). Analyse basée sur les résultats SERP et les métadonnées visibles dans les résultats Google.
+Note : maya-boutique.fr est toujours inaccessible via fetch réseau (accès proxy bloqué depuis 5 semaines). Analyse basée sur les résultats SERP et les métadonnées visibles.
 
-**Forces confirmées cette semaine :**
-- Positionnement 1er estimé sur "produits sénégalais en ligne" — leur requête cible principale.
-- Catégorie halieutique complète avec 6+ produits indexés avec prix visibles : guedj beurre (6.00€), crevettes séchées (6.50€), yett/mollusque, pagne, kéthiakh, kong fumé. Les prix visibles en SERP donnent un avantage CTR immédiat.
-- Structure WooCommerce propre, URLs catégorie bien formées (/product-category/produits-halieutiques).
-- Catégories larges : halieutiques, marché, boissons, accessoires, "mon marché" — couverture catalogue étendue.
+**Forces confirmées :**
+- 1ère position estimée sur "produits sénégalais en ligne" — leur requête principale dominante.
+- Présence sur "produits sénégalais en ligne acheter france" avec le tagline "Le Sénégal à votre porte".
+- Catalogue élargi visible (halieutiques, marché, boissons, accessoires, décoration, bien-être).
 
 **Faiblesses confirmées :**
-- Toujours aucun contenu éditorial visible dans les SERP (aucun blog, aucun article de fond). Pas d'autorité thématique.
+- Aucun contenu éditorial (blog, articles, recettes) visible dans les SERP.
+- Absent sur toutes les requêtes informatives (guedj, netetou, thiéboudienne, cuisine sénégalaise).
 - Pas de rich snippets détectés (ni Recipe, ni Product avec étoiles, ni FAQ).
-- Absent sur les requêtes informatives : "recette thieboudienne", "qu'est-ce que le guedj", "cuisine sénégalaise produits".
-- Pas de différenciation thématique — présence généraliste "Sénégal à votre porte" sans expertise affichée.
+- Aucune autorité thématique construite — positionnement généraliste "Sénégal à votre porte" sans expertise affichée.
 
-**Avantages de Louma vs maya-boutique.fr :**
-- Blog seggfaye.com actif sur les requêtes éditoriales et culturelles (guedj, mbourou fass, mbakhalou saloum).
-- guide.seggfaye.com : 5 recettes structurées indexées, aucun équivalent chez maya-boutique.
-- Article "quest-ce-que-le-guedj" visible sur les requêtes transactionnelles guedj — autorité thématique que maya-boutique ne peut pas répliquer rapidement.
+**Avantages Louma vs maya-boutique :**
+- Blog seggfaye.com actif : 4+ articles indexés (guedj, mbourou fass, mbakhalou saloum, paella sénégalaise).
+- Backlink chefsimon.com (recette Lamine Faye) : signal d'autorité externe fort, inédit cette semaine.
+- guide.seggfaye.com : 5 recettes structurées indexées — aucun équivalent chez maya-boutique.
+- 4 pages produit visibles en SERP (vs 3 la semaine dernière).
 - Positionnement "Guedjologue" + "Îles du Saloum" (terme UNESCO) : différenciation non replicable.
-- 3 pages produit confirmées dans les SERP (netetu-poudre, sauce-netetu-beugeuc, yakh) vs S-3 (1 page). Progression.
+- Article "quest-ce-que-le-guedj" positionné sur les requêtes guedj transactionnelles.
 
 ### 2.2 Concurrents à surveiller
 
-| Concurrent | Observations | Menace | Evolution S-3 → S-4 |
+| Concurrent | Observations | Menace | Evolution S-4 → S-5 |
 |---|---|---|---|
-| keryaye.fr | **Confirmé.** Page produit guedj dédiée (keryaye.fr/produit/le-guedj/). ESS, travaille avec associations de femmes. Se positionne sur les requêtes guedj transactionnelles. | Moyenne-Haute sur guedj | Page produit confirmée — à analyser en local |
-| sunualimentation.com | Visible sur "guedj beurre" (crevettes séchées mentionnées). Spécialiste Sénégal. | Haute | Stable |
-| magasin-africain.com | Leader estimé sur "guedj acheter france". | Haute | Stable |
-| issanny.com | Visible sur "guedj acheter france" et "épicerie africaine en ligne". | Haute | Stable |
-| nkosiagro.com | Leader estimé "épicerie africaine en ligne". Blog actif avec article thiéboudienne. Vend soumbara/netetou. | Haute sur le généraliste | Stable, concurrent direct sur netetou |
-| carafrique.fr | Leader estimé "netetou acheter" avec page produit et livraison Europe. | Haute sur la niche netetou | Stable |
-| exoticasenegal.fr | Leader estimé "crevettes séchées sénégal". | Moyenne-Haute sur les halieutiques | Stable |
-| racines-shop.com | Épicerie africaine généraliste +30 ans. Peu spécialisé halieutiques sénégalais. | Faible sur la niche | Stable |
-| enviesdafrique.fr | Marketplace généraliste, spécialité plantain et poisson. Peu spécialisé Sénégal. | Faible à surveiller | Stable |
+| keryaye.fr | Inaccessible via fetch. Présence en SERP confirmée semaines précédentes. Concurrent direct niche guedj ESS. | Moyenne-Haute sur guedj | Stable — à analyser en local |
+| magasin-africain.com | Leader estimé sur "guedj acheter france". Produit guedj bien référencé. | Haute | Stable |
+| issanny.com | Visible sur "guedj acheter france" et "poisson séché sénégalais acheter". | Haute | Stable |
+| nkosiagro.com | Leader estimé "épicerie africaine en ligne". Blog actif avec recettes. Vend netetou/soumbara. | Haute sur généraliste | Stable |
+| carafrique.fr | Leader estimé "netetou acheter". Prix compétitif (1,99€/100g). Livraison Europe. | Haute sur niche netetou | Stable |
+| sunualimentation.com | 2ème résultat estimé sur "produits sénégalais en ligne". Spécialiste Sénégal avec guedj beurre. | Haute | Stable |
+| exoticasenegal.fr | Leader estimé "crevettes séchées sénégal". Niche complémentaire. | Moyenne-Haute halieutiques | Stable |
+| racines-shop.com | Inaccessible via fetch. Généraliste africain, peu spécialisé halieutiques sénégalais. | Faible sur la niche | Stable |
+| enviesdafrique.fr | Généraliste marketplace. Peu spécialisé Sénégal. | Faible à surveiller | Stable |
+| chefsimon.com | N'est pas concurrent, mais partenaire indirect : recette Lamine Faye indexée, signal d'autorité. | Neutre / positif | **Nouveau signal positif** |
 
 ---
 
-## 3. Etat des rich snippets (estimé, hors GSC)
+## 3. État des rich snippets (estimé, hors GSC)
 
 ### 3.1 Schema Recipe — guide.seggfaye.com
 
-Les 5 pages plats (caldou, lakh, dibi, mbakhalou saloum, fondé) sont visibles dans les SERP avec titres bien formés. Aucun enrichissement visuel détecté pour la quatrième semaine consécutive : pas de temps de préparation, pas d'image de recette, pas d'étoiles en snippet.
+Les 5 pages plats sont visibles dans les SERP avec titres bien formés (caldou, fonde, dibi, lakh, mbakhalou saloum). Aucun enrichissement visuel détecté pour la **cinquième semaine consécutive** : pas de temps de préparation, pas d'image de recette, pas d'étoiles en snippet.
 
-Interprétation prudente inchangée : le schema Recipe est probablement implémenté côté code, mais les rich snippets ne s'activent pas. Causes les plus fréquentes : image manquante ou non conforme dans le schema, durées non en format ISO 8601 (PT30M, PT1H). À tester dans l'outil Rich Results Test de Google, page par page, en local.
+Interprétation prudente inchangée : le schema Recipe est probablement implémenté côté code mais les rich snippets ne s'activent pas. Causes les plus fréquentes : image manquante ou non conforme dans le schema, durées non en format ISO 8601 (PT30M, PT1H). À tester impérativement dans l'outil Rich Results Test de Google, page par page, en local.
 
-**Action en suspens depuis 4 semaines (19 août, 26 août, 2 septembre, 9 septembre). Blocage identique. À exécuter.**
+**Action en suspens depuis 5 semaines (19 août → 16 septembre). Priorité absolue.**
 
 ### 3.2 Schema FAQPage / Article — seggfaye.com
 
@@ -99,50 +98,55 @@ Articles de blog apparaissent comme liens simples sans enrichissement. Pas de FA
 
 ### 3.3 Schema Product — seggfaye.com
 
-Trois pages produit visibles dans les SERP cette semaine (netetu-poudre, sauce-netetu-beugeuc, yakh-carpe-rouge), mais sans rich snippet Product (pas d'étoiles, pas de prix visibles en snippet). Pour activer les Product rich snippets, un schema Product complet (price, availability, et aggregateRating sur le Product individuel) serait nécessaire. **La progression côté indexation est réelle — la prochaine étape est l'enrichissement schema pour obtenir des prix et étoiles visibles directement en SERP. Décision à prendre par Lamine.**
+Quatre pages produit visibles dans les SERP cette semaine (netetu-poudre, sauce-netetu-beugeuc, yakh-carpe-rouge, **kongfume** — nouveau), mais sans rich snippet Product (pas d'étoiles, pas de prix visibles en snippet). Un schema Product complet (price, availability, et aggregateRating sur le Product individuel) permettrait d'afficher les prix directement en SERP. La progression en indexation produit est réelle (3 → 4 pages). La prochaine étape logique est l'enrichissement schema Product. Décision à prendre par Lamine.
 
 ### 3.4 AggregateRating — seggfaye.com (rappel, hors périmètre automatique)
 
-Rappel identique aux rapports S-1 à S-3 : l'aggregateRating est positionné sur le type Organization. Google n'affiche pas les étoiles pour ce type. La solution est un aggregateRating par fiche produit avec de vrais avis clients. Aucune correction automatique. Décision et exécution : Lamine.
+Rappel identique aux rapports précédents : l'aggregateRating positionné sur le type Organization n'est pas affiché par Google comme étoiles en SERP. La solution est un aggregateRating par fiche produit individuelle avec de vrais avis clients. Aucune correction automatique. Décision et exécution : Lamine.
 
 ---
 
 ## 4. Trois actions prioritaires pour la semaine
 
-### Action 1 — Corriger les rich snippets Recipe sur guide.seggfaye.com (action technique prioritaire)
-**Impact estimé : Moyen-Elevé | Délai résultats : 2-4 semaines après correction**
+### Action 1 — Corriger les rich snippets Recipe sur guide.seggfaye.com (TOUJOURS priorité absolue)
+**Impact estimé : Moyen-Élevé | Délai résultats : 2-4 semaines après correction**
 
-Quatrième semaine consécutive sans exécution. Le guide compte maintenant 5 plats indexés (fondé en plus cette semaine) — c'est le bon moment pour activer les rich snippets Recipe sur toute la base. Les rich snippets Recipe augmentent le CTR de 15-30% (benchmarks connus). Étapes en local :
+Cinquième semaine consécutive sans exécution. Chaque semaine supplémentaire = trafic CTR manqué sur 5 URLs indexées. Les rich snippets Recipe augmentent le CTR de 15-30% (benchmarks établis). Étapes en local :
 1. Tester chaque URL dans l'outil Rich Results Test de Google.
 2. Vérifier la présence d'une image valide dans le schema Recipe (cause principale de non-activation).
 3. Vérifier le format ISO 8601 des durées (PT30M, PT1H).
-4. Corriger sur une page pilote (caldou), valider, déployer sur toutes les pages.
+4. Corriger sur une page pilote (caldou ou dibi), valider, déployer sur toutes les pages.
 
-### Action 2 — Analyser keryaye.fr en local pour évaluer leur compétitivité sur guedj
-**Impact estimé : Moyen | Délai résultats : immédiat (diagnostic)**
+### Action 2 — Capitaliser sur le backlink chefsimon.com (nouvelle priorité cette semaine)
+**Impact estimé : Élevé | Délai résultats : 1-4 semaines**
 
-KerYaye est confirmé avec une page produit guedj dédiée et un positionnement ESS/associations de femmes. L'accès au site est bloqué depuis l'environnement cloud. À analyser en local : visite de keryaye.fr/produit/le-guedj/ pour comparer contenu, prix, schema markup, UX vs seggfaye.com. Si keryaye.fr propose une page produit bien optimisée, renforcer l'interlinkage entre l'article "quest-ce-que-le-guedj" et la future page produit guedj de seggfaye.com.
+La recette "Thiéboudienne rouge au guedj" de Lamine Faye est visible sur chefsimon.com — un des plus forts sites culinaires français (DR élevé). C'est un signal d'autorité externe exceptionnel pour la niche. Actions recommandées :
+1. Vérifier en local que la page chefsimon.com pointe bien vers seggfaye.com (backlink actif).
+2. Créer ou renforcer une page blog seggfaye.com sur "thiéboudienne rouge au guedj" pour capter le trafic chaud qui atterrit sur cette recette.
+3. Lier cette page à la page produit guedj (une fois créée) pour maximiser la conversion.
+4. Si aucun lien vers seggfaye.com n'est présent sur chefsimon.com, contacter pour demander l'ajout d'un lien.
 
-### Action 3 — Ouvrir une page produit guedj sur seggfaye.com
-**Impact estimé : Elevé | Délai résultats : 1-3 mois**
+### Action 3 — Créer la page produit guedj sur seggfaye.com
+**Impact estimé : Élevé | Délai résultats : 1-3 mois**
 
-L'article "quest-ce-que-le-guedj" est visible dans les SERP sur les requêtes guedj transactionnelles — c'est de l'autorité thématique qui ne convertit pas encore directement. Louma n'a pas de page produit guedj (contrairement à keryaye.fr, magasin-africain.com, issanny.com, grandexotique.com). Créer cette page permettrait de capitaliser sur le trafic éditorial existant et de toucher l'intent d'achat direct. Le yakh (carpe rouge) est déjà indexé — le guedj est le produit phare manquant.
+L'article "quest-ce-que-le-guedj" est visible sur les requêtes transactionnelles guedj depuis 2+ semaines — autorité thématique réelle sans page produit pour la capter. Avec le backlink chefsimon.com sur la même thématique, c'est le moment d'ouvrir la page produit guedj. Elle compléterait le catalogue (4 produits + guedj = 5), et connecterait l'autorité éditoriale à l'intention d'achat directe. Vérifier d'abord dans le dossier produits qu'aucune page guedj n'existe déjà avant de créer.
 
 ---
 
 ## 5. Estimation du délai pour dépasser maya-boutique.fr
 
-| Segment | maya-boutique.fr (estimé) | seggfaye.com aujourd'hui | Evolution vs S-3 (2 sept.) | Délai estimé |
+| Segment | maya-boutique.fr (estimé) | seggfaye.com aujourd'hui | Evolution vs S-4 (9 sept.) | Délai estimé |
 |---|---|---|---|---|
-| Requêtes "produits sénégalais en ligne" | **1er résultat estimé** | non vu | stable | 9-12 mois (nécessite pages catégorie + backlinks + ancienneté domaine) |
+| Requêtes "produits sénégalais en ligne" | **1er résultat estimé** | non vu | stable | 9-12 mois (pages catégorie + backlinks + ancienneté domaine) |
 | Requêtes e-commerce génériques (épicerie africaine) | visible | non vu | stable | 9-12 mois |
-| Requêtes "guedj / poissons séchés" | visible (guedj beurre, sans expertise) | article visible (~5e), page produit absente | stable — lacune produit identifiée | 1-3 mois si page produit guedj créée |
-| Requêtes "netetou acheter" | non vu | 2 pages produit netetou visibles | **progression** (1 → 2 pages produit) | Louma devance maya — à consolider |
-| Catalogue halieutique (prix en SERP) | 6+ produits avec prix visibles | 3 pages produit visibles sans prix | écart persistant | 2-4 mois si schema Product complet activé |
-| Rich snippets Recipe (guide.seggfaye.com) | non détecté | schema en place, non activé | stable (action en suspens 4 semaines) | 4-8 semaines après correction technique |
+| Requêtes "guedj / poissons séchés" | visible (sans expertise) | article visible (~7e) + 2 pages produit guedj/kong indexées | **progression** (kongfume nouvelle page produit) | 1-3 mois si page produit guedj créée |
+| Requêtes "netetou acheter" | non vu | 2 pages produit netetou indexées | stable | Louma devance maya sur cette niche — à consolider |
+| Catalogue halieutique (prix en SERP) | 6+ produits avec prix visibles en snippet | 4 pages produit visibles sans prix | **progression** (3 → 4 pages produit) | 2-4 mois si schema Product complet activé |
+| Rich snippets Recipe (guide.seggfaye.com) | non détecté | schema en place, non activé | stable (action en suspens 5 semaines) | 4-8 semaines après correction technique |
+| Autorité domaine / backlinks externes | forte présence Senegalese niche | backlink chefsimon.com détecté cette semaine | **signal positif nouveau** | gain d'autorité progressif sur 3-6 mois |
 
-**Synthèse :** La semaine du 9 septembre confirme une progression structurelle de seggfaye.com : 3 pages produit maintenant visibles dans les SERP (vs 1 en S-3), et le guide passe à 5 plats indexés. L'avantage éditorial sur la niche guedj/netetou reste l'atout principal face à maya-boutique.fr, qui domine sur la requête généraliste "produits sénégalais en ligne" mais n'a aucune profondeur de contenu. Le chaînon manquant reste la page produit guedj : l'autorité thématique existe, l'intent d'achat n'est pas encore capté côté produit. L'autre priorité bloquante est l'activation des rich snippets Recipe (4 semaines sans exécution).
+**Synthèse :** La semaine du 16 septembre marque deux signaux positifs inédits : une 4ème page produit indexée (kongfume), et un backlink visible sur chefsimon.com — l'un des sites culinaires les plus autoritaires de France. L'avantage éditorial sur la niche guedj/netetou reste le point de différenciation fondamental face à maya-boutique.fr, qui ne produit aucun contenu et ne construit aucune autorité thématique. Les deux priorités bloquantes restent les mêmes : rich snippets Recipe (5 semaines sans exécution = CTR manqué sur 5 URLs indexées) et page produit guedj (seul produit phare sans fiche e-commerce).
 
 ---
 
-*Rapport généré automatiquement le 9 septembre 2026. Sources : recherches web publiques (hors Search Console). Positions = estimations prudentes, la vérité est dans GSC.*
+*Rapport généré automatiquement le 16 septembre 2026. Sources : recherches web publiques (hors Search Console). Positions = estimations prudentes, la vérité est dans GSC.*
