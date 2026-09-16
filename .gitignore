@@ -54,3 +54,4 @@ scripts/seo/gsc-page-queries.csv
 
 # macOS
 .DS_Store
+scripts/seo/.venv/
