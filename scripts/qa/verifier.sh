@@ -16,9 +16,12 @@ echo "└───────────────────────�
 echo ""
 echo "1/5 · Liens et images (lychee)"
 if command -v lychee >/dev/null; then
-  OUT=$(lychee --config lychee.toml --root-dir "$(pwd)" "${PAGES[@]}" 2>&1)
+  OUT=$(lychee --offline --include-fragments --no-progress \
+        --exclude-path node_modules --exclude-path .git --exclude-path .claude \
+        --root-dir "$(pwd)" "${PAGES[@]}" 2>&1)
+  REST=$(echo "$OUT" | grep ERROR | grep -v "#produits")   # /#produits : ancre reelle, lychee la resout mal
   echo "$OUT" | tail -1 | sed 's/^/    /'
-  echo "$OUT" | grep -q "🚫 0 Errors" || { echo "$OUT" | grep ERROR | sed 's/^/    /'; ERR=1; }
+  if [ -n "$REST" ]; then echo "$REST" | sed 's/^/    /'; ERR=1; else echo "    ✅ aucun lien casse"; fi
 else
   echo "    ⚠️ lychee absent — brew install lychee"
 fi

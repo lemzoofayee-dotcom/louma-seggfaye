@@ -1,7 +1,0 @@
-# Vérification des liens — Louma by Seggfaye
-offline = true
-include_fragments = true
-no_progress = true
-exclude_path = ["node_modules", ".git", "scripts"]
-# /#produits est une ancre de l'accueil ; lychee résout "/" comme un dossier -> faux positif
-exclude = ["^/#produits$"]
