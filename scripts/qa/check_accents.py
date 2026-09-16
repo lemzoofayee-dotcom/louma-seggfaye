@@ -20,7 +20,11 @@ for w, n in acc.items(): cand[strip(w)][w] += n
 # graphies wolof / produits : intouchables (validées par Lamine)
 WOLOF = {'netetou','netetu','soumbala','nere','thiere','thiakry','guedj','guej','yeet','yet','bissap',
  'bouye','diwnior','diwtir','kethiakh','sompate','thiof','yakh','kong','pagne','cipakh','niebe','mafe',
- 'seche','seches','sechee','sechees','prepare','melange','cote','cotes','sale','ferme','marche','pate'}
+ 'seche','seches','sechee','sechees','prepare','melange','cote','cotes','sale','ferme','marche','pate',
+ # graphies wolof : seul Lamine tranche
+ 'thieboudienne','thiebou','dieye','diargne','sompatt','yekem','keciax','ciakri','yoxos','tuffa',
+ # mots francais valides tels quels : ne JAMAIS accentuer automatiquement
+ 'jeune','granules','tache','mure','cure','tire','acre','are','cotes','entre','eleve','reste','age'}
 dico = {}
 for nu, formes in cand.items():
     if nu in WOLOF or len(nu) < 4: continue
