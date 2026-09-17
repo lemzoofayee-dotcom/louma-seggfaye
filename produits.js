@@ -515,7 +515,7 @@ image: "thiere1.webp",
 description: "Couscous de mil roulé à la main, le thiéré est la base du plat national sénégalais « thiéré mboum ». Sacré Champion du Monde du couscous en compétition internationale.",
 origine: "Sénégal — Roulé à la main de manière artisanale",
 goutPlus: "La différence avec un couscous industriel est immédiate : grains irréguliers, texture unique, goût de mil authentique. Le roulage à la main change tout.",
-conseil: "Cuire à la vapeur comme un couscous classique. Se sert avec des sauces de légumes (mboum), du lait caillé ou du bouillon de viande.",
+conseil: "Cuire à la vapeur comme un couscous classique. Se sert avec des sauces de légumes (mboum) ou du bouillon de viande. Au lait, c'est du lait frais — le lait caillé, c'est pour le thiakry.",
 stock: true,
 nouveaute: false
 },
