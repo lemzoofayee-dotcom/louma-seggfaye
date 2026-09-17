@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Bloque le push si la verification du site echoue.
+# Contournement volontaire :  git push --no-verify
+echo "▶ Vérification avant publication…"
+if ./scripts/qa/verifier.sh >/tmp/qa-prepush.txt 2>&1; then
+  echo "✅ Site propre — publication autorisée"
+  exit 0
+fi
+echo ""
+echo "⛔ PUSH BLOQUÉ — le site a des erreurs :"
+echo ""
+grep -E "❌|erreur" /tmp/qa-prepush.txt | head -20
+echo ""
+echo "   Corrige, puis relance. Rapport complet : /tmp/qa-prepush.txt"
+echo "   (Pour forcer malgré tout : git push --no-verify)"
+exit 1
