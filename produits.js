@@ -617,7 +617,7 @@ image: "tiagadegue.webp",
 description: "Pâte d'arachide pure 100% artisanale, fabriquée à partir d'arachides sénégalaises grillées et broyées. Sans sucre, sans huile de palme, sans additif. La vraie pâte d'arachide.",
 origine: "Sénégal — Fabrication artisanale",
 goutPlus: "Texture épaisse et goût d'arachide grillée intense. Rien à voir avec les pâtes d'arachide industrielles diluées. 100% arachide, rien d'autre.",
-conseil: "Base du mafé et du domoda. Se tartine aussi sur du pain. Délayer dans un peu d'eau chaude avant d'ajouter à la sauce.",
+conseil: "Base du mafé, du souloukhou et du dakhine. Entre aussi dans les desserts : ngalakh, lakh neuteri. Se tartine sur du pain. Délayer dans un peu d'eau chaude avant d'ajouter à la sauce.",
 stock: true,
 nouveaute: false
 },
