@@ -792,7 +792,7 @@ stock: true,
 nouveaute: false
 },
 {
-id: "yaye-boye",
+id: "yaboye",
 nom: "Yaboye",
 nomLocal: "Sardinelle",
 categorie: "frais",
