@@ -6,8 +6,11 @@ corrige jamais vers une graphie étrangère au site. Les mots ambigus
 import re, glob, collections, unicodedata, sys
 def strip(s): return ''.join(c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) != 'Mn')
 def visible(h):
+    """Texte lu par un humain + texte des donnees structurees JSON-LD,
+    que Google lit aussi (angle mort repere le 17/09/2026)."""
+    ld = ' '.join(re.findall(r'<script type="application/ld\+json">(.*?)</script>', h, re.S))
     h = re.sub(r'<(script|style).*?</\1>', '', h, flags=re.S)
-    return ''.join(p for p in re.split(r'(<[^>]+>)', h) if not p.startswith('<'))
+    return ld + ' ' + ''.join(p for p in re.split(r'(<[^>]+>)', h) if not p.startswith('<'))
 
 pages = glob.glob('*.html')+glob.glob('blog/*.html')+glob.glob('produits/*.html')+glob.glob('categories/*.html')
 acc = collections.Counter()
