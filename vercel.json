@@ -78,6 +78,11 @@
       "source": "/blog/produits-senegalais-france.html",
       "destination": "/epicerie-africaine.html",
       "permanent": true
+    },
+    {
+      "source": "/produits/yaye-boye.html",
+      "destination": "/produits/yaboye.html",
+      "permanent": true
     }
   ]
 }
