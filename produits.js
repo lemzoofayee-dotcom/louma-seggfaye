@@ -171,7 +171,7 @@ gallery: ["guedj-kong-1.webp", "guedj-kong-3.webp", "guedj-kong-2.webp", "guedj-
 description: "Guedj de mâchoiron (Kong). Avec le Beurre, c'est l'un des 2 guedj les plus connus de la diaspora. Goût prononcé, idéal pour les plats traditionnels.",
 origine: "Sénégal — Pêche artisanale côtière",
 goutPlus: "Le kong a un goût puissant et caractéristique qui donne du corps aux sauces. C'est le guedj que la diaspora reconnaît les yeux fermés.",
-conseil: "Incontournable dans le thiéboudienne et les plats en sauce. Un petit morceau suffit pour parfumer tout le plat.",
+conseil: "Le roi du soupou kandja, du thiébou guedj et du thiébou kéthiakh. Dans le thiéboudienne, il vient juste après le guedj beurre. Un petit morceau suffit pour parfumer tout le plat.",
 stock: true,
 nouveaute: false
 },
