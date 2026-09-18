@@ -57,7 +57,7 @@ document.addEventListener('click', function(e){
     "logo": {"@type": "ImageObject", "url": "https://seggfaye.com/logosite.webp"}
   },
   "datePublished": "2026-07-12T09:00:00+02:00",
-  "dateModified": "2026-08-12T09:00:00+02:00",
+  "dateModified": "2026-09-18T15:00:00+02:00",
   "image": "https://seggfaye.com/netetou-dôme.webp",
   "mainEntityOfPage": "https://seggfaye.com/blog/quest-ce-que-le-nere.html"
 }
@@ -214,6 +214,12 @@ li { margin-bottom:.5rem; }
 .faq summary::before { content:'+ '; color:var(--gold); font-weight:700; }
 .faq details[open] summary::before { content:'- '; }
 .faq details p { margin-top:.6rem; font-size:.9rem; }
+.photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; margin:1.5rem 0 2rem; }
+@media(max-width:600px) { .photo-grid { grid-template-columns:1fr; } }
+.photo-grid figure { margin:0; }
+.photo-grid img { width:100%; height:auto; aspect-ratio:3/4; object-fit:cover; border-radius:.6rem; border:1px solid var(--border); }
+.photo-grid figcaption { font-size:.8rem; color:var(--cream); margin-top:.4rem; line-height:1.4; }
+.photo-grid figcaption small { display:block; font-size:.68rem; color:var(--muted); }
 .back-link { display:inline-flex; align-items:center; gap:.4rem; padding:1.5rem 0; font-size:.85rem; color:var(--gold); }
 footer { text-align:center; padding:2rem; font-size:.75rem; color:var(--muted); border-top:1px solid var(--border); }
 </style>
@@ -250,6 +256,24 @@ footer { text-align:center; padding:2rem; font-size:.75rem; color:var(--muted); 
   <p>Le néré (<em>Parkia biglobosa</em>) est un grand arbre des savanes qui pousse du Sénégal jusqu'au Nigeria. Il peut vivre plus d'un siècle et atteindre vingt mètres de haut. Dans les villages, on ne le coupe pas : c'est un <strong>arbre nourricier</strong>, protégé et transmis de génération en génération, souvent au milieu des champs — les cultivateurs sèment autour de lui, jamais à sa place.</p>
 
   <p>À la saison sèche, le néré se couvre de pompons rouge-orangé, puis de longues gousses qui pendent en grappes. C'est là que tout se joue : chaque gousse contient deux trésors.</p>
+
+  <div class="photo-grid">
+    <figure>
+      <img src="/nere-arbre.webp" alt="Grand arbre à néré (Parkia biglobosa) isolé dans la savane" loading="lazy" width="1000" height="750">
+      <figcaption>L'arbre à néré, au milieu de la savane
+        <small>Photo : Vitellaria, <a href="https://commons.wikimedia.org/wiki/File:Parkia_biglobosa_Burkina.jpg" rel="nofollow noopener" target="_blank">Wikimedia Commons</a>, CC BY-SA 2.0 de</small></figcaption>
+    </figure>
+    <figure>
+      <img src="/nere-fleur.webp" alt="Fleur du néré : un pompon rouge suspendu à une longue tige" loading="lazy" width="667" height="1000">
+      <figcaption>La fleur : un pompon rouge au bout d'une longue tige
+        <small>Photo : Masséni Héma, <a href="https://commons.wikimedia.org/wiki/File:Fleur_de_n%C3%A9er%C3%A9.jpg" rel="nofollow noopener" target="_blank">Wikimedia Commons</a>, CC BY-SA 4.0</small></figcaption>
+    </figure>
+    <figure>
+      <img src="/nere-gousses.webp" alt="Gousses de néré séchées, attachées en bottes au marché" loading="lazy" width="750" height="1000">
+      <figcaption>Les gousses séchées, vendues en bottes
+        <small>Photo : BeraDigle, <a href="https://commons.wikimedia.org/wiki/File:Le_n%C3%A9r%C3%A9.jpg" rel="nofollow noopener" target="_blank">Wikimedia Commons</a>, CC BY-SA 4.0</small></figcaption>
+    </figure>
+  </div>
 
   <h2>Trésor n°1 : la pulpe jaune sucrée</h2>
 
