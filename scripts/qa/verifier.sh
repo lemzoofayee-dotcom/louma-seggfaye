@@ -14,7 +14,7 @@ echo "│  VÉRIFICATION DU SITE                          │"
 echo "└────────────────────────────────────────────────┘"
 
 echo ""
-echo "1/5 · Liens et images (lychee)"
+echo "1/6 · Liens et images (lychee)"
 if command -v lychee >/dev/null; then
   OUT=$(lychee --offline --include-fragments --no-progress \
         --exclude-path node_modules --exclude-path .git --exclude-path .claude \
@@ -27,7 +27,7 @@ else
 fi
 
 echo ""
-echo "2/5 · Validité HTML (html-validate)"
+echo "2/6 · Validité HTML (html-validate)"
 if npx --yes html-validate "${PAGES[@]}" >/tmp/hv.txt 2>&1; then
   echo "    ✅ aucune erreur"
 else
@@ -35,16 +35,20 @@ else
 fi
 
 echo ""
-echo "3/5 · Piège Vercel : extensions en MAJUSCULES"
+echo "3/6 · Piège Vercel : extensions en MAJUSCULES"
 python3 scripts/qa/check_casse.py || ERR=1
 
 echo ""
-echo "4/5 · Images de partage (og:image)"
+echo "4/6 · Images de partage (og:image)"
 python3 scripts/qa/check_og.py || ERR=1
 
 echo ""
-echo "5/5 · Accents français manquants"
+echo "5/6 · Accents français manquants"
 python3 scripts/qa/check_accents.py || ERR=1
+
+echo ""
+echo "6/6 · Liens internes (URLs accentuees, cibles manquantes)"
+python3 scripts/qa/check_liens.py || ERR=1
 
 echo ""
 if [ "$ERR" -eq 0 ]; then echo "✅ TOUT EST PROPRE — bon pour la mise en ligne"; else echo "❌ CORRIGER AVANT DE PUBLIER"; fi
