@@ -9,8 +9,11 @@ def visible(h):
     """Texte lu par un humain + texte des donnees structurees JSON-LD,
     que Google lit aussi (angle mort repere le 17/09/2026)."""
     ld = ' '.join(re.findall(r'<script type="application/ld\+json">(.*?)</script>', h, re.S))
+    # les URLs ne sont PAS du texte lu : les accentuer casse les pages (404 du 17/09/2026)
+    ld = re.sub(r'https?://[^"\s]+|"/[^"]*"', ' ', ld)
     h = re.sub(r'<(script|style).*?</\1>', '', h, flags=re.S)
-    return ld + ' ' + ''.join(p for p in re.split(r'(<[^>]+>)', h) if not p.startswith('<'))
+    txt = ''.join(p for p in re.split(r'(<[^>]+>)', h) if not p.startswith('<'))
+    return ld + ' ' + re.sub(r'https?://\S+', ' ', txt)
 
 pages = glob.glob('*.html')+glob.glob('blog/*.html')+glob.glob('produits/*.html')+glob.glob('categories/*.html')
 acc = collections.Counter()
