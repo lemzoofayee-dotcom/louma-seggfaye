@@ -373,7 +373,7 @@ document.addEventListener('click', function(e){
 <!-- ═══ POISSONS FRAIS ═══ -->
 <div class="cat-panel" id="cat-frais">
 <div style="background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:1rem;padding:1rem 1.5rem;margin-bottom:1.5rem;font-size:.85rem;color:#e0c070;">
-  🚚 <strong>Livraison FedEx :</strong> France métropolitaine 15 € (1 à 3 cartons) · 20 € (4 et 5 cartons) · Union Européenne 20,00 € · Commande minimum 1 carton, ou 2 kg de yaboye
+  🚚 <strong>Livraison Chronopost ou FedEx :</strong> France métropolitaine 15 € (1 à 3 cartons) · 20 € (4 et 5 cartons) · Union Européenne 20,00 € · Commande minimum 1 carton, ou 2 kg de yaboye
 </div>
 <div class="cat-grid">
 </div>
@@ -872,7 +872,7 @@ document.addEventListener('click', function(e){
 </div>
 <div id="cart-mix-warn" style="display:none; background:rgba(196,74,31,.12); border:1px solid rgba(196,74,31,.45); border-left:3px solid #c44a1f; color:#f5ead8; padding:.8rem 1rem; margin:0 1.2rem 0; border-radius:.5rem; font-size:.78rem; line-height:1.5;">
   <strong style="color:#e8c478; display:block; margin-bottom:.3rem;">⚠️ Colis séparés requis</strong>
-  Votre panier contient des <strong>poissons frais</strong> et des <strong>produits secs</strong>. La chaîne du froid impose 2 colis distincts (FedEx + Colissimo). Vous pouvez continuer, ou passer 2 commandes séparées.
+  Votre panier contient des <strong>poissons frais</strong> et des <strong>produits secs</strong>. La chaîne du froid impose 2 colis distincts (Chronopost ou FedEx + Colissimo). Vous pouvez continuer, ou passer 2 commandes séparées.
 </div>
 <div class="cart-items" id="cart-items">
 <div class="cart-empty">
@@ -984,7 +984,7 @@ document.addEventListener('click', function(e){
           <button class="prod-modal-add" id="modal-add-btn" onclick="modalAddToCart()">🛒 Ajouter au panier</button>
         </div>
         <div id="modal-fresh-warn" style="display:none; background:rgba(196,74,31,.12); border:1px solid rgba(196,74,31,.45); border-left:3px solid #c44a1f; color:#f5ead8; padding:.7rem .9rem; margin-top:.8rem; border-radius:.5rem; font-size:.78rem; line-height:1.5;">
-          <strong style="color:#e8c478;">🧊 Chaîne du froid :</strong> ce produit voyage dans un colis FedEx séparé (10€ France · 20€ Europe). Si vous commandez aussi des produits secs, ils partiront dans un colis distinct.
+          <strong style="color:#e8c478;">🧊 Chaîne du froid :</strong> ce produit voyage dans un colis Chronopost ou FedEx séparé (15 € France · 20 € Europe). Si vous commandez aussi des produits secs, ils partiront dans un colis distinct.
         </div>
         <div class="prod-modal-trust">
           <div>📦 Conditionnement sous vide — préserve la fraîcheur, pas d'odeur</div>
@@ -1177,7 +1177,7 @@ document.addEventListener('click', function(e){
 
     shippingCarrier() {
       if (this.items.length === 0) return '';
-      if (this.hasFreshFish()) return 'FedEx';
+      if (this.hasFreshFish()) return 'Chronopost / FedEx';
       const zone = document.getElementById('cart-zone')?.value || 'fr';
       return zone === 'fr' ? 'Colissimo' : 'Mondial Relay';
     },
