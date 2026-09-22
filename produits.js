@@ -230,7 +230,7 @@ nouveaute: false
 },
 {
 id: "kongfume",
-nom: "Kongfume",
+nom: "Kong fumé",
 nomLocal: "Kong fumé",
 categorie: "mer",
 prix: 30.00,
@@ -247,7 +247,7 @@ nouveaute: false
 },
 {
 id: "kongfume-gambie",
-nom: "Kongfume Gambie",
+nom: "Kong fumé de Gambie",
 nomLocal: "Kong fumé de Gambie",
 categorie: "mer",
 prix: 30.00,
