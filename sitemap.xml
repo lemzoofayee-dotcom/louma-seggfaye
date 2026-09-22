@@ -356,6 +356,10 @@
     <loc>https://seggfaye.com/categories/pates-beurres.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>  <url>
+    <loc>https://seggfaye.com/categories/plats-prepares.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://seggfaye.com/categories/poissons-frais.html</loc>

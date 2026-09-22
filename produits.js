@@ -434,6 +434,23 @@ stock: false,
 nouveaute: false
 },
 {
+id: "pastels",
+nom: "Pastels au poisson",
+nomLocal: "Pastels",
+categorie: "plats",
+prix: 40.00,
+unite: "les 50 pièces",
+prixAncien: null,
+badge: "Sur commande",
+image: "pastels.jpg",
+description: "Le snack de toutes les fêtes sénégalaises : un chausson croustillant en pâte brisée, garni d'une farce épicée au poisson. Vendus précuits, il ne reste qu'à les frire. Sur commande uniquement.",
+origine: "Sénégal — Recette traditionnelle",
+goutPlus: "Pâte croustillante, farce au poisson relevée : le snack salé des fêtes sénégalaises.",
+conseil: "Frire à l'huile bien chaude jusqu'à ce qu'ils soient dorés. Servir chaud, avec une sauce pimentée.",
+stock: true,
+nouveaute: false
+},
+{
 id: "bouye-baobab",
 nom: "Bouye (poudre baobab)",
 nomLocal: "Bouye",
@@ -952,7 +969,7 @@ ${btnHtml}
 </div>`.trim();
 }
 function renderProduits() {
-const categories = ['mer', 'epices', 'cereales', 'beurres', 'frais'];
+const categories = ['mer', 'epices', 'cereales', 'beurres', 'plats', 'frais'];
 categories.forEach(cat => {
 const grid = document.querySelector(`#cat-${cat} .cat-grid`);
 if (!grid) return;
