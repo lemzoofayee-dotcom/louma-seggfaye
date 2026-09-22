@@ -258,7 +258,7 @@ image: "kong-fume1.webp",
 description: "Kong fumé importé de Gambie. Même poisson (mâchoiron) mais fumé selon la technique gambienne, qui donne un résultat légèrement différent du fumage sénégalais.",
 origine: "Gambie — Pêche artisanale, fumage traditionnel gambien",
 goutPlus: "Fumé entier, sans être ouvert, sa chair ressort mi-cuite : plus délicate et plus moelleuse que celle du kong fumé ouvert, qui est plus dense et plus sec. En contrepartie, il demande une conservation plus stricte.",
-conseil: "Même utilisation que le kongfumé sénégalais. À doser selon votre préférence, le goût fumé étant plus marqué.",
+conseil: "Même utilisation que le kong fumé ouvert : casser en morceaux dans les sauces. Sa chair est plus délicate, à conserver au congélateur.",
 stock: true,
 nouveaute: false
 },
