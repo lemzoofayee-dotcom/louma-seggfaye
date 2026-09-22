@@ -373,7 +373,7 @@ document.addEventListener('click', function(e){
 <!-- ═══ POISSONS FRAIS ═══ -->
 <div class="cat-panel" id="cat-frais">
 <div style="background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:1rem;padding:1rem 1.5rem;margin-bottom:1.5rem;font-size:.85rem;color:#e0c070;">
-  🚚 <strong>Livraison FedEx :</strong> France métropolitaine 10,00 € · Union Européenne 20,00 € · Commande minimum 1 carton
+  🚚 <strong>Livraison FedEx :</strong> France métropolitaine 15 € (1 à 3 cartons) · 20 € (4 et 5 cartons) · Union Européenne 20,00 € · Commande minimum 1 carton, ou 2 kg de yaboye
 </div>
 <div class="cat-grid">
 </div>
@@ -416,14 +416,14 @@ document.addEventListener('click', function(e){
 <div style="font-size:1.5rem; margin-bottom:.5rem;">🇫🇷</div>
 <div style="font-weight:800; color:var(--gold); font-size:1.1rem;">France</div>
 <div style="color:var(--muted); font-size:.82rem; margin-top:.3rem;">Colissimo 48h</div>
-<div style="font-weight:700; color:var(--cream); margin-top:.5rem;">6,90 €</div>
+<div style="font-weight:700; color:var(--cream); margin-top:.5rem;">dès 5,49 €</div>
 <div style="font-size:.72rem; color:var(--muted); margin-top:.25rem;">Selon poids</div>
 </div>
 <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; text-align:center;">
 <div style="font-size:1.5rem; margin-bottom:.5rem;">🇪🇺</div>
 <div style="font-weight:800; color:var(--gold); font-size:1.1rem;">Europe</div>
-<div style="color:var(--muted); font-size:.82rem; margin-top:.3rem;">Colis suivi 3–5j</div>
-<div style="font-weight:700; color:var(--cream); margin-top:.5rem;">12,90 €</div>
+<div style="color:var(--muted); font-size:.82rem; margin-top:.3rem;">Mondial Relay 3–5j</div>
+<div style="font-weight:700; color:var(--cream); margin-top:.5rem;">dès 12,89 €</div>
 <div style="font-size:.72rem; color:var(--muted); margin-top:.25rem;">Selon poids</div>
 </div>
 <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; text-align:center;">
@@ -1032,7 +1032,7 @@ document.addEventListener('click', function(e){
     },
 
     add(product) {
-      // Limite : 1 kg/client (détail) ou 3 cartons/client (exception cartons)
+      // Limite : 1 kg/client (détail) ou 5 cartons/client (exception cartons)
       const existingQ = this.items.find(i => i.name === product.name);
       const currentQty = existingQ ? existingQ.qty : 0;
       if (currentQty + 1 > this.maxUnits(product.unit, product.cat)) {
@@ -1048,7 +1048,7 @@ document.addEventListener('click', function(e){
 
       const existing = this.items.find(i => i.name === product.name);
       if (existing) existing.qty++;
-      else this.items.push({...product, qty: 1});
+      else this.items.push({...product, qty: this.minUnits(product.unit, product.cat)});
       this.save(); this.updateCount(); this.animateBtn();
       this.showNotif(product.name);
       this.refreshMixWarn();
@@ -1082,7 +1082,7 @@ document.addEventListener('click', function(e){
         this.showLimitMsg(item.name, item.unit, item.cat); return;
       }
       item.qty += delta;
-      if (item.qty <= 0) this.remove(name);
+      if (item.qty < this.minUnits(item.unit, item.cat)) this.remove(name);
       else { this.save(); this.renderItems(); this.updateCount(); this.refreshMixWarn(); }
     },
 
@@ -1110,7 +1110,7 @@ document.addEventListener('click', function(e){
       // Détection par catégorie (source de vérité produits.js).
       // Les anciens noms restent en fallback pour les paniers legacy en localStorage.
       const fresh = ['thiof','dorade','tilapia','sompate','seude','iler','yakh','yaye boye','yaboye','yet','yeet','yete','yéte','chanchar','capitaine','colafil','baracouda','poisson eau douce','mélange de poisson'];
-      return this.items.some(i => i.cat === 'frais' || fresh.some(k => i.name.toLowerCase().includes(k)));
+      return this.items.some(i => i.cat === 'frais' || (!i.cat && fresh.some(k => i.name.toLowerCase().includes(k))));
     },
 
     parseWeight(unit) {
@@ -1129,28 +1129,33 @@ document.addEventListener('click', function(e){
     isCarton(unit) { return /carton/i.test(unit || ''); },
 
     // Quantité max autorisée pour une ligne produit
-    // Cartons = 3 max ; poisson frais au kilo = 2 kg ; sinon 1 kg par client
+    // Poisson frais au kilo (yaboye) : 2 kg minimum, sinon la livraison à 15 € n'est pas rentable
+    minUnits(unit, cat) {
+      return (cat === 'frais' && !this.isCarton(unit)) ? 2 : 1;
+    },
+
+    // Cartons = 5 max ; poisson frais au kilo = 2 kg ; sinon 1 kg par client
     maxUnits(unit, cat) {
-      if (this.isCarton(unit)) return 3;
+      if (this.isCarton(unit)) return 5;
       if (cat === 'frais') return 2;
       return Math.max(1, Math.floor(1000 / this.parseWeight(unit)));
     },
 
     limitLabel(unit, cat) {
-      if (this.isCarton(unit)) return 'Max 3 cartons / client';
+      if (this.isCarton(unit)) return 'Max 5 cartons / client';
       if (cat === 'frais') return 'Max 2 kg / client';
       return 'Max 1 kg / client';
     },
 
     totalWeightG() {
       const PKG = 80; // emballage ~80g par ligne
-      return this.items.reduce((s, i) => s + (this.parseWeight(i.unit) + PKG) * i.qty, 0);
+      return this.items.reduce((s, i) => s + this.parseWeight(i.unit) * i.qty + PKG, 0);
     },
 
     colissimoRate(wg, zone) {
       // Grille simplifiée Colissimo 2026
       const grid = {
-        fr: [[1000,9.59],[2000,11.19],[5000,17.39]],
+        fr: [[250,5.49],[500,7.59],[750,9.29],[1000,9.59],[2000,11.19],[5000,17.39],[10000,25.29]],
         r1: [[1000,12.89],[2000,14.49],[5000,20.69]],
         r2: [[1000,14.59],[2000,16.19],[5000,22.39]]
       };
@@ -1162,14 +1167,19 @@ document.addEventListener('click', function(e){
     shippingCost() {
       if (this.items.length === 0) return 0;
       const zone = document.getElementById('cart-zone')?.value || 'fr';
-      if (this.hasFreshFish()) return zone === 'fr' ? 10.00 : 20.00;
+      if (this.hasFreshFish()) {
+        if (zone !== 'fr') return 20.00;
+        const cartons = this.items.filter(i => i.cat === 'frais' && this.isCarton(i.unit)).reduce((s, i) => s + i.qty, 0);
+        return cartons >= 4 ? 20.00 : 15.00;
+      }
       return this.colissimoRate(this.totalWeightG(), zone);
     },
 
     shippingCarrier() {
       if (this.items.length === 0) return '';
       if (this.hasFreshFish()) return 'FedEx';
-      return 'Colissimo';
+      const zone = document.getElementById('cart-zone')?.value || 'fr';
+      return zone === 'fr' ? 'Colissimo' : 'Mondial Relay';
     },
 
     discount() {
