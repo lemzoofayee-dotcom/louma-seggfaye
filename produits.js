@@ -446,7 +446,7 @@ image: "poudre-baobab.webp",
 description: "Poudre de fruit de baobab (bouye), riche en vitamine C et en fibres. La base du jus de bouye, boisson crémeuse et rafraîchissante emblématique du Sénégal.",
 origine: "Sénégal — Cueillette sauvage",
 goutPlus: "Goût acidulé et légèrement sucré, texture farineuse qui donne une consistance crémeuse au jus. Superaliment naturel avec 6x plus de vitamine C que l'orange.",
-conseil: "Mélanger dans de l'eau froide avec du sucre et de la vanille pour un jus de bouye. Se consomme aussi en smoothie ou mélangé au lait caillé (thiakry).",
+conseil: "Mélanger dans de l'eau froide avec du sucre et de la vanille, puis ajouter du lait évaporé ou du lait concentré sucré pour un jus de bouye crémeux. Se consomme aussi en smoothie ou mélangé au lait caillé (thiakry).",
 stock: true,
 nouveaute: false
 },
