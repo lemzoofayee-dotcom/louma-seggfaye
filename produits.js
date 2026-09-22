@@ -691,7 +691,7 @@ nouveaute: false
 },
 {
 id: "lem-miel",
-nom: "Lem miel Pure",
+nom: "Miel pur du Sénégal (Kédougou)",
 nomLocal: "Lem",
 categorie: "beurres",
 prix: 25.00,
