@@ -735,4 +735,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://seggfaye.com/en/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://seggfaye.com/en/shop.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://seggfaye.com/en/senegalese-food.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://seggfaye.com/en/thieboudienne-recipe.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://seggfaye.com/en/dawadawa-iru-soumbala.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://seggfaye.com/en/cymbium-yeet.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
 </urlset>
