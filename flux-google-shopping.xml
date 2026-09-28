@@ -17,6 +17,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>yoxos</g:id>
@@ -31,6 +33,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>pagne</g:id>
@@ -45,10 +49,12 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>tuffa</g:id>
-    <g:title>Toufa (touffa, tuffa) — 100g</g:title>
+    <g:title>Toufa (Touffa (tuffa)) — 100g</g:title>
     <g:description>Escargot de mer des Îles du Saloum, cueilli à la main en même temps que les coques (pagne) dans la mangrove. Sorti de sa coquille puis séché au soleil pendant 3 à 4 jours. Contrairement aux coques qui sont bouillies, le toufa est séché directement après extraction. Aussi écrit « tuffa » ou « touffa ».</g:description>
     <g:link>https://seggfaye.com/produits/tuffa.html</g:link>
     <g:image_link>https://seggfaye.com/tuffa.webp</g:image_link>
@@ -59,6 +65,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>yeet-maggi</g:id>
@@ -73,6 +81,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>guej-yass</g:id>
@@ -87,6 +97,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>guej-beurre</g:id>
@@ -101,6 +113,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>guej-beur-casamance</g:id>
@@ -115,11 +129,13 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>380 g</g:shipping_weight>
   </item>
   <item>
     <g:id>guej-sol</g:id>
     <g:title>Guedj Sole — 100g</g:title>
-    <g:description>Guedj de sole, un poisson plat à chair délicate. Séchage traditionnel au soleil. Sa finesse en fait un guedj apprécié pour les sauces légères et parfumées.</g:description>
+    <g:description>Guedj de sole, un poisson plat à chair délicate — et le seul guedj séché sans sa peau. Terroir : Îles du Saloum, Casamance et Gambie.</g:description>
     <g:link>https://seggfaye.com/produits/guej-sol.html</g:link>
     <g:image_link>https://seggfaye.com/guedj-sole-1.webp</g:image_link>
     <g:price>4.00 EUR</g:price>
@@ -129,6 +145,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>guej-kong</g:id>
@@ -143,11 +161,13 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>guej-tambajang</g:id>
     <g:title>Guedj Tambajang — 100g</g:title>
-    <g:description>Guedj de tambajang, petit poisson séché entier. Très utilisé comme condiment dans la cuisine sénégalaise pour son goût concentré et sa praticité.</g:description>
+    <g:description>Guedj de tambajang : du mulet (guiss) séché entier. Très utilisé comme condiment dans la cuisine sénégalaise pour son goût concentré et sa praticité.</g:description>
     <g:link>https://seggfaye.com/produits/guej-tambajang.html</g:link>
     <g:image_link>https://seggfaye.com/guedj-tambajang-1.webp</g:image_link>
     <g:price>3.00 EUR</g:price>
@@ -157,6 +177,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>guej-toumboulan</g:id>
@@ -171,11 +193,13 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>guerte-tooy</g:id>
     <g:title>Guerte Tooy (Arachides grillées) — kg</g:title>
-    <g:description>Arachides grillées à sec (guerte tooy), snack populaire au Sénégal. Grillées artisanalement dans du sable chaud pour une cuisson uniforme et un croquant parfait.</g:description>
+    <g:description>Arachides fraîches crues (guerte tooy) du bassin arachidier sénégalais. Ni grillées ni transformées : l'arachide telle qu'elle sort de terre, à cuisiner ou à griller soi-même.</g:description>
     <g:link>https://seggfaye.com/produits/guerte-tooy.html</g:link>
     <g:image_link>https://seggfaye.com/guerte-toye.webp</g:image_link>
     <g:price>8.00 EUR</g:price>
@@ -185,6 +209,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Céréales &amp; farines</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>1080 g</g:shipping_weight>
   </item>
   <item>
     <g:id>kongfume</g:id>
@@ -199,6 +225,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>580 g</g:shipping_weight>
   </item>
   <item>
     <g:id>kongfume-gambie</g:id>
@@ -213,6 +241,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>580 g</g:shipping_weight>
   </item>
   <item>
     <g:id>pack-saloum</g:id>
@@ -227,10 +257,12 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>1080 g</g:shipping_weight>
   </item>
   <item>
     <g:id>netetu-dom</g:id>
-    <g:title>Netetu Dom (Netetou) — 100g</g:title>
+    <g:title>Netetou dôme (Netetou) — 100g</g:title>
     <g:description>Graines de néré bouillies, fermentées puis séchées. Condiment emblématique de la cuisine ouest-africaine. Origine principale : Mali et Casamance (Sédhiou/Kolda). Circuit court, emballé sous vide pour neutraliser l'odeur.</g:description>
     <g:link>https://seggfaye.com/produits/netetu-dom.html</g:link>
     <g:image_link>https://seggfaye.com/netetou-dome.webp</g:image_link>
@@ -241,11 +273,13 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>netetu-barre</g:id>
-    <g:title>Netetu Barre (Netetou en barre) — 100g</g:title>
-    <g:description>Netetou (soumbala) pressé en forme de barre compacte. Même produit que le netetu dôme, mais moulé en barre pour un dosage plus facile. L'alternative 100% naturelle aux bouillons industriels.</g:description>
+    <g:title>Netetou barre (Netetou en barre) — 100g</g:title>
+    <g:description>Netetou (soumbala) en barre : la même graine fermentée que le dôme, mais pilée jusqu'à devenir une purée, puis moulée en barre compacte. L'alternative 100% naturelle aux bouillons industriels.</g:description>
     <g:link>https://seggfaye.com/produits/netetu-barre.html</g:link>
     <g:image_link>https://seggfaye.com/netetou-barre.webp</g:image_link>
     <g:price>5.00 EUR</g:price>
@@ -255,11 +289,13 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>netetu-mix</g:id>
-    <g:title>Netetu Mix (Netetou mixte) — 200g</g:title>
-    <g:description>Assortiment de netetou sous plusieurs formes (dôme, barre, poudre) pour découvrir et comparer. Idéal pour ceux qui veulent tester les différentes textures et trouver leur préférence.</g:description>
+    <g:title>Netetou Mix (Netetou mixte) — 200g</g:title>
+    <g:description>Mélange à base de poudre de netetou torréfié, de crevettes séchées et de kéthiakh (poisson séché fumé du Saloum), relevé d'un peu de piment. Un condiment prêt à l'emploi pour relever sauces, riz et plats sénégalais.</g:description>
     <g:link>https://seggfaye.com/produits/netetu-mix.html</g:link>
     <g:image_link>https://seggfaye.com/netetou-mixte.webp</g:image_link>
     <g:price>15.00 EUR</g:price>
@@ -269,10 +305,12 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>280 g</g:shipping_weight>
   </item>
   <item>
     <g:id>netetu-poudre</g:id>
-    <g:title>Netetu simple poudre (Netetou poudre) — 100g</g:title>
+    <g:title>Netetou en poudre (Netetou poudre) — 100g</g:title>
     <g:description>Netetou (soumbala) réduit en poudre fine. Le format le plus pratique pour saupoudrer directement dans les plats. Se dissout instantanément dans les sauces.</g:description>
     <g:link>https://seggfaye.com/produits/netetu-poudre.html</g:link>
     <g:image_link>https://seggfaye.com/netetou-poudre.webp</g:image_link>
@@ -283,10 +321,12 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>sauce-netetu-beugeuc</g:id>
-    <g:title>Sauce Netetu Beugeuc (Sauce netetou beugeuc) — 250g</g:title>
+    <g:title>Sauce netetou beugeuc — 250g</g:title>
     <g:description>Sauce prête à l'emploi à base de netetou et de feuilles de bissap (beugeuc). Préparée de manière artisanale, il suffit de l'ajouter directement dans votre plat en cours de cuisson.</g:description>
     <g:link>https://seggfaye.com/produits/sauce-netetu-beugeuc.html</g:link>
     <g:image_link>https://seggfaye.com/sauce-netetou.webp</g:image_link>
@@ -297,6 +337,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>330 g</g:shipping_weight>
   </item>
   <item>
     <g:id>beugeuc-feuille-bissap</g:id>
@@ -311,11 +353,13 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>380 g</g:shipping_weight>
   </item>
   <item>
     <g:id>keciax</g:id>
-    <g:title>Kéthiakh (Kethiakh) — 100g</g:title>
-    <g:description>Poisson séché et fermenté, plus sec et plus piquant que le guedj classique. Le kethiakh est obtenu par un séchage prolongé qui concentre les saveurs au maximum.</g:description>
+    <g:title>Kéthiakh (Kethiakh · Keciax) — 100g</g:title>
+    <g:description>Sardinelle (yaboye ou mbeureuk) salée en couches, fumée dans des fours artisanaux, puis séchée à l'ombre — jamais au soleil. Contrairement au guedj, le kéthiakh n'est pas un poisson sec : c'est un poisson gardé, qui reste frais. Aussi écrit « kethiakh », nom officiel « keciax ».</g:description>
     <g:link>https://seggfaye.com/produits/keciax.html</g:link>
     <g:image_link>https://seggfaye.com/kethiakh1.webp</g:image_link>
     <g:price>3.00 EUR</g:price>
@@ -325,6 +369,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>bissap-rouge</g:id>
@@ -339,6 +385,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>230 g</g:shipping_weight>
   </item>
   <item>
     <g:id>bissap-blanc</g:id>
@@ -353,6 +401,23 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>280 g</g:shipping_weight>
+  </item>
+  <item>
+    <g:id>pastels</g:id>
+    <g:title>Pastels au poisson (Pastels) — les 50 pièces</g:title>
+    <g:description>Le snack de toutes les fêtes sénégalaises : un chausson croustillant en pâte brisée, garni d'une farce épicée au poisson. Vendus précuits, il ne reste qu'à les frire. Sur commande uniquement.</g:description>
+    <g:link>https://seggfaye.com/produits/pastels.html</g:link>
+    <g:image_link>https://seggfaye.com/pastels.jpg</g:image_link>
+    <g:price>40.00 EUR</g:price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>Louma by Seggfaye</g:brand>
+    <g:identifier_exists>false</g:identifier_exists>
+    <g:product_type>Plats préparés</g:product_type>
+    <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>plats</g:shipping_label>
   </item>
   <item>
     <g:id>bouye-baobab</g:id>
@@ -367,6 +432,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>280 g</g:shipping_weight>
   </item>
   <item>
     <g:id>puree-piment</g:id>
@@ -381,6 +448,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>280 g</g:shipping_weight>
   </item>
   <item>
     <g:id>maad-confi</g:id>
@@ -395,6 +464,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>1080 g</g:shipping_weight>
   </item>
   <item>
     <g:id>maad-fruit</g:id>
@@ -409,11 +480,13 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Épices &amp; condiments</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>1080 g</g:shipping_weight>
   </item>
   <item>
     <g:id>thiere-champion</g:id>
-    <g:title>Thiéré (couscous de mil) (Thiéré) — kg</g:title>
-    <g:description>Couscous de mil roulé à la main, le thiéré est la base du plat national sénégalais « thiéré mboum ». Sacré Champion du Monde du couscous en compétition internationale.</g:description>
+    <g:title>Thiéré Lalo (couscous de mil) (Thiéré) — kg</g:title>
+    <g:description>Thiéré Lalo : couscous de mil roulé à la main, avec le lalo (poudre de feuilles de baobab) déjà incorporé. La base du plat national sénégalais « thiéré mboum ». Sacré Champion du Monde du couscous en compétition internationale.</g:description>
     <g:link>https://seggfaye.com/produits/thiere-champion.html</g:link>
     <g:image_link>https://seggfaye.com/thiere1.webp</g:image_link>
     <g:price>18.00 EUR</g:price>
@@ -423,6 +496,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Céréales &amp; farines</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>1080 g</g:shipping_weight>
   </item>
   <item>
     <g:id>arraw-dugup</g:id>
@@ -437,11 +512,13 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Céréales &amp; farines</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>1080 g</g:shipping_weight>
   </item>
   <item>
     <g:id>ciakri</g:id>
     <g:title>Thiakry (Cere / Thiakry · Dégué) — kg</g:title>
-    <g:description>Couscous de mil fin roulé à la main, spécialement préparé pour le dessert thiakry — celui qu'on appelle dégué au Mali et en Côte d'Ivoire. Mélangé avec du lait caillé sucré, de la crème et de la vanille, c'est le dessert sénégalais par excellence.</g:description>
+    <g:description>Couscous de mil roulé à la main, spécialement préparé pour le dessert thiakry — celui qu'on appelle dégué au Mali et en Côte d'Ivoire. Mélangé avec du lait caillé sucré, de la crème et de la vanille, c'est le dessert sénégalais par excellence.</g:description>
     <g:link>https://seggfaye.com/produits/ciakri.html</g:link>
     <g:image_link>https://seggfaye.com/thiakry1.webp</g:image_link>
     <g:price>18.00 EUR</g:price>
@@ -451,6 +528,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Céréales &amp; farines</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>1080 g</g:shipping_weight>
   </item>
   <item>
     <g:id>sankal-duggup</g:id>
@@ -465,6 +544,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Céréales &amp; farines</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>580 g</g:shipping_weight>
   </item>
   <item>
     <g:id>niebe-saloum</g:id>
@@ -479,6 +560,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Céréales &amp; farines</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>330 g</g:shipping_weight>
   </item>
   <item>
     <g:id>guerte-noflay</g:id>
@@ -493,6 +576,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Céréales &amp; farines</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>330 g</g:shipping_weight>
   </item>
   <item>
     <g:id>tiguadegue-500</g:id>
@@ -507,6 +592,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Pâtes &amp; beurres</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>580 g</g:shipping_weight>
   </item>
   <item>
     <g:id>tigadegue-250</g:id>
@@ -521,6 +608,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Pâtes &amp; beurres</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>330 g</g:shipping_weight>
   </item>
   <item>
     <g:id>diwnior-500</g:id>
@@ -535,6 +624,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Pâtes &amp; beurres</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>580 g</g:shipping_weight>
   </item>
   <item>
     <g:id>diwnior-1l</g:id>
@@ -549,6 +640,8 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Pâtes &amp; beurres</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>1080 g</g:shipping_weight>
   </item>
   <item>
     <g:id>diwtir-pure</g:id>
@@ -563,10 +656,12 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Pâtes &amp; beurres</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>1080 g</g:shipping_weight>
   </item>
   <item>
     <g:id>lem-miel</g:id>
-    <g:title>Miel pur du Sénégal, brut, de Kédougou (lem) — 1,5L</g:title>
+    <g:title>Miel pur du Sénégal (Kédougou) (Lem) — 1,5L</g:title>
     <g:description>Miel pur non pasteurisé, récolté de manière traditionnelle au Sénégal. Non chauffé, non filtré, conserve tous ses enzymes et nutriments. Format généreux de 1,5L.</g:description>
     <g:link>https://seggfaye.com/produits/lem-miel.html</g:link>
     <g:image_link>https://seggfaye.com/lem-pure.webp</g:image_link>
@@ -577,118 +672,152 @@
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Pâtes &amp; beurres</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>sec</g:shipping_label>
+    <g:shipping_weight>2180 g</g:shipping_weight>
   </item>
   <item>
     <g:id>thiof-decoupe</g:id>
     <g:title>Thiof découpé (Thiof) — carton 5kg</g:title>
     <g:description>Thiof (mérou blanc) découpé en tranches, congelé et conditionné en carton de 5kg. Le poisson noble du Sénégal, celui du vrai thiéboudienne. Chair blanche, ferme et savoureuse.</g:description>
     <g:link>https://seggfaye.com/produits/thiof-decoupe.html</g:link>
-    <g:image_link>https://seggfaye.com/thiof.webp</g:image_link>
+    <g:image_link>https://seggfaye.com/thiof-decoupe.webp</g:image_link>
     <g:price>55.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>5000 g</g:shipping_weight>
   </item>
   <item>
     <g:id>diargne-colafil</g:id>
     <g:title>Diarégne Colafil (Diarégne) — carton 5kg</g:title>
-    <g:description>Diarégne (pageot) découpé en filets (colafil), congelé en carton de 5kg. Poisson à chair blanche et délicate, très apprécié dans la cuisine sénégalaise.</g:description>
+    <g:description>Diarégne découpé en filets (colafil), congelé en carton de 5 kg. Le denté à gros yeux — celui qu'on appelle « dent long fil » au Sénégal. Chair blanche, ferme, sans arêtes puisqu'il arrive déjà en filets.</g:description>
     <g:link>https://seggfaye.com/produits/diargne-colafil.html</g:link>
-    <g:image_link>https://seggfaye.com/sompate2.webp</g:image_link>
-    <g:price>49.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:image_link>https://seggfaye.com/diargne-colafil.webp</g:image_link>
+    <g:price>55.00 EUR</g:price>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>5000 g</g:shipping_weight>
   </item>
   <item>
     <g:id>beurre-capitaine</g:id>
-    <g:title>Beurre (Capitaine) (Berr / Capitaine) — carton 5kg</g:title>
-    <g:description>Capitaine (courbine/beurre) congelé en carton de 5kg. Poisson à chair blanche et grasse, c'est le même poisson qui donne le guedj beurre une fois séché. Frais, il est encore meilleur.</g:description>
+    <g:title>Beurre (Capitaine) (Le gros calibre du diane (capitaine)) — carton 5kg</g:title>
+    <g:description>Le gros calibre du capitaine (Polydactylus quadrifilis), appelé « beurre » au marché, congelé en carton de 5 kg. Chair blanche, ferme et généreuse : c'est le poisson des grandes marmites.</g:description>
     <g:link>https://seggfaye.com/produits/beurre-capitaine.html</g:link>
-    <g:image_link>https://seggfaye.com/thiof4.webp</g:image_link>
-    <g:price>45.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:image_link>https://seggfaye.com/beurre-capitaine.webp</g:image_link>
+    <g:price>55.00 EUR</g:price>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>5000 g</g:shipping_weight>
+  </item>
+  <item>
+    <g:id>diane-capitaine</g:id>
+    <g:title>Diane (Capitaine) (Le petit calibre du capitaine) — carton 5kg</g:title>
+    <g:description>Le petit calibre du capitaine (Polydactylus quadrifilis), appelé diane au marché, congelé en carton de 5 kg. Même poisson que le beurre, en plus petit : chair blanche et ferme.</g:description>
+    <g:link>https://seggfaye.com/produits/diane-capitaine.html</g:link>
+    <g:image_link>https://seggfaye.com/diane-capitaine.webp</g:image_link>
+    <g:price>45.00 EUR</g:price>
+    <g:availability>in_stock</g:availability>
+    <g:condition>new</g:condition>
+    <g:brand>Louma by Seggfaye</g:brand>
+    <g:identifier_exists>false</g:identifier_exists>
+    <g:product_type>Poissons frais</g:product_type>
+    <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>5000 g</g:shipping_weight>
   </item>
   <item>
     <g:id>chanchar-dieye</g:id>
     <g:title>Chanchar (Diéye) (Diéye) — carton 5kg</g:title>
-    <g:description>Chanchar (diéye) congelé en carton de 5kg. Petit poisson savoureux à prix accessible, très populaire dans la cuisine quotidienne sénégalaise.</g:description>
+    <g:description>Chanchar (diéye) congelé en carton de 5 kg. Le petit poisson à gros yeux du quotidien sénégalais : celui qu'on frit le soir, qu'on met dans le riz, et qui ne ruine personne.</g:description>
     <g:link>https://seggfaye.com/produits/chanchar-dieye.html</g:link>
-    <g:image_link>https://seggfaye.com/yakh4.webp</g:image_link>
+    <g:image_link>https://seggfaye.com/chanchar-dieye.webp</g:image_link>
     <g:price>25.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>5000 g</g:shipping_weight>
   </item>
   <item>
     <g:id>poisson-eau-douce</g:id>
-    <g:title>Poisson Eau Douce — carton 5kg</g:title>
-    <g:description>Assortiment de poissons d'eau douce congelés en carton de 5kg. Provenant des fleuves et rivières du Sénégal. Prix imbattable pour une quantité généreuse.</g:description>
+    <g:title>Poisson Eau Douce (Jën bu dëkh) — carton 5kg</g:title>
+    <g:description>Assortiment de poissons d'eau douce congelés, carton de 5 kg — soit 10 € le kilo. Pêchés dans les fleuves et les rivières du Sénégal, pas en mer.</g:description>
     <g:link>https://seggfaye.com/produits/poisson-eau-douce.html</g:link>
-    <g:image_link>https://seggfaye.com/sompate3.webp</g:image_link>
-    <g:price>10.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:image_link>https://seggfaye.com/poisson-eau-douce.webp</g:image_link>
+    <g:price>50.00 EUR</g:price>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>5000 g</g:shipping_weight>
   </item>
   <item>
-    <g:id>yaye-boye</g:id>
-    <g:title>Yaye Boye (Yaboye) — / kilo</g:title>
+    <g:id>yaboye</g:id>
+    <g:title>Yaboye (Sardinelle) — / kilo</g:title>
     <g:description>Sardinelles fraîches congelées (yaboye), vendues au kilo. Le poisson le plus consommé au Sénégal, base de nombreux plats du quotidien.</g:description>
     <g:link>https://seggfaye.com/produits/yaboye.html</g:link>
-    <g:image_link>https://seggfaye.com/yaboye.webp</g:image_link>
+    <g:image_link>https://seggfaye.com/yaboye-tass.webp</g:image_link>
     <g:price>7.50 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>2000 g</g:shipping_weight>
   </item>
   <item>
     <g:id>poisson-sompate</g:id>
     <g:title>Poisson Sompate (Sompate) — carton 5kg</g:title>
     <g:description>Sompate congelé en carton de 5kg. Poisson de mer à chair ferme et goûteuse, très apprécié grillé ou en sauce. Un des poissons préférés de la diaspora.</g:description>
     <g:link>https://seggfaye.com/produits/poisson-sompate.html</g:link>
-    <g:image_link>https://seggfaye.com/sompate.webp</g:image_link>
+    <g:image_link>https://seggfaye.com/poisson-sompate.webp</g:image_link>
     <g:price>45.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>5000 g</g:shipping_weight>
   </item>
   <item>
     <g:id>tilapia-rouge</g:id>
     <g:title>Tilapia Rouge (Tilapia) — carton 5kg</g:title>
     <g:description>Tilapia rouge congelé en carton de 5kg. Poisson d'élevage à chair blanche et douce, apprécié pour sa polyvalence en cuisine et son prix accessible.</g:description>
     <g:link>https://seggfaye.com/produits/tilapia-rouge.html</g:link>
-    <g:image_link>https://seggfaye.com/yakh.webp</g:image_link>
+    <g:image_link>https://seggfaye.com/tilapia-rouge.webp</g:image_link>
     <g:price>22.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>5000 g</g:shipping_weight>
   </item>
   <item>
     <g:id>seude-baracouda</g:id>
@@ -697,54 +826,62 @@
     <g:link>https://seggfaye.com/produits/seude-baracouda.html</g:link>
     <g:image_link>https://seggfaye.com/seude.webp</g:image_link>
     <g:price>40.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>5000 g</g:shipping_weight>
   </item>
   <item>
     <g:id>yakh-carpe-rouge</g:id>
     <g:title>Yakh (Carpe Rouge) (Yakh) — carton 5kg</g:title>
     <g:description>Carpe rouge (yakh) congelée en carton de 5kg. Poisson noble à chair rouge, ferme et savoureuse. Considéré comme un poisson de fête au Sénégal.</g:description>
     <g:link>https://seggfaye.com/produits/yakh-carpe-rouge.html</g:link>
-    <g:image_link>https://seggfaye.com/yakh2.webp</g:image_link>
+    <g:image_link>https://seggfaye.com/yakh-carpe-rouge.webp</g:image_link>
     <g:price>60.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>5000 g</g:shipping_weight>
   </item>
   <item>
     <g:id>iler-bi</g:id>
     <g:title>Iler Bi (Plapla) (Iler) — carton 5kg</g:title>
-    <g:description>Iler bi (plapla) congelé en carton de 5kg. Poisson plat à chair fine et délicate, très recherché pour sa saveur subtile.</g:description>
+    <g:description>Iler bi (plapla) congelé en carton de 5 kg. Le poisson plat que la diaspora surnomme « plat plat », et qui porte en wolof le nom de l'outil du cultivateur : une seule arête centrale, une chair fine qui se détache toute seule.</g:description>
     <g:link>https://seggfaye.com/produits/iler-bi.html</g:link>
-    <g:image_link>https://seggfaye.com/iler.webp</g:image_link>
+    <g:image_link>https://seggfaye.com/iler-bi.webp</g:image_link>
     <g:price>45.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>5000 g</g:shipping_weight>
   </item>
   <item>
     <g:id>melange-poisson-10kg</g:id>
     <g:title>Mélange de Poisson 10kg — carton 10kg</g:title>
-    <g:description>Carton de 10kg avec un mélange de plusieurs espèces de poissons congelés. Le meilleur rapport quantité/prix du catalogue. Idéal pour stocker et varier les plats.</g:description>
+    <g:description>Carton de 10 kg mélangeant six espèces : seude, thiof, yakh, sompate, iler et youfouf. De quoi changer de poisson à chaque plat sans acheter six cartons.</g:description>
     <g:link>https://seggfaye.com/produits/melange-poisson-10kg.html</g:link>
     <g:image_link>https://seggfaye.com/melange-poisson.webp</g:image_link>
     <g:price>110.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>Poissons frais</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>frais</g:shipping_label>
+    <g:shipping_weight>10000 g</g:shipping_weight>
   </item>
 </channel>
 </rss>
