@@ -949,7 +949,7 @@ return 'https://wa.me/33652650395?text=' + msg;
 }
 function buildProdCard(p) {
 const imgContent = p.image
-? `<img alt="${p.nom}" src="${p.image}" style="width:100%;height:100%;object-fit:cover;"/>`
+? `<img alt="${p.nom}" src="${p.image}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;"/>`
 : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;">📦</div>`;
 let badgeHtml = '';
 if (!p.stock) {
