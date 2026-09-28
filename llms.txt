@@ -1,0 +1,44 @@
+# Louma by Seggfaye
+
+> Marché africain en ligne spécialisé dans les produits alimentaires du Sénégal : poissons séchés et fermentés (guedj), yeet (cymbium séché), netetou (soumbala, dawadawa), crevettes séchées, huîtres de mangrove (yoxos), bissap, bouye (baobab), céréales de mil et poissons frais. Les produits de la mer viennent des Îles du Saloum (Delta du Saloum, Sénégal), sourcés directement auprès des pêcheurs et des femmes transformatrices. Fondateur : Lamine Faye, surnommé « le Guedjologue » (TikTok @seggfaye).
+
+Informations pratiques :
+- Commande : sur le site (panier) ou sur WhatsApp au +33 6 52 65 03 95.
+- Livraison : France et Europe depuis la boutique. Amériques, Royaume-Uni et Asie : devis sur WhatsApp. Pas de livraison en Afrique.
+- Paiement : PayPal ou Wero.
+- Les prix et la disponibilité à jour sont sur chaque fiche produit.
+
+## Pages principales
+- [Accueil (français)](https://seggfaye.com/): boutique complète, catégories, livraison
+- [Home (English)](https://seggfaye.com/en/): Senegalese online market, in English
+- [Shop (English)](https://seggfaye.com/en/shop.html): catalogue en anglais
+- [Prix des poissons](https://seggfaye.com/poissons-prix.html): tarifs des poissons frais et séchés
+- [Le Guedjologue](https://seggfaye.com/le-guedjologue.html): qui est Lamine Faye
+- [Conditions de vente](https://seggfaye.com/conditions-de-vente.html): livraison, retours, paiement
+
+## Rayons
+- [Produits halieutiques séchés (guedj, yeet, crevettes, coquillages)](https://seggfaye.com/categories/produits-halieutiques.html)
+- [Poissons frais du Sénégal](https://seggfaye.com/categories/poissons-frais.html)
+- [Épices et condiments (netetou, bissap, kani)](https://seggfaye.com/categories/epices-condiments.html)
+- [Céréales et farines (mil, thiéré, arraw, sankal)](https://seggfaye.com/categories/cereales-farines.html)
+- [Pâtes et beurres (tigadégué, diwtir, diwnior, miel)](https://seggfaye.com/categories/pates-beurres.html)
+
+## Guides de référence
+- [Qu'est-ce que le guedj ?](https://seggfaye.com/blog/quest-ce-que-le-guedj.html): le poisson séché et fermenté du Sénégal
+- [Les 7 guedj du Sénégal](https://seggfaye.com/blog/les-7-guedj-du-senegal.html)
+- [Cymbium : le coquillage que le Sénégal appelle yeet](https://seggfaye.com/blog/cymbium-coquillage-yeet-senegal.html)
+- [Netetou (soumbala) : le guide complet](https://seggfaye.com/blog/guide-netetou-soumbala.html)
+- [Recette du thiéboudienne authentique](https://seggfaye.com/blog/recette-thieboudienne-authentique.html)
+- [Les plats sénégalais incontournables](https://seggfaye.com/blog/plats-senegalais.html)
+- [Atlas des poissons en wolof](https://seggfaye.com/atlas-poissons-wolof.html): noms wolof, français et latins
+- [Lexique wolof-français](https://seggfaye.com/lexique-wolof-francais.html)
+
+## English guides
+- [Senegalese food: the dishes you need to know](https://seggfaye.com/en/senegalese-food.html)
+- [Thieboudienne recipe](https://seggfaye.com/en/thieboudienne-recipe.html)
+- [Dawadawa, iru, soumbala: the African locust bean seasoning](https://seggfaye.com/en/dawadawa-iru-soumbala.html)
+- [Cymbium: the sea snail Senegal calls yeet](https://seggfaye.com/en/cymbium-yeet.html)
+
+## Optional
+- [Tous les articles du blog](https://seggfaye.com/blog/)
+- [Plan du site](https://seggfaye.com/sitemap.xml)
