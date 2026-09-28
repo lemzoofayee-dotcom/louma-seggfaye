@@ -114,9 +114,16 @@ document.addEventListener('click', function(e){
 <link rel="preload" href="crevettesechees.webp" as="image" type="image/webp" fetchpriority="high"/>
 <link rel="dns-prefetch" href="https://www.paypal.com"/>
 <link rel="dns-prefetch" href="https://www.tiktok.com"/>
-<link rel="stylesheet" href="/fonts/fonts.css"/>
+<style>@font-face{font-family:'Playfair Display';font-style:italic;font-weight:700;font-display:swap;src:url(/fonts/playfair-italic-700.woff) format('woff')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/playfair-normal.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:900;font-display:swap;src:url(/fonts/playfair-normal.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jakarta.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/jakarta.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/jakarta.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/jakarta.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/jakarta.woff2) format('woff2')}</style>
 <link rel="stylesheet" href="style.css?v=2"/>
-<style>#preloader{position:fixed;inset:0;z-index:9999;background:#100d08;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .8s ease,visibility .8s ease}#preloader.hidden{opacity:0;visibility:hidden}.pre-logo{width:300px;height:300px;border-radius:50%;overflow:hidden;margin-bottom:2rem}.pre-logo img{width:100%;height:100%;object-fit:cover}.pre-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;letter-spacing:.25em;color:#f5f0e8;text-transform:uppercase}.pre-bar{width:160px;height:1.5px;background:rgba(201,168,76,.15);overflow:hidden}.pre-fill{height:100%;background:#c9a84c;animation:pre-load 2s ease-in-out forwards}@keyframes pre-load{from{width:0}to{width:100%}}</style>
+<style>#preloader{position:fixed;inset:0;z-index:9999;background:#100d08;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .4s ease,visibility .4s ease}#preloader.hidden{opacity:0;visibility:hidden}.pre-logo{width:300px;height:300px;border-radius:50%;overflow:hidden;margin-bottom:2rem}.pre-logo img{width:100%;height:100%;object-fit:cover}.pre-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;letter-spacing:.25em;color:#f5f0e8;text-transform:uppercase}.pre-bar{width:160px;height:1.5px;background:rgba(201,168,76,.15);overflow:hidden}.pre-fill{height:100%;background:#c9a84c;animation:pre-load .3s ease-in-out forwards}@keyframes pre-load{from{width:0}to{width:100%}}</style>
 </head>
 <body>
 <!-- ANN BAR -->
@@ -631,7 +638,7 @@ document.addEventListener('click', function(e){
         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@seggfaye" data-unique-id="seggfaye" data-embed-from="oembed" data-embed-type="creator" style="max-width:100%;min-width:100%;border-left:0;">
           <section><a target="_blank" href="https://www.tiktok.com/@seggfaye">@seggfaye</a></section>
         </blockquote>
-        <script async src="https://www.tiktok.com/embed.js"></script>
+        <script>(function(){if(window.__ttLazy)return;window.__ttLazy=1;function init(){var q=document.querySelectorAll("blockquote.tiktok-embed");function go(){if(window.__ttLoaded)return;window.__ttLoaded=1;var s=document.createElement("script");s.src="https://www.tiktok.com/embed.js";s.async=true;document.body.appendChild(s);}q.forEach(function(b){var t=document.createElement("button");t.type="button";t.textContent="▶ Lire la vidéo TikTok";t.style.cssText="display:block;margin:.8rem auto;padding:.65rem 1.3rem;border-radius:2rem;border:1px solid #c9a84c;background:#c9a84c;color:#100d08;font-weight:700;font-size:.9rem;cursor:pointer";t.addEventListener("click",go);b.appendChild(t);});}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();})();</script>
       </div>
       <div class="tiktok-card reveal reveal-delay-2" style="display:flex;flex-direction:column;gap:0;align-items:stretch;justify-content:center;background:var(--surface);padding:2rem;">
         <div style="font-size:3rem;margin-bottom:1rem;text-align:center;">🎵</div>
@@ -1717,13 +1724,17 @@ document.addEventListener('click', function(e){
   // ═══════════════════════════════════════
   // PRELOADER
   // ═══════════════════════════════════════
-  window.addEventListener('load', () => {
-    setTimeout(() => {
+  (function () {
+    let done = false;
+    const hide = () => {
+      if (done) return; done = true;
       const pl = document.getElementById('preloader');
       if (pl) pl.classList.add('hidden');
-      setTimeout(() => { if (pl) pl.remove(); }, 900);
-    }, 2600);
-  });
+      setTimeout(() => { if (pl) pl.remove(); }, 450);
+    };
+    const start = () => setTimeout(hide, 300);
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+  })();
 
   // ═══════════════════════════════════════
   // LENIS SMOOTH SCROLL
@@ -1926,7 +1937,7 @@ document.addEventListener('click', function(e){
   </ul>
 </nav>
 
-<script src="produits.js"></script>
+<script src="produits.js?v=20260928"></script>
 <script>
 /* ── PARTICULES DORÉES HERO ── */
 (function() {

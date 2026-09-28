@@ -108,7 +108,7 @@ document.addEventListener('click', function(e){
 </script>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
 :root {
   --bg: #100d08; --bg-2: #161210; --card: #1a1612;
@@ -179,7 +179,7 @@ footer { text-align:center; padding:2rem; font-size:.75rem; color:var(--muted); 
     </div>
   </header>
 
-  <img src="/epicerie-guedj.jpg" alt="Guedj et yeet, condiments séchés du Sénégal" loading="eager" style="width:100%;max-height:430px;object-fit:cover;border-radius:.8rem;margin-bottom:1.5rem;">
+  <img src="/epicerie-guedj.jpg" width="900" height="675" alt="Guedj et yeet, condiments séchés du Sénégal" loading="eager" style="width:100%;height:auto;max-height:430px;object-fit:cover;border-radius:.8rem;margin-bottom:1.5rem;">
 
   <div class="highlight-box">
     <p><strong>En bref :</strong> le <strong>guedj</strong> est un <strong>poisson</strong> séché et fermenté. Le <strong>yeet</strong> est un <strong>coquillage</strong> séché — un cymbium (mollusque marin). Deux condiments différents, deux origines différentes, mais le même rôle : apporter l'<strong>umami</strong> à la sauce.</p>
@@ -228,7 +228,7 @@ footer { text-align:center; padding:2rem; font-size:.75rem; color:var(--muted); 
   <h2>Je te montre en vidéo</h2>
   <p>Le yeet et les guedj, l'âme cachée de la cuisine sénégalaise — la différence en images :</p>
   <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@seggfaye/video/7597150014762192150" data-video-id="7597150014762192150" style="max-width:605px;min-width:325px;margin:1.5rem auto;"><section><a target="_blank" href="https://www.tiktok.com/@seggfaye/video/7597150014762192150">Le Yett & les guedj, l'âme cachée du Sénégal — voir sur TikTok (@seggfaye)</a></section></blockquote>
-  <script async src="https://www.tiktok.com/embed.js"></script>
+  <script>(function(){if(window.__ttLazy)return;window.__ttLazy=1;function init(){var q=document.querySelectorAll("blockquote.tiktok-embed");function go(){if(window.__ttLoaded)return;window.__ttLoaded=1;var s=document.createElement("script");s.src="https://www.tiktok.com/embed.js";s.async=true;document.body.appendChild(s);}q.forEach(function(b){var t=document.createElement("button");t.type="button";t.textContent="▶ Lire la vidéo TikTok";t.style.cssText="display:block;margin:.8rem auto;padding:.65rem 1.3rem;border-radius:2rem;border:1px solid #c9a84c;background:#c9a84c;color:#100d08;font-weight:700;font-size:.9rem;cursor:pointer";t.addEventListener("click",go);b.appendChild(t);});}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();})();</script>
 
   <h2>A lire aussi</h2>
 
