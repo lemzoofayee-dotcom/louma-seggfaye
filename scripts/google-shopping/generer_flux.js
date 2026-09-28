@@ -17,8 +17,25 @@ const CATEGORIES = {
   epices: 'Épices & condiments',
   cereales: 'Céréales & farines',
   beurres: 'Pâtes & beurres',
-  frais: 'Poissons frais'
+  frais: 'Poissons frais',
+  plats: 'Plats préparés'
 };
+
+
+// Poids d'expédition (g) depuis l'unité de vente : même règle que le panier (+80 g d'emballage pour les produits secs)
+function poidsExpedition(p) {
+  const u = (p.unite || '').toLowerCase().replace(',', '.');
+  let g = null, m;
+  if ((m = u.match(/carton\s*(\d+(?:\.\d+)?)\s*kg/))) g = parseFloat(m[1]) * 1000;
+  else if ((m = u.match(/(\d+(?:\.\d+)?)\s*kg/))) g = parseFloat(m[1]) * 1000;
+  else if (/(^|\s)kg$|par kg|kilo/.test(u)) g = p.id === 'yaboye' ? 2000 : 1000;
+  else if ((m = u.match(/(\d+(?:\.\d+)?)\s*g\b/))) g = parseFloat(m[1]);
+  else if ((m = u.match(/(\d+(?:\.\d+)?)\s*l\b/))) g = parseFloat(m[1]) * (p.id === 'lem-miel' ? 1400 : 1000);
+  if (g === null) return null;
+  return p.categorie === 'frais' ? g : g + 80;
+}
+// Étiquette de livraison : frais et plats préparés = France/Europe uniquement (réglé dans Merchant Center)
+const etiquette = p => (p.categorie === 'frais' ? 'frais' : p.categorie === 'plats' ? 'plats' : 'sec');
 
 const warnings = [];
 const items = PRODUITS.map(p => {
@@ -45,6 +62,7 @@ const items = PRODUITS.map(p => {
     <g:identifier_exists>false</g:identifier_exists>
     <g:product_type>${esc(CATEGORIES[p.categorie] || p.categorie)}</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
+    <g:shipping_label>${etiquette(p)}</g:shipping_label>${poidsExpedition(p) ? `\n    <g:shipping_weight>${poidsExpedition(p)} g</g:shipping_weight>` : ''}
   </item>`;
 });
 
