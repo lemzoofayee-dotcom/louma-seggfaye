@@ -124,6 +124,7 @@ def page(path, fr, title, desc, image, body, schemas, og_type="article"):
   <a class="brand" href="/en/">Louma by Seggfaye</a>
   <nav>
     <a href="/en/shop.html">Shop</a>
+    <a href="/en/shipping.html">Shipping</a>
     <a href="/en/senegalese-food.html">Senegalese food</a>
     <a href="/en/thieboudienne-recipe.html">Thieboudienne</a>
     <a href="/en/dawadawa-iru-soumbala.html">Dawadawa</a>
@@ -175,7 +176,7 @@ def header(cat, h1, minutes):
 
 
 SHIPPING = """<div class="highlight-box">
-    <p><strong>Shipping:</strong> our online shop ships across <strong>France and Europe</strong>. We also ship to <strong>the Americas (USA, Canada…), the UK and Asia</strong>: send us a message on WhatsApp and we will give you a shipping quote. We do not ship to Africa.</p>
+    <p><strong>Shipping:</strong> France and Europe from our online shop. <strong>UK from €18.99, the Americas and Asia from €35.19</strong> with Colissimo International (tracked). <a href="/en/shipping.html">See all shipping rates</a>. We do not ship to Africa.</p>
   </div>"""
 
 PAGES = {}
@@ -189,7 +190,7 @@ qas = [
     ("Are cymbium and yeet the same thing?", "Yes. Cymbium is the scientific name of the genus, yeet is its Wolof name. You will also see it written yett, yette or yet."),
     ("How big must a cymbium be to be caught?", "At least 17.5 cm in Senegal. Below that size it is illegal: the animal has not yet had time to reproduce."),
     ("What does dried cymbium taste like?", "A very powerful umami taste, deep and briny. One small piece flavours a whole pot, which is why it is nicknamed the African Maggi."),
-    ("Where can I buy dried cymbium (yeet)?", "Louma by Seggfaye sells large pieces of dried yeet under the name Yeet Maggi, in 100 g packs, shipped across Europe, and to the Americas, the UK and Asia on request via WhatsApp."),
+    ("Where can I buy dried cymbium (yeet)?", "Louma by Seggfaye sells large pieces of dried yeet under the name Yeet Maggi, in 100 g packs, shipped across Europe, the UK, the Americas and Asia (Colissimo International)."),
 ]
 b = f"""<nav class="breadcrumb"><a href="/en/">Home</a> &gt; <span>Cymbium (yeet)</span></nav>
 <article>
@@ -241,7 +242,7 @@ qas = [
     ("Are dawadawa, iru, soumbala and netetou the same?", "Yes, the same product under different names: netetou in Senegal, soumbala in Mali and Burkina Faso, soumbara in Guinea and Côte d'Ivoire, dawadawa in Ghana and northern Nigeria, iru among the Yoruba."),
     ("How is dawadawa made?", "The seeds are boiled for almost a whole day, fermented for several days, dried in the sun, then pounded into powder or shaped into balls. About five days in all."),
     ("Why does it smell so strong?", "That is the fermentation. The smell goes away with cooking and leaves a deep umami taste: the signature of the real thing."),
-    ("Where can I buy dawadawa (netetou)?", "Louma by Seggfaye sells netetou as a powder, a dome, a bar and a ready-made mix, shipped across Europe, and to the Americas, the UK and Asia on request via WhatsApp."),
+    ("Where can I buy dawadawa (netetou)?", "Louma by Seggfaye sells netetou as a powder, a dome, a bar and a ready-made mix, shipped across Europe, the UK, the Americas and Asia (Colissimo International)."),
 ]
 b = f"""<nav class="breadcrumb"><a href="/en/">Home</a> &gt; <span>Dawadawa</span></nav>
 <article>
@@ -499,12 +500,46 @@ b = f"""<nav class="breadcrumb"><a href="/en/">Home</a> &gt; <span>Shop</span></
     <p>Sourced directly from the fishermen and the women processors of the Îles du Saloum, and from producers across Senegal. Prices in euros.</p>
   </header>
   {SHIPPING}
-  <p><strong>How to order:</strong> tap “Order on WhatsApp” on any product, tell us your country, and we confirm the total with shipping. Payment by PayPal or Wero.</p>
+  <p><strong>How to order:</strong> tap “Order on WhatsApp” on any product, tell us your country, and we confirm the total with shipping (rates on the <a href="/en/shipping.html">shipping page</a>). Payment by PayPal or Wero.</p>
 {chr(10).join(sections)}
   <p style="margin-top:2rem;"><a class="btn" href="{wa('Hello, I would like to place an order.')}">Order on WhatsApp</a></p>
 </div>"""
 shop_ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Louma by Seggfaye — Senegalese ingredients", "itemListElement": items_ld}
 PAGES[p] = page(p, None, t, d, "packsaloum-sachetdebout1.webp", b, [shop_ld, crumbs("Shop", p)], og_type="website")
+
+# ---------------------------------------------------------------- SHIPPING
+p = "/en/shipping.html"
+t = "Shipping rates: Europe, UK, USA, Canada, Asia | Louma by Seggfaye"
+d = "Shipping rates for Senegalese food from France: Europe, United Kingdom, the Americas (USA, Canada) and Asia with Colissimo International, tracked. We do not ship to Africa."
+ROWS = [("up to 500 g", "€18.99", "€35.19"), ("up to 1 kg", "€23.39", "€39.19"), ("up to 2 kg", "€26.19", "€53.99"),
+        ("up to 5 kg", "€32.59", "€78.69"), ("up to 10 kg", "€50.99", "€148.99")]
+rows = "\n".join(f"      <tr><td style='padding:.45rem'>{w}</td><td style='padding:.45rem'>{uk}</td><td style='padding:.45rem'>{c}</td></tr>" for w, uk, c in ROWS)
+TH = "padding:.5rem;border-bottom:1px solid var(--border-hi)"
+b = f"""<nav class="breadcrumb"><a href="/en/">Home</a> &gt; <span>Shipping</span></nav>
+<article>
+  <header class="article-header">
+    <div class="article-cat">Shipping</div>
+    <h1>Shipping rates</h1>
+  </header>
+  <p>We ship from France. Our dried products (guedj, yeet, netetou, dried shrimp, bissap, millet…) travel well. <strong>Fresh and frozen fish are delivered in France and Europe only.</strong></p>
+  <h2>France and Europe</h2>
+  <p>Order directly in our <a href="/">online shop</a> (in French): the shipping cost is calculated in the basket. Or order on WhatsApp.</p>
+  <h2>United Kingdom, the Americas and Asia</h2>
+  <p>Colissimo International, tracked. Price by total weight of the parcel (packaging included).</p>
+  <table style="width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.95rem">
+    <thead><tr style="color:var(--gold);text-align:left"><th style="{TH}">Parcel weight</th><th style="{TH}">United Kingdom</th><th style="{TH}">Americas (USA, Canada…) &amp; Asia</th></tr></thead>
+    <tbody style="color:var(--cream)">
+{rows}
+    </tbody>
+  </table>
+  <p>Import duties and taxes, if any, are charged by your country on arrival and paid by the recipient.</p>
+  <h2>Africa</h2>
+  <p>We do not ship to Africa.</p>
+  <h2>How to order from abroad</h2>
+  <p>Choose your products in the <a href="/en/shop.html">shop</a>, then send us your list and your country on WhatsApp. We confirm the total (products + shipping) and you pay by PayPal or Wero.</p>
+  <p><a class="btn" href="{wa('Hello, I would like to order from abroad. My country is: ')}">Order on WhatsApp</a><a class="btn ghost" href="/en/shop.html">See the shop</a></p>
+</article>"""
+PAGES[p] = page(p, None, t, d, "packsaloum-sachetdebout1.webp", b, [crumbs("Shipping", p)], og_type="website")
 
 # ---------------------------------------------------------------- HOME
 p = "/en/"
