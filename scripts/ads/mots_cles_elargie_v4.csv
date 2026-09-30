@@ -1,0 +1,53 @@
+cluster,mot_cle,volume_mensuel,concurrence
+poisson-frais,tilapia,18100,LOW
+poisson-frais,poisson capitaine,5400,LOW
+poisson-frais,poisson braisé,1000,LOW
+poisson-frais,thiof,590,LOW
+poisson-frais,poisson africain,480,LOW
+poisson-frais,sardinelle,260,LOW
+conservation,poisson fumé africain,140,LOW
+fetes,buffet africain,90,LOW
+cadeaux-diaspora,épicerie fine africaine,40,LOW
+poisson-frais,carton de poisson,40,MEDIUM
+poisson-frais,tilapia cuisine,30,LOW
+fetes,repas de noël africain,20,LOW
+fetes,repas tabaski,10,UNSPECIFIED
+fetes,recette tabaski,10,LOW
+fetes,recette korité,10,UNSPECIFIED
+fetes,recette ramadan africaine,10,UNSPECIFIED
+conservation,poisson séché bienfaits,10,LOW
+conservation,poisson salé séché,10,HIGH
+conservation,crevettes séchées recette,10,LOW
+poisson-frais,tilapia a la mexicana,10,UNSPECIFIED
+poisson-frais,tilapia empanizado,10,UNSPECIFIED
+poisson-frais,tilapia gourmet,10,UNSPECIFIED
+poisson-frais,tilapia lidl,10,LOW
+poisson-frais,tilapia loin,10,LOW
+poisson-frais,tilapia prijs,10,LOW
+poisson-frais,tilapia uit de oven met tomaat,10,UNSPECIFIED
+poisson-frais,tilapia vis,10,LOW
+poisson-frais,tilapiafilets,10,LOW
+poisson-frais,vis tilapia,10,LOW
+fetes,plat de fête africain,0,UNSPECIFIED
+fetes,menu mariage sénégalais,0,UNSPECIFIED
+cadeaux-diaspora,cadeau gourmand africain,0,UNSPECIFIED
+cadeaux-diaspora,coffret produits africains,0,UNSPECIFIED
+cadeaux-diaspora,colis alimentaire afrique,0,UNSPECIFIED
+cadeaux-diaspora,produits du sénégal en france,0,UNSPECIFIED
+cadeaux-diaspora,box cuisine africaine,0,UNSPECIFIED
+conservation,conserver poisson séché,0,UNSPECIFIED
+conservation,poisson séché odeur,0,UNSPECIFIED
+conservation,dessaler poisson séché,0,UNSPECIFIED
+conservation,comment cuisiner poisson séché,0,UNSPECIFIED
+poisson-frais,la tilapia tiene colesterol,0,UNSPECIFIED
+poisson-frais,tajin tilapia,0,UNSPECIFIED
+poisson-frais,tilapia con vegetales,0,UNSPECIFIED
+poisson-frais,tilapia crudo,0,UNSPECIFIED
+poisson-frais,tilapia en aluminio,0,UNSPECIFIED
+poisson-frais,tilapia in de oven,0,UNSPECIFIED
+poisson-frais,tilapia molida,0,UNSPECIFIED
+poisson-frais,tilapia op de bbq,0,UNSPECIFIED
+poisson-frais,tilapia prijs per kilo,0,UNSPECIFIED
+poisson-frais,tilapia tomate,0,UNSPECIFIED
+poisson-frais,tilapia uit de oven,0,UNSPECIFIED
+poisson-frais,tilapia uit de oven aluminiumfolie,0,UNSPECIFIED
