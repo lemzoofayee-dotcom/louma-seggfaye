@@ -589,7 +589,7 @@ nouveaute: false
 },
 {
 id: "niebe-saloum",
-nom: "Niebe Saloum",
+nom: "Niébé des Îles du Saloum",
 nomLocal: "Niébé",
 categorie: "cereales",
 prix: 5.00,
