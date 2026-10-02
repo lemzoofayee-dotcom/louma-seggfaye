@@ -30,7 +30,7 @@ WOLOF = {'netetou','netetu','soumbala','nere','thiere','thiakry','guedj','guej',
  # graphies wolof : seul Lamine tranche
  'thieboudienne','thiebou','dieye','diargne','sompatt','yekem','keciax','ciakri','yoxos','tuffa',
  # mots francais valides tels quels : ne JAMAIS accentuer automatiquement
- 'jeune','granules','tache','mure','cure','tire','acre','are','cotes','entre','eleve','reste','age'}
+ 'jeune','notre','votre','granules','tache','mure','cure','tire','acre','are','cotes','entre','eleve','reste','age'}
 dico = {}
 for nu, formes in cand.items():
     if nu in WOLOF or len(nu) < 4: continue
