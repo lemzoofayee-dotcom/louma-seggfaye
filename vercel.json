@@ -83,6 +83,11 @@
       "source": "/produits/yaye-boye.html",
       "destination": "/produits/yaboye.html",
       "permanent": true
+    },
+    {
+      "source": "/poissons",
+      "destination": "/poissons-prix.html",
+      "permanent": false
     }
   ]
 }
