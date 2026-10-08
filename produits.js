@@ -803,7 +803,7 @@ badge: "Carton 5kg",
 image: "chanchar-dieye.webp",
 description: "Chanchar (diéye) congelé en carton de 5 kg. Le petit poisson à gros yeux du quotidien sénégalais : celui qu'on frit le soir, qu'on met dans le riz, et qui ne ruine personne.",
 origine: "Sénégal — Pêche artisanale côtière",
-goutPlus: "Au Sénégal on l'appelle « chinchard », mais ce n'est pas le chinchard d'Europe. C'est le coulisou (Selar crumenophthalmus), en wolof jay bi — d'où diéye, et d'où djaye : un seul et même poisson, trois façons de l'écrire. On le reconnaît à ses yeux énormes, qui lui servent à chasser la nuit. Chair grasse et goûteuse, à l'opposé des poissons blancs comme le thiof.",
+goutPlus: "Au Sénégal on l'appelle « chinchard », mais ce n'est pas le chinchard d'Europe. C'est le comète coussut (Decapterus rhonchus), en wolof jay — d'où diéye, et d'où djaye : un seul et même poisson, trois façons de l'écrire. On le reconnaît à son corps gris argenté et à sa queue jaune. Chair grasse et goûteuse, à l'opposé des poissons blancs comme le thiof.",
 conseil: "Décongeler au réfrigérateur. Excellent frit, en sauce tomate ou dans le riz au poisson. Sa chair grasse supporte très bien la friture : elle ne se dessèche pas.",
 stock: true,
 nouveaute: false
