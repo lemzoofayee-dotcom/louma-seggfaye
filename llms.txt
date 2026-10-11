@@ -15,6 +15,7 @@ Informations pratiques :
 - [Prix des poissons](https://seggfaye.com/poissons-prix.html): tarifs des poissons frais et séchés
 - [Le Guedjologue](https://seggfaye.com/le-guedjologue.html): qui est Lamine Faye
 - [Conditions de vente](https://seggfaye.com/conditions-de-vente.html): livraison, retours, paiement
+- [Louma Guide](https://guide.seggfaye.com/): quel produit utiliser pour chaque plat sénégalais (39 plats, 53 produits) ; sa propre fiche pour les IA : https://guide.seggfaye.com/llms.txt
 
 ## Rayons
 - [Produits halieutiques séchés (guedj, yeet, crevettes, coquillages)](https://seggfaye.com/categories/produits-halieutiques.html)
@@ -38,6 +39,58 @@ Informations pratiques :
 - [Les plats sénégalais incontournables](https://seggfaye.com/blog/plats-senegalais.html)
 - [Atlas des poissons en wolof](https://seggfaye.com/atlas-poissons-wolof.html): noms wolof, français et latins
 - [Lexique wolof-français](https://seggfaye.com/lexique-wolof-francais.html)
+
+## Poissons séchés, guedj et fruits de mer
+- [Comment cuisiner le guedj : le secret umami](https://seggfaye.com/blog/comment-cuisiner-le-guedj.html)
+- [Comment conserver le guedj (sans le congeler)](https://seggfaye.com/blog/comment-conserver-le-guedj.html)
+- [Guedj ou yeet : quelle différence ?](https://seggfaye.com/blog/guedj-ou-yeet-difference.html)
+- [Le yeet ou yet : le Maggi africain du Sénégal](https://seggfaye.com/blog/yeet-cymbium-maggi-africain.html)
+- [Kong fumé ou guedj kong ? Même poisson, deux produits](https://seggfaye.com/blog/kong-fume-ou-guedj-kong.html)
+- [Le poisson kong (mâchoiron) : le guedj de la diaspora](https://seggfaye.com/blog/poisson-kong.html)
+- [Pourquoi on dit « poisson beurre » ? (ça n'a rien à voir avec le beurre)](https://seggfaye.com/blog/poisson-beurre-berr-courbine.html)
+- [Kéthiakh : c'est quoi, et comment on le fait (sardinelle fumée)](https://seggfaye.com/blog/kethiakh-sardinelle-fumee-senegal.html)
+- [Crevettes séchées du Saloum (cipakh)](https://seggfaye.com/blog/crevettes-sechees-saloum.html)
+- [Quel poisson pour le thiéboudienne ? Le thiof et ses cousins](https://seggfaye.com/blog/quel-poisson-thieboudienne.html)
+- [Poisson braisé : quel poisson choisir et la recette au charbon](https://seggfaye.com/blog/poisson-braise.html)
+
+## Épices, condiments, fruits et boissons
+- [Le néré : l'arbre, le fruit jaune, et le nététou qu'on en tire](https://seggfaye.com/blog/quest-ce-que-le-nere.html)
+- [Netetou Mix : le soumbala sérérisé, sans cube](https://seggfaye.com/blog/netetou-mix-condiment-senegalais.html)
+- [Dawadawa : le netetou vu du Nigeria](https://seggfaye.com/blog/dawadawa-netetou-african-locust-bean.html)
+- [Bissap : le guide complet de l'hibiscus sénégalais](https://seggfaye.com/blog/bissap-hibiscus-guide.html)
+- [Bissap blanc : la variété douce de l'hibiscus](https://seggfaye.com/blog/bissap-blanc.html)
+- [Jus de bissap : la vraie recette (hibiscus, rouge ou blanc)](https://seggfaye.com/blog/recette-jus-de-bissap.html)
+- [Pain de singe : le fruit du baobab, jus et poudre (bouye)](https://seggfaye.com/blog/pain-de-singe-bouye-baobab.html)
+- [Jus de bouye : la recette du jus de baobab](https://seggfaye.com/blog/recette-jus-de-bouye.html)
+- [Jus de tamarin (dakhar) : la recette sénégalaise](https://seggfaye.com/blog/jus-de-tamarin-dakhar.html)
+- [Ditakh : le fruit à la vitamine C du Sénégal](https://seggfaye.com/blog/ditakh-fruit-vitamine-c-senegal.html)
+- [Kinkeliba : la tisane de longue vie](https://seggfaye.com/blog/kinkeliba-tisane-bienfaits.html)
+- [Diakhatou en français : l'aubergine africaine amère](https://seggfaye.com/blog/diakhatou-aubergine-africaine.html)
+
+## Céréales et légumineuses
+- [Thiéré : c'est quoi ? Le couscous de mil sénégalais](https://seggfaye.com/blog/thiere-couscous-mil-senegalais.html)
+- [Araw : la farine de mil roulée du Sénégal (et le fondé)](https://seggfaye.com/blog/fonde-araw-bouillie-mil-senegalais.html)
+- [Lakh : la bouillie de mil au lait caillé (sow)](https://seggfaye.com/blog/lakh-bouillie-mil-lait-caille.html)
+- [Thiakry (dégué) : le dessert sénégalais au mil](https://seggfaye.com/blog/thiakry-degue-dessert-senegalais.html)
+- [Fonio : céréale sans gluten d'Afrique](https://seggfaye.com/blog/fonio-cereale-sans-gluten.html)
+- [Niébé : le haricot du Saloum (et le ndambé)](https://seggfaye.com/blog/niebe-haricot-saloum.html)
+
+## Recettes sénégalaises
+- [Mafé poulet : la vraie recette sénégalaise](https://seggfaye.com/blog/recette-mafe-senegalais.html)
+- [Recette du yassa poulet sénégalais](https://seggfaye.com/blog/recette-yassa-poulet.html)
+- [Domoda sénégalais : le vrai ragoût (sans arachide)](https://seggfaye.com/blog/domoda-senegalais.html)
+- [Thiébou yapp : le riz à la viande sénégalais](https://seggfaye.com/blog/thiebou-yapp-riz-viande-senegalais.html)
+- [Mbakhal poisson (mbaxal jën) : le riz sans arachide](https://seggfaye.com/blog/mbakhal-poisson-mbaxal-jen.html)
+- [Recette du mbakhalou saloum](https://seggfaye.com/blog/recette-mbakhalou-saloum.html)
+- [Recette du caldou sénégalais](https://seggfaye.com/blog/recette-caldou-senegalais.html)
+- [Recette du soupoukandja (sauce gombo)](https://seggfaye.com/blog/recette-soupoukandja.html)
+- [Thiéré bassé tigadégué : recette et sauce arachide](https://seggfaye.com/blog/recette-basse-salte.html)
+- [Ndiambane dakkar : le mélange au tamarin et aux fruits de mer séchés](https://seggfaye.com/blog/ndiambane-dakkar.html)
+- [Paella sénégalaise : la recette aux fruits de mer séchés](https://seggfaye.com/blog/recette-paella-senegalaise.html)
+- [Ngalakh : le dessert sénégalais de Pâques](https://seggfaye.com/blog/ngalakh-dessert-senegalais.html)
+- [Riz au lait sénégalais : le sombi](https://seggfaye.com/blog/riz-au-lait-senegalais-sombi.html)
+- [Pain perdu sénégalais : le mbourou fass](https://seggfaye.com/blog/pain-perdu-mbourou-fass-senegalais.html)
+- [Beignet africain : le beignet banane sénégalais](https://seggfaye.com/blog/beignet-banane-senegalais.html)
 
 ## English guides
 - [Senegalese food: the dishes you need to know](https://seggfaye.com/en/senegalese-food.html)
