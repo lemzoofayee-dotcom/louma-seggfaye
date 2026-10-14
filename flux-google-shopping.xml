@@ -102,11 +102,11 @@
   </item>
   <item>
     <g:id>guej-beurre</g:id>
-    <g:title>Guedj Beurre — 100g</g:title>
+    <g:title>Guedj Beurre — 200g</g:title>
     <g:description>Le guedj le plus connu de la diaspora. Fait à partir de courbine (Berr), un poisson à chair blanche et grasse. Séchage traditionnel au soleil. Goût doux et polyvalent — il passe partout.</g:description>
     <g:link>https://seggfaye.com/produits/guej-beurre.html</g:link>
     <g:image_link>https://seggfaye.com/guedji-beurre.webp</g:image_link>
-    <g:price>4.00 EUR</g:price>
+    <g:price>8.00 EUR</g:price>
     <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
@@ -114,7 +114,7 @@
     <g:product_type>Poissons séchés &amp; fruits de mer</g:product_type>
     <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
     <g:shipping_label>sec</g:shipping_label>
-    <g:shipping_weight>180 g</g:shipping_weight>
+    <g:shipping_weight>280 g</g:shipping_weight>
   </item>
   <item>
     <g:id>guej-beur-casamance</g:id>
