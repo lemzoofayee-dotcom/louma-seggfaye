@@ -921,6 +921,7 @@ document.addEventListener('click', function(e){
 <p>Votre panier est vide</p>
 </div>
 </div>
+<button type="button" id="cart-clear" onclick="cartSystem.clearCart()" style="display:none;background:none;border:none;color:var(--muted);font-size:.78rem;text-decoration:underline;cursor:pointer;margin:.2rem auto .4rem;padding:.3rem .6rem;">🗑 Vider le panier</button>
 <div class="cart-footer">
 <div class="cart-zone-row">
 <span class="label-total">Zone livraison</span>
@@ -1308,6 +1309,11 @@ document.addEventListener('click', function(e){
       this.renderItems();
     },
 
+    clearCart(skipConfirm) {
+      if (!skipConfirm && !confirm('Vider votre panier ?')) return;
+      this.items = []; this.save(); this.renderItems(); this.updateCount(); this.refreshMixWarn();
+    },
+
     save() { try { localStorage.setItem('sgf-cart', JSON.stringify(this.items)); } catch {} },
     load() { try { this.items = JSON.parse(localStorage.getItem('sgf-cart')) || []; } catch { this.items = []; } },
 
@@ -1337,6 +1343,8 @@ document.addEventListener('click', function(e){
       const wrap = document.getElementById('paypal-btn-wrap');
       if (!container) return;
 
+      const clearBtn = document.getElementById('cart-clear');
+      if (clearBtn) clearBtn.style.display = this.items.length ? 'block' : 'none';
       if (this.items.length === 0) {
         container.innerHTML = '<div class="cart-empty"><span>🛒</span><p>Votre panier est vide</p></div>';
         if (totalEl) totalEl.textContent = '0,00 €';
@@ -1394,8 +1402,9 @@ document.addEventListener('click', function(e){
         if (promoToggle) promoToggle.style.display = 'none';
         if (promoForm) promoForm.style.display = 'none';
         if (promoApplied) { promoApplied.style.display = 'flex'; }
-        if (promoLabel) promoLabel.textContent = label;
-        if (discountRow) discountRow.style.display = 'flex';
+        const sousMin = p.min && this.total() < p.min;
+        if (promoLabel) promoLabel.textContent = sousMin ? label + ' — valable dès ' + p.min + ' € d\'achat' : label;
+        if (discountRow) discountRow.style.display = sousMin ? 'none' : 'flex';
         if (discountVal) discountVal.textContent = '-' + d.toFixed(2).replace('.',',') + ' €';
       } else {
         if (promoToggle) promoToggle.style.display = 'block';
@@ -1469,7 +1478,11 @@ document.addEventListener('click', function(e){
         + this.items.map(i => '- ' + i.qty + '× ' + i.name + ' (' + eur(i.price) + ')').join('\n');
       msg += '\n\nSous-total : ' + eur(this.total());
       const d = this.discount();
-      if (d > 0) msg += '\nRéduction : -' + eur(d);
+      if (d > 0) {
+        const pc = this.promoCodes[this.activePromo];
+        msg += '\nCode promo : ' + this.activePromo + ' (' + (pc.type === 'percent' ? '-' + pc.value + ' %' : '-' + pc.value + ' €') + ')';
+        msg += '\nRéduction : -' + eur(d);
+      }
       msg += '\nLivraison' + (zoneLabel ? ' (' + zoneLabel + ')' : '') + ' : ' + eur(this.shippingCost());
       msg += '\nTotal : ' + eur(this.grandTotal());
 
@@ -1483,6 +1496,10 @@ document.addEventListener('click', function(e){
       if (typeof gtag === 'function') gtag('event', 'whatsapp_order', { value: this.grandTotal(), currency: 'EUR' });
 
       window.open('https://wa.me/33652650395?text=' + encodeURIComponent(msg), '_blank');
+      // Commande partie sur WhatsApp : on vide le panier et le code « une fois » est marqué utilisé (décision Lamine 14/10)
+      this.markPromoUsed(); this.clearCart(true); this.close();
+      const n = document.getElementById('cart-notif');
+      if (n) { n.textContent = 'Commande envoyée sur WhatsApp ✅ Panier vidé'; n.classList.add('show'); setTimeout(() => n.classList.remove('show'), 4000); }
     }
   };
 
