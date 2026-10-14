@@ -1140,7 +1140,7 @@ document.addEventListener('click', function(e){
     promoCodes: {
       'BIENVENUE10': { type: 'percent', value: 10, once: true, min: 25 },
       'SALOUM15': { type: 'percent', value: 15, once: true, min: 25 },
-      'LOUMA5': { type: 'fixed', value: 5, once: false, min: 40 }
+      'LOUMA5': { type: 'fixed', value: 5, once: false, min: 40, paused: true }  // en pause (Lamine 14/10) : retirer « paused: true » pour le réactiver
     },
     activePromo: null,
     usedPromos: [],
@@ -1227,7 +1227,7 @@ document.addEventListener('click', function(e){
     discount() {
       if (!this.activePromo) return 0;
       const p = this.promoCodes[this.activePromo];
-      if (!p) return 0;
+      if (!p || p.paused) return 0;
       const t = this.total();
       if (p.min && t < p.min) return 0; // minimum d'achat non atteint
       if (p.type === 'percent') return Math.round(t * p.value / 100 * 100) / 100;
@@ -1241,6 +1241,11 @@ document.addEventListener('click', function(e){
       const code = input.value.trim().toUpperCase();
       if (!code) return;
       const promo = this.promoCodes[code];
+      if (promo && promo.paused) {
+        if (errEl) { errEl.textContent = 'Ce code n\'est plus disponible pour le moment'; errEl.style.display = 'block'; }
+        setTimeout(() => { if (errEl) errEl.style.display = 'none'; }, 3500);
+        return;
+      }
       if (!promo) {
         if (errEl) { errEl.textContent = 'Code invalide'; errEl.style.display = 'block'; }
         setTimeout(() => { if (errEl) errEl.style.display = 'none'; }, 3000);
@@ -1290,7 +1295,7 @@ document.addEventListener('click', function(e){
         const u = localStorage.getItem('sgf-used');
         if (u) this.usedPromos = JSON.parse(u);
         const c = localStorage.getItem('sgf-promo');
-        if (c && this.promoCodes[c]) this.activePromo = c;
+        if (c && this.promoCodes[c] && !this.promoCodes[c].paused) this.activePromo = c;
       } catch {}
     },
     markPromoUsed() {
