@@ -1,115 +1,110 @@
-# Analyse mots-clés Google Ads — Lundi 12/10/2026
+# Analyse mots-clés Google Ads — Lundi 19/10/2026
 
 > **Analyse cloud, aucune donnée neuve générée.** Pas d'accès à l'API Google Ads ni à Google Search Console depuis le cloud.
-> Source : les 5 CSV déjà commités dans `scripts/ads/` (`mots_cles_resultats.csv` v1, `mots_cles_resultats_v2.csv` + son snapshot du 05/08, `mots_cles_passerelle_v3.csv`, et **nouveau** : `mots_cles_elargie_v4.csv`).
-> **Nouveauté cette semaine** : `mots_cles_elargie_v4.csv` a été ajouté en local le 30/09 (commit `398a1e1`) — exactement la suite demandée dans le rapport du 28/09 (« relancer un pull avec des seeds élargies »). 4 nouveaux clusters testés : `poisson-frais`, `conservation`, `fetes`, `cadeaux-diaspora`. Les 4 autres CSV sont inchangés depuis le 23/09.
-> Croisé avec : `ls blog/` (49 articles), `ls produits/` (54 fiches), et les pages racine pertinentes (`epicerie-africaine.html`, `poissons-prix.html`, `atlas-poissons-wolof.html`).
+> Source : les 5 CSV déjà commités dans `scripts/ads/` (`mots_cles_resultats.csv` v1, `mots_cles_resultats_v2.csv` + son snapshot du 05/08, `mots_cles_passerelle_v3.csv`, `mots_cles_elargie_v4.csv`).
+> **Pas de nouveau CSV cette semaine.** `mots_cles_elargie_v4.csv` (ajouté le 30/09) reste la dernière étude — aucun pull local depuis. Rien à analyser de neuf côté données.
+> Croisé avec : `ls blog/` (55 articles + `index.html`), `ls produits/` (55 fiches), et les pages racine pertinentes (`epicerie-africaine.html`, `poissons-prix.html`, `atlas-poissons-wolof.html`).
+> **Nouveauté côté catalogue** : `blog/recette-thiebou-diagga.html` a été publié le 14/10 (thiebou djeun diagga, sans guedj ni yeet) — postérieur au rapport du 12/10. Vérifié ci-dessous : ça ne referme aucun trou (le sujet n'en était pas un) mais ça enrichit la couverture « recette thieboudienne / plat sénégalais ».
 > Géo des études : France · langue FR.
 
 ---
 
 ## 1. Verdict en une ligne
 
-**5e semaine consécutive sans trou strict**, mais celle-ci compte : la nouvelle étude élargie (v4) teste 4 clusters inédits (poisson frais, fêtes, cadeaux diaspora, conservation) et le catalogue absorbe encore tout — y compris « tilapia » (18 100/mois, FAIBLE) et « poisson capitaine » (5 400/mois, FAIBLE), déjà couverts par des fiches produit existantes. C'est un signal positif (le catalogue est robuste même face à de nouvelles seeds), pas un signal d'arrêt : il reste des pistes sous le seuil de volume à garder en réserve, détaillées en §3-4.
+**6e semaine consécutive sans trou strict** — aucune donnée neuve à croiser (toujours les mêmes 5 CSV, le dernier pull remonte au 30/09) et le catalogue (55 articles + 55 fiches) couvre toujours l'intégralité des mots-clés ≥300/mois en concurrence faible ; la seule nouveauté est un article de plus (`recette-thiebou-diagga.html`, 14/10) qui ne change pas le constat.
 
 ---
 
 ## 2. Déjà couvert (validation)
 
-### Nouveaux mots-clés testés (v4) — tous déjà couverts
-
 | Mot-clé | Vol./mois | Concurrence | Contenu |
 |---|---:|---|---|
+| pain perdu | 90 500 | FAIBLE | `blog/pain-perdu-mbourou-fass-senegalais.html` |
+| riz au lait / sombi | 74 000 | FAIBLE | `blog/riz-au-lait-senegalais-sombi.html` |
+| bissap | 60 500 | FAIBLE | `blog/bissap-hibiscus-guide.html`, `blog/recette-jus-de-bissap.html` + fiches bissap-blanc/rouge |
+| dégué | 12 100 | FAIBLE | `blog/thiakry-degue-dessert-senegalais.html` |
 | tilapia | 18 100 | FAIBLE | `produits/tilapia-rouge.html` |
-| poisson capitaine | 5 400 | FAIBLE | `produits/diane-capitaine.html`, `produits/beurre-capitaine.html` |
-| poisson braisé | 1 000 | FAIBLE | `blog/poisson-braise.html` |
-| thiof | 590 | FAIBLE | `produits/thiof-decoupe.html` |
-| poisson africain | 480 | FAIBLE | `poissons-prix.html` (title : « Prix des poissons africains du Sénégal ») — page racine, hors blog/produits mais dédiée |
-
-*Sardinelle (260/mois) et poisson fumé africain (140/mois) sont sous le seuil de 300 mais déjà couverts quand même (`blog/kethiakh-sardinelle-fumee-senegal.html`, articles guedj fumé).*
-
-### Mots-clés des CSV v1/v2/passerelle (rappel, inchangés depuis le 23/09)
-
-| Mot-clé | Vol./mois | Concurrence | Contenu |
-|---|---:|---|---|
-| pain perdu | 90 500 | FAIBLE | `pain-perdu-mbourou-fass-senegalais.html` |
-| riz au lait / sombi | 74 000 | FAIBLE | `riz-au-lait-senegalais-sombi.html` |
-| bissap | 60 500 | FAIBLE | `bissap-hibiscus-guide.html`, `recette-jus-de-bissap.html` + fiches bissap-blanc/rouge |
-| dégué | 12 100 | FAIBLE | `thiakry-degue-dessert-senegalais.html` |
-| recette mafé | 9 900 | FAIBLE | `recette-mafe-senegalais.html` |
+| recette mafé | 9 900 | FAIBLE | `blog/recette-mafe-senegalais.html` |
 | guedj | 6 600-8 100 | FAIBLE | 7+ articles (`quest-ce-que-le-guedj`, `les-7-guedj-du-senegal`…) |
-| yassa poulet | 8 100 | FAIBLE | `recette-yassa-poulet.html` |
-| néré | 6 600 | FAIBLE | `quest-ce-que-le-nere.html` |
-| cymbium | 5 400-6 600 | FAIBLE | `yeet-cymbium-maggi-africain.html` + fiche `yeet-maggi` |
-| épicerie africaine | 5 400 | FAIBLE | `epicerie-africaine.html` (page racine ; **l'ancienne `blog/produits-senegalais-france.html` a été supprimée le 11/10**, redirection 308 déjà en place) |
-| fonio | 5 400 | MOYENNE | `fonio-cereale-sans-gluten.html` — ⚠️ piège CPC, voir §4 |
-| beignet africain / banane | 4 400 / 1 900 | FAIBLE | `beignet-banane-senegalais.html` |
-| thiakry / plat sénégalais | 4 400 | FAIBLE | `thiakry-degue-dessert-senegalais.html`, `plats-senegalais.html` |
-| bissap blanc | 1 600 | MOYENNE | `bissap-blanc.html` + fiche produit |
-| soumbala | 1 600 | FAIBLE | `guide-netetou-soumbala.html` |
-| thiébou yapp | 1 300 | FAIBLE | `thiebou-yapp-riz-viande-senegalais.html` |
-| pain de singe / bouye / poudre de baobab | 1 300-3 600 | MOYENNE/FAIBLE/ÉLEVÉE | `pain-de-singe-bouye-baobab.html` + fiche `bouye-baobab` |
-| lakh / bouillie de mil | 1 000-1 300 | FAIBLE | `lakh-bouillie-mil-lait-caille.html`, `fonde-araw-bouillie-mil-senegalais.html` |
-| thiéré / couscous de mil | 590-1 300 | FAIBLE | `thiere-couscous-mil-senegalais.html` |
-| niébé (des Îles du Saloum) | 1 300 | FAIBLE | `niebe-haricot-saloum.html` — produit renommé le 02/10 |
-| yeet | 1 000 | FAIBLE | `yeet-cymbium-maggi-africain.html`, `guedj-ou-yeet-difference.html` |
-| ditakh | 1 000 | FAIBLE | `ditakh-fruit-vitamine-c-senegal.html` |
-| domoda | 880 | FAIBLE | `domoda-senegalais.html` |
-| jus de bouye | 880 | FAIBLE | `recette-jus-de-bouye.html` |
-| dessert sénégalais | 480 | FAIBLE | `thiakry-degue-dessert-senegalais.html`, `ngalakh-dessert-senegalais.html` |
-| netetou / nététou | 390 / 590 | FAIBLE | `acheter-netetou-france.html`, `guide-netetou-soumbala.html`, fiche `netetu-mix` |
-| soupou kandja | 590-720 | FAIBLE | `recette-soupoukandja.html` |
-| ngalakh | 590 | FAIBLE | `ngalakh-dessert-senegalais.html` |
-| recette thieboudienne | 590 | FAIBLE | `recette-thieboudienne-authentique.html` |
-| bissap rouge | 390 | ÉLEVÉE | fiche `bissap-rouge`, `bissap-hibiscus-guide.html` |
-| oseille de guinée (= bissap) | 390 | FAIBLE | `bissap-hibiscus-guide.html` (synonyme, pas un trou) |
-| beignets sénégalais | 390 | FAIBLE | `beignet-banane-senegalais.html` |
-| mbakhalou saloum | 320 | FAIBLE | `recette-mbakhalou-saloum.html` |
-| poisson kong | 260-320 (sous le seuil) | FAIBLE | `poisson-kong.html` |
-| caldou | 140 | FAIBLE | `recette-caldou-senegalais.html` |
+| yassa poulet | 8 100 | FAIBLE | `blog/recette-yassa-poulet.html` |
+| néré | 6 600 | FAIBLE | `blog/quest-ce-que-le-nere.html` |
+| cymbium | 5 400-6 600 | FAIBLE | `blog/yeet-cymbium-maggi-africain.html` + fiche `yeet-maggi` |
+| poisson capitaine | 5 400 | FAIBLE | `produits/diane-capitaine.html`, `produits/beurre-capitaine.html` |
+| épicerie africaine | 5 400 | FAIBLE | `epicerie-africaine.html` (page racine) |
+| fonio | 5 400 | MOYENNE | `blog/fonio-cereale-sans-gluten.html` — ⚠️ piège CPC, voir §4 |
+| beignet africain / banane | 4 400 / 1 900 | FAIBLE | `blog/beignet-banane-senegalais.html` |
+| thiakry / plat sénégalais | 4 400 | FAIBLE | `blog/thiakry-degue-dessert-senegalais.html`, `blog/plats-senegalais.html` |
+| jus de bissap | 4 400 | FAIBLE | `blog/recette-jus-de-bissap.html` |
+| pain de singe | 3 600 | FAIBLE | `blog/pain-de-singe-bouye-baobab.html` |
+| soumbala | 1 600 | FAIBLE | `blog/guide-netetou-soumbala.html` |
+| bissap blanc | 1 600 | MOYENNE | `blog/bissap-blanc.html` + fiche produit |
+| thiébou yapp | 1 300 | FAIBLE | `blog/thiebou-yapp-riz-viande-senegalais.html` |
+| bouye | 1 300 | FAIBLE | `blog/pain-de-singe-bouye-baobab.html` + fiche `bouye-baobab` |
+| niébé (Îles du Saloum) | 1 300 | FAIBLE | `blog/niebe-haricot-saloum.html` |
+| thiéré / couscous de mil | 590-1 300 | FAIBLE | `blog/thiere-couscous-mil-senegalais.html` |
+| lakh / bouillie de mil | 1 000-1 300 | FAIBLE | `blog/lakh-bouillie-mil-lait-caille.html`, `blog/fonde-araw-bouillie-mil-senegalais.html` |
+| poisson braisé | 1 000 | FAIBLE | `blog/poisson-braise.html` |
+| yeet | 1 000 | FAIBLE | `blog/yeet-cymbium-maggi-africain.html`, `blog/guedj-ou-yeet-difference.html` |
+| ditakh | 1 000 | FAIBLE | `blog/ditakh-fruit-vitamine-c-senegal.html` |
+| domoda | 880 | FAIBLE | `blog/domoda-senegalais.html` |
+| jus de bouye | 880 | FAIBLE | `blog/recette-jus-de-bouye.html` |
+| netetou / nététou | 390-720 | FAIBLE | `blog/acheter-netetou-france.html`, `blog/guide-netetou-soumbala.html`, fiche `netetu-mix` |
+| soupoukandja | 590-720 | FAIBLE | `blog/recette-soupoukandja.html` |
+| thiof | 590 | FAIBLE | `produits/thiof-decoupe.html` |
+| couscous de mil | 590 | FAIBLE | `blog/thiere-couscous-mil-senegalais.html` |
+| recette thieboudienne | 590 | FAIBLE | `blog/recette-thieboudienne-authentique.html` + `blog/recette-thiebou-diagga.html` (nouveau, 14/10) |
+| ngalakh | 590 | FAIBLE | `blog/ngalakh-dessert-senegalais.html` |
+| poisson africain | 480 | FAIBLE | `poissons-prix.html` (page racine) |
+| dessert sénégalais | 480 | FAIBLE | `blog/thiakry-degue-dessert-senegalais.html`, `blog/ngalakh-dessert-senegalais.html` |
+| oseille de guinée (= bissap) | 390 | FAIBLE | `blog/bissap-hibiscus-guide.html` (synonyme) |
+| beignets sénégalais | 390 | FAIBLE | `blog/beignet-banane-senegalais.html` |
+| sombi | 390 | FAIBLE | `blog/riz-au-lait-senegalais-sombi.html` |
+| mbakhal(ou) saloum | 320 | FAIBLE | `blog/recette-mbakhalou-saloum.html` |
 
-*Concurrence ÉLEVÉE, déjà couvertes malgré tout (pas des trous, référencement juste plus dur) : kinkeliba (3 600), poudre de baobab (2 400), crevettes séchées (590), fleur d'hibiscus séchée (1 000), bissap rouge (390).*
+*Concurrence ÉLEVÉE mais déjà couvertes malgré tout (pas des trous, référencement juste plus dur) : pâte d'arachide (4 400), kinkeliba (3 600), poudre de baobab (2 400), crevettes séchées (590), fleur d'hibiscus séchée (1 000), bissap rouge (390).*
 
 ---
 
 ## 3. Les trous à occuper (PRIORITÉ)
 
-**Aucun trou strict** (volume ≥ 300/mois + concurrence FAIBLE + zéro article/fiche) dans les 5 CSV actuels, nouveaux clusters v4 inclus. 5e semaine d'affilée, mais la première fois que ce verdict est testé contre des seeds vraiment nouvelles.
+**Aucun trou strict** (volume ≥ 300/mois + concurrence FAIBLE + zéro article/fiche) dans les 5 CSV disponibles. 6e semaine d'affilée — constat inchangé faute de données neuves.
 
-Pistes secondaires hors critère strict, à garder en réserve :
+Pistes sous le seuil, à garder en réserve (aucune n'est urgente) :
 
-| Mot-clé | Vol./mois | Concurrence | Pourquoi ce n'est pas un trou prioritaire | Piste si jamais |
+| Mot-clé | Vol./mois | Concurrence | Pourquoi ce n'est pas un trou prioritaire | Angle si jamais / produit à lier |
 |---|---:|---|---|---|
-| pâte d'arachide | 4 400 | **ÉLEVÉE** | Concurrence trop forte pour viser le terme générique | Angle de niche « pâte d'arachide sénégalaise maison » — à lier à `tigadegue`/`guerte-noflay` — *graphie à confirmer avec Lamine* |
-| buffet africain | 90 | FAIBLE | Sous le seuil de 300/mois, mais cluster « fêtes » nouveau et thématiquement inexploité | Article/angle « coffret buffet africain pour les fêtes » lié à `produits/pack-saloum.html` — *à valider avec Lamine avant tout nom de plat précis* |
-| graine de néré | 170 | FAIBLE | Sous le seuil, déjà mentionné dans les articles néré/soumbala | Pas besoin d'article dédié |
+| buffet africain | 90 | FAIBLE | Sous le seuil de 300/mois | Angle « coffret buffet africain pour les fêtes » lié à `produits/pack-saloum.html` — *à valider avec Lamine avant tout nom de plat précis* |
+| sardinelle | 260 | FAIBLE | Sous le seuil, déjà couvert quand même | `blog/kethiakh-sardinelle-fumee-senegal.html` — pas besoin de nouvel article |
+| poisson fumé africain | 140 | FAIBLE | Sous le seuil, déjà couvert quand même | Articles guedj fumé existants — pas besoin de nouvel article |
 | épicerie fine africaine | 40 | FAIBLE | Sous le seuil | Déjà proche d'`epicerie-africaine.html` — pas de nouvel article nécessaire |
+| graine de néré | 170 | FAIBLE | Sous le seuil, déjà mentionné dans les articles néré/soumbala | Pas besoin d'article dédié |
+
+Aucune de ces pistes ne justifie une création cette semaine.
 
 ---
 
 ## 4. Insights stratégiques
 
-- **L'élargissement des seeds demandé la semaine dernière a été fait, et le catalogue a tenu.** La v4 teste 4 clusters inédits (poisson frais, fêtes, cadeaux diaspora, conservation) — y compris le très gros volume « tilapia » (18 100/mois) — et tout est déjà couvert par des fiches produit ou pages racine existantes. C'est une validation utile du travail de maillage déjà fait, pas une impasse : les prochaines seeds à tester en local pourraient cibler des angles encore absents du Keyword Planner France, comme des variantes longues « recette tabaski »/« recette korité » (actuellement à 10/mois, trop tôt pour en tirer une conclusion) à repuller après le Ramadan/Tabaski prochain pour voir si le volume monte en saison.
-- **Bruit de données à surveiller dans `mots_cles_elargie_v4.csv` : requêtes « tilapia » non francophones.** Le cluster `poisson-frais` fait remonter des variantes espagnoles/néerlandaises (« tilapia a la mexicana », « tilapia prijs », « tilapia in de oven », « vis tilapia »…) — normal pour un terme générique international capté par Keyword Planner même en géo France, mais ça ne reflète pas une intention FR réelle. Ne pas les compter comme signal de demande francophone.
+- **Rien de neuf côté données depuis trois semaines maintenant** (dernier pull : `mots_cles_elargie_v4.csv`, 30/09). Les deux pistes locales proposées la semaine dernière restent d'actualité et n'ont pas été relancées : (1) un pull Keyword Planner en géo USA/Canada pour vraiment valider le cluster diaspora « acheter » (structurellement à 0 en géo France) ; (2) un repull saisonnier des requêtes « recette tabaski »/« recette korité »/« recette ramadan africaine » (10/mois actuellement) après la prochaine fête religieuse.
+- **Le nouvel article `recette-thiebou-diagga.html` (14/10) renforce un mot-clé déjà couvert** (« recette thieboudienne », 590/mois, FAIBLE) plutôt que d'en ouvrir un nouveau — bon réflexe éditorial (variante sans guedj/yeet pour élargir l'audience), mais ça ne change pas le verdict des trous.
 - **Piège fonio inchangé.** « fonio » (5 400/mois) republie un CPC 20-172 € : homonyme finance (ticker), pas la céréale. Ne jamais enchérir dessus en Google Ads — trafic 100 % organique sur `fonio-cereale-sans-gluten.html`.
-- **Le préfixe « acheter »/diaspora reste à 0 en géo France, c'est normal.** « où acheter guedj », « acheter netetou », « acheter poisson séché », « coffret produits africains », « colis alimentaire afrique » = 0/mois dans cette géo. Les articles diaspora (`acheter-guedj-amerique-nord.html`, `acheter-guedj-europe.html`) ciblent une autre géo et ne sont pas invalidés par ce 0 — une vraie validation de ce cluster nécessiterait un pull Keyword Planner en géo USA/Canada, à faire en local.
+- **Le préfixe « acheter »/diaspora reste à 0 en géo France, c'est normal.** « où acheter guedj », « acheter netetou », « acheter poisson séché » = 0/mois dans cette géo. Les articles diaspora (`acheter-guedj-amerique-nord.html`, `acheter-guedj-europe.html`) ciblent une autre géo et ne sont pas invalidés par ce 0.
 - **yeet reste le seul mot-clé au CPC réellement commercial** dans les CSV disponibles. Le reste du catalogue est quasi à 0 € de CPC → levier SEO organique, pas budget Ads.
-- **Page supprimée à surveiller** : `blog/produits-senegalais-france.html` a été supprimée le 11/10 (redirection 308 vers `/epicerie-africaine.html` depuis le 23/09) — le mot-clé « épicerie africaine » reste couvert par la page racine, mais si une future étude Ads cherche encore l'ancienne URL, c'est normal, elle est intentionnellement retirée.
 
 ---
 
 ## 5. Limites de l'étude (à lire avant d'agir)
 
 - **Cette routine cloud n'a pas accès à l'API Google Ads ni à Google Search Console** — elle recoupe uniquement les 5 CSV déjà commités dans `scripts/ads/`.
-- **Géo = France uniquement.** Le cluster diaspora (achat USA/Canada) ressort à 0 ici, c'est attendu — voir §4. Les clusters « fêtes »/« cadeaux diaspora » de la v4 sont aussi en géo France, donc leurs très petits volumes (10-90/mois) ne disent rien de la demande réelle côté diaspora.
+- **Aucune donnée neuve cette semaine** : les CSV analysés sont identiques à ceux du rapport du 12/10. Ce verdict ne vaut que pour ces mêmes mots-clés testés il y a 3 semaines.
+- **Géo = France uniquement.** Le cluster diaspora (achat USA/Canada) ressort à 0 ici, c'est attendu.
 - **Volumes Google Ads = fourchettes arrondies**, pas des chiffres exacts. `UNSPECIFIED` = pas assez de données, pas « zéro recherche ».
 - **Positions/impressions/CTR réels** : uniquement dans `scripts/seo/gsc-data.md` (généré en local), jamais dans cette analyse.
-- **Bruit linguistique dans la v4** (requêtes tilapia en espagnol/néerlandais) — voir §4, à ignorer pour la stratégie FR.
 
 ---
 
 ## 6. Recommandation
 
-Rien à créer cette semaine — même les nouvelles seeds (v4) ne révèlent aucun trou strict. Deux pistes non-contenu pour la prochaine étude locale : (1) tester une géo USA/Canada pour valider réellement le cluster diaspora « acheter » qui est structurellement à 0 en France ; (2) repuller les requêtes saisonnières (tabaski, korité, ramadan africain) après la prochaine fête religieuse pour voir si leur volume (10/mois actuellement) grimpe en saison.
+Rien à créer cette semaine. Priorité pour la prochaine session locale : relancer un pull Keyword Planner (geo USA/Canada pour le cluster diaspora, et/ou nouvelles seeds) — l'étude cloud ne peut rien analyser de neuf tant qu'aucun CSV n'est ajouté.
 
-**Les 3 trous prioritaires de la semaine : aucun** — la nouvelle étude élargie (v4 : poisson frais, fêtes, cadeaux diaspora, conservation) confirme que le catalogue (49 articles + 54 fiches + pages racine) couvre déjà tous les mots-clés ≥300/mois en concurrence faible, y compris « tilapia » (18 100/mois) et « poisson capitaine » (5 400/mois) ; seules pistes de réserve sous le seuil : « pâte d'arachide sénégalaise maison » (concurrence élevée) et « coffret buffet africain pour les fêtes » (faible volume, cluster neuf).
+**Les 3 trous prioritaires de la semaine : aucun** — 6e semaine sans donnée neuve à croiser, le catalogue (55 articles + 55 fiches) couvre toujours tous les mots-clés ≥300/mois en concurrence faible ; seule piste de réserve sous le seuil : « coffret buffet africain pour les fêtes » (90/mois, cluster fêtes encore jeune).
