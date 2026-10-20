@@ -11,6 +11,8 @@ def visible(h):
     ld = ' '.join(re.findall(r'<script type="application/ld\+json">(.*?)</script>', h, re.S))
     # les URLs ne sont PAS du texte lu : les accentuer casse les pages (404 du 17/09/2026)
     ld = re.sub(r'https?://[^"\s]+|"/[^"]*"', ' ', ld)
+    # les noms de propriétés schema.org ("video": …) sont du code, pas du texte lu
+    ld = re.sub(r'"[A-Za-z@]+"\s*:', ' ', ld)
     h = re.sub(r'<(script|style).*?</\1>', '', h, flags=re.S)
     txt = ''.join(p for p in re.split(r'(<[^>]+>)', h) if not p.startswith('<'))
     return ld + ' ' + re.sub(r'https?://\S+', ' ', txt)
