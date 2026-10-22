@@ -20,6 +20,9 @@ scripts/seo/gsc_token.json
 scripts/seo/gsc-data.md
 scripts/seo/gsc-queries.csv
 scripts/seo/gsc-page-queries.csv
+scripts/seo/bing_key.txt
+scripts/seo/bing-data.md
+scripts/seo/bing-queries.csv
 
 # Skills HeyGen/HyperFrames matérialisés en local (skills-lock.json suffit à les réinstaller)
 .agents/
