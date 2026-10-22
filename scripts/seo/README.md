@@ -21,3 +21,7 @@ La routine SEO **cloud** ne peut PAS lire ces données (elles restent locales). 
 positionnement se fait **en local** (on-demand avec Claude, ou via un launchd hebdo sur le Mac).
 La routine cloud, si conservée, doit se limiter aux **idées de contenu** et **ne jamais présenter
 d'estimations de position comme des faits** (elle n'a pas accès à GSC).
+
+## Bing Webmaster Tools (local)
+- Clé API dans `~/.bing_webmaster_key` (hors du dépôt), collée via `~/Desktop/Coller-cle-Bing.command`.
+- `scripts/ads/.venv/bin/python scripts/seo/bing_pull.py` → `bing-data.md` + `bing-queries.csv` (gitignorés).
