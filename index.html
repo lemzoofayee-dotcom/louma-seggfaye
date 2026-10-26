@@ -824,14 +824,14 @@ document.addEventListener('click', function(e){
 <div class="nl-text">
 <span class="label">Offre de bienvenue</span>
 <h2 class="display nl-title">-10% sur ta <em class="serif-italic">première commande</em></h2>
-<p>Rejoins la famille Louma : reçois ton code promo (-10 % sur nos produits, hors poissons), les nouveautés et l'alerte retour de stock du poisson frais. Zéro spam, promis.</p>
+<p>Rejoins la famille Louma : reçois ton code promo (-10 % sur nos produits, hors poissons frais), les nouveautés et l'alerte retour de stock du poisson frais. Zéro spam, promis.</p>
 </div>
 <form class="nl-form" onsubmit="handleNewsletter(event)">
 <input type="email" name="email" required placeholder="Ton adresse email" aria-label="Ton adresse email">
 <input type="hidden" name="_subject" value="Nouvel abonne newsletter Louma">
 <input type="hidden" name="source" value="section-bienvenue-10">
 <button type="submit" class="btn btn-gold">Recevoir mon -10%</button>
-<div class="nl-success" id="nlSuccess">🎉 Bienvenue dans la famille Louma ! Ton code : <strong>BIENVENUE10</strong> — à saisir dans le panier (hors poissons).</div>
+<div class="nl-success" id="nlSuccess">🎉 Bienvenue dans la famille Louma ! Ton code : <strong>BIENVENUE10</strong> — à saisir dans le panier (hors poissons frais).</div>
 </form>
 </div>
 </section>
@@ -1236,7 +1236,7 @@ document.addEventListener('click', function(e){
       const p = this.promoCodes[this.activePromo];
       if (!p || p.paused) return 0;
       const t = this.promoBase(p);
-      if (p.min && t < p.min) return 0; // minimum d'achat non atteint (hors poissons pour BIENVENUE10)
+      if (p.min && t < p.min) return 0; // minimum d'achat non atteint (hors poissons frais pour BIENVENUE10)
       if (p.type === 'percent') return Math.round(t * p.value / 100 * 100) / 100;
       return Math.min(p.value, t);
     },
@@ -1269,7 +1269,7 @@ document.addEventListener('click', function(e){
         return;
       }
       if (promo.min && this.promoBase(promo) < promo.min) {
-        if (errEl) { errEl.textContent = 'Code valable dès ' + promo.min + '€ d\'achat' + (promo.horsPoissons ? ' (hors poissons)' : ''); errEl.style.display = 'block'; }
+        if (errEl) { errEl.textContent = 'Code valable dès ' + promo.min + '€ d\'achat' + (promo.horsPoissons ? ' (hors poissons frais)' : ''); errEl.style.display = 'block'; }
         setTimeout(() => { if (errEl) errEl.style.display = 'none'; }, 3500);
         return;
       }
@@ -1415,12 +1415,12 @@ document.addEventListener('click', function(e){
       const d = this.discount();
       if (this.activePromo && this.promoCodes[this.activePromo]) {
         const p = this.promoCodes[this.activePromo];
-        const label = this.activePromo + (p.type === 'percent' ? ' (-' + p.value + '%' : ' (-' + p.value + '€') + (p.horsPoissons ? ' hors poissons)' : ')');
+        const label = this.activePromo + (p.type === 'percent' ? ' (-' + p.value + '%' : ' (-' + p.value + '€') + (p.horsPoissons ? ' hors poissons frais)' : ')');
         if (promoToggle) promoToggle.style.display = 'none';
         if (promoForm) promoForm.style.display = 'none';
         if (promoApplied) { promoApplied.style.display = 'flex'; }
         const sousMin = p.min && this.promoBase(p) < p.min;
-        if (promoLabel) promoLabel.textContent = sousMin ? label + ' — valable dès ' + p.min + ' € d\'achat' + (p.horsPoissons ? ' hors poissons' : '') : label;
+        if (promoLabel) promoLabel.textContent = sousMin ? label + ' — valable dès ' + p.min + ' € d\'achat' + (p.horsPoissons ? ' hors poissons frais' : '') : label;
         if (discountRow) discountRow.style.display = sousMin ? 'none' : 'flex';
         if (discountVal) discountVal.textContent = '-' + d.toFixed(2).replace('.',',') + ' €';
       } else {
@@ -1497,7 +1497,7 @@ document.addEventListener('click', function(e){
       const d = this.discount();
       if (d > 0) {
         const pc = this.promoCodes[this.activePromo];
-        msg += '\nCode promo : ' + this.activePromo + ' (' + (pc.type === 'percent' ? '-' + pc.value + ' %' : '-' + pc.value + ' €') + (pc.horsPoissons ? ' hors poissons' : '') + ')';
+        msg += '\nCode promo : ' + this.activePromo + ' (' + (pc.type === 'percent' ? '-' + pc.value + ' %' : '-' + pc.value + ' €') + (pc.horsPoissons ? ' hors poissons frais' : '') + ')';
         msg += '\nRéduction : -' + eur(d);
       }
       msg += '\nLivraison' + (zoneLabel ? ' (' + zoneLabel + ')' : '') + ' : ' + eur(this.shippingCost());
@@ -2104,13 +2104,13 @@ document.addEventListener('click', function(e){
 <button class="nl-popup-close" onclick="closeNewsletterPopup()" aria-label="Fermer">✕</button>
 <span class="label">Offre de bienvenue</span>
 <h3>-10% sur ta première commande 🎁</h3>
-<p>Laisse ton email, reçois ton code promo (hors poissons) et les bons plans Louma.</p>
+<p>Laisse ton email, reçois ton code promo (hors poissons frais) et les bons plans Louma.</p>
 <form onsubmit="handleNewsletter(event)">
 <input type="email" name="email" required placeholder="Ton adresse email" aria-label="Ton adresse email">
 <input type="hidden" name="_subject" value="Nouvel abonne (popup) Louma">
 <input type="hidden" name="source" value="popup-bienvenue-10">
 <button type="submit" class="btn btn-gold">Recevoir mon -10%</button>
-<div class="nl-success" id="nlPopupSuccess">🎉 Ton code : <strong>BIENVENUE10</strong> — à saisir dans le panier (hors poissons).</div>
+<div class="nl-success" id="nlPopupSuccess">🎉 Ton code : <strong>BIENVENUE10</strong> — à saisir dans le panier (hors poissons frais).</div>
 </form>
 </div>
 </div>
