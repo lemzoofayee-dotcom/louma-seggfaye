@@ -88,6 +88,96 @@
       "source": "/poissons",
       "destination": "/poissons-prix.html",
       "permanent": false
+    },
+    {
+      "source": "/blog/pain-perdu-mbourou-fass-sénégalais.html",
+      "destination": "/blog/pain-perdu-mbourou-fass-senegalais.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/acheter-guedj-amérique-nord.html",
+      "destination": "/blog/acheter-guedj-amerique-nord.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/beignet-banane-sénégalais.html",
+      "destination": "/blog/beignet-banane-senegalais.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/crevettes-séchées-saloum.html",
+      "destination": "/blog/crevettes-sechees-saloum.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ditakh-fruit-vitamine-c-sénégal.html",
+      "destination": "/blog/ditakh-fruit-vitamine-c-senegal.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/domoda-sénégalais.html",
+      "destination": "/blog/domoda-senegalais.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fonde-araw-bouillie-mil-sénégalais.html",
+      "destination": "/blog/fonde-araw-bouillie-mil-senegalais.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fonio-céréale-sans-gluten.html",
+      "destination": "/blog/fonio-cereale-sans-gluten.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/guedj-ou-yeet-différence.html",
+      "destination": "/blog/guedj-ou-yeet-difference.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/les-7-guedj-du-sénégal.html",
+      "destination": "/blog/les-7-guedj-du-senegal.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/plats-sénégalais.html",
+      "destination": "/blog/plats-senegalais.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/produits-sénégalais-france.html",
+      "destination": "/epicerie-africaine.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/recette-caldou-sénégalais.html",
+      "destination": "/blog/recette-caldou-senegalais.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/recette-mafe-sénégalais.html",
+      "destination": "/blog/recette-mafe-senegalais.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/riz-au-lait-sénégalais-sombi.html",
+      "destination": "/blog/riz-au-lait-senegalais-sombi.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/thiakry-degue-dessert-sénégalais.html",
+      "destination": "/blog/thiakry-degue-dessert-senegalais.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/thiebou-yapp-riz-viande-sénégalais.html",
+      "destination": "/blog/thiebou-yapp-riz-viande-senegalais.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/thiere-couscous-mil-sénégalais.html",
+      "destination": "/blog/thiere-couscous-mil-senegalais.html",
+      "permanent": true
     }
   ]
 }
