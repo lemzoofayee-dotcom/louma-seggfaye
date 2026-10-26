@@ -125,7 +125,7 @@ document.addEventListener('click', function(e){
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/jakarta.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/jakarta.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/jakarta.woff2) format('woff2')}</style>
-<link rel="stylesheet" href="style.css?v=3"/>
+<link rel="stylesheet" href="style.css?v=4"/>
 <style>#preloader{position:fixed;inset:0;z-index:9999;background:#100d08;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .4s ease,visibility .4s ease}#preloader.hidden{opacity:0;visibility:hidden}.pre-logo{width:300px;height:300px;border-radius:50%;overflow:hidden;margin-bottom:2rem}.pre-logo img{width:100%;height:100%;object-fit:cover}.pre-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;letter-spacing:.25em;color:#f5f0e8;text-transform:uppercase}.pre-bar{width:160px;height:1.5px;background:rgba(201,168,76,.15);overflow:hidden}.pre-fill{height:100%;background:#c9a84c;animation:pre-load .3s ease-in-out forwards}@keyframes pre-load{from{width:0}to{width:100%}}</style>
 <style>
 .fish-band{background:var(--surface);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:1.6rem 16px}
@@ -931,6 +931,27 @@ document.addEventListener('click', function(e){
 <option value="r2">Europe Zone 2 🇪🇺</option>
 </select>
 </div>
+<div class="cart-zone-row">
+<span class="label-total">Pays</span>
+<select id="cart-country" onchange="cartSystem.onAddressChange()">
+<option value="FR">France</option>
+<option value="ES">Espagne</option>
+<option value="IT">Italie</option>
+<option value="PT">Portugal</option>
+<option value="BE">Belgique</option>
+<option value="DE">Allemagne</option>
+<option value="NL">Pays-Bas</option>
+<option value="LU">Luxembourg</option>
+<option value="AT">Autriche</option>
+<option value="SE">Suède</option>
+<option value="XX">Autre pays d'Europe</option>
+</select>
+</div>
+<div class="cart-zone-row">
+<span class="label-total">Code postal</span>
+<input type="text" id="cart-cp" class="cart-cp-input" inputmode="text" autocomplete="postal-code" maxlength="10" placeholder="ex. 75011" oninput="cartSystem.onAddressChange()">
+</div>
+<div class="cart-promo-error" id="cart-address-error" style="display:none"></div>
 <div class="cart-subtotal">
 <span class="label-total">Sous-total</span>
 <span id="cart-subtotal-val">0,00 €</span>
@@ -1320,6 +1341,45 @@ document.addEventListener('click', function(e){
 
     grandTotal() { return this.total() - this.discount() + this.shippingCost(); },
 
+    // Adresse : code postal obligatoire avant de commander.
+    // Poisson frais : pas d'envoi vers les îles ni l'outre-mer (délais trop longs, Lamine 26/10).
+    freshBlockedArea(country, cp) {
+      const d = cp.replace(/\D/g, '');
+      const p2 = d.slice(0, 2);
+      if (country === 'FR') return /^20/.test(d) || /^9[78]/.test(d);           // Corse, DOM-TOM
+      if (country === 'ES') return ['07','35','38','51','52'].includes(p2);      // Baléares, Canaries, Ceuta, Melilla
+      if (country === 'IT') return ['07','08','09'].includes(p2) || (p2 >= '90' && p2 <= '98')
+        || d === '23041' || d === '22061';                                      // Sardaigne, Sicile, Livigno, Campione
+      if (country === 'PT') return /^9/.test(d);                                 // Madère, Açores
+      return false;
+    },
+
+    checkAddress() {
+      const err = document.getElementById('cart-address-error');
+      const country = document.getElementById('cart-country')?.value || 'FR';
+      const cp = (document.getElementById('cart-cp')?.value || '').trim();
+      const zone = document.getElementById('cart-zone')?.value || 'fr';
+      let msg = '';
+      if (!/\d{4}/.test(cp)) msg = 'Indique ton code postal pour vérifier la livraison.';
+      else if ((country === 'FR') !== (zone === 'fr')) msg = 'La zone de livraison ne correspond pas au pays choisi.';
+      else if (this.hasFreshFish() && this.freshBlockedArea(country, cp))
+        msg = 'Désolé, nous ne livrons pas le poisson frais sur les îles ni en outre-mer : les délais sont trop longs pour la chaîne du froid. Les produits secs restent livrables.';
+      if (err) { err.textContent = msg; err.style.display = msg ? 'block' : 'none'; }
+      return !msg;
+    },
+
+    onAddressChange() {
+      const cp = (document.getElementById('cart-cp')?.value || '').trim();
+      if (cp.replace(/\D/g, '').length >= 4) this.checkAddress();
+      else { const err = document.getElementById('cart-address-error'); if (err) err.style.display = 'none'; }
+    },
+
+    addressLabel() {
+      const sel = document.getElementById('cart-country');
+      const cp = (document.getElementById('cart-cp')?.value || '').trim();
+      return (sel ? sel.options[sel.selectedIndex].text : '') + ' ' + cp;
+    },
+
     onZoneChange() {
       const pp = document.getElementById('paypal-button-container');
       if (pp) { pp.innerHTML = ''; this.renderPayPal(); }
@@ -1439,6 +1499,7 @@ document.addEventListener('click', function(e){
       if (!window.paypal) { setTimeout(() => this.renderPayPal(), 800); return; }
       paypal.Buttons({
         style: { layout:'horizontal', color:'gold', shape:'pill', label:'pay', height:44 },
+        onClick: (data, actions) => this.checkAddress() ? actions.resolve() : actions.reject(),
         createOrder: (data, actions) => {
           const bd = {
             item_total: { value: this.total().toFixed(2), currency_code: 'EUR' },
@@ -1486,6 +1547,7 @@ document.addEventListener('click', function(e){
 
     orderWhatsApp() {
       if (this.items.length === 0) return;
+      if (!this.checkAddress()) return;
       const eur = v => v.toFixed(2).replace('.',',') + ' €';
       const zoneSel = document.getElementById('cart-zone');
       const zoneLabel = zoneSel ? zoneSel.options[zoneSel.selectedIndex].text : '';
@@ -1502,6 +1564,7 @@ document.addEventListener('click', function(e){
       }
       msg += '\nLivraison' + (zoneLabel ? ' (' + zoneLabel + ')' : '') + ' : ' + eur(this.shippingCost());
       msg += '\nTotal : ' + eur(this.grandTotal());
+      msg += '\nLivraison à : ' + this.addressLabel();
 
       // Enregistre la commande dans le CRM (non bloquant ; keepalive = survit a la navigation vers WhatsApp)
       try {
