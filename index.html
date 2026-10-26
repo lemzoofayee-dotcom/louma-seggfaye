@@ -1066,7 +1066,7 @@ document.addEventListener('click', function(e){
       // Panier mixte = au moins 1 produit frais ET au moins 1 produit non-frais
       let hasFresh = false, hasDry = false;
       for (const i of this.items) {
-        const isFrais = i.cat === 'frais' || (this.hasFreshFish.call({items:[i]}));
+        const isFrais = this.isFreshFish(i);
         if (isFrais) hasFresh = true; else hasDry = true;
         if (hasFresh && hasDry) return true;
       }
