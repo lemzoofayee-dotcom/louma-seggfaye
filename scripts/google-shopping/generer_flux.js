@@ -54,7 +54,7 @@ const items = PRODUITS.map(p => {
     <g:title>${esc(title)}</g:title>
     <g:description>${esc(description)}</g:description>
     <g:link>https://seggfaye.com/produits/${esc(p.id)}.html</g:link>
-    <g:image_link>https://seggfaye.com/${esc(p.image)}</g:image_link>
+    <g:image_link>https://seggfaye.com/${esc(p.image)}</g:image_link>${(p.gallery || []).filter(g => g !== p.image).slice(0, 10).map(g => `\n    <g:additional_image_link>https://seggfaye.com/${esc(g)}</g:additional_image_link>`).join('')}
     <g:price>${p.prix.toFixed(2)} EUR</g:price>
     <g:availability>${p.stock ? 'in_stock' : 'out_of_stock'}</g:availability>
     <g:condition>new</g:condition>
