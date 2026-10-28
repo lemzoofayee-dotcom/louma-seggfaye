@@ -984,7 +984,7 @@ document.addEventListener('click', function(e){
 <button type="button" class="btn btn-wa cart-wa-order" onclick="cartSystem.orderWhatsApp()" style="width:100%;justify-content:center;margin-bottom:.75rem;">Commander sur WhatsApp 💬</button>
 <div class="cart-pay-sep" style="text-align:center;font-size:.72rem;color:var(--muted);margin-bottom:.6rem;">— ou payer en ligne —</div>
 <div id="paypal-button-container"></div>
-<p class="cart-paypal-note">🔒 Paiement sécurisé · CB, Apple Pay, Google Pay</p>
+<p class="cart-paypal-note">🔒 Paiement sécurisé PayPal</p>
 </div>
 </div>
 </div>
@@ -1069,6 +1069,7 @@ document.addEventListener('click', function(e){
   // ═══════════════════════════════════════
   // PANIER D'ACHAT
   // ═══════════════════════════════════════
+  const PAYPAL_ME = 'MamadouLamineFaye111'; // vider ('') quand le Client ID Live sera en place
   const cartSystem = {
     items: [],
 
@@ -1496,6 +1497,7 @@ document.addEventListener('click', function(e){
     },
 
     renderPayPal() {
+      if (PAYPAL_ME) { this.renderPayPalMe(); return; }
       if (!window.paypal) { setTimeout(() => this.renderPayPal(), 800); return; }
       paypal.Buttons({
         style: { layout:'horizontal', color:'gold', shape:'pill', label:'pay', height:44 },
@@ -1532,6 +1534,30 @@ document.addEventListener('click', function(e){
         }),
         onError: err => { console.error('PayPal:', err); alert('Erreur PayPal. Veuillez réessayer.'); }
       }).render('#paypal-button-container');
+    },
+
+    // Dépannage tant que le compte PayPal n'est pas Professionnel (pas de Client ID Live) : lien PayPal.me avec le montant
+    renderPayPalMe() {
+      const pp = document.getElementById('paypal-button-container');
+      if (!pp) return;
+      pp.innerHTML = '<button type="button" class="btn btn-gold" style="width:100%;justify-content:center" onclick="cartSystem.payPayPalMe()">Payer ' + this.grandTotal().toFixed(2).replace('.',',') + ' € avec PayPal</button>';
+    },
+
+    payPayPalMe() {
+      if (this.items.length === 0 || !this.checkAddress()) return;
+      const total = this.grandTotal();
+      const produitStr = this.items.map(i => i.qty + '× ' + i.name).join(', ');
+      const msg = 'Paiement PayPal.me : ' + produitStr + ' · Total ' + total.toFixed(2).replace('.',',') + ' € · Livraison à : ' + this.addressLabel();
+      try {
+        fetch('/api/crm', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
+          body: JSON.stringify({ produit: produitStr.slice(0,500), message: msg, source: 'PayPal.me' })
+        }).catch(() => {});
+      } catch (_) {}
+      if (typeof gtag === 'function') gtag('event', 'paypalme_order', { value: total, currency: 'EUR' });
+      window.open('https://paypal.me/' + PAYPAL_ME + '/' + total.toFixed(2) + 'EUR', '_blank');
+      const n = document.getElementById('cart-notif');
+      if (n) { n.textContent = 'Indiquez votre commande et votre adresse dans la note PayPal 🙏'; n.classList.add('show'); setTimeout(() => n.classList.remove('show'), 6000); }
     },
 
     open() {
@@ -1583,8 +1609,8 @@ document.addEventListener('click', function(e){
     }
   };
 
-  // Chargement du SDK PayPal
-  (function() {
+  // Chargement du SDK PayPal (inutile tant que le lien PayPal.me sert de dépannage)
+  if (!PAYPAL_ME) (function() {
     const s = document.createElement('script');
     s.src = 'https://www.paypal.com/sdk/js?client-id=EMzE2BXGXLylAGNXodpV5Utq7pl9kvetZGCA_TkFe6pdInzYMtRxQSHn3bDkhbBYNJFcJgDeV39ijA14&currency=EUR&locale=fr_FR&disable-funding=credit';
     document.head.appendChild(s);
