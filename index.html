@@ -1548,12 +1548,26 @@ document.addEventListener('click', function(e){
       const total = this.grandTotal();
       const produitStr = this.items.map(i => i.qty + '× ' + i.name).join(', ');
       const msg = 'Paiement PayPal.me : ' + produitStr + ' · Total ' + total.toFixed(2).replace('.',',') + ' € · Livraison à : ' + this.addressLabel();
-      try {
-        fetch('/api/crm', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
-          body: JSON.stringify({ produit: produitStr.slice(0,500), message: msg, source: 'PayPal.me' })
-        }).catch(() => {});
-      } catch (_) {}
+      // Un seul enregistrement et un seul e-mail à Lamine par panier, même si le client reclique
+      if (this.lastPayPalMeMsg !== msg) {
+        this.lastPayPalMeMsg = msg;
+        try {
+          fetch('/api/crm', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
+            body: JSON.stringify({ produit: produitStr.slice(0,500), message: msg, source: 'PayPal.me' })
+          }).catch(() => {});
+          fetch('https://formspree.io/f/xpqkwvlb', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, keepalive: true,
+            body: JSON.stringify({
+              _subject: 'Commande PayPal ' + total.toFixed(2).replace('.',',') + ' € : ' + this.addressLabel(),
+              commande: produitStr,
+              total: total.toFixed(2).replace('.',',') + ' €',
+              livraison: this.addressLabel(),
+              a_verifier: "Le client vient d'ouvrir PayPal : la commande est payée seulement si le mail PayPal « Vous avez reçu de l'argent » arrive avec ce montant. Nom et adresse complète sont dans ce mail PayPal."
+            })
+          }).catch(() => {});
+        } catch (_) {}
+      }
       if (typeof gtag === 'function') gtag('event', 'paypalme_order', { value: total, currency: 'EUR' });
       window.open('https://paypal.me/' + PAYPAL_ME + '/' + total.toFixed(2) + 'EUR', '_blank');
       const n = document.getElementById('cart-notif');
