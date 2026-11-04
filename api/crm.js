@@ -2,6 +2,19 @@
 // dans la table Supabase « leads ». Ne bloque jamais le parcours client :
 // toute erreur est loggée côté serveur et répond 200.
 // Env requises (Vercel) : SUPABASE_URL, SUPABASE_SERVICE_KEY
+// Env optionnelles, alerte WhatsApp à Lamine pour chaque commande : CALLMEBOT_APIKEY, WHATSAPP_ALERT_PHONE
+
+async function alerteWhatsApp(source, message) {
+  const { CALLMEBOT_APIKEY: apikey, WHATSAPP_ALERT_PHONE: phone } = process.env;
+  if (!apikey || !phone || !['PayPal.me', 'WhatsApp', 'Commande'].includes(source)) return;
+  const text = `🛒 Commande site (${source})\n${String(message).slice(0, 1000)}`;
+  try {
+    const r = await fetch(`https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(phone)}&text=${encodeURIComponent(text)}&apikey=${encodeURIComponent(apikey)}`, { signal: AbortSignal.timeout(5000) });
+    if (!r.ok) console.error('Alerte WhatsApp', r.status);
+  } catch (err) {
+    console.error('Alerte WhatsApp', err.message);
+  }
+}
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
@@ -38,6 +51,7 @@ module.exports = async (req, res) => {
     if (!r.ok) {
       console.error('Supabase error', r.status, await r.text());
     }
+    await alerteWhatsApp(source, message);
     res.status(200).json({ ok: r.ok });
   } catch (err) {
     console.error('CRM error', err);
