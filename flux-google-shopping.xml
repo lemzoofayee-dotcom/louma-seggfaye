@@ -136,7 +136,7 @@
     <g:link>https://seggfaye.com/produits/guej-beur-casamance.html</g:link>
     <g:image_link>https://seggfaye.com/guedji-beur_casamance.webp</g:image_link>
     <g:price>12.00 EUR</g:price>
-    <g:availability>in_stock</g:availability>
+    <g:availability>out_of_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
@@ -238,7 +238,7 @@
   <item>
     <g:id>kongfume</g:id>
     <g:title>Kong fumé — 500g</g:title>
-    <g:description>Mâchoiron (kong) fumé puis séché. Double transformation : le fumage apporte une saveur boisée profonde, le séchage assure la conservation. Le résultat est un goût incomparable, plus complexe que le guedj kong classique.</g:description>
+    <g:description>Silure fumé (kong fumé), sans sel, puis séché. Double transformation : le fumage apporte une saveur boisée profonde, le séchage assure la conservation. Le résultat est un goût incomparable, plus complexe que le guedj kong classique.</g:description>
     <g:link>https://seggfaye.com/produits/kongfume.html</g:link>
     <g:image_link>https://seggfaye.com/kong-fume-sec.webp</g:image_link>
     <g:price>30.00 EUR</g:price>
@@ -254,7 +254,7 @@
   <item>
     <g:id>kongfume-gambie</g:id>
     <g:title>Kong fumé de Gambie — 500g</g:title>
-    <g:description>Kong fumé importé de Gambie. Même poisson (mâchoiron) mais fumé selon la technique gambienne, qui donne un résultat légèrement différent du fumage sénégalais.</g:description>
+    <g:description>Kong fumé importé de Gambie. Même poisson (le silure) mais fumé entier selon la technique gambienne, qui donne un résultat légèrement différent du fumage sénégalais.</g:description>
     <g:link>https://seggfaye.com/produits/kongfume-gambie.html</g:link>
     <g:image_link>https://seggfaye.com/kong-fume1.webp</g:image_link>
     <g:price>30.00 EUR</g:price>
@@ -483,7 +483,7 @@
     <g:link>https://seggfaye.com/produits/maad-confi.html</g:link>
     <g:image_link>https://seggfaye.com/maad-confi2.webp</g:image_link>
     <g:price>25.00 EUR</g:price>
-    <g:availability>in_stock</g:availability>
+    <g:availability>out_of_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
@@ -499,7 +499,7 @@
     <g:link>https://seggfaye.com/produits/maad-fruit.html</g:link>
     <g:image_link>https://seggfaye.com/maad-fruit.webp</g:image_link>
     <g:price>10.00 EUR</g:price>
-    <g:availability>in_stock</g:availability>
+    <g:availability>out_of_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
