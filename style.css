@@ -11,6 +11,9 @@
 .cart-zone-row{padding:.2rem 0;}
 .cart-shipping-row{padding:.15rem 0;}
 .cart-promo-row{padding:.15rem 0;}
+.cart-welcome{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:.4rem;padding:.5rem .6rem;border:1px solid var(--gold);border-radius:8px;font-size:.76rem;line-height:1.35;}
+.cart-welcome button{flex-shrink:0;background:var(--gold);color:#100d08;border:none;border-radius:6px;padding:.35rem .7rem;font-size:.74rem;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;}
+.cart-welcome button:hover{opacity:.85;}
 .cart-grand-total-row{padding-top:.5rem;margin-top:0;}
 .cart-promo-toggle{background:none;border:none;color:var(--gold);font-size:.74rem;font-weight:700;cursor:pointer;padding:.1rem 0;font-family:'Plus Jakarta Sans',sans-serif;text-decoration:underline;text-underline-offset:2px;}
 .cart-promo-toggle:hover{opacity:.8;}
