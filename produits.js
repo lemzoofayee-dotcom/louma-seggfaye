@@ -136,7 +136,7 @@ description: "Même poisson que le Guedj Beurre (courbine/Berr), mais avec un s�
 origine: "Casamance — Région sud du Sénégal",
 goutPlus: "Le fumage au bois casamançais apporte une dimension fumée unique. C'est la version premium du Guedj Beurre, au goût incomparable.",
 conseil: "Idéal pour les sauces qui demandent de la profondeur. À utiliser avec parcimonie, le goût est plus intense que le Beurre classique.",
-stock: true,
+stock: false,
 nouveaute: false
 },
 {
@@ -498,7 +498,7 @@ description: "Confiture artisanale de maad (Saba senegalensis), fruit sauvage ac
 origine: "Sénégal — Cueillette sauvage, fruit de saison",
 goutPlus: "Le maad a un goût acidulé-sucré unique, entre le citron vert et la mangue verte. En confiture, cette acidité est adoucie tout en gardant le caractère du fruit.",
 conseil: "Se tartine comme une confiture classique. Excellent avec du pain, des crêpes ou mélangé dans un yaourt. Se conserve plusieurs mois au frais.",
-stock: true,
+stock: false,
 nouveaute: false
 },
 {
@@ -515,7 +515,7 @@ description: "Maad frais (Saba senegalensis), fruit sauvage de saison très rech
 origine: "Sénégal — Cueillette sauvage, disponibilité saisonnière",
 goutPlus: "Fruit de saison rare, disponible seulement quelques mois par an. Son goût acidulé-sucré est addictif. La diaspora en raffole car impossible à trouver en Europe.",
 conseil: "Ouvrir le fruit, extraire la pulpe et consommer avec sel, sucre ou piment selon le goût. Quantité limitée à 3kg par commande.",
-stock: true,
+stock: false,
 nouveaute: true,
 maxKg: 3
 },
