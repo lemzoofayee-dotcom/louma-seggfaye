@@ -102,7 +102,7 @@ description: "Le guedj le plus rare, le plus cher et le plus particulier de tous
 origine: "Sénégal — Pêche artisanale côtière",
 goutPlus: "Sa singularité : aucun sel de fermentation, seulement le gras du poisson, l'air humide et le soleil. Il en résulte une texture fine et cassante, presque comme du papyrus, et un goût unique que les connaisseurs recherchent — ce qui en fait le guedj le plus rare et le plus prisé.",
 conseil: "Il est fragile et ne supporte pas les longues cuissons : on l'ajoute en fin de cuisson pour qu'il reste entier et visible — c'est le trophée du plat fini. Idéal dans le thiéboudienne, le riz au poisson et les sauces à la tomate.",
-stock: true,
+stock: false,
 nouveaute: false
 },
 {
