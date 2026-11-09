@@ -1,0 +1,153 @@
+geo,cluster,mot_cle,volume_mensuel,decembre_2025,pic_mois,concurrence,seed
+BE-CH-CA,noel-reveillon,pastels sénégalais,40,50,2026-02,LOW,True
+BE-CH-CA,achat-en-ligne,épicerie africaine en ligne,30,30,2026-02,MEDIUM,True
+BE-CH-CA,noel-reveillon,repas de noël africain,10,30,2025-12,LOW,True
+BE-CH-CA,achat-en-ligne,acheter crevettes séchées,10,0,2025-11,UNSPECIFIED,True
+BE-CH-CA,achat-en-ligne,livraison produits africains,10,10,2025-11,HIGH,True
+BE-CH-CA,noel-reveillon,recette réveillon poisson,0,0,2025-10,UNSPECIFIED,True
+BE-CH-CA,noel-reveillon,menu réveillon africain,0,,,UNSPECIFIED,True
+BE-CH-CA,noel-reveillon,plat africain pour le nouvel an,0,,,UNSPECIFIED,True
+BE-CH-CA,noel-reveillon,thieboudienne noël,0,,,UNSPECIFIED,True
+BE-CH-CA,noel-reveillon,entrée africaine de fête,0,,,UNSPECIFIED,True
+BE-CH-CA,cadeaux-colis,cadeau gourmand africain,0,,,UNSPECIFIED,True
+BE-CH-CA,cadeaux-colis,panier garni africain,0,,,UNSPECIFIED,True
+BE-CH-CA,cadeaux-colis,colis alimentaire sénégal,0,,,UNSPECIFIED,True
+BE-CH-CA,cadeaux-colis,cadeau noël africain,0,,,UNSPECIFIED,True
+BE-CH-CA,cadeaux-colis,coffret épices africaines,0,,,UNSPECIFIED,True
+BE-CH-CA,cadeaux-colis,idée cadeau sénégal,0,,,UNSPECIFIED,True
+BE-CH-CA,achat-en-ligne,produits sénégalais en ligne,0,,,UNSPECIFIED,True
+BE-CH-CA,achat-en-ligne,acheter poisson séché,0,,,UNSPECIFIED,True
+FR,noel-reveillon,pastels sénégalais,390,480,2026-02,LOW,True
+FR,achat-en-ligne,épicerie africaine en ligne,140,110,2025-10,HIGH,True
+FR,noel-reveillon,repas de noël africain,20,140,2025-12,LOW,True
+FR,noel-reveillon,recette réveillon poisson,10,10,2025-10,UNSPECIFIED,True
+FR,achat-en-ligne,acheter crevettes séchées,10,0,2025-11,UNSPECIFIED,True
+FR,achat-en-ligne,livraison produits africains,10,10,2026-01,HIGH,True
+FR,noel-reveillon,menu réveillon africain,0,,,UNSPECIFIED,True
+FR,noel-reveillon,plat africain pour le nouvel an,0,,,UNSPECIFIED,True
+FR,noel-reveillon,thieboudienne noël,0,,,UNSPECIFIED,True
+FR,noel-reveillon,entrée africaine de fête,0,,,UNSPECIFIED,True
+FR,cadeaux-colis,cadeau gourmand africain,0,,,UNSPECIFIED,True
+FR,cadeaux-colis,panier garni africain,0,,,UNSPECIFIED,True
+FR,cadeaux-colis,colis alimentaire sénégal,0,,,UNSPECIFIED,True
+FR,cadeaux-colis,cadeau noël africain,0,,,UNSPECIFIED,True
+FR,cadeaux-colis,coffret épices africaines,0,,,UNSPECIFIED,True
+FR,cadeaux-colis,idée cadeau sénégal,0,,,UNSPECIFIED,True
+FR,achat-en-ligne,produits sénégalais en ligne,0,,,UNSPECIFIED,True
+FR,achat-en-ligne,acheter poisson séché,0,,,UNSPECIFIED,True
+US-UK-CA,buy-online,online african stores,1300,1300,2026-02,HIGH,False
+US-UK-CA,christmas,christmas food in south africa,390,3600,2025-12,LOW,False
+US-UK-CA,christmas,christmas menu south africa,390,3600,2025-12,LOW,False
+US-UK-CA,christmas,christmas recipes south africa,390,3600,2025-12,LOW,False
+US-UK-CA,christmas,south african christmas meal,390,3600,2025-12,LOW,False
+US-UK-CA,christmas,south african xmas food,390,3600,2025-12,LOW,False
+US-UK-CA,christmas,nigerian christmas food,260,1900,2025-12,LOW,True
+US-UK-CA,christmas,nigerian christmas meal,260,1900,2025-12,LOW,False
+US-UK-CA,buy-online,african food shop online,260,210,2026-09,HIGH,False
+US-UK-CA,buy-online,african food shopping online,260,210,2026-09,HIGH,False
+US-UK-CA,buy-online,south african food online shop,260,260,2025-11,HIGH,False
+US-UK-CA,buy-online,buy african food online,170,170,2025-11,HIGH,False
+US-UK-CA,buy-online,online african grocery store,170,170,2026-09,HIGH,False
+US-UK-CA,buy-online,african supermarket online,170,170,2026-01,HIGH,False
+US-UK-CA,buy-online,african grocery online,140,140,2026-01,HIGH,True
+US-UK-CA,christmas,african christmas food,110,1000,2025-12,LOW,True
+US-UK-CA,christmas,christmas dinner in south africa,90,720,2025-12,LOW,False
+US-UK-CA,christmas,nigerian christmas dinner,90,720,2025-12,LOW,False
+US-UK-CA,christmas,south africa christmas food,70,720,2025-12,LOW,False
+US-UK-CA,christmas,south african traditional christmas food,70,590,2025-12,LOW,False
+US-UK-CA,christmas,traditional christmas food in south africa,70,590,2025-12,LOW,False
+US-UK-CA,christmas,african christmas dinner,50,390,2025-12,LOW,False
+US-UK-CA,buy-online,online african food store,50,50,2025-10,HIGH,False
+US-UK-CA,christmas,christmas meal in south africa,40,480,2025-12,UNSPECIFIED,False
+US-UK-CA,buy-online,african grocery delivery,40,30,2026-04,HIGH,False
+US-UK-CA,buy-online,african store delivery,40,50,2025-12,HIGH,False
+US-UK-CA,christmas,south african christmas crackers,30,260,2025-12,LOW,False
+US-UK-CA,buy-online,african grocery delivery near me,30,20,2026-07,HIGH,False
+US-UK-CA,buy-online,order african groceries online,30,20,2026-02,HIGH,False
+US-UK-CA,buy-online,african market online shopping,30,30,2026-01,HIGH,False
+US-UK-CA,buy-online,african meat store,30,40,2026-03,LOW,False
+US-UK-CA,christmas,nigerian christmas menu,20,140,2025-12,LOW,False
+US-UK-CA,christmas,traditional christmas dinner south africa,20,140,2025-12,LOW,False
+US-UK-CA,buy-online,buy dried fish online,20,20,2025-11,HIGH,True
+US-UK-CA,buy-online,dry fish online purchase,20,20,2025-11,HIGH,False
+US-UK-CA,christmas,african christmas desserts,10,50,2025-12,LOW,False
+US-UK-CA,christmas,african christmas dishes,10,90,2025-12,LOW,False
+US-UK-CA,christmas,african christmas meals,10,30,2025-12,UNSPECIFIED,False
+US-UK-CA,christmas,african christmas menu,10,90,2025-12,LOW,False
+US-UK-CA,christmas,african christmas recipes,10,50,2025-12,LOW,False
+US-UK-CA,christmas,christmas dishes in nigeria,10,20,2025-12,UNSPECIFIED,False
+US-UK-CA,christmas,christmas dishes south africa,10,10,2025-11,UNSPECIFIED,False
+US-UK-CA,christmas,christmas food ideas in nigeria,10,10,2025-11,LOW,False
+US-UK-CA,christmas,christmas food ideas nigeria,10,20,2025-12,UNSPECIFIED,False
+US-UK-CA,christmas,christmas food nigeria,10,90,2025-12,UNSPECIFIED,False
+US-UK-CA,christmas,christmas lunch menu south africa,10,10,2025-11,UNSPECIFIED,False
+US-UK-CA,christmas,christmas lunch recipes south africa,10,50,2025-12,LOW,False
+US-UK-CA,christmas,christmas meal south africa,10,110,2025-12,LOW,False
+US-UK-CA,christmas,christmas meals in nigeria,10,10,2025-12,UNSPECIFIED,False
+US-UK-CA,christmas,christmas meats south africa,10,10,2025-12,UNSPECIFIED,False
+US-UK-CA,christmas,christmas recipes in nigeria,10,0,2025-11,UNSPECIFIED,False
+US-UK-CA,christmas,christmas rice nigeria,10,30,2025-12,LOW,False
+US-UK-CA,christmas,christmas side dishes south africa,10,10,2025-12,LOW,False
+US-UK-CA,christmas,ghana traditional christmas food,10,50,2025-12,UNSPECIFIED,False
+US-UK-CA,christmas,luxury christmas crackers south africa,10,10,2025-10,UNSPECIFIED,False
+US-UK-CA,christmas,nigerian christmas dishes,10,90,2025-12,LOW,False
+US-UK-CA,christmas,nigerian christmas food ideas,10,70,2025-12,UNSPECIFIED,False
+US-UK-CA,christmas,side dishes for christmas lunch south africa,10,0,2025-11,UNSPECIFIED,False
+US-UK-CA,christmas,south african christmas dinner recipes,10,20,2025-12,UNSPECIFIED,False
+US-UK-CA,christmas,south african christmas dish,10,20,2025-12,UNSPECIFIED,False
+US-UK-CA,christmas,south african christmas food recipes,10,10,2025-11,UNSPECIFIED,False
+US-UK-CA,christmas,south african christmas lunch,10,50,2025-12,LOW,False
+US-UK-CA,christmas,south african christmas side dishes,10,20,2025-12,LOW,False
+US-UK-CA,christmas,south african christmas treats,10,50,2025-12,HIGH,False
+US-UK-CA,christmas,traditional african christmas food,10,110,2025-12,LOW,False
+US-UK-CA,christmas,traditional christmas dinner menu south africa,10,10,2025-11,UNSPECIFIED,False
+US-UK-CA,christmas,traditional south african christmas dessert,10,10,2025-11,UNSPECIFIED,False
+US-UK-CA,christmas,traditional south african christmas menu,10,10,2025-11,UNSPECIFIED,False
+US-UK-CA,christmas,jollof rice christmas,10,20,2025-12,UNSPECIFIED,True
+US-UK-CA,buy-online,buy stockfish online,10,10,2025-10,HIGH,True
+US-UK-CA,buy-online,buy african groceries online,10,10,2025-10,MEDIUM,False
+US-UK-CA,buy-online,dry fish online near me,10,0,2025-10,HIGH,False
+US-UK-CA,buy-online,dry seafood online,10,10,2025-10,HIGH,False
+US-UK-CA,buy-online,dry fish online shopping,10,10,2025-10,UNSPECIFIED,False
+US-UK-CA,buy-online,afro food shop online,10,0,2025-11,HIGH,False
+US-UK-CA,buy-online,bombay duck dry fish online,10,10,2025-11,LOW,False
+US-UK-CA,buy-online,bombay duck fish buy online,10,10,2025-10,UNSPECIFIED,False
+US-UK-CA,buy-online,buy bombil online,10,10,2025-11,HIGH,False
+US-UK-CA,buy-online,buy fish maw online,10,0,2026-01,UNSPECIFIED,False
+US-UK-CA,buy-online,buy karuvadu online,10,10,2025-12,UNSPECIFIED,False
+US-UK-CA,buy-online,buy shidol shutki online,10,0,2025-10,HIGH,False
+US-UK-CA,buy-online,buy shutki online,10,10,2025-10,HIGH,False
+US-UK-CA,buy-online,dried anchovies online,10,10,2025-10,UNSPECIFIED,False
+US-UK-CA,buy-online,dried bombay duck buy online,10,0,2026-03,UNSPECIFIED,False
+US-UK-CA,buy-online,dried fish for sale online,10,10,2025-10,MEDIUM,False
+US-UK-CA,buy-online,dry bombay duck fish buy online,10,10,2025-10,LOW,False
+US-UK-CA,buy-online,dry fish online delivery,10,10,2025-10,UNSPECIFIED,False
+US-UK-CA,buy-online,dry fish online order,10,10,2025-10,HIGH,False
+US-UK-CA,buy-online,dry fish order online,10,10,2025-10,UNSPECIFIED,False
+US-UK-CA,buy-online,karuvadu buy online,10,10,2025-10,HIGH,False
+US-UK-CA,buy-online,karuvadu online order,10,10,2025-12,UNSPECIFIED,False
+US-UK-CA,buy-online,karuvadu online shopping,10,0,2025-10,UNSPECIFIED,False
+US-UK-CA,buy-online,katambak dried fish price,10,10,2026-07,LOW,False
+US-UK-CA,buy-online,maasi karuvadu buy online,10,10,2025-10,UNSPECIFIED,False
+US-UK-CA,buy-online,online african grocery,10,10,2025-10,HIGH,False
+US-UK-CA,buy-online,online dry fish,10,0,2025-11,UNSPECIFIED,False
+US-UK-CA,buy-online,online dry fish delivery,10,0,2025-10,UNSPECIFIED,False
+US-UK-CA,buy-online,online dry fish near me,10,0,2026-07,UNSPECIFIED,False
+US-UK-CA,buy-online,online shopping dry fish,10,0,2026-06,UNSPECIFIED,False
+US-UK-CA,buy-online,order dry fish online,10,10,2025-10,HIGH,False
+US-UK-CA,buy-online,paal sura karuvadu buy online,10,0,2026-04,UNSPECIFIED,False
+US-UK-CA,buy-online,salted dry fish online,10,10,2025-12,UNSPECIFIED,False
+US-UK-CA,buy-online,shidol dry fish online,10,0,2026-05,UNSPECIFIED,False
+US-UK-CA,christmas,eco friendly christmas crackers south africa,0,0,2025-10,UNSPECIFIED,False
+US-UK-CA,christmas,menu for christmas lunch in south africa,0,0,2025-10,UNSPECIFIED,False
+US-UK-CA,christmas,recipes for christmas lunch in south africa,0,0,2025-10,UNSPECIFIED,False
+US-UK-CA,christmas,woolworths christmas recipes south africa,0,0,2025-10,UNSPECIFIED,False
+US-UK-CA,christmas,senegalese christmas dinner,0,,,UNSPECIFIED,True
+US-UK-CA,christmas,west african christmas recipes,0,,,UNSPECIFIED,True
+US-UK-CA,gifts,african food gift box,0,,,UNSPECIFIED,True
+US-UK-CA,gifts,african spice gift set,0,,,UNSPECIFIED,True
+US-UK-CA,gifts,african snacks gift,0,,,UNSPECIFIED,True
+US-UK-CA,buy-online,dry fish online buy,0,0,2025-10,UNSPECIFIED,False
+US-UK-CA,buy-online,karuvadu online purchase,0,,,UNSPECIFIED,False
+US-UK-CA,buy-online,senegalese food online,0,,,UNSPECIFIED,True
+US-UK-CA,buy-online,dried shrimp african,0,,,UNSPECIFIED,True
