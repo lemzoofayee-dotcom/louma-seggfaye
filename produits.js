@@ -195,7 +195,7 @@ nouveaute: false
 },
 {
 id: "guej-toumboulan",
-nom: "Guedj Toumboulan",
+nom: "Guedj Toumboulane",
 nomLocal: "",
 categorie: "mer",
 prix: 3.00,
