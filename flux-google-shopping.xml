@@ -136,7 +136,7 @@
     <g:link>https://seggfaye.com/produits/guej-beur-casamance.html</g:link>
     <g:image_link>https://seggfaye.com/guedji-beur_casamance.webp</g:image_link>
     <g:price>12.00 EUR</g:price>
-    <g:availability>out_of_stock</g:availability>
+    <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
     <g:brand>Louma by Seggfaye</g:brand>
     <g:identifier_exists>false</g:identifier_exists>
