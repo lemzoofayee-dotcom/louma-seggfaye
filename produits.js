@@ -136,7 +136,7 @@ description: "Même poisson que le Guedj Beurre (courbine/Berr), mais avec un s�
 origine: "Casamance — Région sud du Sénégal",
 goutPlus: "Le fumage au bois casamançais apporte une dimension fumée unique. C'est la version premium du Guedj Beurre, au goût incomparable.",
 conseil: "Idéal pour les sauces qui demandent de la profondeur. À utiliser avec parcimonie, le goût est plus intense que le Beurre classique.",
-stock: false,
+stock: true,
 nouveaute: false
 },
 {
