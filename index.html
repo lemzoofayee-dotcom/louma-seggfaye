@@ -125,7 +125,7 @@ document.addEventListener('click', function(e){
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/jakarta.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/jakarta.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/jakarta.woff2) format('woff2')}</style>
-<link rel="stylesheet" href="style.css?v=5"/>
+<link rel="stylesheet" href="style.css?v=6"/>
 <style>#preloader{position:fixed;inset:0;z-index:9999;background:#100d08;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .4s ease,visibility .4s ease}#preloader.hidden{opacity:0;visibility:hidden}.pre-logo{width:300px;height:300px;border-radius:50%;overflow:hidden;margin-bottom:2rem}.pre-logo img{width:100%;height:100%;object-fit:cover}.pre-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;letter-spacing:.25em;color:#f5f0e8;text-transform:uppercase}.pre-bar{width:160px;height:1.5px;background:rgba(201,168,76,.15);overflow:hidden}.pre-fill{height:100%;background:#c9a84c;animation:pre-load .3s ease-in-out forwards}@keyframes pre-load{from{width:0}to{width:100%}}</style>
 <style>
 .fish-band{background:var(--surface);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:1.6rem 16px}
@@ -986,8 +986,20 @@ document.addEventListener('click', function(e){
 </div>
 <div id="paypal-btn-wrap" style="display:none">
 <button type="button" class="btn btn-wa cart-wa-order" onclick="cartSystem.orderWhatsApp()" style="width:100%;justify-content:center;margin-bottom:.75rem;">Commander sur WhatsApp 💬</button>
-<!-- Paiement direct retiré le 04/11 (décision Lamine : validation sur WhatsApp d'abord). Pour le remettre : rétablir ici #paypal-button-container. -->
 <p class="cart-paypal-note">Vous payez par PayPal ou Wero une fois la commande validée sur WhatsApp.</p>
+<!-- PayPal.me (26/11, Lamine) : produits secs uniquement, coordonnées obligatoires, e-mail + CRM/WhatsApp à Lamine avant l'ouverture de PayPal. Poisson frais = WhatsApp seulement. -->
+<div id="cart-pp" style="display:none">
+<div class="cart-pay-sep" style="text-align:center;font-size:.72rem;color:var(--muted);margin:.9rem 0 .6rem;">— ou payer en ligne avec PayPal —</div>
+<p class="cart-pp-title">Vos coordonnées de livraison</p>
+<input type="text" id="pp-nom" class="cart-pp-input" autocomplete="name" maxlength="80" placeholder="Prénom et nom">
+<input type="text" id="pp-adresse" class="cart-pp-input" autocomplete="street-address" maxlength="150" placeholder="Adresse (n°, rue, bâtiment, étage)">
+<input type="text" id="pp-ville" class="cart-pp-input" autocomplete="address-level2" maxlength="60" placeholder="Ville">
+<input type="tel" id="pp-tel" class="cart-pp-input" autocomplete="tel" maxlength="25" placeholder="Téléphone (WhatsApp de préférence)">
+<input type="email" id="pp-email" class="cart-pp-input" autocomplete="email" maxlength="100" placeholder="E-mail">
+<div class="cart-promo-error" id="pp-error" style="display:none"></div>
+<div id="paypal-button-container"></div>
+<p class="cart-paypal-note" style="margin-top:.5rem">Après le paiement, Lamine vous confirme l'envoi par WhatsApp ou par e-mail.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1516,6 +1528,8 @@ document.addEventListener('click', function(e){
       }
 
       if (totalEl) totalEl.textContent = this.grandTotal().toFixed(2).replace('.',',') + ' €';
+      const ppBlock = document.getElementById('cart-pp');
+      if (ppBlock) ppBlock.style.display = this.hasFreshFish() ? 'none' : 'block';
       const pp = document.getElementById('paypal-button-container');
       if (pp) { pp.innerHTML = ''; this.renderPayPal(); }
     },
@@ -1567,27 +1581,57 @@ document.addEventListener('click', function(e){
       pp.innerHTML = '<button type="button" class="btn btn-gold" style="width:100%;justify-content:center" onclick="cartSystem.payPayPalMe()">Payer ' + this.grandTotal().toFixed(2).replace('.',',') + ' € avec PayPal</button>';
     },
 
+    // Coordonnées obligatoires avant PayPal.me (le lien PayPal.me ne transmet ni la commande ni l'adresse)
+    readPayPalContact() {
+      const v = id => (document.getElementById(id)?.value || '').trim();
+      const c = { nom: v('pp-nom'), adresse: v('pp-adresse'), ville: v('pp-ville'), tel: v('pp-tel'), email: v('pp-email') };
+      let err = '';
+      if (c.nom.length < 3 || c.adresse.length < 5 || c.ville.length < 2 || c.tel.replace(/\D/g, '').length < 8)
+        err = 'Merci de remplir votre adresse complète et votre téléphone avant de payer.';
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.email)) err = 'Merci d\'indiquer un e-mail valide.';
+      const el = document.getElementById('pp-error');
+      if (el) { el.textContent = err; el.style.display = err ? 'block' : 'none'; }
+      return err ? null : c;
+    },
+
     payPayPalMe() {
-      if (this.items.length === 0 || !this.checkAddress()) return;
+      if (this.items.length === 0 || this.hasFreshFish() || !this.checkAddress()) return;
+      const c = this.readPayPalContact();
+      if (!c) return;
+      const eur = v => v.toFixed(2).replace('.',',') + ' €';
       const total = this.grandTotal();
       const produitStr = this.items.map(i => i.qty + '× ' + i.name).join(', ');
-      const msg = 'Paiement PayPal.me : ' + produitStr + ' · Total ' + total.toFixed(2).replace('.',',') + ' € · Livraison à : ' + this.addressLabel();
+      const cp = (document.getElementById('cart-cp')?.value || '').trim();
+      const sel = document.getElementById('cart-country');
+      const pays = sel ? sel.options[sel.selectedIndex].text : '';
+      const adresseComplete = c.adresse + ', ' + cp + ' ' + c.ville + ', ' + pays;
+      let detail = this.items.map(i => '- ' + i.qty + '× ' + i.name + ' (' + eur(i.price) + ')').join('\n');
+      detail += '\nSous-total : ' + eur(this.total());
+      const d = this.discount();
+      if (d > 0) detail += '\nCode promo ' + this.activePromo + ' : -' + eur(d);
+      detail += '\nLivraison : ' + eur(this.shippingCost());
+      detail += '\nTotal : ' + eur(total);
+      const msg = 'Commande PayPal.me (à vérifier : paiement reçu ?)\n' + detail
+        + '\n\nClient : ' + c.nom + '\nTél : ' + c.tel + '\nE-mail : ' + c.email + '\nLivraison à : ' + adresseComplete;
       // Un seul enregistrement et un seul e-mail à Lamine par panier, même si le client reclique
       if (this.lastPayPalMeMsg !== msg) {
         this.lastPayPalMeMsg = msg;
         try {
           fetch('/api/crm', {
             method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
-            body: JSON.stringify({ produit: produitStr.slice(0,500), message: msg, source: 'PayPal.me' })
+            body: JSON.stringify({ name: c.nom, email: c.email, produit: produitStr.slice(0,500), message: msg, source: 'PayPal.me' })
           }).catch(() => {});
           fetch('https://formspree.io/f/xpqkwvlb', {
             method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, keepalive: true,
             body: JSON.stringify({
-              _subject: 'Commande PayPal ' + total.toFixed(2).replace('.',',') + ' € : ' + this.addressLabel(),
-              commande: produitStr,
-              total: total.toFixed(2).replace('.',',') + ' €',
-              livraison: this.addressLabel(),
-              a_verifier: "Le client vient d'ouvrir PayPal : la commande est payée seulement si le mail PayPal « Vous avez reçu de l'argent » arrive avec ce montant. Nom et adresse complète sont dans ce mail PayPal."
+              _subject: 'Commande PayPal ' + eur(total) + ' : ' + c.nom + ' (' + c.ville + ')',
+              commande: detail,
+              total: eur(total),
+              nom: c.nom,
+              adresse_livraison: adresseComplete,
+              telephone: c.tel,
+              email: c.email,
+              a_verifier: "Le client vient d'ouvrir PayPal : la commande est payée seulement si le mail PayPal « Vous avez reçu de l'argent » arrive avec ce montant."
             })
           }).catch(() => {});
         } catch (_) {}
@@ -1595,7 +1639,7 @@ document.addEventListener('click', function(e){
       if (typeof gtag === 'function') gtag('event', 'paypalme_order', { value: total, currency: 'EUR' });
       window.open('https://paypal.me/' + PAYPAL_ME + '/' + total.toFixed(2) + 'EUR', '_blank');
       const n = document.getElementById('cart-notif');
-      if (n) { n.textContent = 'Indiquez votre commande et votre adresse dans la note PayPal 🙏'; n.classList.add('show'); setTimeout(() => n.classList.remove('show'), 6000); }
+      if (n) { n.textContent = 'Commande transmise à Lamine ✅ Finalisez le paiement dans PayPal'; n.classList.add('show'); setTimeout(() => n.classList.remove('show'), 6000); }
     },
 
     open() {

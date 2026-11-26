@@ -44,3 +44,6 @@
 .nl-popup-close{position:absolute;top:.8rem;right:.8rem;width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--muted);cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;transition:color .2s,border-color .2s;}
 .nl-popup-close:hover{color:var(--cream);border-color:var(--border-hi);}
 a.recipe-card{display:block;text-decoration:none;color:inherit;}
+.cart-pp-title{font-size:.78rem;font-weight:700;color:var(--cream);margin:0 0 .4rem;}
+.cart-pp-input{display:block;width:100%;box-sizing:border-box;margin-bottom:.4rem;background:var(--surface-2);border:1px solid var(--border);color:var(--cream);border-radius:10px;padding:.5rem .8rem;font-size:16px;font-family:'Plus Jakarta Sans',sans-serif;outline:none;transition:border-color .2s;}
+.cart-pp-input:focus{border-color:var(--gold);}
